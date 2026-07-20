@@ -1,5 +1,15 @@
 # SEO-Report – Bestattungen Gorhau
 
+## Multi-Page-Architektur (kein One-Pager, kein SPA-Routing)
+Die Website besteht aus **25 eigenständigen, beim Build erzeugten HTML-Dokumenten** (24
+indexierbare Seiten + 404), jeweils mit eigener URL, eigenem Title, eigener Description, eigenem
+Canonical und eigenständigem Inhalt. Es kommt **kein** Hash-Routing (`/#leistungen`) und **keine**
+Single-Page-Application zum Einsatz – geprüft per Quellcode-Suche (keine `location.hash`-/
+`history.pushState`-Navigation, keine `client:*`-Hydration-Direktiven) und per automatisiertem
+Multi-Page-Check (`npm run test:multipage` → `audit/multipage-seo-report.md`). Jede Hauptseite ist
+über die Hauptnavigation oder interne Links erreichbar; keine Hauptinformation existiert nur als
+Startseiten-Abschnitt.
+
 ## Ausgangslage (Seobility-Onpage ≈ 56 %) und Behebung
 
 | Bekanntes Problem (alt) | Status neu | Umsetzung |
@@ -55,8 +65,13 @@ Würzburg · Thanatopraxie Würzburg · Hilfe im Trauerfall Würzburg.
 ## Prüfergebnisse
 - `npm run audit` (statischer SEO-/Struktur-Audit über dist): **0 Fehler, 0 Warnungen**,
   JSON-LD auf allen Seiten valide.
-- `npm run test:links`: **0 defekte interne Links** (1152 geprüft).
-- Lighthouse-SEO-Kategorie: **100** auf allen 8 geprüften Seitentypen (LH 13.4.0, lokal).
+- `npm run test:links`: **0 defekte interne Links** (1221 geprüft).
+- `npm run test:multipage` (siehe `audit/multipage-seo-report.md`): **alle 25 Seiten einzeln
+  geprüft** – 25/25 mit genau einer nicht-leeren H1, 24/24 eindeutige Titles, 24/24 eindeutige
+  Descriptions, 24/24 in der Sitemap, 0 defekte interne Links, 0 leere Überschriften, 0 leere
+  Links, 0 Bilder ohne Alt-Attribut, 0 Seiten mit Befund.
+- Lighthouse-SEO-Kategorie: **100** auf allen 8 geprüften Seitentypen, jeweils Desktop **und**
+  Mobil (LH 13.4.0, lokal).
 
 ## SEO-Realität: was diese Werte bedeuten (und was nicht)
 Verschiedene „SEO-Scores" messen Unterschiedliches. Ein grüner eigener Audit ist **keine**

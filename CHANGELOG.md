@@ -1,5 +1,38 @@
 # Changelog
 
+## 1.2.0 – Multi-Page-Vertiefung, Inhaltsausbau, vollständige Einzelseiten-Prüfung
+
+### Neu
+- **Echtes Logo integriert:** `header_logo.png` (979×115) pixelgenau auf die Marke zugeschnitten
+  (524×92, Telefon-Widget + Spiegelung entfernt, Kreuz/Pfeile/Wortmarke/Proportionen
+  unverändert). Platzhalterlogo vollständig ersetzt. Favicons, Apple-Touch-Icon, OG-Bild und
+  Webmanifest aus dem echten Logo neu erzeugt.
+- **Markenfarben aus Original übernommen:** Bordeaux `#882020` (Wortmarke/Headline im Flyer
+  2009), Gold `#b8933d` (Logo-Fassung), warmes Creme `#f7ece9`/Beige `#ecdcd6`
+  (Flyer-Papier) – in globalen CSS-Tokens, Header, Footer, Buttons, Fokuszuständen, Favicons und
+  OG-Bild konsistent umgesetzt. Alle Kontraste WCAG AA.
+- **Flyer 2009 eingebunden** auf `/mediathek/` (AVIF/WebP/JPG, Alt-Text, Bildunterschrift, klar
+  als historisches Material 2009 gekennzeichnet).
+- **Inhaltsausbau aller Kernseiten** auf die vorgegebenen Wortumfänge, ohne künstliches
+  Aufblähen: Startseite 498→836 Wörter, Leistungsseiten und Bestattungsarten je auf 400–800
+  Wörter, Vorsorge/Abschiedsraum/Über uns/Friedhöfe entsprechend erweitert – mit echten
+  Zwischenüberschriften, Listen, Hinweiskästen und thematischen internen Verlinkungen
+  (Content-Cluster: Trauerfall ↔ Dokumente ↔ Formalitäten ↔ Bestattungsarten ↔ Kontakt;
+  Vorsorge ↔ Bestattungsarten ↔ Abschiedsraum; Leistungsübersicht ↔ alle Leistungsunterseiten
+  und zurück).
+- **Multi-Page-SEO-Check** (`tests/multipage-audit.mjs`, `npm run test:multipage`): prüft jede
+  der 25 gebauten Einzelseiten automatisiert auf H1, Title-/Description-Eindeutigkeit,
+  selbstreferenzierenden Canonical, lang/Viewport, interne Links (aus- und eingehend), defekte
+  Links, leere Überschriften/Links, Alt-Attribute und Sitemap-Eintrag. Ergebnis:
+  `audit/multipage-seo-report.md` / `.json` – **0 Seiten mit Befund**.
+- Bestätigt: **keine** Single-Page-Application, **kein** Hash-/Client-Routing – 25 eigenständige,
+  beim Build erzeugte HTML-Dokumente, alle über Navigation/interne Links erreichbar.
+- WCAG-Regression durch neue Inhalte behoben (Heading-Order auf der Startseite: „Zuhören ·
+  Beraten · Begleiten“ von `<p>` zu `<h2>` aufgewertet) – danach wieder axe 0 Verstöße und
+  Lighthouse Accessibility 100 auf allen geprüften Seiten.
+- Lighthouse erneut für alle 8 Kern-Seitentypen **einzeln für Desktop und Mobil** ausgeführt:
+  durchgehend 100/100/100/100.
+
 ## 1.0.0 – Relaunch
 
 ### Neu

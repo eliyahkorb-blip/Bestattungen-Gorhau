@@ -25,7 +25,17 @@ const arten = [
       im Kreis der Angehörigen getroffen. Wir nehmen uns Zeit, Ihnen die Möglichkeiten in Ruhe
       zu erläutern.
     </p>
+    <p>
+      In Deutschland gilt grundsätzlich der sogenannte Friedhofszwang: Die Beisetzung einer
+      Urne oder eines Sarges muss auf einem dafür zugelassenen Friedhof erfolgen – Ausnahmen
+      bilden etwa die See- oder die Baumbestattung an eigens dafür vorgesehenen Orten. Innerhalb
+      dieses Rahmens gibt es jedoch eine Vielzahl an Möglichkeiten, den Abschied persönlich zu
+      gestalten.
+    </p>
   </div>
+
+  <h2>Die vier gängigsten Bestattungsarten</h2>
+  <hr class="accent-rule" />
   <div class="grid grid--2">
     {
       arten.map((a) => (
@@ -37,11 +47,60 @@ const arten = [
       ))
     }
   </div>
+  <h2>Wie Sie die passende Bestattungsart finden</h2>
+  <hr class="accent-rule" />
   <div class="prose">
     <p>
-      Die konkreten Möglichkeiten und Gebühren unterscheiden sich je nach Friedhof und
-      Gemeinde. Gern informieren wir Sie über die aktuell geltenden Regelungen in Würzburg und
-      Umgebung.
+      Häufig hat die verstorbene Person selbst schon zu Lebzeiten einen Wunsch geäußert – sei
+      es mündlich, in einer Verfügung oder im Rahmen einer
+      <a href="/bestattungsvorsorge/">Bestattungsvorsorge</a>. Ist das nicht der Fall,
+      entscheiden die Angehörigen gemeinsam. Dabei spielen neben persönlichen Vorstellungen
+      auch praktische Fragen eine Rolle: die spätere Grabpflege, die Verbundenheit zu einem
+      bestimmten Ort oder die Frage, wie ein Grab als Ort der Erinnerung genutzt werden soll.
+    </p>
+    <p>
+      Erd- und Feuerbestattung unterscheiden sich vor allem darin, ob die verstorbene Person im
+      Sarg oder als Urne beigesetzt wird – daraus ergeben sich unterschiedliche Grabformen,
+      Ruhezeiten und Pflegeanforderungen. See- und anonyme Bestattung sind beides besondere
+      Formen, die in der Regel auf eine Feuerbestattung folgen und sich vor allem durch den
+      Verzicht auf ein klassisches, individuell gekennzeichnetes Grab auszeichnen.
+    </p>
+    <p>
+      Wir erläutern Ihnen im persönlichen Gespräch die Unterschiede zwischen Ruhezeiten,
+      Pflegeaufwand und den jeweils möglichen Formen der Trauerfeier – für jede der vier
+      Bestattungsarten und für die dazugehörigen Grabformen.
+    </p>
+    <p>
+      Manche Fragen lassen sich erst im direkten Gespräch klären: Wie viel Zeit soll zwischen
+      Todesfall und Beisetzung liegen? Soll ein fester Ort der Erinnerung entstehen oder ist
+      das nicht wichtig? Wer soll sich später um die Grabpflege kümmern? Diese Überlegungen
+      helfen dabei, gemeinsam die passende Form zu finden.
+    </p>
+    <div class="hinweisbox">
+      <p>
+        <strong>Hinweis:</strong> Die konkreten Möglichkeiten und Gebühren unterscheiden sich je
+        nach Friedhof und Gemeinde und können sich ändern. Gern informieren wir Sie über die
+        aktuell geltenden Regelungen in Würzburg und Umgebung. Weiterführende allgemeine
+        Informationen zu Friedhöfen finden Sie auch auf unserer Seite
+        <a href="/friedhoefe-in-wuerzburg/">Friedhöfe in Würzburg</a>.
+      </p>
+    </div>
+    <p>
+      Wenn Sie bereits zu Lebzeiten vorsorgen möchten, lesen Sie mehr auf unserer Seite
+      <a href="/bestattungsvorsorge/">Bestattungsvorsorge</a>. Befinden Sie sich aktuell in
+      einem Trauerfall, finden Sie erste Orientierung auf der Seite
+      <a href="/im-trauerfall/">Im Trauerfall</a>.
     </p>
   </div>
 </PageLayout>
+
+<style>
+  .hinweisbox {
+    background: var(--surface-cream);
+    border-left: 4px solid var(--brand-gold);
+    padding: var(--space-md);
+    border-radius: var(--radius-sm);
+    max-width: 46rem;
+    color: var(--text-muted);
+  }
+</style>

@@ -54,7 +54,9 @@ const services = [
       <p class="hero__text">
         Der Tod eines nahen Menschen verändert alles. In dieser Zeit stehen wir Ihnen ruhig
         und verständnisvoll zur Seite: Wir hören zu, beraten Sie in aller Ruhe und übernehmen
-        die Organisation – vom ersten Anruf bis zum würdevollen Abschied.
+        die Organisation – vom ersten Anruf bis zum würdevollen Abschied. Als familiengeführtes
+        Institut in Würzburg-Heidingsfeld begleiten wir Trauerfamilien aus Würzburg und der
+        Region bereits seit 1970 – mit der gleichen Sorgfalt, die schon am Anfang stand.
       </p>
       <div class="hero__actions">
         <a class="btn btn--primary" href={`tel:${company.phoneRaw}`}>
@@ -70,16 +72,42 @@ const services = [
   <section class="section section--beige philosophy">
     <div class="container">
       <p class="eyebrow">Unsere Haltung</p>
-      <p class="philosophy__words">
+      <h2 class="philosophy__words">
         <span>Zuhören</span><span aria-hidden="true">·</span>
         <span>Beraten</span><span aria-hidden="true">·</span>
         <span>Begleiten</span>
-      </p>
+      </h2>
       <p class="philosophy__text">
         Seit 1970 begleiten wir als Familienunternehmen Menschen aus Würzburg und der Region
         in Zeiten der Trauer. Für uns bedeutet Bestattungskultur, dass jeder Abschied so
         persönlich sein darf wie das Leben, an das er erinnert.
       </p>
+      <div class="philosophy__grid">
+        <div>
+          <h3>Zuhören</h3>
+          <p>
+            Am Anfang steht das Gespräch – nicht das Formular. Wir nehmen uns Zeit, zu
+            verstehen, was Ihnen und der verstorbenen Person wichtig war, bevor wir über
+            Ablauf und Organisation sprechen.
+          </p>
+        </div>
+        <div>
+          <h3>Beraten</h3>
+          <p>
+            Wir erläutern die Möglichkeiten offen und verständlich – ohne Druck, ohne
+            Fachjargon und ohne unnötige Empfehlungen. Sie entscheiden, wir zeigen die
+            Optionen auf.
+          </p>
+        </div>
+        <div>
+          <h3>Begleiten</h3>
+          <p>
+            Von den ersten Formalitäten bis zur Trauerfeier und darüber hinaus bleiben wir
+            Ihr fester Ansprechpartner – persönlich, verlässlich und mit einem offenen Ohr,
+            auch nach der Bestattung.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -100,6 +128,53 @@ const services = [
             </article>
           ))
         }
+      </div>
+    </div>
+  </section>
+
+  <!-- Warum Gorhau -->
+  <section class="section section--white">
+    <div class="container">
+      <h2>Was uns als Bestattungsinstitut ausmacht</h2>
+      <hr class="accent-rule" />
+      <p class="lead">
+        Ein Trauerfall lässt sich nicht standardisieren. Deshalb arbeiten wir bewusst nicht
+        nach starrem Schema, sondern richten uns nach dem, was in Ihrer Situation gebraucht
+        wird.
+      </p>
+      <div class="grid grid--2">
+        <div class="reason">
+          <h3>Familiengeführt seit 1970</h3>
+          <p>
+            Wir sind ein inhabergeführtes Institut, keine anonyme Kette. Sie sprechen mit
+            Menschen, die in Würzburg-Heidingsfeld verwurzelt sind und seit Generationen
+            Verantwortung für ihre Arbeit übernehmen.
+          </p>
+        </div>
+        <div class="reason">
+          <h3>Erreichbar, wenn Sie uns brauchen</h3>
+          <p>
+            Ein Todesfall hält sich nicht an Bürozeiten. Im Trauerfall erreichen Sie uns
+            deshalb Tag und Nacht – für die organisatorischen Fragen stehen wir Ihnen zu
+            unseren regulären Bürozeiten zur Verfügung.
+          </p>
+        </div>
+        <div class="reason">
+          <h3>Alles aus einer Hand</h3>
+          <p>
+            Überführung, Formalitäten, Trauerfeier, Trauerdruck und Bestattung – wir
+            koordinieren die einzelnen Schritte, damit Sie nicht selbst zwischen mehreren
+            Ansprechpartnern vermitteln müssen.
+          </p>
+        </div>
+        <div class="reason">
+          <h3>Individuelle Abschiednahme</h3>
+          <p>
+            Ob im hauseigenen Abschiedsraum, bei einer kirchlichen Feier oder in stillem
+            Rahmen – wir gestalten den Abschied so, wie er zu der verstorbenen Person und
+            ihrer Familie passt.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -161,7 +236,14 @@ const services = [
         1970 gegründet, ist unser Institut seit 1980 in der Reuterstraße in
         Würzburg-Heidingsfeld zu Hause. Über die Jahrzehnte ist aus dem Familienbetrieb ein
         fester Bestandteil der Region geworden – getragen von Vertrauen, das über Generationen
-        gewachsen ist.
+        gewachsen ist. Seit 2004 gehört auch unser hauseigener Abschiedsraum zu diesem Weg:
+        ein Ort, der zeigt, dass sich Tradition und persönliche Weiterentwicklung nicht
+        ausschließen.
+      </p>
+      <p>
+        Mehr zu den einzelnen Stationen unserer Geschichte sowie zu unserem Team und unserer
+        Arbeitsweise finden Sie auf den Seiten <a href="/ueber-uns/">Über uns</a> und
+        <a href="/ueber-uns/historie/">Historie seit 1970</a>.
       </p>
       <p><a class="btn btn--secondary" href="/ueber-uns/historie/">Unsere Historie</a></p>
     </div>
@@ -174,7 +256,8 @@ const services = [
       <hr class="accent-rule" />
       <p>
         In unserer Mediathek finden Sie den Imagefilm des Unternehmens sowie historische
-        Aufnahmen und Dokumente aus der Geschichte des Hauses Gorhau.
+        Aufnahmen und Dokumente aus der Geschichte des Hauses Gorhau – unter anderem Anzeigen
+        und Flyer aus vergangenen Jahren, die wir bewusst als Archivmaterial kennzeichnen.
       </p>
       <p><a class="btn btn--secondary" href="/mediathek/">Zur Mediathek</a></p>
     </div>
@@ -196,6 +279,11 @@ const services = [
         <p class="contact-block__hours">
           <strong>Bürozeiten:</strong> Montag bis Freitag, 08:00 – 16:00 Uhr sowie nach
           Vereinbarung.
+        </p>
+        <p class="contact-block__hours">
+          Unser Institut liegt in Würzburg-Heidingsfeld und ist von Würzburg sowie den
+          umliegenden Gemeinden gut erreichbar. Weitere Hinweise zur Anfahrt finden Sie auf
+          der <a href="/kontakt/">Kontaktseite</a>.
         </p>
       </div>
       <div class="split__aside">
@@ -256,6 +344,29 @@ const services = [
   }
   .philosophy__text {
     max-width: 46rem;
+  }
+  .philosophy__grid {
+    display: grid;
+    gap: var(--space-lg);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+    margin-top: var(--space-xl);
+    max-width: none;
+  }
+  .philosophy__grid h3 {
+    font-size: 1.15rem;
+    margin-bottom: var(--space-2xs);
+  }
+  .philosophy__grid p {
+    color: var(--text-muted);
+    margin: 0;
+  }
+  .reason h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-2xs);
+  }
+  .reason p {
+    color: var(--text-muted);
+    margin: 0;
   }
 
   .split {

@@ -30,23 +30,30 @@ externe Ressourcen, kein Framework-Runtime, keine Webfont-Ladezeit, keine Layout
 ## Lighthouse – tatsächlich durchgeführte Läufe (Lab)
 
 Ausgeführt mit **Lighthouse 13.4.0** im vorinstallierten Chromium gegen den lokal
-ausgelieferten `dist/`-Ordner (Lab-Daten, nicht Feld/CrUX):
+ausgelieferten `dist/`-Ordner (Lab-Daten, nicht Feld/CrUX), **jeweils als eigener Desktop- und
+Mobil-Lauf**:
 
-| Seite | Performance | Accessibility | Best Practices | SEO | LCP | CLS |
-|---|---|---|---|---|---|---|
-| Startseite (Desktop) | 100 | 100 | 100 | 100 | 1,1 s | 0 |
-| Im Trauerfall | 100 | 100 | 100 | 100 | 1,1 s | 0 |
-| Leistungen | 100 | 100 | 100 | 100 | 1,1 s | 0 |
-| Bestattungsart (Feuerbestattung) | 100 | 100 | 100 | 100 | 1,1 s | 0 |
-| Abschiedsraum | 100 | 100 | 100 | 100 | 1,1 s | 0 |
-| Über uns | 100 | 100 | 100 | 100 | 0,9 s | 0 |
-| Mediathek | 100 | 100 | 100 | 100 | 1,1 s | 0 |
-| Kontakt | 100 | 100 | 100 | 100 | 1,1 s | 0 |
-| **Startseite (Mobil)** | 100 | 100 | 100 | 100 | 1,1 s | 0 |
+| Seite | Perf (Desktop) | A11y (Desktop) | BP (Desktop) | SEO (Desktop) | Perf (Mobil) | A11y (Mobil) | BP (Mobil) | SEO (Mobil) |
+|---|---|---|---|---|---|---|---|---|
+| Startseite | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 |
+| Im Trauerfall | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 |
+| Leistungen | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 |
+| Bestattungsart (Feuerbestattung) | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 |
+| Abschiedsraum | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 |
+| Über uns | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 |
+| Mediathek | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 |
+| Kontakt | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 |
 
-TBT durchgehend ≤ 10 ms. Zwei WCAG-2.2-Punkte, die Lighthouse anfangs auf der Kontaktseite
-zeigte (Label-in-Name am Logo-Link, Touch-Target-Abstand der Telefon-Schaltfläche), wurden
-behoben; danach alle Seiten 100.
+LCP durchgehend ≈ 0,4–1,1 s, CLS 0, TBT ≤ 10 ms auf allen gemessenen Seiten.
+
+Im Verlauf der Arbeit behobene, real gemessene Befunde: 9 Farbkontrast-Verstöße (erster
+axe-Lauf), Label-in-Name am Logo-Link, Touch-Target-Abstand der Telefon-Schaltfläche im Header
+sowie eine Bild-Seitenverhältnis-Abweichung im responsiven Logo-`srcset` (Best Practices fiel
+dadurch zwischenzeitlich auf 96) und ein Heading-Order-Verstoß auf der Startseite (die
+„Zuhören · Beraten · Begleiten“-Zeile fehlte als H2 zwischen H1 und den neu ergänzten H3
+-Unterpunkten, Accessibility fiel dadurch zwischenzeitlich auf 98). Alle Befunde wurden behoben;
+der zuletzt ausgeführte Lauf zeigt auf allen 8 geprüften Seitentypen (Desktop + Mobil) durchgehend
+100/100/100/100.
 
 > **Einordnung:** Dies sind **lokale Lab-Werte** gegen den statischen Build. Nach dem Deployment
 > sollten die Läufe gegen die Live-URL wiederholt werden (reale Serverlatenz/Kompression), am

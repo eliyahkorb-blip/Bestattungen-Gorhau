@@ -20,6 +20,7 @@ npm run test           # Smoke-Tests (node:test) über dist/
 npm run test:a11y      # axe-core-Accessibility-Test (Chromium)
 npm run test:links     # interner Linkcheck
 npm run audit          # SEO-/Struktur-Audit (H1, Titles, Alt, JSON-LD …)
+npm run test:multipage # Multi-Page-SEO-Check je Einzelseite → audit/multipage-seo-report.md
 npm run test:screenshots  # Desktop/Mobil-Screenshots → audit/screenshots/
 npm run ingest         # Originaldateien aus incoming-assets/ verarbeiten (Logo, Bilder, Medien)
 npm run format         # Prettier

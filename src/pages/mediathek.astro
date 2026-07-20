@@ -34,6 +34,12 @@ const dokumente = [
   breadcrumbs={[{ name: 'Mediathek', path: '/mediathek/' }]}
 >
   <div class="prose">
+    <p>
+      Über fünf Jahrzehnte Firmengeschichte haben nicht nur Erinnerungen, sondern auch
+      Bildmaterial hinterlassen: Imagefilm, Anzeigen, Flyer und Aufnahmen aus früheren
+      Kampagnen. In unserer Mediathek stellen wir Ihnen diese Materialien zusammen – aktuelle
+      Inhalte ebenso wie historisches Archivmaterial, das klar als solches gekennzeichnet ist.
+    </p>
     <p class="notice">
       <strong>Hinweis:</strong> Die selbst gehosteten Video- und Audiodateien werden
       barrierefrei (mit Untertiteln bzw. Transkript, ohne Autoplay und ohne externe Player)
@@ -110,6 +116,14 @@ const dokumente = [
       ))
     }
   </ul>
+
+  <div class="prose gallery-outro">
+    <p>
+      Weitere Bilder aus der Geschichte unseres Hauses finden Sie in unserer
+      <a href="/ueber-uns/galerie/">Galerie</a>, eine ausführliche Zeitleiste auf der Seite
+      <a href="/ueber-uns/historie/">Historie seit 1970</a>.
+    </p>
+  </div>
 </PageLayout>
 
 <style>
@@ -211,5 +225,8 @@ const dokumente = [
     margin-top: var(--space-sm);
     color: var(--text-muted);
     font-size: 0.95rem;
+  }
+  .gallery-outro {
+    margin-top: var(--space-xl);
   }
 </style>
