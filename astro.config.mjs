@@ -1,11 +1,11 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-export const SITE = 'https://eliyahkorb-blip.github.io';
+// Kanonische Domain – alle anderen Varianten leiten hierher weiter.
+export const SITE = 'https://www.gorhau-bestattungen.de';
 
 export default defineConfig({
   site: SITE,
-  base: '/Bestattungen-Gorhau',
   trailingSlash: 'always',
   build: {
     format: 'directory',

@@ -41,6 +41,14 @@ rsync -avz --delete dist/ user@server:/home/user/public_html/
 - Achtung: `.htaccess` wirkt auf GitHub Pages nicht (kein Apache). Redirects/Canonical-Domain
   dann über DNS/Custom-Domain-Konfiguration bzw. den Hosting-Layer lösen. Für vollständige
   Server-Redirects und Header ist Variante A/B/C vorzuziehen.
+- **Wichtig bei Projekt-Pages unter einem Repo-Unterpfad**
+  (`https://<user>.github.io/<repo>/`): Der gesamte Website-Code verwendet bewusst **absolute
+  Wurzelpfade** (`/leistungen/`, `/img/logo.png`, Favicons usw.), passend zur kanonischen
+  Root-Domain `https://www.gorhau-bestattungen.de`. Ohne projektweite Anpassung auf einen
+  Astro-`base`-Pfad brechen unter einem Repo-Unterpfad Navigation, Logo, Favicons und interne
+  Links (nur die Startseite selbst lädt). Für eine schnelle Live-Vorschau ohne Unterpfad-Problem
+  eignen sich stattdessen Netlify oder Vercel (Root-Hosting auf einer eigenen Subdomain, siehe
+  Varianten B/C) oder lokal `npm run preview`.
 
 ## Kanonische Domain
 `https://www.gorhau-bestattungen.de` — alle Varianten (http, non-www, alte `/*.html`-URLs)
