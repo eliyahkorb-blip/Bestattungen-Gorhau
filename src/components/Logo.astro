@@ -18,8 +18,14 @@ const { variant = 'default' } = Astro.props;
 
 // Echtes Logo erkennen (Build-Zeit, statisch)
 const metaPath = path.resolve('public/img/logo-meta.json');
-let realLogo: { width: number; height: number; src: string; webp: string; srcset: string } | null =
-  null;
+let realLogo: {
+  width: number;
+  height: number;
+  src: string;
+  webp: string;
+  srcset: string;
+  srcsetWebp?: string;
+} | null = null;
 try {
   if (fs.existsSync(metaPath)) {
     realLogo = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
@@ -28,8 +34,9 @@ try {
   realLogo = null;
 }
 
-// Zielhöhe im Header; Breite proportional (kein CLS)
-const targetH = 42;
+// Anzeigehöhe im Header (per CSS); width/height-Attribute = intrinsische Maße
+// → exakt korrektes Seitenverhältnis, kein CLS, keine Aspect-Ratio-Warnung.
+const targetH = 54;
 const displayW = realLogo ? Math.round((realLogo.width / realLogo.height) * targetH) : 0;
 
 const wordColor = variant === 'light' ? '#fbf7f0' : '#521720';
@@ -39,16 +46,21 @@ const gold = '#b8933d';
 
 {
   realLogo ? (
-    <img
-      class="logo-img"
-      src={realLogo.src}
-      srcset={realLogo.srcset}
-      sizes={`${displayW}px`}
-      width={displayW}
-      height={targetH}
-      alt="Bestattungen Gorhau – Bestattungs- und Überführungs-Institut, Würzburg-Heidingsfeld"
-      decoding="async"
-    />
+    <picture class="logo-pic">
+      {realLogo.srcsetWebp && (
+        <source type="image/webp" srcset={realLogo.srcsetWebp} sizes={`${displayW}px`} />
+      )}
+      <img
+        class="logo-img"
+        src={realLogo.src}
+        srcset={realLogo.srcset}
+        sizes={`${displayW}px`}
+        width={realLogo.width}
+        height={realLogo.height}
+        alt="Bestattungen Gorhau – Bestattungs- und Überführungs-Institut, Würzburg-Heidingsfeld"
+        decoding="async"
+      />
+    </picture>
   ) : (
     <span class="logo" aria-hidden="false">
       <svg
@@ -75,10 +87,18 @@ const gold = '#b8933d';
 }
 
 <style>
+  .logo-pic {
+    display: block;
+  }
   .logo-img {
-    height: 42px;
+    height: 54px;
     width: auto;
     display: block;
+  }
+  @media (max-width: 480px) {
+    .logo-img {
+      height: 44px;
+    }
   }
   .logo {
     display: inline-flex;

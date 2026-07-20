@@ -1,19 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Bestattungen Gorhau Würzburg">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#fbf7f0"/>
-      <stop offset="1" stop-color="#efe6d6"/>
+      <stop offset="0" stop-color="#f7ece9"/>
+      <stop offset="1" stop-color="#ecdcd6"/>
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <rect x="0" y="0" width="1200" height="12" fill="#6b1f2a"/>
+  <rect x="0" y="0" width="1200" height="12" fill="#882020"/>
   <rect x="0" y="618" width="1200" height="12" fill="#b8933d"/>
   <g transform="translate(110 150)">
     <rect x="34" y="0" width="20" height="150" rx="4" fill="#b8933d"/>
     <rect x="0" y="48" width="88" height="20" rx="4" fill="#b8933d"/>
   </g>
-  <text x="240" y="250" font-family="Palatino, Georgia, serif" font-size="86" font-weight="700" fill="#521720" letter-spacing="4">GORHAU</text>
-  <text x="242" y="312" font-family="Palatino, Georgia, serif" font-size="40" fill="#6b1f2a">Bestattungen · Würzburg-Heidingsfeld</text>
+  <text x="240" y="250" font-family="Palatino, Georgia, serif" font-size="86" font-weight="700" fill="#6e1a1a" letter-spacing="4">GORHAU</text>
+  <text x="242" y="312" font-family="Palatino, Georgia, serif" font-size="40" fill="#882020">Bestattungen · Würzburg-Heidingsfeld</text>
   <text x="242" y="410" font-family="Segoe UI, Arial, sans-serif" font-size="38" fill="#2a2420">Zuhören · Beraten · Begleiten</text>
   <text x="242" y="470" font-family="Segoe UI, Arial, sans-serif" font-size="30" fill="#5c544c">Familienunternehmen seit 1970 · Tel. 0931 61 00 00</text>
 </svg>

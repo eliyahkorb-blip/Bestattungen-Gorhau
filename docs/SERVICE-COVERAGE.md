@@ -3,7 +3,13 @@
 Abgleich der zu prüfenden Leistungen mit der neuen Website. **Endgültiger Abgleich gegen die
 Originalseiten ist erst nach Bereitstellung von `incoming-assets/original-site.zip` möglich**
 (dann automatisch via `npm run ingest` archiviert und hier zu ergänzen). Grundlage bis dahin:
-Auftragstext + öffentliche Unternehmensprofile.
+Auftragstext, öffentliche Unternehmensprofile **und der bereitgestellte Flyer 2009**.
+
+> **Beleg aus Flyer 2009:** Der Flyer nennt ausdrücklich die Leistungen
+> „Bestattungsvorsorge / Sterbegeldversicherungen / Überführungen von u. nach allen Orten /
+> Erd-, Feuer-, Seebestattungen / Grabbereitungen / Umbettungen / Trägergestellungen /
+> Dekorationen" sowie „Würzburgs erstes Bestattungshaus mit eigenem Abschiedsraum". Das bestätigt
+> mehrere zuvor offene Punkte (Stand 2009 – aktuellen Stand vor Live-Schaltung bestätigen).
 
 | Leistung (Prüfliste) | Auf der Website | Wo | Status |
 |---|---|---|---|
@@ -13,8 +19,10 @@ Auftragstext + öffentliche Unternehmensprofile.
 | Seebestattung | ✅ | `/bestattungsarten/seebestattung/` | übernommen |
 | Anonyme Bestattung | ✅ | `/bestattungsarten/anonyme-bestattung/` | übernommen |
 | Überführungen national/international | ✅ | `/leistungen/ueberfuehrungen/` | übernommen |
-| Umbettungen | ✅ | `/leistungen/` (Weitere Leistungen) | **hinzugefügt – zu bestätigen** |
-| Graböffnungen | ✅ | `/leistungen/` (Weitere Leistungen) | **hinzugefügt – zu bestätigen** |
+| Umbettungen | ✅ | `/leistungen/` (Weitere Leistungen) | **belegt (Flyer 2009)** – aktuellen Stand bestätigen |
+| Graböffnungen / Grabbereitungen | ✅ | `/leistungen/` (Weitere Leistungen) | **belegt (Flyer 2009)** – aktuellen Stand bestätigen |
+| Trägergestellung | ✅ | `/leistungen/` (Weitere Leistungen) | **belegt (Flyer 2009)** – aktuellen Stand bestätigen |
+| Sterbegeldversicherungen | ✅ | `/bestattungsvorsorge/` | **belegt (Flyer 2009)** |
 | Trauerreden | ✅ | `/leistungen/trauerfeier-und-trauerdruck/`, `/leistungen/` | übernommen |
 | Trauerdruck | ✅ | `/leistungen/trauerfeier-und-trauerdruck/` | übernommen |
 | Friedhofsdekoration | ✅ | `/leistungen/trauerfeier-und-trauerdruck/`, `/leistungen/` | übernommen |

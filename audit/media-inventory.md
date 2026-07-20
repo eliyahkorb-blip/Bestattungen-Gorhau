@@ -1,5 +1,13 @@
 # Medien-Inventar
 
+## Bereits integriert (aus incoming-assets/)
+| Medium | Quelle | Status |
+|---|---|---|
+| **Original-Logo** | `incoming-assets/header_logo.png` (979×115) | ✅ integriert: auf Marke zugeschnitten (524×92), Header-Logo, Favicons & OG daraus erzeugt. Siehe `docs/LOGO-SOURCE.md`. |
+| **Flyer/Anzeige 2009** | `incoming-assets/flyer_2009.jpg` (1200×865) | ✅ integriert: AVIF/WebP/JPG, eingebunden auf `/mediathek/` mit Alt-Text + Bildunterschrift, als historisches Material 2009 gekennzeichnet. |
+
+## Noch ausstehend
+
 ## Wichtiger technischer Hinweis
 Die bestehende Website (`https://www.gorhau-bestattungen.de/`) ist in dieser Build-Umgebung
 durch die **Egress-Netzwerk-Policy gesperrt**. Sämtliche Abrufe (curl, wget, Fetch-Dienst,

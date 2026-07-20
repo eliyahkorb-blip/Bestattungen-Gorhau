@@ -6,25 +6,26 @@
  */
 
 :root {
-  /* Markenfarben */
-  --brand-bordeaux: #6b1f2a;
-  --brand-bordeaux-dark: #521720;
-  --brand-red: #8b2332;
-  --brand-gold: #b8933d;
+  /* Markenfarben – aus Original-Logo (header_logo.png) und Flyer 2009 extrahiert.
+     Siehe docs/BRAND-COLORS-EXTRACTED.md und docs/BRAND-GUIDELINES.md. */
+  --brand-bordeaux: #882020; /* »GORHAU«-Wortmarke & Headline im Flyer */
+  --brand-bordeaux-dark: #6e1a1a; /* Überschriften/Hover */
+  --brand-red: #a02828; /* wärmerer Rotakzent */
+  --brand-gold: #b8933d; /* Gold-Treatment des Logos (header_logo.png) */
   --brand-gold-dark: #8c6d28;
   /* Dunkleres Gold ausschließlich für Text auf hellen Flächen (WCAG-AA-tauglich). */
   --brand-gold-text: #7a5e1a;
-  --brand-cream: #fbf7f0;
-  --brand-beige: #efe6d6;
+  --brand-cream: #f7ece9; /* warmes Creme (Flyer-Papier #f0e0e0, für Flächen aufgehellt) */
+  --brand-beige: #ecdcd6;
   --brand-white: #ffffff;
   --brand-charcoal: #2a2420;
 
   /* Semantische Farben */
   --text-primary: #2a2420;
   --text-muted: #5c544c;
-  --text-on-dark: #fbf7f0;
-  --border-subtle: #e3d9c8;
-  --focus-color: #6b1f2a;
+  --text-on-dark: #f7ece9;
+  --border-subtle: #e6d7d1;
+  --focus-color: #882020;
   --focus-ring: #b8933d;
   --success: #2e6e4e;
   --warning: #8a5a0f;
@@ -32,9 +33,9 @@
 
   /* Flächen */
   --surface: #ffffff;
-  --surface-cream: #fbf7f0;
-  --surface-beige: #efe6d6;
-  --surface-dark: #3a2a2c;
+  --surface-cream: #f7ece9;
+  --surface-beige: #ecdcd6;
+  --surface-dark: #3a1e20;
 
   /* Typografie – lokal ohne externe Schriften (System-Font-Stacks) */
   --font-heading: 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua',

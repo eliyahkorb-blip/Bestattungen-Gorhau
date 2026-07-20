@@ -19,7 +19,6 @@ const historisch = [
 ];
 const dokumente = [
   { t: 'Flyer „Tag der offenen Tür“', jahr: '2012', desc: 'Historischer Veranstaltungsflyer.' },
-  { t: 'Historische Anzeige', jahr: '2009', desc: 'Zeitungsanzeige des Instituts.' },
   { t: 'Vorsorgebroschüre', jahr: 'Archiv', desc: 'Informationsbroschüre zur Bestattungsvorsorge.' },
   { t: 'Urnengarten (Info-PDF)', jahr: 'Archiv', desc: 'Information zum Urnengarten.' },
 ];
@@ -77,6 +76,29 @@ const dokumente = [
 
   <h2>Flyer, Anzeigen und Dokumente</h2>
   <hr class="accent-rule" />
+
+  <figure class="historic-figure">
+    <span class="media-item__tag media-item__tag--doc">Archiv · 2009</span>
+    <picture>
+      <source type="image/avif" srcset="/img/content/flyer_2009.avif" />
+      <source type="image/webp" srcset="/img/content/flyer_2009.webp" />
+      <img
+        src="/img/content/flyer_2009.jpg"
+        width="1200"
+        height="865"
+        loading="lazy"
+        decoding="async"
+        alt="Historische Anzeige des Bestattungsinstituts Gorhau von 2009: Ankündigung „Würzburgs erstes Bestattungshaus mit eigenem Abschiedsraum“ und Einladung zum Tag der offenen Tür am 6. Juni 2009."
+      />
+    </picture>
+    <figcaption>
+      <strong>Historische Anzeige, 2009.</strong> Einladung zum Tag der offenen Tür und Hinweis
+      auf den damals ersten hauseigenen Abschiedsraum in Würzburg. Dieses Material ist ein
+      historisches Dokument aus dem Jahr 2009 und gibt den damaligen Stand wieder – Angaben,
+      Preise und Konditionen können überholt sein.
+    </figcaption>
+  </figure>
+
   <ul class="media-grid">
     {
       dokumente.map((m) => (
@@ -167,5 +189,27 @@ const dokumente = [
   .media-card p {
     color: var(--text-muted);
     margin: 0;
+  }
+  .historic-figure {
+    margin: 0 0 var(--space-xl);
+    max-width: 46rem;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+  }
+  .historic-figure .media-item__tag {
+    margin-bottom: var(--space-sm);
+  }
+  .historic-figure img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-subtle);
+  }
+  .historic-figure figcaption {
+    margin-top: var(--space-sm);
+    color: var(--text-muted);
+    font-size: 0.95rem;
   }
 </style>

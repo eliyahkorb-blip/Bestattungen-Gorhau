@@ -57,6 +57,23 @@ for (const [w, name, isMobile] of [[1440, 'desktop', false], [390, 'mobile', tru
   for (const [path, slug] of pages) {
     const page = await ctx.newPage();
     await page.goto(base + path, { waitUntil: 'networkidle' });
+    // Lazy-Bilder unterhalb des Folds durch Durchscrollen auslösen, dann zurück nach oben.
+    await page.evaluate(async () => {
+      await new Promise((resolve) => {
+        let y = 0;
+        const step = () => {
+          window.scrollTo(0, y);
+          y += window.innerHeight;
+          if (y < document.body.scrollHeight) setTimeout(step, 60);
+          else {
+            window.scrollTo(0, 0);
+            setTimeout(resolve, 200);
+          }
+        };
+        step();
+      });
+    });
+    await page.waitForTimeout(300);
     await page.screenshot({ path: join(OUT, `${slug}-${name}.png`), fullPage: true });
     await page.close();
   }

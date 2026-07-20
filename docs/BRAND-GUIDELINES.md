@@ -5,38 +5,46 @@ familiengeführter Charakter, Philosophie „Zuhören – Beraten – Begleiten"
 
 ## Farbpalette (Design-Tokens)
 
-Die Palette wurde aus der bekannten Markenidentität (Bordeaux-/Rot-/Gold-/Creme-/Beige-Töne)
-abgeleitet und zu einer konsistenten, WCAG-2.2-AA-tauglichen Palette vereinheitlicht.
-Definiert in `src/styles/tokens.css`.
+Die Palette wurde aus den **tatsächlichen Originaldateien** extrahiert: dem Original-Logo
+(`incoming-assets/header_logo.png`) und dem Flyer 2009 (`incoming-assets/flyer_2009.jpg`).
+Rohwerte: `docs/BRAND-COLORS-EXTRACTED.md`. Definiert in `src/styles/tokens.css`.
 
-| Token | Hex | Verwendung |
+| Token | Hex | Herkunft / Verwendung |
 |---|---|---|
-| `--brand-bordeaux` | `#6b1f2a` | Primärfarbe, Buttons, Links, Akzent |
-| `--brand-bordeaux-dark` | `#521720` | Überschriften, Hover |
-| `--brand-red` | `#8b2332` | wärmerer Rotakzent, Hover |
-| `--brand-gold` | `#b8933d` | dekorativer Goldakzent (Linien, auf Dunkelflächen) |
+| `--brand-bordeaux` | `#882020` | »GORHAU«-Wortmarke & Headline im Flyer → Primärfarbe, Buttons, Links |
+| `--brand-bordeaux-dark` | `#6e1a1a` | Überschriften, Hover (abgedunkelt aus #882020) |
+| `--brand-red` | `#a02828` | wärmerer Rotakzent |
+| `--brand-gold` | `#b8933d` | Gold-Treatment des Logos (header_logo.png), dekorativer Akzent |
 | `--brand-gold-dark` | `#8c6d28` | Gold-Button, kräftigerer Akzent |
 | `--brand-gold-text` | `#7a5e1a` | Gold **für Text** auf hellen Flächen (AA-konform) |
-| `--brand-cream` | `#fbf7f0` | Haupt-Hintergrundfläche |
-| `--brand-beige` | `#efe6d6` | ruhige Sekundärfläche für Abschnitte |
+| `--brand-cream` | `#f7ece9` | warmes Creme (Flyer-Papier ≈ #f0e0e0, für Flächen aufgehellt) |
+| `--brand-beige` | `#ecdcd6` | ruhige Sekundärfläche für Abschnitte |
 | `--brand-white` | `#ffffff` | Karten, Flächen |
 | `--brand-charcoal` | `#2a2420` | Fließtext (warmes Schwarz) |
 | `--text-primary` | `#2a2420` | Fließtext |
 | `--text-muted` | `#5c544c` | Sekundärtext |
-| `--border-subtle` | `#e3d9c8` | Rahmen, Trennlinien |
-| `--focus-color` | `#6b1f2a` | Fokusrahmen |
+| `--border-subtle` | `#e6d7d1` | Rahmen, Trennlinien |
+| `--focus-color` | `#882020` | Fokusrahmen |
+| `--surface-dark` | `#3a1e20` | dunkle Flächen (Footer, CTA), bordeaux-getönt |
 | `--success` | `#2e6e4e` | Erfolg |
 | `--warning` | `#8a5a0f` | Warnung |
 | `--error` | `#a32330` | Fehler |
 
-### Hinweis zur Farbherleitung
-Die Originaldateien (CSS, `header_logo.png`, Flyer) der bestehenden Website konnten in dieser
-Umgebung **nicht heruntergeladen werden** (die Quelldomain ist durch die Netzwerk-Policy
-gesperrt, alle Direktabrufe → HTTP 403). Die Werte sind daher aus der dokumentierten
-Markenbeschreibung rekonstruiert und zu einer in sich stimmigen, eindeutig als „Gorhau"
-erkennbaren Palette vereinheitlicht. Sobald die Originaldateien vorliegen, sollten die exakten
-Hex-Werte gegengeprüft und – falls nötig – minimal angepasst werden. Die Kontraste bleiben
-dabei einzuhalten.
+### Wichtige Erkenntnis: zwei Farb-Treatments derselben Marke
+Die Marke existiert in **zwei Farbfassungen**, die beide aus den Originaldateien belegt sind:
+- **Bordeaux/Rot `#882020`** – die »GORHAU«-Wortmarke und die Headline im Flyer 2009 (Druck).
+- **Gold `#b8933d`** – die Fassung in `header_logo.png` (Web-Header).
+
+Kreuz, Pfeile (» «), Wortmarke und das BESTATTER-Emblem sind in beiden identisch. Die Website
+nutzt **beides** markengerecht: die **Gold-Fassung als echtes Logo im Header** (unverändert, siehe
+`docs/LOGO-SOURCE.md`) und **Bordeaux `#882020` als Primärfarbe** für Überschriften, Buttons und
+Links – exakt wie im Original-Flyer. Creme/Beige entsprechen dem warmen Flyer-Papier.
+
+### Kontrast-Anpassungen (WCAG 2.2 AA)
+Alle Kombinationen wurden nachgerechnet und mit axe-core geprüft (0 Verstöße):
+Bordeaux `#882020` auf Creme 7,97:1 · auf Weiß 9,23:1 · Weiß auf Bordeaux-Button 9,23:1 ·
+Gold-Text `#7a5e1a` auf Beige 4,58:1 · Charcoal auf Creme 13,2:1. Reines Gold `#b8933d` wird
+für Text auf Hell nicht verwendet (nur dekorativ / im Logo).
 
 ## Kontraste (WCAG 2.2 AA)
 Alle Text-/Hintergrund-Kombinationen der Website wurden mit axe-core geprüft: **0 Verstöße**.

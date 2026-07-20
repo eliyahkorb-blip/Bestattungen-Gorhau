@@ -33,9 +33,10 @@ PUBLIC = ROOT / "public"
 BRAND_ORIG = ROOT / "src" / "assets" / "brand" / "logo-original"
 BRAND_OPT = ROOT / "src" / "assets" / "brand" / "logo-optimized"
 
-BORDEAUX = (107, 31, 42)
-GOLD = (184, 147, 61)
-CREAM = (251, 247, 240)
+# Aus Original-Logo/Flyer 2009 extrahierte Markenfarben (siehe docs/BRAND-GUIDELINES.md)
+BORDEAUX = (136, 32, 32)  # #882020
+GOLD = (184, 147, 61)  # #b8933d
+CREAM = (247, 236, 233)  # #f7ece9
 
 missing: list[str] = []
 did: list[str] = []
@@ -165,20 +166,23 @@ def stage_logo() -> None:
         return
 
     img = Image.open(logo).convert("RGBA")
-    # auf Inhalt zuschneiden (transparente Ränder entfernen)
-    bbox = img.getbbox()
-    if bbox:
-        img = img.crop(bbox)
+    img = _crop_brand_mark(img)
     w, h = img.size
-    # optimierte, responsive Rasterfassungen
-    for width in (240, 480, 720):
-        if width <= w:
-            ratio = width / w
-            out = img.resize((width, max(1, round(h * ratio))), Image.LANCZOS)
-        else:
+    # optimierte, responsive Rasterfassungen – nur echte Breiten (keine Hochskalierung),
+    # damit srcset-Deskriptoren exakt der tatsächlichen Bildbreite entsprechen.
+    variant_widths = [vw for vw in (240, 480) if vw < w] + [w]
+    srcset_png, srcset_webp = [], []
+    for vw in variant_widths:
+        if vw == w:
             out = img
-        out.save(PUBLIC / "img" / f"logo-{width}.png")
-        out.save(PUBLIC / "img" / f"logo-{width}.webp", quality=90, method=6)
+            name = "logo"
+        else:
+            out = img.resize((vw, max(1, round(h * vw / w))), Image.LANCZOS)
+            name = f"logo-{vw}"
+        out.save(PUBLIC / "img" / f"{name}.png")
+        out.save(PUBLIC / "img" / f"{name}.webp", quality=90, method=6)
+        srcset_png.append(f"/img/{name}.png {vw}w")
+        srcset_webp.append(f"/img/{name}.webp {vw}w")
     img.save(PUBLIC / "img" / "logo.png")
     img.save(PUBLIC / "img" / "logo.webp", quality=92, method=6)
     img.save(BRAND_OPT / "logo.png")
@@ -186,14 +190,55 @@ def stage_logo() -> None:
     (PUBLIC / "img" / "logo-meta.json").write_text(
         json.dumps({"present": True, "width": w, "height": h,
                     "src": "/img/logo.png", "webp": "/img/logo.webp",
-                    "srcset": "/img/logo-240.png 240w, /img/logo-480.png 480w, /img/logo-720.png 720w"},
+                    "srcset": ", ".join(srcset_png),
+                    "srcsetWebp": ", ".join(srcset_webp)},
                    ensure_ascii=False),
         encoding="utf-8",
     )
-    did.append(f"Logo integriert (Original {w}×{h}px) -> public/img/logo.png/.webp + responsive Größen")
+    did.append(f"Logo integriert (Marke {w}×{h}px) -> public/img/logo.png/.webp + responsive Größen")
 
     _favicons_from_logo(img)
     _og_from_logo(img)
+
+
+def _crop_brand_mark(img):
+    """Beschneidet das Header-Banner pixelgenau auf die eigentliche Wort-/Bildmarke.
+
+    Das Original-Banner enthält rechts eine separate Telefon-Schaltfläche mit Spiegelung,
+    die kein Bestandteil der Marke ist. Findet sich im rechten Bereich eine breite
+    transparente Lücke, wird auf das linke Segment (Emblem + »GORHAU«-Wortmarke) zugeschnitten.
+    Die Marke selbst (Kreuz, Pfeile, Buchstaben, Proportionen) bleibt unverändert –
+    es werden nur Rand/Nebenelemente entfernt.
+    """
+    bbox = img.getbbox()
+    if not bbox:
+        return img
+    img = img.crop(bbox)
+    w, h = img.size
+    px = img.load()
+    # Opazität je Spalte
+    col_op = [sum(1 for y in range(h) if px[x, y][3] > 30) for x in range(w)]
+    # breite transparente Lücke suchen (mind. 60 px), die rechts ein Nebenelement abtrennt
+    gap_start = None
+    run = 0
+    boundary = None
+    for x in range(w):
+        if col_op[x] == 0:
+            if run == 0:
+                gap_start = x
+            run += 1
+        else:
+            if run >= 60 and gap_start is not None and gap_start > int(w * 0.4):
+                boundary = gap_start
+                break
+            run = 0
+    if boundary:
+        img = img.crop((0, 0, boundary, h))
+        # nach dem Zuschnitt erneut auf Inhalt trimmen
+        b2 = img.getbbox()
+        if b2:
+            img = img.crop(b2)
+    return img
 
 
 def _rounded_tile(size: int, bg: tuple[int, int, int]):
