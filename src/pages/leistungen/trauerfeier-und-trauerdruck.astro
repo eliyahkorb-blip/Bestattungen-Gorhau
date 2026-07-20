@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import { withBase } from '../../utils/url';
 ---
 
 <PageLayout
@@ -58,8 +59,8 @@ import PageLayout from '../../layouts/PageLayout.astro';
 
   <div class="prose">
     <p>
-      Organisatorische Schritte: <a href="/leistungen/formalitaeten/">Formalitäten</a> · Feier im
-      kleinen Kreis: <a href="/abschiedsraum/">Abschiedsraum</a>.
+      Organisatorische Schritte: <a href={withBase('/leistungen/formalitaeten/')}>Formalitäten</a> · Feier im
+      kleinen Kreis: <a href={withBase('/abschiedsraum/')}>Abschiedsraum</a>.
     </p>
   </div>
 </PageLayout>

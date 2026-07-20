@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import { withBase } from '../../utils/url';
 
 const milestones = [
   { year: '1970', text: 'Gründung des Bestattungsinstituts durch Manfred und Ingrid Gorhau. Eröffnung am 11. Mai 1970.' },
@@ -50,13 +51,13 @@ const milestones = [
     </p>
     <p>
       Mehr über unser heutiges Leistungsspektrum erfahren Sie auf der Seite
-      <a href="/ueber-uns/">Über uns</a>, mehr über unseren
-      <a href="/abschiedsraum/">Abschiedsraum</a> auf der entsprechenden Seite.
+      <a href={withBase('/ueber-uns/')}>Über uns</a>, mehr über unseren
+      <a href={withBase('/abschiedsraum/')}>Abschiedsraum</a> auf der entsprechenden Seite.
     </p>
     <p class="src-note">
       Einzelne historische Angaben stammen aus öffentlich zugänglichen Unternehmensprofilen
       und den bisherigen Website-Inhalten. Historische Aufnahmen finden Sie in unserer
-      <a href="/ueber-uns/galerie/">Galerie</a> und in der <a href="/mediathek/">Mediathek</a>.
+      <a href={withBase('/ueber-uns/galerie/')}>Galerie</a> und in der <a href={withBase('/mediathek/')}>Mediathek</a>.
     </p>
   </div>
 </PageLayout>

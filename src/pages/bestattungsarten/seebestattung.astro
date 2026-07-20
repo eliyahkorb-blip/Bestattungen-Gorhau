@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import HintBox from '../../components/ui/HintBox.astro';
+import { withBase } from '../../utils/url';
 ---
 
 <PageLayout
@@ -61,8 +62,8 @@ import HintBox from '../../components/ui/HintBox.astro';
 
   <div class="prose">
     <p>
-      Weitere Bestattungsarten im Überblick: <a href="/bestattungsarten/">Bestattungsarten</a> ·
-      vorausschauend planen: <a href="/bestattungsvorsorge/">Bestattungsvorsorge</a>.
+      Weitere Bestattungsarten im Überblick: <a href={withBase('/bestattungsarten/')}>Bestattungsarten</a> ·
+      vorausschauend planen: <a href={withBase('/bestattungsvorsorge/')}>Bestattungsvorsorge</a>.
     </p>
   </div>
 </PageLayout>

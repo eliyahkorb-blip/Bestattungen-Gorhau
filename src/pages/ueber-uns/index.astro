@@ -2,6 +2,7 @@
 import PageLayout from '../../layouts/PageLayout.astro';
 import IconFeature from '../../components/ui/IconFeature.astro';
 import { company } from '../../data/company';
+import { withBase } from '../../utils/url';
 
 const links = [
   { icon: 'history' as const, title: 'Historie seit 1970', text: 'Die Stationen unserer Geschichte.', href: '/ueber-uns/historie/' },
@@ -51,7 +52,7 @@ const links = [
     <p>
       Von der ersten Beratung bis zur Bestattungsvorsorge bieten wir alle Leistungen aus einer
       Hand – die vollständige Übersicht finden Sie auf der Seite
-      <a href="/leistungen/">Leistungen</a>.
+      <a href={withBase('/leistungen/')}>Leistungen</a>.
     </p>
   </div>
 

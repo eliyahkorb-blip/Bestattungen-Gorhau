@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../utils/url';
+
 export interface Crumb {
   name: string;
   path: string;
@@ -11,14 +13,14 @@ const { items } = Astro.props;
 
 <nav class="breadcrumbs" aria-label="Sie befinden sich hier">
   <ol class="container">
-    <li><a href="/">Start</a></li>
+    <li><a href={withBase('/')}>Start</a></li>
     {
       items.map((item, i) => (
         <li>
           {i === items.length - 1 ? (
             <span aria-current="page">{item.name}</span>
           ) : (
-            <a href={item.path}>{item.name}</a>
+            <a href={withBase(item.path)}>{item.name}</a>
           )}
         </li>
       ))

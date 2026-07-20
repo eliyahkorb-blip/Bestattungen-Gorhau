@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import { company } from '../../data/company';
+import { withBase } from '../../utils/url';
 
 const steps = [
   {
@@ -93,7 +94,7 @@ const faqLd = {
 
   <div class="prose">
     <p>
-      <a class="btn btn--secondary" href="/im-trauerfall/benoetigte-dokumente/">
+      <a class="btn btn--secondary" href={withBase('/im-trauerfall/benoetigte-dokumente/')}>
         Benötigte Dokumente ansehen
       </a>
     </p>

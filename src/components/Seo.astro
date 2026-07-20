@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import nodePath from 'node:path';
 import { company } from '../data/company';
+import { absoluteUrl, isPreviewBuild } from '../utils/url';
 
 export interface Props {
   title: string;
@@ -12,23 +13,26 @@ export interface Props {
   jsonLd?: Record<string, unknown>[];
 }
 
-const site = 'https://www.gorhau-bestattungen.de';
 const { title, description, path, ogType = 'website', noindex = false, jsonLd = [] } =
   Astro.props;
 
-const canonical = new URL(path, site + '/').href;
+// In der GitHub-Pages-Vorschau ist die gesamte Website noindex, unabhängig von der
+// einzelnen Seite – siehe auch src/pages/robots.txt.ts (Disallow: /).
+const effectiveNoindex = noindex || isPreviewBuild();
+
+const canonical = absoluteUrl(path);
 const fullTitle = title.includes('Gorhau') ? title : `${title} | ${company.shortName} Würzburg`;
 // Bevorzugt das aus dem echten Logo erzeugte OG-Bild, sonst das SVG-Standardbild.
 const ogFile = fs.existsSync(nodePath.resolve('public/img/og-default.png'))
   ? '/img/og-default.png'
   : '/img/og-default.svg';
-const ogImage = new URL(ogFile, site + '/').href;
+const ogImage = absoluteUrl(ogFile);
 ---
 
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
-{noindex && <meta name="robots" content="noindex, nofollow" />}
+{effectiveNoindex && <meta name="robots" content="noindex, nofollow" />}
 
 <!-- Open Graph -->
 <meta property="og:type" content={ogType} />

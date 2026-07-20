@@ -10,6 +10,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { withBase, withBaseSrcset } from '../utils/url';
 
 export interface Props {
   variant?: 'default' | 'light';
@@ -48,12 +49,16 @@ const gold = '#b8933d';
   realLogo ? (
     <picture class="logo-pic">
       {realLogo.srcsetWebp && (
-        <source type="image/webp" srcset={realLogo.srcsetWebp} sizes={`${displayW}px`} />
+        <source
+          type="image/webp"
+          srcset={withBaseSrcset(realLogo.srcsetWebp)}
+          sizes={`${displayW}px`}
+        />
       )}
       <img
         class="logo-img"
-        src={realLogo.src}
-        srcset={realLogo.srcset}
+        src={withBase(realLogo.src)}
+        srcset={withBaseSrcset(realLogo.srcset)}
         sizes={`${displayW}px`}
         width={realLogo.width}
         height={realLogo.height}

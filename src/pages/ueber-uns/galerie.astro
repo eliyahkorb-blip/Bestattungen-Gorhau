@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import { withBase } from '../../utils/url';
 
 /*
  * Die Original-Bilddateien (Gebäudeansicht, historische Aufnahmen, Räume) konnten
@@ -63,10 +64,10 @@ const planned = [
   <div class="prose gallery-outro">
     <p>
       Mehr über die einzelnen Stationen unserer Geschichte erfahren Sie auf der Seite
-      <a href="/ueber-uns/historie/">Historie seit 1970</a>. Einen persönlichen Eindruck von
+      <a href={withBase('/ueber-uns/historie/')}>Historie seit 1970</a>. Einen persönlichen Eindruck von
       unserem Abschiedsraum können Sie sich außerdem auf der Seite
-      <a href="/abschiedsraum/">Abschiedsraum</a> verschaffen; bewegte Bilder und historische
-      Werbematerialien finden Sie in unserer <a href="/mediathek/">Mediathek</a>.
+      <a href={withBase('/abschiedsraum/')}>Abschiedsraum</a> verschaffen; bewegte Bilder und historische
+      Werbematerialien finden Sie in unserer <a href={withBase('/mediathek/')}>Mediathek</a>.
     </p>
   </div>
 </PageLayout>

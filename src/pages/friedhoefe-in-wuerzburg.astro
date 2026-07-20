@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import HintBox from '../components/ui/HintBox.astro';
+import { withBase } from '../utils/url';
 ---
 
 <PageLayout
@@ -59,8 +60,8 @@ import HintBox from '../components/ui/HintBox.astro';
   <div class="prose">
     <p>
       Bei Auswahl und Formalitäten stehen wir Ihnen zur Seite. Übersicht der
-      <a href="/bestattungsarten/">Bestattungsarten</a> · erste Schritte:
-      <a href="/im-trauerfall/">Im Trauerfall</a>.
+      <a href={withBase('/bestattungsarten/')}>Bestattungsarten</a> · erste Schritte:
+      <a href={withBase('/im-trauerfall/')}>Im Trauerfall</a>.
     </p>
     <p class="src-note">
       Dieser Beitrag dient der allgemeinen Information und stellt keine Rechtsberatung dar.

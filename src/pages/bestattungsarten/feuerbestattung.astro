@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import HintBox from '../../components/ui/HintBox.astro';
+import { withBase } from '../../utils/url';
 ---
 
 <PageLayout
@@ -28,8 +29,8 @@ import HintBox from '../../components/ui/HintBox.astro';
     <li>Urnenreihen- und Urnenwahlgrab</li>
     <li>Urnengarten und Gemeinschaftsanlagen</li>
     <li>Baumbestattung</li>
-    <li><a href="/bestattungsarten/seebestattung/">Seebestattung</a></li>
-    <li><a href="/bestattungsarten/anonyme-bestattung/">Anonyme Beisetzung</a></li>
+    <li><a href={withBase('/bestattungsarten/seebestattung/')}>Seebestattung</a></li>
+    <li><a href={withBase('/bestattungsarten/anonyme-bestattung/')}>Anonyme Beisetzung</a></li>
   </ul>
 
   <h2>Ablauf und rechtliche Voraussetzung</h2>
@@ -56,7 +57,7 @@ import HintBox from '../../components/ui/HintBox.astro';
 
   <HintBox>
     Beisetzungsformen und Gebühren hängen vom jeweiligen Friedhof ab. Allgemeine Hinweise finden
-    Sie auf unserer Seite <a href="/friedhoefe-in-wuerzburg/">Friedhöfe in Würzburg</a>.
+    Sie auf unserer Seite <a href={withBase('/friedhoefe-in-wuerzburg/')}>Friedhöfe in Würzburg</a>.
   </HintBox>
 </PageLayout>
 

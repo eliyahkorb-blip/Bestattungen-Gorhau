@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import { withBase } from '../../utils/url';
 
 const groups = [
   {
@@ -60,7 +61,7 @@ const further = [
       Standesamt benötigt. Erst mit der ausgestellten Sterbeurkunde können anschließend weitere
       Schritte erfolgen – etwa die Anmeldung bei Friedhof oder Krematorium sowie Anträge bei
       Versicherungen und Behörden. Mehr dazu finden Sie auf unserer Seite
-      <a href="/leistungen/formalitaeten/">Formalitäten</a>.
+      <a href={withBase('/leistungen/formalitaeten/')}>Formalitäten</a>.
     </p>
   </div>
 
@@ -95,7 +96,7 @@ const further = [
     </p>
     <p>
       Eine Übersicht über die ersten Schritte nach einem Todesfall finden Sie auf unserer Seite
-      <a href="/im-trauerfall/">Im Trauerfall</a>.
+      <a href={withBase('/im-trauerfall/')}>Im Trauerfall</a>.
     </p>
   </div>
 </PageLayout>

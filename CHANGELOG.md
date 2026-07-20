@@ -1,5 +1,30 @@
 # Changelog
 
+## 1.4.0 – Öffentliche GitHub-Pages-Vorschau (dualer Build)
+
+### Neu
+- **Dualer Build-Modus** über `DEPLOY_TARGET`-Umgebungsvariable in `astro.config.mjs`:
+  `npm run build` (Produktion, `site: https://www.gorhau-bestattungen.de`, `base: /`,
+  unverändert) und neu `npm run build:pages` (`site: https://eliyahkorb-blip.github.io`,
+  `base: /Bestattungen-Gorhau`, nicht indexierbar).
+- **Zentraler URL-Helfer** `src/utils/url.ts` (`withBase()`, `absoluteUrl()`,
+  `withBaseSrcset()`, `isPreviewBuild()`) – alle internen Pfade (Navigation, Footer,
+  Breadcrumbs, Logo, Favicons, Manifest, Browserconfig, Bilder, Flyer, Canonicals, JSON-LD,
+  Sitemap) laufen jetzt zentral darüber statt über hartkodierte Wurzelpfade.
+- **Dynamische Endpunkte** ersetzen statische `public/`-Dateien, die je Build-Ziel variieren
+  müssen: `src/pages/robots.txt.ts`, `site.webmanifest.ts`, `browserconfig.xml.ts`.
+- **GitHub-Actions-Workflow** `.github/workflows/deploy-pages-preview.yml`
+  (`withastro/action@v6` + `actions/deploy-pages@v5`), läuft bei jedem Push auf den
+  Entwicklungsbranch sowie manuell – kein Merge nach `main` nötig.
+- **Vorschauschutz:** `noindex, nofollow` auf jeder Vorschauseite, `robots.txt` mit
+  `Disallow: /`, keine `CNAME`, kein Tracking/Search-Console in der Vorschau.
+- Neuer Lokal-Test `npm run test:pages-preview` (`tests/pages-preview-check.mjs`) prüft den
+  `build:pages`-Output unter simuliertem Repo-Unterpfad (24 Seiten + 404): Status, defekte
+  Links, fehlgeschlagene Requests, horizontales Scrollen, noindex, mobile Navigation,
+  `prefers-reduced-motion`. Bericht: `audit/github-pages-preview-report.md` / `.json`.
+- `docs/DEPLOYMENT.md` (Variante D) aktualisiert: Unterpfad-Problem ist gelöst, Vorschau-Workflow
+  dokumentiert.
+
 ## 1.3.0 – Visuelle Neuinszenierung, weniger Textlast, mehr Bildsprache
 
 ### Neu

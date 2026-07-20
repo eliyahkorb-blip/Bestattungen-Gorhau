@@ -2,15 +2,18 @@
 import Logo from './Logo.astro';
 import { mainNav } from '../data/navigation';
 import { company } from '../data/company';
+import { withBase } from '../utils/url';
 
 const current = Astro.url.pathname;
-const isActive = (href: string) =>
-  href === '/' ? current === '/' : current === href || current.startsWith(href);
+const isActive = (href: string) => {
+  const target = withBase(href);
+  return target === withBase('/') ? current === target : current === target || current.startsWith(target);
+};
 ---
 
 <header class="site-header">
   <div class="container site-header__inner">
-    <a href="/" class="site-header__logo">
+    <a href={withBase('/')} class="site-header__logo">
       <Logo />
       <span class="visually-hidden">Zur Startseite</span>
     </a>
@@ -36,7 +39,7 @@ const isActive = (href: string) =>
           mainNav.map((item) => (
             <li class="site-nav__item">
               <a
-                href={item.href}
+                href={withBase(item.href)}
                 class="site-nav__link"
                 aria-current={isActive(item.href) ? 'page' : undefined}
               >
@@ -47,8 +50,8 @@ const isActive = (href: string) =>
                   {item.children.map((child) => (
                     <li>
                       <a
-                        href={child.href}
-                        aria-current={current === child.href ? 'page' : undefined}
+                        href={withBase(child.href)}
+                        aria-current={current === withBase(child.href) ? 'page' : undefined}
                       >
                         {child.label}
                       </a>

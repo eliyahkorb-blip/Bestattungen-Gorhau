@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import Quote from '../components/ui/Quote.astro';
+import { withBase } from '../utils/url';
 ---
 
 <PageLayout
@@ -42,7 +43,7 @@ import Quote from '../components/ui/Quote.astro';
     <p>
       Der Raum eignet sich für eine stille Abschiednahme direkt nach dem Todesfall ebenso wie
       für eine kleine Feierstunde im engsten Kreis. Ob eine aufgebahrte Abschiednahme möglich
-      ist, hängt von einer vorherigen <a href="/leistungen/thanatopraxie/">hygienischen
+      ist, hängt von einer vorherigen <a href={withBase('/leistungen/thanatopraxie/')}>hygienischen
       Versorgung</a> ab.
     </p>
   </div>
@@ -50,8 +51,8 @@ import Quote from '../components/ui/Quote.astro';
   <div class="prose">
     <p>
       Sprechen Sie uns an, wenn Sie den Raum nutzen möchten. Planen Sie bereits für die Zukunft?
-      Informieren Sie sich über unsere <a href="/bestattungsvorsorge/">Bestattungsvorsorge</a>.
-      Aufnahmen unserer Räume finden Sie in der <a href="/ueber-uns/galerie/">Galerie</a>.
+      Informieren Sie sich über unsere <a href={withBase('/bestattungsvorsorge/')}>Bestattungsvorsorge</a>.
+      Aufnahmen unserer Räume finden Sie in der <a href={withBase('/ueber-uns/galerie/')}>Galerie</a>.
     </p>
   </div>
 </PageLayout>

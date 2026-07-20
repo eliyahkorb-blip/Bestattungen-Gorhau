@@ -2,6 +2,7 @@
 import PageLayout from '../../layouts/PageLayout.astro';
 import IconFeature from '../../components/ui/IconFeature.astro';
 import HintBox from '../../components/ui/HintBox.astro';
+import { withBase } from '../../utils/url';
 
 const arten = [
   { icon: 'map-pin' as const, t: 'Erdbestattung', d: 'Beisetzung des Sarges in einem Reihen- oder Wahlgrab.', href: '/bestattungsarten/erdbestattung/' },
@@ -23,7 +24,7 @@ const arten = [
   <div class="prose">
     <p>
       Welche Bestattungsart die richtige ist, ist eine persönliche Entscheidung – oft im Vorfeld
-      per <a href="/bestattungsvorsorge/">Bestattungsvorsorge</a> festgelegt, sonst im Kreis der
+      per <a href={withBase('/bestattungsvorsorge/')}>Bestattungsvorsorge</a> festgelegt, sonst im Kreis der
       Angehörigen getroffen. In Deutschland gilt grundsätzlich der Friedhofszwang: Die Beisetzung
       muss auf einem zugelassenen Friedhof erfolgen, Ausnahmen bilden See- und Baumbestattung.
     </p>
@@ -57,7 +58,7 @@ const arten = [
   </div>
   <HintBox>
     Möglichkeiten und Gebühren unterscheiden sich je nach Friedhof und Gemeinde. Mehr dazu auf
-    unserer Seite <a href="/friedhoefe-in-wuerzburg/">Friedhöfe in Würzburg</a>.
+    unserer Seite <a href={withBase('/friedhoefe-in-wuerzburg/')}>Friedhöfe in Würzburg</a>.
   </HintBox>
 </PageLayout>
 

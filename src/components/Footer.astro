@@ -1,6 +1,7 @@
 ---
 import { company } from '../data/company';
 import { mainNav, legalNav } from '../data/navigation';
+import { withBase } from '../utils/url';
 ---
 
 <footer class="site-footer">
@@ -25,15 +26,15 @@ import { mainNav, legalNav } from '../data/navigation';
     <nav aria-label="Footer-Navigation">
       <h2 class="site-footer__heading">Übersicht</h2>
       <ul class="site-footer__links">
-        <li><a href="/">Startseite</a></li>
-        {mainNav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+        <li><a href={withBase('/')}>Startseite</a></li>
+        {mainNav.map((item) => <li><a href={withBase(item.href)}>{item.label}</a></li>)}
       </ul>
     </nav>
 
     <nav aria-label="Rechtliches">
       <h2 class="site-footer__heading">Rechtliches</h2>
       <ul class="site-footer__links">
-        {legalNav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+        {legalNav.map((item) => <li><a href={withBase(item.href)}>{item.label}</a></li>)}
       </ul>
       <p class="site-footer__philosophy">Zuhören · Beraten · Begleiten</p>
     </nav>

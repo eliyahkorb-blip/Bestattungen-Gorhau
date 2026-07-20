@@ -1,14 +1,13 @@
 import type { APIRoute } from 'astro';
 import { indexablePages } from '../data/pages';
-
-const SITE = 'https://www.gorhau-bestattungen.de';
+import { absoluteUrl } from '../utils/url';
 
 export const GET: APIRoute = () => {
   const lastmod = new Date().toISOString().split('T')[0];
   const urls = indexablePages
     .map(
       (p) => `  <url>
-    <loc>${SITE}${p.path}</loc>
+    <loc>${absoluteUrl(p.path)}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>${p.changefreq}</changefreq>
     <priority>${p.priority.toFixed(1)}</priority>

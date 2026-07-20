@@ -8,6 +8,7 @@ import Quote from '../components/ui/Quote.astro';
 import WaveDivider from '../components/ui/WaveDivider.astro';
 import Icon from '../components/icons/Icon.astro';
 import { company } from '../data/company';
+import { withBase } from '../utils/url';
 
 const orientation = [
   {
@@ -91,7 +92,7 @@ const facts = [
           <a class="btn btn--primary" href={`tel:${company.phoneRaw}`}>
             <span aria-hidden="true">☎</span> Im Trauerfall anrufen
           </a>
-          <a class="btn btn--secondary" href="/bestattungsvorsorge/">Vorsorge besprechen</a>
+          <a class="btn btn--secondary" href={withBase('/bestattungsvorsorge/')}>Vorsorge besprechen</a>
         </div>
         <p class="hero__note">{company.emergencyNote}</p>
       </div>
@@ -163,10 +164,10 @@ const facts = [
         {reasons.map((r) => <IconFeature icon={r.icon} title={r.title} text={r.text} href={r.href} />)}
       </div>
       <p class="leistungen-links">
-        Weitere Leistungen: <a href="/leistungen/ueberfuehrungen/">Überführungen</a> ·
-        <a href="/leistungen/thanatopraxie/">Thanatopraxie</a> ·
-        <a href="/leistungen/trauerfeier-und-trauerdruck/">Trauerfeier &amp; Trauerdruck</a> ·
-        <a href="/leistungen/">alle Leistungen im Überblick →</a>
+        Weitere Leistungen: <a href={withBase('/leistungen/ueberfuehrungen/')}>Überführungen</a> ·
+        <a href={withBase('/leistungen/thanatopraxie/')}>Thanatopraxie</a> ·
+        <a href={withBase('/leistungen/trauerfeier-und-trauerdruck/')}>Trauerfeier &amp; Trauerdruck</a> ·
+        <a href={withBase('/leistungen/')}>alle Leistungen im Überblick →</a>
       </p>
     </div>
   </section>
@@ -181,7 +182,7 @@ const facts = [
           Seit 2004 bieten wir in Würzburg einen eigenen Abschiedsraum – für einen persönlichen
           Abschied im kleinen Kreis, ganz ohne Zeitdruck.
         </p>
-        <p><a class="btn btn--secondary" href="/abschiedsraum/">Abschiedsraum kennenlernen</a></p>
+        <p><a class="btn btn--secondary" href={withBase('/abschiedsraum/')}>Abschiedsraum kennenlernen</a></p>
       </div>
       <div class="split__aside">
         <Quote text="Ein persönlicher Abschied braucht vor allem eines: Zeit. Genau die möchten wir Ihnen geben." />
@@ -198,7 +199,7 @@ const facts = [
           Legen Sie zu Lebzeiten fest, wie Ihr Abschied gestaltet werden soll, und entlasten Sie
           Ihre Angehörigen – organisatorisch wie finanziell.
         </p>
-        <a class="card__link" href="/bestattungsvorsorge/">Zur Vorsorge →</a>
+        <a class="card__link" href={withBase('/bestattungsvorsorge/')}>Zur Vorsorge →</a>
       </article>
       <article class="mini-card">
         <h2>Über uns</h2>
@@ -206,7 +207,7 @@ const facts = [
           Handwerkliches Können, persönliche Nähe und regionale Verbundenheit prägen unsere
           Arbeit seit über fünf Jahrzehnten.
         </p>
-        <a class="card__link" href="/ueber-uns/">Mehr über uns →</a>
+        <a class="card__link" href={withBase('/ueber-uns/')}>Mehr über uns →</a>
       </article>
     </div>
   </section>
@@ -219,10 +220,10 @@ const facts = [
       <p class="history-lead">
         Aus einem Familienbetrieb ist über die Jahrzehnte ein fester Bestandteil der Region
         geworden. Historische Aufnahmen und den Imagefilm finden Sie in unserer
-        <a href="/mediathek/">Mediathek</a>.
+        <a href={withBase('/mediathek/')}>Mediathek</a>.
       </p>
       <FactStrip facts={facts.slice(0, 3)} />
-      <p class="history-link"><a class="btn btn--secondary" href="/ueber-uns/historie/">Unsere Historie ansehen</a></p>
+      <p class="history-link"><a class="btn btn--secondary" href={withBase('/ueber-uns/historie/')}>Unsere Historie ansehen</a></p>
     </div>
   </section>
 
@@ -239,11 +240,11 @@ const facts = [
         </address>
         <p class="contact-block__hours">
           Mo–Fr 08:00–16:00 Uhr sowie nach Vereinbarung ·
-          <a href="/kontakt/">Anfahrt &amp; weitere Kontaktwege</a>
+          <a href={withBase('/kontakt/')}>Anfahrt &amp; weitere Kontaktwege</a>
         </p>
       </div>
       <div class="split__aside">
-        <p><a class="btn btn--primary" href="/kontakt/">Anfahrt &amp; Kontakt</a></p>
+        <p><a class="btn btn--primary" href={withBase('/kontakt/')}>Anfahrt &amp; Kontakt</a></p>
         <p><a href={company.maps.osm} rel="noopener">Standort auf OpenStreetMap ansehen</a></p>
       </div>
     </div>

@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import { withBase } from '../utils/url';
 
 /*
  * Die Originalmedien (FLV-Videos, Audios, Flyer-Scans, PDFs) liegen auf der
@@ -86,10 +87,10 @@ const dokumente = [
   <figure class="historic-figure">
     <span class="media-item__tag media-item__tag--doc">Archiv · 2009</span>
     <picture>
-      <source type="image/avif" srcset="/img/content/flyer_2009.avif" />
-      <source type="image/webp" srcset="/img/content/flyer_2009.webp" />
+      <source type="image/avif" srcset={withBase('/img/content/flyer_2009.avif')} />
+      <source type="image/webp" srcset={withBase('/img/content/flyer_2009.webp')} />
       <img
-        src="/img/content/flyer_2009.jpg"
+        src={withBase('/img/content/flyer_2009.jpg')}
         width="1200"
         height="865"
         loading="lazy"
@@ -120,8 +121,8 @@ const dokumente = [
   <div class="prose gallery-outro">
     <p>
       Weitere Bilder aus der Geschichte unseres Hauses finden Sie in unserer
-      <a href="/ueber-uns/galerie/">Galerie</a>, eine ausführliche Zeitleiste auf der Seite
-      <a href="/ueber-uns/historie/">Historie seit 1970</a>.
+      <a href={withBase('/ueber-uns/galerie/')}>Galerie</a>, eine ausführliche Zeitleiste auf der Seite
+      <a href={withBase('/ueber-uns/historie/')}>Historie seit 1970</a>.
     </p>
   </div>
 </PageLayout>

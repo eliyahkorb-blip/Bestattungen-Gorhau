@@ -1,5 +1,6 @@
 ---
 import Icon from '../icons/Icon.astro';
+import { withBase } from '../../utils/url';
 export interface Props {
   icon: Parameters<typeof Icon>[0]['name'];
   title: string;
@@ -9,7 +10,7 @@ export interface Props {
 const { icon, title, text, href } = Astro.props;
 ---
 
-<a class="icon-feature" href={href}>
+<a class="icon-feature" href={withBase(href)}>
   <span class="icon-feature__icon"><Icon name={icon} size={30} /></span>
   <span class="icon-feature__body">
     <span class="icon-feature__title">{title}</span>

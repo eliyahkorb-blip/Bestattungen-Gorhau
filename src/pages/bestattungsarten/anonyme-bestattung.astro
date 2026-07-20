@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import HintBox from '../../components/ui/HintBox.astro';
+import { withBase } from '../../utils/url';
 ---
 
 <PageLayout
@@ -60,8 +61,8 @@ import HintBox from '../../components/ui/HintBox.astro';
 
   <HintBox>
     Wir beraten Sie einfühlsam zu den örtlichen Regelungen. Übersicht:
-    <a href="/bestattungsarten/">Bestattungsarten</a> ·
-    <a href="/friedhoefe-in-wuerzburg/">Friedhöfe in Würzburg</a>.
+    <a href={withBase('/bestattungsarten/')}>Bestattungsarten</a> ·
+    <a href={withBase('/friedhoefe-in-wuerzburg/')}>Friedhöfe in Würzburg</a>.
   </HintBox>
 </PageLayout>
 

@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { company } from '../data/company';
 import { mainNav } from '../data/navigation';
+import { withBase } from '../utils/url';
 ---
 
 <BaseLayout
@@ -19,13 +20,13 @@ import { mainNav } from '../data/navigation';
         Vielleicht hilft Ihnen einer der folgenden Wege weiter.
       </p>
       <p>
-        <a class="btn btn--primary" href="/">Zur Startseite</a>
+        <a class="btn btn--primary" href={withBase('/')}>Zur Startseite</a>
         <a class="btn btn--secondary" href={`tel:${company.phoneRaw}`}>Anrufen: {company.phone}</a>
       </p>
       <h2>Beliebte Seiten</h2>
       <ul>
-        {mainNav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
-        <li><a href="/kontakt/">Kontakt &amp; Anfahrt</a></li>
+        {mainNav.map((item) => <li><a href={withBase(item.href)}>{item.label}</a></li>)}
+        <li><a href={withBase('/kontakt/')}>Kontakt &amp; Anfahrt</a></li>
       </ul>
     </div>
   </section>

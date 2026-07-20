@@ -1,16 +1,15 @@
 import { company } from './company';
-
-const site = 'https://www.gorhau-bestattungen.de';
+import { absoluteUrl } from '../utils/url';
 
 /** LocalBusiness (FuneralHome) – zentrale, überall identische Unternehmensdaten. */
 export function localBusinessLd() {
   return {
     '@context': 'https://schema.org',
     '@type': 'FuneralHome',
-    '@id': `${site}/#organization`,
+    '@id': absoluteUrl('/#organization'),
     name: company.name,
     legalName: company.legalName,
-    url: `${site}/`,
+    url: absoluteUrl('/'),
     telephone: company.phoneRaw,
     faxNumber: company.faxRaw,
     email: company.email,
@@ -60,10 +59,10 @@ export function organizationLd() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    '@id': `${site}/#organization`,
+    '@id': absoluteUrl('/#organization'),
     name: company.name,
     legalName: company.legalName,
-    url: `${site}/`,
+    url: absoluteUrl('/'),
     foundingDate: String(company.foundingYear),
     telephone: company.phoneRaw,
     email: company.email,
@@ -82,11 +81,11 @@ export function websiteLd() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    '@id': `${site}/#website`,
-    url: `${site}/`,
+    '@id': absoluteUrl('/#website'),
+    url: absoluteUrl('/'),
     name: company.name,
     inLanguage: 'de-DE',
-    publisher: { '@id': `${site}/#organization` },
+    publisher: { '@id': absoluteUrl('/#organization') },
   };
 }
 
@@ -99,7 +98,7 @@ export function breadcrumbLd(items: { name: string; path: string }[]) {
       '@type': 'ListItem',
       position: i + 1,
       name: item.name,
-      item: new URL(item.path, site + '/').href,
+      item: absoluteUrl(item.path),
     })),
   };
 }
@@ -111,9 +110,9 @@ export function webPageLd(title: string, description: string, path: string) {
     '@type': 'WebPage',
     name: title,
     description,
-    url: new URL(path, site + '/').href,
+    url: absoluteUrl(path),
     inLanguage: 'de-DE',
-    isPartOf: { '@id': `${site}/#website` },
-    about: { '@id': `${site}/#organization` },
+    isPartOf: { '@id': absoluteUrl('/#website') },
+    about: { '@id': absoluteUrl('/#organization') },
   };
 }

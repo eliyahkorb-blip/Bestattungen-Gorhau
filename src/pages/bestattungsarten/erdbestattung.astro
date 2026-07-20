@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import HintBox from '../../components/ui/HintBox.astro';
+import { withBase } from '../../utils/url';
 ---
 
 <PageLayout
@@ -57,13 +58,13 @@ import HintBox from '../../components/ui/HintBox.astro';
   <HintBox>
     Ruhezeiten, Grabarten und Gebühren richten sich nach der jeweiligen Friedhofssatzung und
     können unterschiedlich sein. Mehr dazu auf unserer Seite
-    <a href="/friedhoefe-in-wuerzburg/">Friedhöfe in Würzburg</a>.
+    <a href={withBase('/friedhoefe-in-wuerzburg/')}>Friedhöfe in Würzburg</a>.
   </HintBox>
 
   <div class="prose">
     <p>
       Unsicher, ob eine Erdbestattung zu Ihnen passt? Alle Alternativen finden Sie auf der Seite
-      <a href="/bestattungsarten/">Bestattungsarten</a>.
+      <a href={withBase('/bestattungsarten/')}>Bestattungsarten</a>.
     </p>
   </div>
 </PageLayout>

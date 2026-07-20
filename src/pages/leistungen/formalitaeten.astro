@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import AccordionItem from '../../components/ui/AccordionItem.astro';
+import { withBase } from '../../utils/url';
 ---
 
 <PageLayout
@@ -47,8 +48,8 @@ import AccordionItem from '../../components/ui/AccordionItem.astro';
 
   <div class="prose">
     <p>
-      Benötigte Unterlagen: <a href="/im-trauerfall/benoetigte-dokumente/">Benötigte Dokumente</a>
-      · erste Schritte: <a href="/im-trauerfall/">Im Trauerfall</a>.
+      Benötigte Unterlagen: <a href={withBase('/im-trauerfall/benoetigte-dokumente/')}>Benötigte Dokumente</a>
+      · erste Schritte: <a href={withBase('/im-trauerfall/')}>Im Trauerfall</a>.
     </p>
   </div>
 </PageLayout>

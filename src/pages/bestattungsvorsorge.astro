@@ -2,6 +2,7 @@
 import PageLayout from '../layouts/PageLayout.astro';
 import HintBox from '../components/ui/HintBox.astro';
 import Quote from '../components/ui/Quote.astro';
+import { withBase } from '../utils/url';
 ---
 
 <PageLayout
@@ -57,8 +58,8 @@ import Quote from '../components/ui/Quote.astro';
   <div class="prose">
     <p>
       Vereinbaren Sie ein unverbindliches Gespräch. Mehr zu den Möglichkeiten:
-      <a href="/bestattungsarten/">Bestattungsarten</a> ·
-      <a href="/abschiedsraum/">Abschiedsraum</a>.
+      <a href={withBase('/bestattungsarten/')}>Bestattungsarten</a> ·
+      <a href={withBase('/abschiedsraum/')}>Abschiedsraum</a>.
     </p>
   </div>
 </PageLayout>

@@ -35,20 +35,30 @@ rsync -avz --delete dist/ user@server:/home/user/public_html/
 - `vercel.json` ist enthalten (Redirects + Header).
 - Framework-Preset: Astro. Build: `npm run build`, Output: `dist`.
 
-## Variante D – GitHub Pages
-- Statisches `dist/` deploybar (z. B. via GitHub Action `withastro/action` oder Upload des
-  `dist/`-Inhalts in den `gh-pages`-Branch).
-- Achtung: `.htaccess` wirkt auf GitHub Pages nicht (kein Apache). Redirects/Canonical-Domain
-  dann über DNS/Custom-Domain-Konfiguration bzw. den Hosting-Layer lösen. Für vollständige
-  Server-Redirects und Header ist Variante A/B/C vorzuziehen.
-- **Wichtig bei Projekt-Pages unter einem Repo-Unterpfad**
-  (`https://<user>.github.io/<repo>/`): Der gesamte Website-Code verwendet bewusst **absolute
-  Wurzelpfade** (`/leistungen/`, `/img/logo.png`, Favicons usw.), passend zur kanonischen
-  Root-Domain `https://www.gorhau-bestattungen.de`. Ohne projektweite Anpassung auf einen
-  Astro-`base`-Pfad brechen unter einem Repo-Unterpfad Navigation, Logo, Favicons und interne
-  Links (nur die Startseite selbst lädt). Für eine schnelle Live-Vorschau ohne Unterpfad-Problem
-  eignen sich stattdessen Netlify oder Vercel (Root-Hosting auf einer eigenen Subdomain, siehe
-  Varianten B/C) oder lokal `npm run preview`.
+## Variante D – GitHub Pages (öffentliche Vorschau)
+- Die Site unterstützt jetzt einen **zweiten, eigenständigen Build-Modus** für GitHub-Pages-
+  Projekt-Hosting unter einem Repo-Unterpfad (`https://<user>.github.io/<repo>/`), gesteuert über
+  die Umgebungsvariable `DEPLOY_TARGET` in `astro.config.mjs`:
+  - `npm run build` → Produktionsbuild, `site: https://www.gorhau-bestattungen.de`, `base: /`,
+    indexierbar, normale `robots.txt`, Canonicals/Sitemap/JSON-LD zeigen auf die Produktivdomain.
+    **Unverändert** durch die Pages-Unterstützung.
+  - `npm run build:pages` → `DEPLOY_TARGET=github-pages`, `site: https://eliyahkorb-blip.github.io`,
+    `base: /Bestattungen-Gorhau`, alle internen Pfade (Navigation, Footer, Breadcrumbs, Logo,
+    Favicons, Manifest, Bilder, Flyer) laufen über den zentralen Helfer `src/utils/url.ts`
+    (`withBase()`/`absoluteUrl()`) und funktionieren korrekt unter dem Unterpfad.
+    Vorschau-Build ist **nicht indexierbar**: `<meta name="robots" content="noindex, nofollow">`
+    auf jeder Seite, `robots.txt` liefert `Disallow: /`, kein Search-Console-Tracking, kein
+    Analytics, keine `CNAME`-Datei.
+- **Automatisches Deployment:** `.github/workflows/deploy-pages-preview.yml` baut bei jedem Push
+  auf den aktuellen Branch (und manuell via „Run workflow“) mit `withastro/action@v6` und
+  veröffentlicht über `actions/deploy-pages@v5` unter GitHub-Pages-Environment `github-pages`.
+  Erfordert kein Merge nach `main`. Voraussetzung: In den Repository-Einstellungen unter
+  **Settings → Pages** muss „Source: GitHub Actions“ ausgewählt sein (einmalig, vor dem ersten
+  erfolgreichen Deployment).
+- Achtung: `.htaccess` wirkt auf GitHub Pages nicht (kein Apache) – für den Vorschau-Zweck
+  unerheblich. Für produktives Hosting mit vollständigen Server-Redirects/Headern bleibt
+  Variante A/B/C maßgeblich; GitHub Pages dient hier ausschließlich als öffentlich erreichbare,
+  nicht indexierte Design-Vorschau.
 
 ## Kanonische Domain
 `https://www.gorhau-bestattungen.de` — alle Varianten (http, non-www, alte `/*.html`-URLs)

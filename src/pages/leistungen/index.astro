@@ -2,6 +2,7 @@
 import PageLayout from '../../layouts/PageLayout.astro';
 import IconFeature from '../../components/ui/IconFeature.astro';
 import AccordionItem from '../../components/ui/AccordionItem.astro';
+import { withBase } from '../../utils/url';
 
 const leistungen = [
   { icon: 'map-pin' as const, t: 'Überführungen', d: 'Würdevoll im In- und Ausland organisiert.', href: '/leistungen/ueberfuehrungen/' },
@@ -30,7 +31,7 @@ const leistungen = [
     </p>
     <p>
       Unsere Leistungen greifen ineinander – von der Überführung bis zur Trauerfeier. Wenn Sie
-      noch nicht wissen, welche <a href="/bestattungsarten/">Bestattungsart</a> passt, beraten
+      noch nicht wissen, welche <a href={withBase('/bestattungsarten/')}>Bestattungsart</a> passt, beraten
       wir Sie dazu gern persönlich und unverbindlich.
     </p>
   </div>
@@ -59,9 +60,9 @@ const leistungen = [
   </ol>
   <div class="prose">
     <p>
-      Liegt bereits eine <a href="/bestattungsvorsorge/">Bestattungsvorsorge</a> vor, arbeiten
+      Liegt bereits eine <a href={withBase('/bestattungsvorsorge/')}>Bestattungsvorsorge</a> vor, arbeiten
       wir auf dieser Grundlage weiter. Für die ersten Schritte nach einem Todesfall lesen Sie
-      unsere Seite <a href="/im-trauerfall/">Im Trauerfall</a>.
+      unsere Seite <a href={withBase('/im-trauerfall/')}>Im Trauerfall</a>.
     </p>
   </div>
 

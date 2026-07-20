@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import { withBase } from '../../utils/url';
 ---
 
 <PageLayout
@@ -39,7 +40,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
     <p>
       Die Versorgung erfolgt in unseren Räumlichkeiten durch geschultes Personal – Ziel ist ein
       friedvoller, natürlicher Anblick, keine künstliche Veränderung. Eine aufgebahrte
-      Abschiednahme, etwa in unserem <a href="/abschiedsraum/">Abschiedsraum</a>, ist in der
+      Abschiednahme, etwa in unserem <a href={withBase('/abschiedsraum/')}>Abschiedsraum</a>, ist in der
       Regel nur nach einer solchen Versorgung möglich.
     </p>
   </div>
@@ -56,8 +57,8 @@ import PageLayout from '../../layouts/PageLayout.astro';
 
   <div class="prose">
     <p>
-      Mehr zur Abschiednahme: <a href="/abschiedsraum/">Abschiedsraum</a> · erste Schritte nach
-      einem Todesfall: <a href="/im-trauerfall/">Im Trauerfall</a>.
+      Mehr zur Abschiednahme: <a href={withBase('/abschiedsraum/')}>Abschiedsraum</a> · erste Schritte nach
+      einem Todesfall: <a href={withBase('/im-trauerfall/')}>Im Trauerfall</a>.
     </p>
   </div>
 </PageLayout>
