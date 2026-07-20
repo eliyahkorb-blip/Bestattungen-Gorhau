@@ -1,0 +1,75 @@
+---
+import Icon from '../icons/Icon.astro';
+export interface Props {
+  icon: Parameters<typeof Icon>[0]['name'];
+  title: string;
+  text: string;
+  href: string;
+}
+const { icon, title, text, href } = Astro.props;
+---
+
+<a class="icon-feature" href={href}>
+  <span class="icon-feature__icon"><Icon name={icon} size={30} /></span>
+  <span class="icon-feature__body">
+    <span class="icon-feature__title">{title}</span>
+    <span class="icon-feature__text">{text}</span>
+  </span>
+  <span class="icon-feature__arrow" aria-hidden="true">→</span>
+</a>
+
+<style>
+  .icon-feature {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-lg);
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--text-primary);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .icon-feature:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    color: var(--text-primary);
+  }
+  .icon-feature__icon {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    background: var(--surface-cream);
+    color: var(--brand-bordeaux);
+  }
+  .icon-feature__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+  }
+  .icon-feature__title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--brand-bordeaux-dark);
+  }
+  .icon-feature__text {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+  .icon-feature__arrow {
+    margin-left: auto;
+    color: var(--brand-gold-dark);
+    font-size: 1.2rem;
+    flex: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .icon-feature {
+      transition: none;
+    }
+  }
+</style>

@@ -1,0 +1,53 @@
+---
+/*
+ * Zurückhaltende, handgestaltete Illustration für den Hero-Bereich.
+ * Es liegt noch kein echtes Unternehmensfoto vor (siehe incoming-assets/) –
+ * anstatt ein Stockfoto oder ein KI-generiertes "Mitarbeiterbild" zu
+ * erfinden, wird bewusst eine warme, abstrakte Licht-/Geborgenheits-Illustration
+ * in Markenfarben verwendet. Sobald echte Fotos vorliegen, kann dieses Element
+ * ersetzt werden (siehe docs/BRAND-GUIDELINES.md).
+ */
+---
+
+<svg
+  class="hero-visual"
+  viewBox="0 0 420 420"
+  role="img"
+  aria-label="Warmes, abstraktes Licht- und Geborgenheitsmotiv in den Gorhau-Markenfarben"
+>
+  <defs>
+    <radialGradient id="hv-glow" cx="50%" cy="42%" r="60%">
+      <stop offset="0%" stop-color="#fbeee9" />
+      <stop offset="100%" stop-color="#f7ece9" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <circle cx="210" cy="180" r="170" fill="url(#hv-glow)" />
+  <circle cx="210" cy="180" r="128" fill="none" stroke="#e6c98a" stroke-width="1.5" opacity="0.55" />
+  <circle cx="210" cy="180" r="98" fill="none" stroke="#b8933d" stroke-width="1.5" opacity="0.5" />
+  <path
+    d="M120 250c8-46 40-76 90-76s82 30 90 76"
+    fill="none"
+    stroke="#882020"
+    stroke-width="4"
+    stroke-linecap="round"
+    opacity="0.85"
+  />
+  <path
+    d="M150 250c6-30 28-50 60-50s54 20 60 50"
+    fill="none"
+    stroke="#b8933d"
+    stroke-width="4"
+    stroke-linecap="round"
+  />
+  <circle cx="210" cy="150" r="14" fill="#882020" opacity="0.9" />
+</svg>
+
+<style>
+  .hero-visual {
+    width: 100%;
+    height: auto;
+    max-width: 26rem;
+    display: block;
+    margin-inline: auto;
+  }
+</style>

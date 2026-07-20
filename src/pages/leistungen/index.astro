@@ -1,13 +1,15 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import IconFeature from '../../components/ui/IconFeature.astro';
+import AccordionItem from '../../components/ui/AccordionItem.astro';
 
 const leistungen = [
-  { t: 'Überführungen', d: 'Würdevolle Überführungen im In- und Ausland – zuverlässig organisiert.', href: '/leistungen/ueberfuehrungen/' },
-  { t: 'Thanatopraxie', d: 'Hygienische und ästhetische Versorgung durch geschulte Fachkräfte.', href: '/leistungen/thanatopraxie/' },
-  { t: 'Trauerfeier & Trauerdruck', d: 'Gestaltung der Trauerfeier, Trauerreden, Drucksachen und Dekoration.', href: '/leistungen/trauerfeier-und-trauerdruck/' },
-  { t: 'Formalitäten', d: 'Behördengänge und organisatorische Unterstützung – wir nehmen Ihnen den Papierkram ab.', href: '/leistungen/formalitaeten/' },
-  { t: 'Bestattungsarten', d: 'Erd-, Feuer-, See- und anonyme Bestattung – wir erläutern alle Möglichkeiten.', href: '/bestattungsarten/' },
-  { t: 'Bestattungsvorsorge', d: 'Regeln Sie Ihre Wünsche zu Lebzeiten und entlasten Sie Ihre Angehörigen.', href: '/bestattungsvorsorge/' },
+  { icon: 'map-pin' as const, t: 'Überführungen', d: 'Würdevoll im In- und Ausland organisiert.', href: '/leistungen/ueberfuehrungen/' },
+  { icon: 'embrace' as const, t: 'Thanatopraxie', d: 'Hygienische und ästhetische Versorgung.', href: '/leistungen/thanatopraxie/' },
+  { icon: 'sun' as const, t: 'Trauerfeier & Trauerdruck', d: 'Trauerreden, Drucksachen, Dekoration.', href: '/leistungen/trauerfeier-und-trauerdruck/' },
+  { icon: 'document' as const, t: 'Formalitäten', d: 'Behördengänge – wir nehmen Ihnen den Papierkram ab.', href: '/leistungen/formalitaeten/' },
+  { icon: 'leaf' as const, t: 'Bestattungsarten', d: 'Erd-, Feuer-, See- und anonyme Bestattung.', href: '/bestattungsarten/' },
+  { icon: 'clock' as const, t: 'Bestattungsvorsorge', d: 'Wünsche zu Lebzeiten festhalten.', href: '/bestattungsvorsorge/' },
 ];
 ---
 
@@ -17,91 +19,116 @@ const leistungen = [
   eyebrow="Unser Leistungsspektrum"
   path="/leistungen/"
   heading="Leistungen"
-  intro="Von der ersten Beratung bis zum würdevollen Abschied begleiten wir Sie umfassend. Alle organisatorischen und gestalterischen Aufgaben übernehmen wir für Sie."
+  intro="Von der ersten Beratung bis zum würdevollen Abschied begleiten wir Sie umfassend – alle organisatorischen und gestalterischen Aufgaben aus einer Hand."
   breadcrumbs={[{ name: 'Leistungen', path: '/leistungen/' }]}
 >
   <div class="prose">
     <p>
-      Als familiengeführtes Institut bieten wir Ihnen alle Leistungen rund um eine Bestattung
-      aus einer Hand. Dabei ist uns wichtig, dass jede Entscheidung in Ruhe und nach Ihren
-      persönlichen Vorstellungen getroffen werden kann. Wir übernehmen die Organisation und
-      die Behördengänge, sodass Sie sich auf das Wesentliche konzentrieren können: den
-      Abschied von einem geliebten Menschen.
+      Als familiengeführtes Institut übernehmen wir Organisation und Behördengänge, damit Sie
+      sich auf das Wesentliche konzentrieren können: den Abschied von einem geliebten Menschen.
+      Jede Entscheidung treffen Sie dabei in Ruhe und nach Ihren eigenen Vorstellungen.
     </p>
     <p>
-      Unsere Leistungen greifen ineinander – von der Überführung über die hygienische
-      Versorgung bis zur Gestaltung der Trauerfeier. Auf den folgenden Seiten stellen wir
-      Ihnen die einzelnen Bereiche im Detail vor. Wenn Sie sich noch nicht sicher sind, welche
-      Bestattungsart oder welche Form des Abschieds zu Ihnen passt, informieren Sie sich auf
-      unserer Übersichtsseite zu den <a href="/bestattungsarten/">Bestattungsarten</a> oder
-      lassen Sie sich in einem persönlichen Gespräch beraten.
+      Unsere Leistungen greifen ineinander – von der Überführung bis zur Trauerfeier. Wenn Sie
+      noch nicht wissen, welche <a href="/bestattungsarten/">Bestattungsart</a> passt, beraten
+      wir Sie dazu gern persönlich und unverbindlich.
     </p>
   </div>
 
   <h2>Unsere Kernleistungen im Überblick</h2>
   <hr class="accent-rule" />
-  <div class="grid grid--3">
-    {
-      leistungen.map((l) => (
-        <article class="card">
-          <h2 style="font-size:1.3rem">{l.t}</h2>
-          <p>{l.d}</p>
-          <a class="card__link" href={l.href}>Mehr erfahren →</a>
-        </article>
-      ))
-    }
+  <div class="tile-grid">
+    {leistungen.map((l) => <IconFeature icon={l.icon} title={l.t} text={l.d} href={l.href} />)}
   </div>
 
-  <h2>Weitere Leistungen</h2>
+  <h2>So arbeiten wir mit Ihnen zusammen</h2>
   <hr class="accent-rule" />
+  <ol class="mini-steps">
+    <li>
+      <strong>Persönliches Gespräch.</strong> Telefonisch, bei uns im Haus oder bei Ihnen –
+      wir klären, was in Ihrer Situation gebraucht wird.
+    </li>
+    <li>
+      <strong>Verständliche Erklärung.</strong> Keine Fachbegriffe, keine Entscheidungen unter
+      Zeitdruck – wir zeigen, wo Fristen wirklich bestehen.
+    </li>
+    <li>
+      <strong>Koordination im Hintergrund.</strong> Behörden, Friedhofsverwaltung, Kirche oder
+      Trauerredner – wir stimmen alle Termine ab.
+    </li>
+  </ol>
   <div class="prose">
     <p>
-      Über die genannten Bereiche hinaus unterstützen wir Sie bei einer Vielzahl weiterer
-      Aufgaben rund um die Bestattung:
+      Liegt bereits eine <a href="/bestattungsvorsorge/">Bestattungsvorsorge</a> vor, arbeiten
+      wir auf dieser Grundlage weiter. Für die ersten Schritte nach einem Todesfall lesen Sie
+      unsere Seite <a href="/im-trauerfall/">Im Trauerfall</a>.
+    </p>
+  </div>
+
+  <h2>Weitere Leistungen im Detail</h2>
+  <hr class="accent-rule" />
+  <AccordionItem title="Vollständige Übersicht ansehen">
+    <p>
+      Über die Kernleistungen hinaus unterstützen wir Sie bei einer Vielzahl weiterer Aufgaben:
     </p>
     <ul>
       <li>Hygienische Versorgung der verstorbenen Person</li>
       <li>Würdevolle Aufbewahrung in unseren gekühlten Räumlichkeiten</li>
-      <li>Umbettungen</li>
-      <li>Grabbereitungen und Graböffnungen</li>
+      <li>Umbettungen sowie Grabbereitungen und Graböffnungen</li>
       <li>Trägergestellung</li>
       <li>Vermittlung von Trauerrednerinnen und Trauerrednern</li>
       <li>Grab- und Friedhofsdekoration, Blumenschmuck</li>
       <li>Beratung zu Grabmal und Grabpflege</li>
     </ul>
     <p>
-      Sie vermissen eine bestimmte Leistung? Sprechen Sie uns an – wir sagen Ihnen offen, ob und
-      wie wir Ihnen weiterhelfen können.
+      Sie vermissen eine bestimmte Leistung? Sprechen Sie uns an – wir sagen Ihnen offen, ob
+      und wie wir Ihnen weiterhelfen können.
     </p>
-  </div>
-
-  <h2>So arbeiten wir mit Ihnen zusammen</h2>
-  <hr class="accent-rule" />
-  <div class="prose">
-    <p>
-      Am Anfang steht immer ein persönliches Gespräch – telefonisch, bei uns im Haus oder,
-      wenn gewünscht, bei Ihnen. Darin klären wir gemeinsam, welche Leistungen in Ihrer
-      Situation gebraucht werden, welche Wünsche die verstorbene Person möglicherweise
-      geäußert hat und welcher zeitliche Rahmen realistisch ist.
-    </p>
-    <p>
-      Dabei erklären wir Ihnen jeden Schritt verständlich, bevor wir ihn umsetzen. Sie müssen
-      keine Fachbegriffe kennen und keine Entscheidungen unter Zeitdruck treffen – wir weisen
-      Sie darauf hin, wo tatsächlich Fristen bestehen und wo Sie sich in Ruhe entscheiden
-      können.
-    </p>
-    <p>
-      Anschließend übernehmen wir die Koordination: Wir sprechen mit Behörden, Friedhofsverwaltung,
-      gegebenenfalls Kirchengemeinde oder freien Trauerrednern und stimmen alle Termine so ab,
-      dass für Sie möglichst wenig Organisationsaufwand bleibt. Sie behalten dabei jederzeit die
-      Übersicht und Entscheidungshoheit – wir setzen lediglich um, was gemeinsam besprochen wurde.
-    </p>
-    <p>
-      Wenn eine Bestattungsvorsorge bereits vorhanden ist, arbeiten wir selbstverständlich auf
-      dieser Grundlage. Mehr dazu finden Sie auf der Seite
-      <a href="/bestattungsvorsorge/">Bestattungsvorsorge</a>. Für die ersten Schritte direkt
-      nach einem Todesfall lesen Sie bitte unsere Seite
-      <a href="/im-trauerfall/">Im Trauerfall</a>.
-    </p>
-  </div>
+  </AccordionItem>
 </PageLayout>
+
+<style>
+  .tile-grid {
+    display: grid;
+    gap: var(--space-md);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    margin: var(--space-lg) 0 var(--space-xl);
+    max-width: none;
+  }
+  .mini-steps {
+    list-style: none;
+    counter-reset: step;
+    padding: 0;
+    margin: var(--space-lg) 0 var(--space-lg);
+    max-width: 42rem;
+    display: grid;
+    gap: var(--space-sm);
+  }
+  .mini-steps li {
+    counter-increment: step;
+    position: relative;
+    padding: var(--space-sm) var(--space-md) var(--space-sm) 3rem;
+    background: var(--surface-cream);
+    border-radius: var(--radius-md);
+    color: var(--text-muted);
+  }
+  .mini-steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0.9rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.6rem;
+    height: 1.6rem;
+    display: grid;
+    place-items: center;
+    background: var(--brand-bordeaux);
+    color: var(--brand-white);
+    border-radius: 50%;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+  .mini-steps strong {
+    color: var(--brand-bordeaux-dark);
+  }
+</style>

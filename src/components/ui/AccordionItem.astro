@@ -1,0 +1,77 @@
+---
+/*
+ * Barrierefreies Akkordion-Element auf Basis von <details>/<summary>.
+ * Funktioniert vollständig ohne JavaScript, der Inhalt steht immer im HTML
+ * (kein SEO-Verlust) und ist nativ per Tastatur bedienbar. Der Browser
+ * verwaltet den Expanded-Status nativ und korrekt für Screenreader – ein
+ * zusätzliches aria-expanded ist bei <details> nicht erforderlich.
+ */
+export interface Props {
+  title: string;
+  open?: boolean;
+}
+const { title, open = false } = Astro.props;
+---
+
+<details class="acc-item" open={open}>
+  <summary class="acc-item__summary">
+    <span>{title}</span>
+    <span class="acc-item__chevron" aria-hidden="true"></span>
+  </summary>
+  <div class="acc-item__body prose">
+    <slot />
+  </div>
+</details>
+
+<style is:global>
+  .acc-item {
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    padding: 0;
+    margin-bottom: var(--space-sm);
+    overflow: hidden;
+  }
+  .acc-item__summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-lg);
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--brand-bordeaux-dark);
+    list-style: none;
+  }
+  .acc-item__summary::-webkit-details-marker {
+    display: none;
+  }
+  .acc-item__summary:hover {
+    color: var(--brand-bordeaux);
+  }
+  .acc-item__chevron {
+    flex: none;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-right: 2px solid var(--brand-gold-dark);
+    border-bottom: 2px solid var(--brand-gold-dark);
+    transform: rotate(-45deg);
+    transition: transform 0.2s ease;
+  }
+  .acc-item[open] .acc-item__chevron {
+    transform: rotate(45deg);
+  }
+  .acc-item__body {
+    padding: 0 var(--space-lg) var(--space-lg);
+    max-width: none;
+    color: var(--text-muted);
+  }
+  .acc-item__body > * + * {
+    margin-top: var(--space-sm);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .acc-item__chevron {
+      transition: none;
+    }
+  }
+</style>

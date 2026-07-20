@@ -1,6 +1,14 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import IconFeature from '../../components/ui/IconFeature.astro';
 import { company } from '../../data/company';
+
+const links = [
+  { icon: 'history' as const, title: 'Historie seit 1970', text: 'Die Stationen unserer Geschichte.', href: '/ueber-uns/historie/' },
+  { icon: 'film' as const, title: 'Galerie', text: 'Aktuelle und historische Bilder.', href: '/ueber-uns/galerie/' },
+  { icon: 'window-light' as const, title: 'Abschiedsraum', text: 'Unser hauseigener Raum für den Abschied.', href: '/abschiedsraum/' },
+  { icon: 'film' as const, title: 'Mediathek', text: 'Imagefilm und historische Aufnahmen.', href: '/mediathek/' },
+];
 ---
 
 <PageLayout
@@ -9,67 +17,64 @@ import { company } from '../../data/company';
   eyebrow="Wer wir sind"
   path="/ueber-uns/"
   heading="Ein Familienunternehmen seit 1970"
-  intro="Seit über fünf Jahrzehnten begleiten wir Menschen aus Würzburg und der Region in Zeiten der Trauer – persönlich, verlässlich und mit Respekt vor jedem Leben."
+  intro="Seit über fünf Jahrzehnten begleiten wir Menschen aus Würzburg und der Region in Zeiten der Trauer."
   breadcrumbs={[{ name: 'Über uns', path: '/ueber-uns/' }]}
 >
   <div class="prose">
     <p>
-      Das Bestattungs- und Überführungs-Institut Gorhau ist ein familiengeführtes Unternehmen
-      mit langer Tradition. 1970 gegründet, sind wir seit 1980 in der Reuterstraße in
-      Würzburg-Heidingsfeld zu Hause. Über die Jahrzehnte ist Vertrauen gewachsen – häufig über
-      mehrere Generationen einer Familie hinweg.
+      1970 gegründet, sind wir seit 1980 in der Reuterstraße in Würzburg-Heidingsfeld zu Hause.
+      Über die Jahrzehnte ist Vertrauen gewachsen – häufig über mehrere Generationen einer
+      Familie hinweg.
     </p>
+  </div>
 
-    <h2>Unsere Haltung: Zuhören, beraten, begleiten</h2>
+  <h2>Unsere Haltung: Zuhören, beraten, begleiten</h2>
+  <hr class="accent-rule" />
+  <div class="prose">
     <p>
-      Diese drei Worte beschreiben, wie wir arbeiten. Wir hören zunächst zu, um zu verstehen,
-      was Ihnen wichtig ist. Wir beraten Sie in aller Ruhe zu den Möglichkeiten. Und wir
-      begleiten Sie – vom ersten Anruf bis über die Bestattung hinaus.
+      Wir hören zunächst zu, um zu verstehen, was Ihnen wichtig ist. Wir beraten Sie in aller
+      Ruhe zu den Möglichkeiten. Und wir begleiten Sie – vom ersten Anruf bis über die
+      Bestattung hinaus.
     </p>
+  </div>
 
-    <h2>Persönlich und regional verbunden</h2>
+  <h2>Persönlich, regional, qualifiziert</h2>
+  <hr class="accent-rule" />
+  <div class="prose">
     <p>
       Als inhabergeführtes Institut sind wir keine anonyme Kette, sondern feste Ansprechpartner
-      vor Ort. Sie sprechen mit Menschen, die die Region kennen und die sich Zeit für Sie
-      nehmen.
+      vor Ort. Eine würdevolle Bestattung erfordert Sorgfalt und Können – wir verbinden
+      handwerkliche Qualifikation mit menschlicher Nähe und bilden uns fachlich stetig weiter.
+      Viele Familien, die wir heute betreuen, kannten unser Institut bereits durch frühere
+      Bestattungen in ihrem Umfeld.
     </p>
-
-    <h2>Fachliche Qualifikation</h2>
     <p>
-      Eine würdevolle Bestattung erfordert Sorgfalt und Können. Wir verbinden handwerkliche
-      Qualifikation mit menschlicher Nähe und bilden uns fachlich weiter, um Sie kompetent zu
-      begleiten – von der Beratung über die hygienische Versorgung bis zur Gestaltung der
-      Trauerfeier.
-    </p>
-
-    <h2>Was uns als Institut trägt</h2>
-    <p>
-      Ein Bestattungsinstitut lebt vom Vertrauen der Menschen, die es in einer der
-      schwierigsten Phasen ihres Lebens beauftragen. Dieses Vertrauen entsteht nicht durch
-      Werbeversprechen, sondern durch die Erfahrung, ernst genommen und gut begleitet worden zu
-      sein. Viele Familien, die wir heute betreuen, kannten unser Institut bereits durch frühere
-      Bestattungen in ihrem Umfeld – eine Kontinuität, auf die wir besonders achten.
-    </p>
-
-    <h2>Unser Leistungsspektrum</h2>
-    <p>
-      Von der ersten Beratung über Überführungen, hygienische Versorgung und die Gestaltung der
-      Trauerfeier bis zur Bestattungsvorsorge bieten wir Ihnen alle Leistungen rund um den
-      Abschied aus einer Hand. Eine vollständige Übersicht finden Sie auf unserer Seite
+      Von der ersten Beratung bis zur Bestattungsvorsorge bieten wir alle Leistungen aus einer
+      Hand – die vollständige Übersicht finden Sie auf der Seite
       <a href="/leistungen/">Leistungen</a>.
     </p>
+  </div>
 
-    <h2>Mehr über uns</h2>
-    <ul>
-      <li><a href="/ueber-uns/historie/">Unsere Historie seit 1970</a></li>
-      <li><a href="/ueber-uns/galerie/">Galerie mit aktuellen und historischen Bildern</a></li>
-      <li><a href="/abschiedsraum/">Unser hauseigener Abschiedsraum</a></li>
-      <li><a href="/mediathek/">Mediathek mit dem Imagefilm des Unternehmens</a></li>
-    </ul>
+  <h2>Mehr über uns</h2>
+  <hr class="accent-rule" />
+  <div class="tile-grid">
+    {links.map((l) => <IconFeature icon={l.icon} title={l.title} text={l.text} href={l.href} />)}
+  </div>
 
+  <div class="prose">
     <p>
       Sie erreichen uns unter <a href={`tel:${company.phoneRaw}`}>{company.phone}</a> oder per
       E-Mail an <a href={`mailto:${company.email}`}>{company.email}</a>.
     </p>
   </div>
 </PageLayout>
+
+<style>
+  .tile-grid {
+    display: grid;
+    gap: var(--space-md);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    margin: var(--space-lg) 0 var(--space-xl);
+    max-width: none;
+  }
+</style>

@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import Quote from '../components/ui/Quote.astro';
 ---
 
 <PageLayout
@@ -8,69 +9,69 @@ import PageLayout from '../layouts/PageLayout.astro';
   eyebrow="Raum und Zeit für den Abschied"
   path="/abschiedsraum/"
   heading="Unser hauseigener Abschiedsraum"
-  intro="Ein persönlicher Abschied braucht vor allem eines: Zeit und einen geschützten Ort. Beides bieten wir Ihnen in unserem hauseigenen Abschiedsraum."
+  intro="Ein persönlicher Abschied braucht vor allem eines: Zeit und einen geschützten Ort."
   breadcrumbs={[{ name: 'Abschiedsraum', path: '/abschiedsraum/' }]}
 >
   <div class="prose">
     <p>
-      Sich in Ruhe zu verabschieden, hilft vielen Menschen, den Verlust zu begreifen und zu
-      verarbeiten. Bereits seit 2004 bieten wir in Würzburg einen eigenen Abschiedsraum – als
-      eines der ersten Häuser in der Region, das Angehörigen bewusst „Raum und Zeit“ für einen
-      persönlichen Abschied zur Verfügung stellt.
+      Bereits seit 2004 bieten wir in Würzburg einen eigenen Abschiedsraum – als eines der
+      ersten Häuser der Region, das Angehörigen bewusst „Raum und Zeit“ für den Abschied gibt.
     </p>
-    <p>
-      Für viele Menschen ist es ungewohnt, sich vorzustellen, noch einmal Zeit mit einer
-      verstorbenen Person zu verbringen. Erfahrungsgemäß empfinden es aber gerade diejenigen, die
-      sich dafür entscheiden, im Nachhinein als wichtigen und hilfreichen Teil ihrer Trauer.
-    </p>
-    <h2>Ein geschützter Ort</h2>
-    <p>
-      In würdiger, ruhiger Atmosphäre können Sie im kleinen Kreis Abschied nehmen – ohne
-      Zeitdruck und ganz nach Ihren Vorstellungen. Der Raum eignet sich für eine persönliche
-      Abschiednahme ebenso wie für eine kleine Feierstunde im Familien- und Freundeskreis.
-    </p>
-    <h2>Nach Ihren Wünschen gestaltet</h2>
-    <ul>
-      <li>Persönliche Abschiednahme in geschützter Umgebung</li>
-      <li>Kleine Feierstunden im engsten Kreis</li>
-      <li>Zeit und Ruhe ohne feste Taktung</li>
-      <li>Begleitung durch unser Team, wenn Sie es wünschen</li>
-    </ul>
+  </div>
 
-    <h2>Warum ein eigener Abschiedsraum einen Unterschied macht</h2>
-    <p>
-      In vielen Trauerhallen ist die Zeit für eine Abschiednahme durch nachfolgende Termine
-      begrenzt. In unserem Abschiedsraum entfällt dieser Zeitdruck: Sie bestimmen, wie lange Sie
-      bleiben möchten, wer dabei sein soll und ob Sie allein sein oder von uns begleitet werden
-      möchten. Für manche Angehörige ist es wichtig, ein letztes Mal die Hand zu halten oder
-      leise mit der verstorbenen Person zu sprechen – dafür ist hier Platz.
-    </p>
+  <Quote text="Für manche ist es ungewohnt, sich vorzustellen, noch einmal Zeit mit einer verstorbenen Person zu verbringen. Im Nachhinein empfinden es die meisten als wichtigen Teil ihrer Trauer." />
 
-    <h2>Wann eine Nutzung sinnvoll ist</h2>
+  <h2>Nach Ihren Wünschen gestaltet</h2>
+  <hr class="accent-rule" />
+  <ul class="chip-list">
+    <li>Persönliche Abschiednahme</li>
+    <li>Kleine Feierstunden</li>
+    <li>Zeit ohne feste Taktung</li>
+    <li>Begleitung auf Wunsch</li>
+  </ul>
+  <div class="prose">
     <p>
-      Der Abschiedsraum eignet sich sowohl für eine kurze, stille Abschiednahme unmittelbar nach
-      dem Todesfall als auch für eine kleine Feierstunde im Kreis der engsten Familie – etwa
-      dann, wenn keine größere öffentliche Trauerfeier gewünscht ist. Ob eine aufgebahrte
-      Abschiednahme möglich ist, hängt unter anderem von einer vorherigen hygienischen
-      Versorgung ab; mehr dazu erfahren Sie auf unserer Seite
-      <a href="/leistungen/thanatopraxie/">Thanatopraxie</a>.
+      Anders als in vielen Trauerhallen entfällt bei uns der Zeitdruck durch nachfolgende
+      Termine: Sie bestimmen, wie lange Sie bleiben und wer dabei sein soll.
     </p>
+  </div>
 
+  <h2>Wann eine Nutzung sinnvoll ist</h2>
+  <hr class="accent-rule" />
+  <div class="prose">
     <p>
-      Sprechen Sie uns an, wenn Sie den Abschiedsraum nutzen möchten – wir stimmen alles
-      Weitere persönlich mit Ihnen ab. Wenn Sie den Abschied bereits jetzt für die Zukunft
-      planen möchten, informieren Sie sich auch über unsere
-      <a href="/bestattungsvorsorge/">Bestattungsvorsorge</a>.
+      Der Raum eignet sich für eine stille Abschiednahme direkt nach dem Todesfall ebenso wie
+      für eine kleine Feierstunde im engsten Kreis. Ob eine aufgebahrte Abschiednahme möglich
+      ist, hängt von einer vorherigen <a href="/leistungen/thanatopraxie/">hygienischen
+      Versorgung</a> ab.
     </p>
-    <p class="hist-hint">
-      Historische und aktuelle Aufnahmen unserer Räume finden Sie in der
-      <a href="/ueber-uns/galerie/">Galerie</a>.
+  </div>
+
+  <div class="prose">
+    <p>
+      Sprechen Sie uns an, wenn Sie den Raum nutzen möchten. Planen Sie bereits für die Zukunft?
+      Informieren Sie sich über unsere <a href="/bestattungsvorsorge/">Bestattungsvorsorge</a>.
+      Aufnahmen unserer Räume finden Sie in der <a href="/ueber-uns/galerie/">Galerie</a>.
     </p>
   </div>
 </PageLayout>
 
 <style>
-  .hist-hint {
-    color: var(--text-muted);
+  .chip-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-md) 0 var(--space-lg);
+    max-width: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+  .chip-list li {
+    background: var(--surface-cream);
+    border-radius: 999px;
+    padding: 0.5em 1.1em;
+    font-size: 0.92rem;
+    color: var(--brand-bordeaux-dark);
+    font-weight: 600;
   }
 </style>

@@ -1,5 +1,7 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import HintBox from '../components/ui/HintBox.astro';
+import Quote from '../components/ui/Quote.astro';
 ---
 
 <PageLayout
@@ -8,87 +10,73 @@ import PageLayout from '../layouts/PageLayout.astro';
   eyebrow="Selbstbestimmt vorsorgen"
   path="/bestattungsvorsorge/"
   heading="Bestattungsvorsorge"
-  intro="Mit einer Bestattungsvorsorge legen Sie zu Lebzeiten fest, wie Ihr Abschied gestaltet werden soll. Das gibt Ihnen Sicherheit und entlastet Ihre Angehörigen in einer schweren Zeit."
+  intro="Mit einer Bestattungsvorsorge legen Sie zu Lebzeiten fest, wie Ihr Abschied gestaltet werden soll – und entlasten Ihre Angehörigen in einer schweren Zeit."
   breadcrumbs={[{ name: 'Bestattungsvorsorge', path: '/bestattungsvorsorge/' }]}
 >
   <div class="prose">
     <p>
-      Viele Menschen möchten selbst bestimmen, wie ihr Abschied einmal aussehen soll – und
-      ihren Angehörigen im Trauerfall Entscheidungen und Kosten ersparen. Die
-      Bestattungsvorsorge macht genau das möglich.
+      Ein Todesfall trifft Angehörige oft unerwartet – selbst wenn er absehbar war. Eine Vorsorge
+      nimmt ihnen viele Entscheidungen ab, weil die wesentlichen Fragen bereits geklärt sind.
     </p>
-    <h2>Ihre Wünsche festhalten</h2>
-    <p>
-      In einem persönlichen Gespräch halten wir Ihre Vorstellungen fest: die gewünschte
-      Bestattungsart, die Gestaltung der Trauerfeier, Musik, Blumenschmuck und weitere
-      persönliche Wünsche. Diese Angaben werden bei uns hinterlegt, sodass im Trauerfall alles
-      in Ihrem Sinne geregelt werden kann.
-    </p>
-    <h2>Vorsorge auch finanziell absichern</h2>
-    <p>
-      Damit die Kosten der Bestattung im Trauerfall nicht Ihre Angehörigen belasten, kann die
-      Vorsorge auch finanziell abgesichert werden – beispielsweise über einen
-      Vorsorgevertrag mit treuhänderischer Verwaltung des hinterlegten Betrags oder über eine
-      Sterbegeldversicherung.
-    </p>
-    <p class="note">
-      Konkrete Konditionen, Beträge und Vertragsbedingungen richten sich nach dem jeweiligen
-      Anbieter und dem aktuellen Stand. Wir beraten Sie individuell und nennen Ihnen die zum
-      Zeitpunkt des Gesprächs geltenden Möglichkeiten – ohne Verpflichtung.
-    </p>
-    <h2>Ihre Vorteile auf einen Blick</h2>
-    <ul>
-      <li>Sie bestimmen selbst, wie Ihr Abschied gestaltet wird.</li>
-      <li>Ihre Angehörigen werden organisatorisch und finanziell entlastet.</li>
-      <li>Ihre Wünsche sind schriftlich festgehalten und verbindlich hinterlegt.</li>
-      <li>Sie gewinnen Sicherheit und Klarheit für sich und Ihre Familie.</li>
-    </ul>
+  </div>
 
-    <h2>Warum viele Menschen frühzeitig vorsorgen</h2>
-    <p>
-      Ein Todesfall trifft Angehörige oft unerwartet – selbst wenn er absehbar war. In dieser
-      Situation müssen dann innerhalb kurzer Zeit viele Entscheidungen getroffen werden: welche
-      Bestattungsart, welcher Ablauf, welche Kosten. Eine Vorsorge nimmt Angehörigen genau diese
-      Entscheidungen ab, weil die wesentlichen Fragen bereits geklärt sind. Das ist häufig eine
-      spürbare Erleichterung – gerade dann, wenn die Trauer selbst schon Kraft genug kostet.
-    </p>
+  <ul class="benefit-list">
+    <li>Sie bestimmen selbst, wie Ihr Abschied gestaltet wird</li>
+    <li>Angehörige werden organisatorisch und finanziell entlastet</li>
+    <li>Ihre Wünsche sind schriftlich und verbindlich hinterlegt</li>
+  </ul>
 
-    <h2>Was im Vorsorgegespräch besprochen wird</h2>
+  <h2>Ihre Wünsche festhalten</h2>
+  <hr class="accent-rule" />
+  <div class="prose">
     <p>
-      Ein Vorsorgegespräch findet in Ruhe statt – bei uns im Haus oder, wenn gewünscht, bei
-      Ihnen zu Hause. Wir sprechen über die gewünschte Bestattungsart, mögliche Orte für die
-      Trauerfeier, persönliche Wünsche zu Musik und Gestaltung sowie über die Frage, wer im
-      Trauerfall informiert und einbezogen werden soll. Nichts davon ist endgültig: Eine einmal
-      getroffene Vorsorge kann bei Bedarf jederzeit angepasst werden.
+      Im Vorsorgegespräch – bei uns oder bei Ihnen zu Hause – halten wir Bestattungsart, Ort der
+      Trauerfeier, Musik und weitere persönliche Wünsche fest. Nichts ist endgültig: Eine
+      getroffene Vorsorge kann jederzeit angepasst werden.
     </p>
+  </div>
 
-    <h2>Zwei Wege der finanziellen Absicherung</h2>
+  <h2>Finanziell absichern</h2>
+  <hr class="accent-rule" />
+  <div class="prose">
     <p>
-      Für die finanzielle Seite der Vorsorge gibt es grundsätzlich zwei gängige Modelle: einen
-      Vorsorgevertrag, bei dem ein festgelegter Betrag treuhänderisch verwaltet wird, oder eine
-      Sterbegeldversicherung mit monatlichen Beiträgen. Beide Modelle haben unterschiedliche
-      Vor- und Nachteile – etwa hinsichtlich der Flexibilität, der Laufzeit und der Frage, wie
-      schnell die volle Summe zur Verfügung steht. Wir erläutern Ihnen die Unterschiede, ohne
-      Ihnen ein bestimmtes Produkt aufzudrängen.
+      Für die finanzielle Seite gibt es zwei gängige Modelle: einen Vorsorgevertrag mit
+      treuhänderisch verwaltetem Betrag oder eine Sterbegeldversicherung mit monatlichen
+      Beiträgen. Beide unterscheiden sich in Flexibilität und Laufzeit – wir erläutern Ihnen die
+      Unterschiede ohne ein bestimmtes Produkt aufzudrängen.
     </p>
+  </div>
 
+  <HintBox>
+    Konkrete Konditionen richten sich nach dem jeweiligen Anbieter. Wir nennen Ihnen die zum
+    Gesprächszeitpunkt geltenden Möglichkeiten – unverbindlich.
+  </HintBox>
+
+  <Quote text="Vorsorgen heißt nicht, an das Ende zu denken – sondern der eigenen Familie Klarheit zu schenken." />
+
+  <div class="prose">
     <p>
-      Vereinbaren Sie ein unverbindliches Vorsorgegespräch – wir nehmen uns Zeit für Sie. Wenn
-      Sie sich zunächst über die möglichen Bestattungsarten informieren möchten, finden Sie eine
-      Übersicht auf unserer Seite <a href="/bestattungsarten/">Bestattungsarten</a>. Mehr über
-      unseren <a href="/abschiedsraum/">Abschiedsraum</a> als möglichen Ort der Abschiednahme
-      erfahren Sie auf der entsprechenden Seite.
+      Vereinbaren Sie ein unverbindliches Gespräch. Mehr zu den Möglichkeiten:
+      <a href="/bestattungsarten/">Bestattungsarten</a> ·
+      <a href="/abschiedsraum/">Abschiedsraum</a>.
     </p>
   </div>
 </PageLayout>
 
 <style>
-  .note {
-    background: var(--surface-cream);
-    border-left: 4px solid var(--brand-gold);
-    padding: var(--space-md);
+  .benefit-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-md) 0 var(--space-xl);
+    max-width: 40rem;
+    display: grid;
+    gap: var(--space-2xs);
+  }
+  .benefit-list li {
+    padding: var(--space-sm) var(--space-md);
+    background: var(--surface-beige);
     border-radius: var(--radius-sm);
-    max-width: none;
-    color: var(--text-muted);
+    color: var(--brand-bordeaux-dark);
+    font-weight: 600;
   }
 </style>

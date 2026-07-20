@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import AccordionItem from '../../components/ui/AccordionItem.astro';
 ---
 
 <PageLayout
@@ -8,67 +9,66 @@ import PageLayout from '../../layouts/PageLayout.astro';
   eyebrow="Leistungen"
   path="/leistungen/formalitaeten/"
   heading="Behördengänge und organisatorische Unterstützung"
-  intro="Im Trauerfall sind zahlreiche Formalitäten zu erledigen. Diese Aufgaben übernehmen wir für Sie, damit Sie sich auf den Abschied konzentrieren können."
+  intro="Der Papierkram nach einem Todesfall kann belastend sein. Wir erledigen die notwendigen Schritte in Ihrem Auftrag."
   breadcrumbs={[
     { name: 'Leistungen', path: '/leistungen/' },
     { name: 'Formalitäten', path: '/leistungen/formalitaeten/' },
   ]}
 >
+  <h2>Formalitäten, die wir für Sie übernehmen</h2>
+  <hr class="accent-rule" />
+  <ul class="chip-list">
+    <li>Beurkundung des Sterbefalls</li>
+    <li>Anmeldung bei Friedhof / Krematorium</li>
+    <li>Trauerfeier- und Bestattungstermin</li>
+    <li>Renten- und Versicherungsanträge</li>
+    <li>Abmeldungen und Anträge</li>
+    <li>Überführungen aus dem/ins Ausland</li>
+  </ul>
+
   <div class="prose">
     <p>
-      Der Papierkram nach einem Todesfall kann belastend sein. Wir kennen die notwendigen
-      Schritte und erledigen sie in Ihrem Auftrag – zuverlässig und in enger Abstimmung mit
-      Ihnen.
+      Die Sterbeurkunde wird erst nach der Beurkundung beim Standesamt ausgestellt – und für
+      zahlreiche weitere Schritte benötigt, etwa Anträge bei Versicherungen oder
+      Bankangelegenheiten. Wir kennen diese Abläufe und sorgen dafür, dass nichts unnötig
+      verzögert wird. Manches muss kurzfristig erledigt werden, anderes hat mehr zeitlichen
+      Spielraum – wir sortieren das gemeinsam mit Ihnen.
     </p>
-    <h2>Formalitäten, die wir für Sie übernehmen</h2>
-    <ul>
-      <li>Beurkundung des Sterbefalls beim Standesamt und Beschaffung der Sterbeurkunden</li>
-      <li>Anmeldung der Bestattung bei Friedhof oder Krematorium</li>
-      <li>Organisation von Trauerfeier und Bestattungstermin</li>
-      <li>Abmeldungen und Anträge, soweit sie mit der Bestattung zusammenhängen</li>
-      <li>Unterstützung bei Anträgen an Renten- und Versicherungsträger</li>
-      <li>Abstimmung mit Kranken- und Sterbegeldversicherungen zur Kostenerstattung</li>
-      <li>Koordination mit Ämtern bei Überführungen aus dem Ausland oder ins Ausland</li>
-    </ul>
-    <h2>Warum diese Schritte wichtig sind</h2>
-    <p>
-      Bevor eine Bestattung stattfinden kann, muss der Sterbefall beim zuständigen Standesamt
-      beurkundet werden. Erst danach kann die Sterbeurkunde ausgestellt werden, die wiederum
-      für zahlreiche weitere Schritte benötigt wird – etwa für die Anmeldung bei Friedhof oder
-      Krematorium, für Anträge bei Versicherungen oder für die Abwicklung von Bankangelegenheiten.
-      Wir kennen diese Abläufe und die jeweils zuständigen Stellen und sorgen dafür, dass nichts
-      unnötig verzögert wird.
-    </p>
+  </div>
 
-    <h2>Persönliche Begleitung</h2>
+  <AccordionItem title="Was Sie selbst regeln müssen">
     <p>
-      Über die reinen Behördengänge hinaus stehen wir Ihnen als Ansprechpartner zur Seite.
-      Wir erklären Ihnen, welche Unterlagen benötigt werden, welche Fristen zu beachten sind
-      und welche Schritte in welcher Reihenfolge sinnvoll sind.
+      Einige Angelegenheiten liegen außerhalb unseres Leistungsspektrums – etwa die Kündigung
+      von Mitgliedschaften, Verträgen oder Abonnements der verstorbenen Person sowie
+      erbrechtliche Fragen. Wir weisen Sie im Beratungsgespräch darauf hin und nennen bei Bedarf
+      geeignete Ansprechpartner, etwa Notariate oder Rechtsanwaltskanzleien.
     </p>
+  </AccordionItem>
 
-    <h2>Was Sie selbst regeln müssen</h2>
+  <div class="prose">
     <p>
-      Einige Angelegenheiten – etwa die Kündigung von Mitgliedschaften, Verträgen oder
-      Abonnements der verstorbenen Person, sowie erbrechtliche Fragen – liegen außerhalb
-      unseres Leistungsspektrums. Wir weisen Sie im Beratungsgespräch darauf hin, was noch zu
-      erledigen ist, und nennen Ihnen bei Bedarf geeignete Ansprechpartner, etwa Notariate oder
-      Rechtsanwaltskanzleien.
-    </p>
-
-    <h2>Zeitlicher Ablauf</h2>
-    <p>
-      Manche Formalitäten müssen sehr kurzfristig erledigt werden, andere haben mehr zeitlichen
-      Spielraum. Wir sortieren gemeinsam mit Ihnen, was zuerst erledigt werden muss – etwa die
-      Beurkundung des Sterbefalls und die Terminabsprache mit dem Friedhof – und was in Ruhe im
-      Anschluss an die Bestattung geregelt werden kann.
-    </p>
-
-    <p>
-      Eine Übersicht der benötigten Unterlagen finden Sie auf der Seite
-      <a href="/im-trauerfall/benoetigte-dokumente/">Benötigte Dokumente</a>, eine
-      Schritt-für-Schritt-Orientierung für die ersten Stunden nach einem Todesfall auf unserer
-      Seite <a href="/im-trauerfall/">Im Trauerfall</a>.
+      Benötigte Unterlagen: <a href="/im-trauerfall/benoetigte-dokumente/">Benötigte Dokumente</a>
+      · erste Schritte: <a href="/im-trauerfall/">Im Trauerfall</a>.
     </p>
   </div>
 </PageLayout>
+
+<style>
+  .chip-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-md) 0 var(--space-xl);
+    max-width: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+  .chip-list li {
+    background: var(--surface-cream);
+    border-radius: 999px;
+    padding: 0.5em 1.1em;
+    font-size: 0.92rem;
+    color: var(--brand-bordeaux-dark);
+    font-weight: 600;
+  }
+</style>

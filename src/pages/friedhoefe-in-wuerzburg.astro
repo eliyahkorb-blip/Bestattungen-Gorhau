@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import HintBox from '../components/ui/HintBox.astro';
 ---
 
 <PageLayout
@@ -8,70 +9,58 @@ import PageLayout from '../layouts/PageLayout.astro';
   eyebrow="Ratgeber"
   path="/friedhoefe-in-wuerzburg/"
   heading="Friedhöfe in Würzburg"
-  intro="Rund um Friedhöfe, Grabarten und Ruhezeiten stellen sich viele Fragen. Wir geben Ihnen einen allgemeinen Überblick und beraten Sie zu den konkreten Regelungen vor Ort."
+  intro="Rund um Friedhöfe, Grabarten und Ruhezeiten stellen sich viele Fragen. Ein allgemeiner Überblick."
   breadcrumbs={[{ name: 'Friedhöfe in Würzburg', path: '/friedhoefe-in-wuerzburg/' }]}
 >
   <div class="prose">
     <p>
       In Würzburg und den umliegenden Gemeinden gibt es verschiedene Friedhöfe mit
-      unterschiedlichen Grabarten und Möglichkeiten der Beisetzung. Welche Grabform verfügbar
-      ist und welche Bedingungen gelten, ist in der jeweiligen Friedhofssatzung geregelt.
+      unterschiedlichen Grabarten. Welche Form verfügbar ist, regelt die jeweilige
+      Friedhofssatzung.
     </p>
+  </div>
 
-    <h2>Häufige Grabarten</h2>
-    <ul>
-      <li><strong>Reihengrab</strong> – wird der Reihe nach für die Dauer der Ruhezeit vergeben.</li>
-      <li><strong>Wahlgrab</strong> – frei wählbar, verlängerbar und oft als Familiengrab genutzt.</li>
-      <li><strong>Urnengrab</strong> – für die Beisetzung einer oder mehrerer Urnen.</li>
-      <li><strong>Gemeinschafts- und Urnengartenanlagen</strong> – gepflegte Anlagen mit geringem Pflegeaufwand.</li>
-      <li><strong>Baumgrab</strong> – Urnenbeisetzung an einem Baum in dafür ausgewiesenen Bereichen.</li>
-      <li><strong>Anonyme oder teilanonyme Grabfelder</strong> – Beisetzung ohne bzw. mit zentraler Namensnennung.</li>
-    </ul>
+  <h2>Häufige Grabarten</h2>
+  <hr class="accent-rule" />
+  <ul class="chip-list">
+    <li>Reihengrab</li>
+    <li>Wahlgrab</li>
+    <li>Urnengrab</li>
+    <li>Urnengarten</li>
+    <li>Baumgrab</li>
+    <li>Anonym / teilanonym</li>
+  </ul>
 
-    <h2>Ruhezeiten und Gebühren</h2>
-    <p class="note">
-      Ruhezeiten, verfügbare Grabarten und die Höhe der Gebühren unterscheiden sich je nach
-      Friedhof und Gemeinde und werden durch die jeweilige Satzung festgelegt. Sie können sich
-      ändern. Wir informieren Sie gern über die aktuell geltenden Regelungen für den von Ihnen
-      gewünschten Friedhof.
-    </p>
-
-    <h2>Der Friedhofszwang in Deutschland</h2>
+  <h2>Friedhofszwang und Ruhezeiten</h2>
+  <hr class="accent-rule" />
+  <div class="prose">
     <p>
-      In Deutschland gilt grundsätzlich eine Bestattungspflicht auf einem dafür zugelassenen
-      Friedhof – die sogenannte Friedhofspflicht. Ausnahmen bestehen nur für bestimmte Formen
-      wie die See- oder die Baumbestattung an eigens dafür vorgesehenen Orten. Eine Aufbewahrung
-      der Urne zu Hause ist in Deutschland grundsätzlich nicht zulässig, auch wenn dies in
-      manchen anderen Ländern anders geregelt ist.
+      In Deutschland gilt grundsätzlich die Friedhofspflicht: Beisetzungen müssen auf einem
+      zugelassenen Friedhof erfolgen, Ausnahmen bilden See- und Baumbestattung. Eine Aufbewahrung
+      der Urne zu Hause ist hierzulande nicht zulässig.
     </p>
+  </div>
+  <HintBox>
+    Ruhezeiten, Grabarten und Gebühren unterscheiden sich je nach Friedhof und Gemeinde und
+    können sich ändern. Wir informieren Sie über die aktuell geltenden Regelungen vor Ort.
+  </HintBox>
 
-    <h2>Wie Sie den passenden Friedhof finden</h2>
+  <h2>Den passenden Friedhof finden</h2>
+  <hr class="accent-rule" />
+  <div class="prose">
     <p>
-      Bei der Wahl des Friedhofs spielen häufig die Nähe zum Wohnort, eine bestehende
-      Familiengrabstätte oder die Verbundenheit zu einem bestimmten Stadtteil oder einer
-      Gemeinde eine Rolle. Auch die Frage, welche Grabarten ein Friedhof überhaupt anbietet –
-      etwa ob ein Urnengarten oder eine Baumbestattung möglich ist – kann die Entscheidung
-      beeinflussen. Wir kennen die Friedhöfe in Würzburg und der Region und beraten Sie zu den
-      dort jeweils verfügbaren Möglichkeiten.
+      Nähe zum Wohnort, eine bestehende Familiengrabstätte oder verfügbare Grabarten spielen bei
+      der Wahl oft eine Rolle. Bei Reihen- und Wahlgräbern liegt die Pflege meist bei den
+      Angehörigen – wer das nicht leisten möchte, kann sie an einen Friedhofsgärtner übergeben
+      oder eine pflegearme Grabform wählen.
     </p>
+  </div>
 
-    <h2>Grabpflege: selbst übernehmen oder abgeben</h2>
+  <div class="prose">
     <p>
-      Bei Reihen- und Wahlgräbern liegt die Pflege in der Regel bei den Angehörigen. Wer diese
-      Aufgabe nicht selbst übernehmen kann oder möchte, kann sie an einen Friedhofsgärtner
-      übergeben oder sich für eine pflegearme bzw. pflegefreie Grabform entscheiden, etwa eine
-      Gemeinschafts- oder Urnengartenanlage. Wir informieren Sie über die jeweiligen
-      Möglichkeiten und ortsansässige Ansprechpartner.
-    </p>
-
-    <h2>Wir begleiten Sie</h2>
-    <p>
-      Bei der Auswahl einer Grabstätte, der Abstimmung mit der Friedhofsverwaltung und allen
-      damit verbundenen Formalitäten stehen wir Ihnen zur Seite. Sprechen Sie uns an – wir
-      finden gemeinsam eine Lösung, die zu Ihnen passt. Einen Überblick über die grundsätzlichen
-      Bestattungsarten finden Sie auf unserer Seite
-      <a href="/bestattungsarten/">Bestattungsarten</a>, Hinweise zu den ersten Schritten nach
-      einem Todesfall auf der Seite <a href="/im-trauerfall/">Im Trauerfall</a>.
+      Bei Auswahl und Formalitäten stehen wir Ihnen zur Seite. Übersicht der
+      <a href="/bestattungsarten/">Bestattungsarten</a> · erste Schritte:
+      <a href="/im-trauerfall/">Im Trauerfall</a>.
     </p>
     <p class="src-note">
       Dieser Beitrag dient der allgemeinen Information und stellt keine Rechtsberatung dar.
@@ -80,13 +69,22 @@ import PageLayout from '../layouts/PageLayout.astro';
 </PageLayout>
 
 <style>
-  .note {
-    background: var(--surface-cream);
-    border-left: 4px solid var(--brand-gold);
-    padding: var(--space-md);
-    border-radius: var(--radius-sm);
+  .chip-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-md) 0 var(--space-xl);
     max-width: none;
-    color: var(--text-muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+  .chip-list li {
+    background: var(--surface-cream);
+    border-radius: 999px;
+    padding: 0.5em 1.1em;
+    font-size: 0.92rem;
+    color: var(--brand-bordeaux-dark);
+    font-weight: 600;
   }
   .src-note {
     color: var(--text-muted);

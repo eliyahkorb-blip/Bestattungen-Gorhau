@@ -24,28 +24,28 @@ Automatisiert erzeugt am 2026-07-20 über `npm run test:multipage`. Prüft **jed
 | URL | H1 | Title eindeutig | Description eindeutig | Canonical | Sitemap | Interne Links (aus/ein) | Befunde |
 |---|---|---|---|---|---|---|---|
 | `/404.html` | ✓ | – | – | ✓ | noindex | 49 / 0 | — |
-| `/abschiedsraum/` | ✓ | ✓ | ✓ | ✓ | ✓ | 42 / 58 | — |
+| `/abschiedsraum/` | ✓ | ✓ | ✓ | ✓ | ✓ | 42 / 59 | — |
 | `/barrierefreiheit/` | ✓ | ✓ | ✓ | ✓ | ✓ | 39 / 24 | — |
 | `/bestattungsarten/anonyme-bestattung/` | ✓ | ✓ | ✓ | ✓ | ✓ | 42 / 26 | — |
 | `/bestattungsarten/erdbestattung/` | ✓ | ✓ | ✓ | ✓ | ✓ | 42 / 25 | — |
 | `/bestattungsarten/feuerbestattung/` | ✓ | ✓ | ✓ | ✓ | ✓ | 43 / 25 | — |
-| `/bestattungsarten/` | ✓ | ✓ | ✓ | ✓ | ✓ | 47 / 86 | — |
+| `/bestattungsarten/` | ✓ | ✓ | ✓ | ✓ | ✓ | 45 / 86 | — |
 | `/bestattungsarten/seebestattung/` | ✓ | ✓ | ✓ | ✓ | ✓ | 42 / 26 | — |
-| `/bestattungsvorsorge/` | ✓ | ✓ | ✓ | ✓ | ✓ | 41 / 58 | — |
+| `/bestattungsvorsorge/` | ✓ | ✓ | ✓ | ✓ | ✓ | 41 / 57 | — |
 | `/datenschutz/` | ✓ | ✓ | ✓ | ✓ | ✓ | 39 / 24 | — |
 | `/friedhoefe-in-wuerzburg/` | ✓ | ✓ | ✓ | ✓ | ✓ | 41 / 53 | — |
 | `/im-trauerfall/benoetigte-dokumente/` | ✓ | ✓ | ✓ | ✓ | ✓ | 42 / 26 | — |
-| `/im-trauerfall/` | ✓ | ✓ | ✓ | ✓ | ✓ | 40 / 81 | — |
+| `/im-trauerfall/` | ✓ | ✓ | ✓ | ✓ | ✓ | 40 / 80 | — |
 | `/impressum/` | ✓ | ✓ | ✓ | ✓ | ✓ | 39 / 24 | — |
-| `/` | ✓ | ✓ | ✓ | ✓ | ✓ | 54 / 72 | — |
-| `/kontakt/` | ✓ | ✓ | ✓ | ✓ | ✓ | 39 / 52 | — |
+| `/` | ✓ | ✓ | ✓ | ✓ | ✓ | 58 / 72 | — |
+| `/kontakt/` | ✓ | ✓ | ✓ | ✓ | ✓ | 39 / 53 | — |
 | `/leistungen/formalitaeten/` | ✓ | ✓ | ✓ | ✓ | ✓ | 42 / 28 | — |
-| `/leistungen/` | ✓ | ✓ | ✓ | ✓ | ✓ | 48 / 78 | — |
+| `/leistungen/` | ✓ | ✓ | ✓ | ✓ | ✓ | 48 / 80 | — |
 | `/leistungen/thanatopraxie/` | ✓ | ✓ | ✓ | ✓ | ✓ | 43 / 27 | — |
-| `/leistungen/trauerfeier-und-trauerdruck/` | ✓ | ✓ | ✓ | ✓ | ✓ | 42 / 25 | — |
+| `/leistungen/trauerfeier-und-trauerdruck/` | ✓ | ✓ | ✓ | ✓ | ✓ | 42 / 26 | — |
 | `/leistungen/ueberfuehrungen/` | ✓ | ✓ | ✓ | ✓ | ✓ | 42 / 26 | — |
 | `/mediathek/` | ✓ | ✓ | ✓ | ✓ | ✓ | 41 / 53 | — |
 | `/ueber-uns/galerie/` | ✓ | ✓ | ✓ | ✓ | ✓ | 43 / 28 | — |
-| `/ueber-uns/historie/` | ✓ | ✓ | ✓ | ✓ | ✓ | 44 / 29 | — |
+| `/ueber-uns/historie/` | ✓ | ✓ | ✓ | ✓ | ✓ | 44 / 28 | — |
 | `/ueber-uns/` | ✓ | ✓ | ✓ | ✓ | ✓ | 44 / 78 | — |
 

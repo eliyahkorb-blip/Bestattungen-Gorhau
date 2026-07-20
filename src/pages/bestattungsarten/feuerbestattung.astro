@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import HintBox from '../../components/ui/HintBox.astro';
 ---
 
 <PageLayout
@@ -8,7 +9,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
   eyebrow="Bestattungsarten"
   path="/bestattungsarten/feuerbestattung/"
   heading="Feuerbestattung"
-  intro="Bei der Feuerbestattung wird die verstorbene Person eingeäschert und die Urne anschließend beigesetzt. Sie eröffnet eine Vielzahl unterschiedlicher Grab- und Beisetzungsformen."
+  intro="Nach der Einäscherung wird die Urne beigesetzt – mit einer größeren Vielfalt an Grabformen als bei der Erdbestattung."
   breadcrumbs={[
     { name: 'Bestattungsarten', path: '/bestattungsarten/' },
     { name: 'Feuerbestattung', path: '/bestattungsarten/feuerbestattung/' },
@@ -16,64 +17,72 @@ import PageLayout from '../../layouts/PageLayout.astro';
 >
   <div class="prose">
     <p>
-      Die Feuerbestattung gehört heute zu den am häufigsten gewählten Bestattungsformen. Nach
-      der Einäscherung im Krematorium wird die Urne beigesetzt – wofür verschiedene Grabarten
-      zur Verfügung stehen.
-    </p>
-    <h2>Mögliche Beisetzungsformen der Urne</h2>
-    <ul>
-      <li><strong>Urnenreihengrab und Urnenwahlgrab</strong> auf dem Friedhof</li>
-      <li><strong>Urnengarten und Gemeinschaftsanlagen</strong> mit gepflegter Umgebung</li>
-      <li><strong>Baumbestattung</strong> an einem Baum in dafür ausgewiesenen Anlagen</li>
-      <li><strong>Seebestattung</strong> auf offener See (siehe eigene Seite)</li>
-      <li><strong>Anonyme Beisetzung</strong> auf einer Gemeinschaftsfläche</li>
-    </ul>
-    <h2>Ablauf</h2>
-    <p>
-      Vor der Einäscherung sind bestimmte Formalitäten zu erledigen, die wir für Sie
-      übernehmen. Auf Wunsch ist auch bei einer Feuerbestattung eine Trauerfeier oder ein
-      Abschied am Sarg vor der Einäscherung möglich – die Urne wird erst danach beigesetzt,
-      sodass Trauerfeier und eigentliche Beisetzung zeitlich auseinanderfallen können.
-    </p>
-
-    <h2>Rechtliche Voraussetzung: der letzte Wille</h2>
-    <p>
-      Für eine Feuerbestattung ist neben der ärztlichen Todesbescheinigung in der Regel eine
-      zweite, unabhängige ärztliche Leichenschau erforderlich, die eine unnatürliche Todesursache
-      ausschließt. Diese Formalität übernehmen wir für Sie und stimmen den Termin mit dem
-      Krematorium ab, sodass sich für Sie keine unnötigen Verzögerungen ergeben.
-    </p>
-
-    <h2>Vorteile und Überlegungen</h2>
-    <p>
-      Viele Menschen entscheiden sich für eine Feuerbestattung, weil sie mehr Freiheit bei der
-      Wahl der Beisetzungsform bietet – von der klassischen Urnengrabstätte über pflegearme
-      Gemeinschaftsanlagen bis hin zur Baum- oder Seebestattung. Auch der geringere Platzbedarf
-      und – je nach gewählter Grabform – der reduzierte Pflegeaufwand spielen für manche
-      Familien eine Rolle.
-    </p>
-
-    <h2>Urnengarten und Gemeinschaftsanlagen</h2>
-    <p>
-      Immer mehr Friedhöfe bieten gestaltete Urnengärten oder Gemeinschaftsanlagen an, in denen
-      die Grabpflege durch die Friedhofsverwaltung übernommen wird. Das kann eine Erleichterung
-      für Angehörige sein, die selbst keine dauerhafte Grabpflege leisten können oder möchten,
-      ohne auf einen sichtbaren Ort der Erinnerung zu verzichten.
-    </p>
-    <p>
-      Auch eine Baumbestattung folgt diesem Gedanken: Die Urne wird im Wurzelbereich eines
-      Baumes in einem dafür ausgewiesenen Bestattungswald oder auf einer entsprechend
-      gestalteten Friedhofsfläche beigesetzt – eine naturnahe Alternative zum klassischen Grab.
-    </p>
-
-    <p>
-      Welche Beisetzungsformen konkret angeboten werden und welche Gebühren anfallen, hängt vom
-      jeweiligen Friedhof und der Gemeinde ab. Wir informieren Sie über die aktuell geltenden
-      Möglichkeiten in Ihrer Region. Mehr zu den einzelnen Beisetzungsformen finden Sie auf den
-      Seiten <a href="/bestattungsarten/seebestattung/">Seebestattung</a> und
-      <a href="/bestattungsarten/anonyme-bestattung/">Anonyme Bestattung</a>, allgemeine
-      Hinweise zu Friedhöfen auf unserer Seite
-      <a href="/friedhoefe-in-wuerzburg/">Friedhöfe in Würzburg</a>.
+      Die Feuerbestattung gehört heute zu den am häufigsten gewählten Bestattungsformen. Nach der
+      Einäscherung im Krematorium stehen verschiedene Grabarten für die Urne zur Verfügung.
     </p>
   </div>
+
+  <h2>Beisetzungsformen der Urne</h2>
+  <hr class="accent-rule" />
+  <ul class="chip-list">
+    <li>Urnenreihen- und Urnenwahlgrab</li>
+    <li>Urnengarten und Gemeinschaftsanlagen</li>
+    <li>Baumbestattung</li>
+    <li><a href="/bestattungsarten/seebestattung/">Seebestattung</a></li>
+    <li><a href="/bestattungsarten/anonyme-bestattung/">Anonyme Beisetzung</a></li>
+  </ul>
+
+  <h2>Ablauf und rechtliche Voraussetzung</h2>
+  <hr class="accent-rule" />
+  <div class="prose">
+    <p>
+      Neben der Todesbescheinigung ist für eine Feuerbestattung eine zweite, unabhängige
+      ärztliche Leichenschau erforderlich – diese Formalität übernehmen wir für Sie. Auf Wunsch
+      ist vor der Einäscherung eine Trauerfeier oder ein Abschied am Sarg möglich; die Urne wird
+      erst danach beigesetzt.
+    </p>
+  </div>
+
+  <h2>Warum viele sich dafür entscheiden</h2>
+  <hr class="accent-rule" />
+  <div class="prose">
+    <p>
+      Die Feuerbestattung bietet mehr Freiheit bei der Grabwahl: von der klassischen
+      Urnengrabstätte über pflegearme Gemeinschaftsanlagen bis zur naturnahen Baumbestattung. Bei
+      Urnengärten übernimmt oft die Friedhofsverwaltung die Pflege – eine Erleichterung für
+      Angehörige, die selbst keine dauerhafte Grabpflege leisten möchten.
+    </p>
+  </div>
+
+  <HintBox>
+    Beisetzungsformen und Gebühren hängen vom jeweiligen Friedhof ab. Allgemeine Hinweise finden
+    Sie auf unserer Seite <a href="/friedhoefe-in-wuerzburg/">Friedhöfe in Würzburg</a>.
+  </HintBox>
 </PageLayout>
+
+<style>
+  .chip-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-md) 0 var(--space-xl);
+    max-width: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+  .chip-list li {
+    background: var(--surface-cream);
+    border-radius: 999px;
+    padding: 0.5em 1.1em;
+    font-size: 0.92rem;
+    color: var(--brand-bordeaux-dark);
+    font-weight: 600;
+  }
+  .chip-list a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .chip-list a:hover {
+    text-decoration: underline;
+  }
+</style>

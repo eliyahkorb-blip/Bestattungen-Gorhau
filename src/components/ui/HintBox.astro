@@ -1,0 +1,29 @@
+---
+export interface Props {
+  label?: string;
+  tone?: 'gold' | 'bordeaux';
+}
+const { label = 'Hinweis', tone = 'gold' } = Astro.props;
+---
+
+<div class={`hintbox hintbox--${tone}`}>
+  <p><strong>{label}:</strong> <slot /></p>
+</div>
+
+<style>
+  .hintbox {
+    background: var(--surface-cream);
+    border-left: 4px solid var(--brand-gold);
+    padding: var(--space-md);
+    border-radius: var(--radius-sm);
+    max-width: 46rem;
+    color: var(--text-muted);
+  }
+  .hintbox--bordeaux {
+    border-left-color: var(--brand-bordeaux);
+  }
+  .hintbox p {
+    margin: 0;
+    max-width: none;
+  }
+</style>

@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import HintBox from '../../components/ui/HintBox.astro';
 ---
 
 <PageLayout
@@ -8,7 +9,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
   eyebrow="Leistungen"
   path="/leistungen/ueberfuehrungen/"
   heading="Nationale und internationale Überführungen"
-  intro="Ob innerhalb Deutschlands oder über Landesgrenzen hinweg – wir organisieren die Überführung verstorbener Menschen würdevoll und kümmern uns um die notwendigen Formalitäten."
+  intro="Innerhalb Deutschlands oder über Landesgrenzen hinweg – wir organisieren die Überführung würdevoll und kümmern uns um alle Formalitäten."
   breadcrumbs={[
     { name: 'Leistungen', path: '/leistungen/' },
     { name: 'Überführungen', path: '/leistungen/ueberfuehrungen/' },
@@ -16,76 +17,72 @@ import PageLayout from '../../layouts/PageLayout.astro';
 >
   <div class="prose">
     <p>
-      Ein Todesfall kann sich fernab des Heimatortes ereignen – auf Reisen, im Urlaub oder in
-      einer Einrichtung in einer anderen Stadt. Ebenso kann der Wunsch bestehen, eine
-      verstorbene Person in ihr Heimatland zu überführen. In all diesen Fällen sind wir für
-      Sie da.
+      Ein Todesfall kann sich fernab des Heimatortes ereignen – auf Reisen oder in einer
+      Einrichtung in einer anderen Stadt. Auch der Wunsch, eine verstorbene Person in ihr
+      Heimatland zu überführen, kommt vor. In all diesen Fällen sind wir für Sie da.
     </p>
-    <h2>Überführungen im Inland</h2>
-    <p>
-      Wir holen die verstorbene Person an jedem Ort in Deutschland ab und überführen sie
-      würdevoll an den gewünschten Bestattungsort. Die Abstimmung mit Behörden, Kliniken oder
-      Pflegeeinrichtungen übernehmen wir für Sie.
-    </p>
-    <h2>Überführungen ins Ausland und aus dem Ausland</h2>
-    <p>
-      Bei Überführungen über Landesgrenzen hinweg sind besondere Bestimmungen und Dokumente zu
-      beachten. Wir kennen die erforderlichen Formalitäten, kümmern uns um den Leichenpass und
-      arbeiten mit zuverlässigen Partnern zusammen, damit die Überführung reibungslos verläuft.
-    </p>
-    <h2>Was wir für Sie übernehmen</h2>
-    <ul>
-      <li>Abholung und Transport mit geeigneten Fahrzeugen</li>
-      <li>Abstimmung mit Behörden, Kliniken und Einrichtungen</li>
-      <li>Beschaffung der notwendigen Dokumente und Genehmigungen</li>
-      <li>Koordination mit Bestattern am Zielort im In- und Ausland</li>
-    </ul>
+  </div>
 
-    <h2>Wann eine Überführung notwendig wird</h2>
+  <h2>Inland und Ausland</h2>
+  <hr class="accent-rule" />
+  <div class="prose">
     <p>
-      Eine Überführung wird immer dann erforderlich, wenn der Sterbeort nicht mit dem
-      gewünschten Bestattungsort übereinstimmt – etwa nach einem Krankenhausaufenthalt in
-      einer anderen Stadt, nach einem Unfall auf einer Reise oder wenn eine verstorbene
-      Person in ihre Heimatregion oder ihr Heimatland überführt werden soll. Auch innerhalb
-      Würzburgs und der umliegenden Gemeinden übernehmen wir die Überführung in unsere
-      Räumlichkeiten, sobald die ärztliche Todesbescheinigung vorliegt.
+      Im Inland holen wir die verstorbene Person an jedem Ort in Deutschland ab und stimmen
+      Behörden, Kliniken und Einrichtungen ab. Bei Überführungen über Landesgrenzen kennen wir
+      die besonderen Bestimmungen, kümmern uns um den Leichenpass und arbeiten mit
+      zuverlässigen Partnern am Zielort.
     </p>
+  </div>
 
-    <h2>Formalitäten bei internationalen Überführungen</h2>
+  <h2>Was wir für Sie übernehmen</h2>
+  <hr class="accent-rule" />
+  <ul class="chip-list">
+    <li>Abholung und Transport</li>
+    <li>Abstimmung mit Behörden und Kliniken</li>
+    <li>Dokumente und Genehmigungen</li>
+    <li>Koordination am Zielort</li>
+  </ul>
+
+  <h2>Wann eine Überführung notwendig wird</h2>
+  <hr class="accent-rule" />
+  <div class="prose">
     <p>
-      Überführungen ins Ausland oder aus dem Ausland nach Deutschland unterliegen besonderen
-      rechtlichen und hygienischen Vorgaben, die je nach Zielland unterschiedlich ausfallen
-      können – etwa hinsichtlich der Einsargung, der erforderlichen Dokumente oder der Fristen.
-      Wir klären diese Anforderungen für Sie mit den zuständigen Stellen und mit unseren
-      Partnern am Zielort, damit die Überführung ohne unnötige Verzögerung erfolgen kann.
+      Immer dann, wenn Sterbeort und gewünschter Bestattungsort nicht übereinstimmen – etwa nach
+      einem Krankenhausaufenthalt auswärts oder bei einer Überführung ins Heimatland. Auch
+      innerhalb Würzburgs übernehmen wir die Überführung in unsere Räumlichkeiten, sobald die
+      Todesbescheinigung vorliegt.
     </p>
+  </div>
 
-    <div class="hinweisbox">
-      <p>
-        <strong>Hinweis:</strong> Die genauen Anforderungen unterscheiden sich je nach Land und
-        können sich ändern. Wir klären die aktuell geltenden Bestimmungen für Ihren konkreten
-        Fall und informieren Sie über den zu erwartenden zeitlichen Ablauf.
-      </p>
-    </div>
+  <HintBox>
+    Anforderungen unterscheiden sich je nach Land. Wir klären die aktuell geltenden
+    Bestimmungen und den zeitlichen Ablauf für Ihren Fall.
+  </HintBox>
 
+  <div class="prose">
     <p>
-      Sprechen Sie uns an – wir beraten Sie zu den Möglichkeiten und dem konkreten Ablauf in
-      Ihrer Situation. Weitere organisatorische Schritte rund um eine Überführung, etwa die
-      Beurkundung des Sterbefalls, finden Sie auf unserer Seite
-      <a href="/leistungen/formalitaeten/">Formalitäten</a>. Informationen zu den
-      Bestattungsmöglichkeiten am Zielort erhalten Sie auf der Seite
-      <a href="/bestattungsarten/">Bestattungsarten</a>.
+      Weitere Schritte: <a href="/leistungen/formalitaeten/">Formalitäten</a> ·
+      Bestattungsmöglichkeiten am Zielort: <a href="/bestattungsarten/">Bestattungsarten</a>.
     </p>
   </div>
 </PageLayout>
 
 <style>
-  .hinweisbox {
+  .chip-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-md) 0 var(--space-xl);
+    max-width: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+  .chip-list li {
     background: var(--surface-cream);
-    border-left: 4px solid var(--brand-gold);
-    padding: var(--space-md);
-    border-radius: var(--radius-sm);
-    max-width: 46rem;
-    color: var(--text-muted);
+    border-radius: 999px;
+    padding: 0.5em 1.1em;
+    font-size: 0.92rem;
+    color: var(--brand-bordeaux-dark);
+    font-weight: 600;
   }
 </style>

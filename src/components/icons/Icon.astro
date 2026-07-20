@@ -1,0 +1,79 @@
+---
+/*
+ * Handgezeichnete, reduzierte Linien-Icons in Markenfarbe (currentColor).
+ * Bewusst KEINE generischen Bestatter-Cliparts (Kerze, Taube, Kreuz, Blume) –
+ * das Kreuz bleibt exklusiv Teil des Original-Logos. Stattdessen ruhige,
+ * warme, abstrahierte Motive: Geborgenheit, Wachstum, Licht, Klarheit.
+ */
+export interface Props {
+  name:
+    | 'embrace'
+    | 'leaf'
+    | 'document'
+    | 'window-light'
+    | 'clock'
+    | 'map-pin'
+    | 'history'
+    | 'film'
+    | 'phone'
+    | 'mail'
+    | 'compass'
+    | 'sun'
+    | 'family';
+  size?: number;
+  class?: string;
+}
+const { name, size = 32, class: klass = '' } = Astro.props;
+
+const paths: Record<Props['name'], string> = {
+  // Zwei sich öffnende, geschützte Bögen – Geborgenheit/Beistand
+  embrace:
+    'M8 30c0-9 5-16 16-16s16 7 16 16 M8 30c3-2 7-3 8-3 M40 30c-3-2-7-3-8-3',
+  // Stilisiertes Blatt mit Mittelrippe – Wachstum, Naturverbundenheit, Kreislauf
+  leaf: 'M24 8c10 4 14 12 12 24-12 2-20-2-24-12-3-8 2-16 12-12z M24 8c-2 8-2 16 2 24',
+  // Offenes Dokument mit Häkchen – Klarheit, Vorsorge, geordnete Wünsche
+  document:
+    'M14 8h14l6 6v26a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2z M28 8v6h6 M18 26l4 4 8-9',
+  // Fenster mit sanftem Lichteinfall – Abschiedsraum, Ruhe, Licht
+  'window-light':
+    'M10 14h28v24a2 2 0 0 1-2 2H12a2 2 0 0 1-2-2V14z M10 14l14-8 14 8 M24 20v20 M10 30h28',
+  // Ruhige Uhr – Erreichbarkeit Tag und Nacht
+  clock: 'M24 8a16 16 0 1 0 0 32 16 16 0 0 0 0-32z M24 15v9l7 4',
+  // Standort-Nadel – Anfahrt/Standort
+  'map-pin':
+    'M24 6c8 0 14 6 14 14 0 10-14 22-14 22S10 30 10 20c0-8 6-14 14-14z M24 24a4 4 0 1 0 0-8 4 4 0 0 0 0 8z',
+  // Ineinandergreifende Ringe – Historie, Generationen, Kontinuität
+  history: 'M17 24a9 9 0 1 1 18 0 9 9 0 0 1-18 0z M13 24a9 9 0 1 0 18 0',
+  // Abgerundetes Wiedergabe-Dreieck im Rahmen – Mediathek
+  film: 'M10 10h28v28H10z M20 18v12l10-6z',
+  // Ruhiger Hörer – Telefon
+  phone:
+    'M14 10c1 6 3 11 7 15s9 6 15 7l3-6c-3-1-6-2-8-4l-4 3c-3-2-5-4-7-7l3-4c-2-2-3-5-4-8z',
+  // Umschlag – E-Mail
+  mail: 'M8 12h32v24H8z M8 12l16 14 16-14',
+  // Kompass – Orientierung/Erste Schritte
+  compass:
+    'M24 6a18 18 0 1 0 0 36 18 18 0 0 0 0-36z M30 18l-4 10-10 4 4-10z',
+  // Sanfte Sonne – Hoffnung, Wärme
+  sun: 'M24 14a10 10 0 1 0 0 20 10 10 0 0 0 0-20z M24 4v6 M24 38v6 M8 24H2 M46 24h-6 M11 11l4 4 M37 37l-4-4 M11 37l4-4 M37 11l-4 4',
+  // Zwei einander zugewandte Figuren – Familie, Begleitung
+  family:
+    'M17 22a5 5 0 1 0 0-10 5 5 0 0 0 0 10z M31 22a5 5 0 1 0 0-10 5 5 0 0 0 0 10z M6 38c1-8 5-12 11-12s10 4 11 12 M20 38c1-8 5-12 11-12s10 4 11 12',
+};
+---
+
+<svg
+  width={size}
+  height={size}
+  viewBox="0 0 48 48"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2.2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class={`icon icon--${name} ${klass}`}
+  aria-hidden="true"
+  focusable="false"
+>
+  <path d={paths[name]}></path>
+</svg>

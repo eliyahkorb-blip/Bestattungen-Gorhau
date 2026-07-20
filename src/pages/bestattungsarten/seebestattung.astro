@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import HintBox from '../../components/ui/HintBox.astro';
 ---
 
 <PageLayout
@@ -8,7 +9,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
   eyebrow="Bestattungsarten"
   path="/bestattungsarten/seebestattung/"
   heading="Seebestattung"
-  intro="Bei der Seebestattung wird die Urne auf offener See beigesetzt. Für viele Menschen ist die Weite des Meeres ein tröstlicher Gedanke für den letzten Weg."
+  intro="Bei der Seebestattung wird die Urne auf offener See beigesetzt – für viele Menschen ein tröstlicher Gedanke für den letzten Weg."
   breadcrumbs={[
     { name: 'Bestattungsarten', path: '/bestattungsarten/' },
     { name: 'Seebestattung', path: '/bestattungsarten/seebestattung/' },
@@ -16,80 +17,52 @@ import PageLayout from '../../layouts/PageLayout.astro';
 >
   <div class="prose">
     <p>
-      Die Seebestattung ist eine besondere Form der Feuerbestattung. Nach der Einäscherung wird
-      die Asche in einer wasserlöslichen Seeurne an einer dafür zugelassenen Stelle auf See
-      beigesetzt.
+      Die Seebestattung ist eine besondere Form der Feuerbestattung. Die Asche wird in einer
+      wasserlöslichen Seeurne an einer zugelassenen Stelle auf See beigesetzt.
     </p>
-    <h2>Ablauf einer Seebestattung</h2>
-    <p>
-      Die Beisetzung erfolgt von einem Schiff aus an einem festgelegten Seegebiet. Angehörige
-      können an der Beisetzungsfahrt teilnehmen; alternativ ist eine stille Beisetzung im
-      kleinsten Kreis der Besatzung möglich. Die Koordinaten des Beisetzungsortes werden den
-      Angehörigen mitgeteilt.
-    </p>
-    <h2>Was wir für Sie organisieren</h2>
-    <ul>
-      <li>Einäscherung und Beschaffung der Seeurne</li>
-      <li>Abstimmung mit einer Reederei für die Beisetzungsfahrt</li>
-      <li>Erledigung der notwendigen Formalitäten</li>
-      <li>Auf Wunsch eine vorherige Trauerfeier</li>
-    </ul>
+  </div>
 
-    <h2>Zugelassene Seebestattungsgebiete</h2>
+  <h2>Ablauf und Organisation</h2>
+  <hr class="accent-rule" />
+  <div class="prose">
     <p>
-      Seebestattungen dürfen in Deutschland nur in dafür behördlich ausgewiesenen
-      Seebestattungsgebieten stattfinden, etwa in der Nord- oder Ostsee. Für Angehörige aus
-      Würzburg bieten spezialisierte Reedereien organisierte Ausfahrten von deutschen
-      Küstenhäfen an, zu denen die Anreise entsprechend zu planen ist.
+      Die Beisetzung erfolgt von einem Schiff aus. Angehörige können an der Fahrt teilnehmen oder
+      eine stille Beisetzung im kleinsten Kreis der Besatzung wählen; die Koordinaten werden
+      danach mitgeteilt. Wir organisieren Einäscherung, Seeurne, Reederei und – auf Wunsch – eine
+      vorherige Trauerfeier.
     </p>
+  </div>
 
-    <h2>Warum sich Angehörige für eine Seebestattung entscheiden</h2>
+  <h2>Zugelassene Seebestattungsgebiete</h2>
+  <hr class="accent-rule" />
+  <div class="prose">
     <p>
-      Für manche Menschen ist die See ein Ort, mit dem sie zu Lebzeiten eine besondere
-      Verbindung hatten – etwa durch Beruf, Herkunft oder persönliche Vorlieben. Andere
-      empfinden die Weite des Meeres als tröstlichen Gegenpol zu einem festen, sichtbaren Grab.
-      Ein wichtiger praktischer Aspekt: Eine Seebestattung ist grundsätzlich pflegefrei, da kein
-      Grab im klassischen Sinn entsteht.
+      Seebestattungen sind in Deutschland nur in behördlich ausgewiesenen Gebieten zulässig, etwa
+      in Nord- oder Ostsee. Spezialisierte Reedereien bieten organisierte Ausfahrten von
+      deutschen Küstenhäfen an.
     </p>
+  </div>
 
-    <h2>Kein festes Grab, aber ein Ort der Erinnerung</h2>
+  <h2>Kein festes Grab, aber ein Ort der Erinnerung</h2>
+  <hr class="accent-rule" />
+  <div class="prose">
     <p>
-      Da es kein physisches Grab gibt, das besucht werden kann, spielt für viele Angehörige die
-      Beisetzungsfahrt selbst eine besondere Rolle als gemeinsamer Abschiedsmoment. Alternativ
-      erhalten Sie nach der Beisetzung eine Seekarte mit den Koordinaten, die als Erinnerungsort
-      dienen kann.
+      Die See ist für manche ein Ort besonderer Verbindung, für andere ein tröstlicher Gegenpol
+      zum festen Grab – und grundsätzlich pflegefrei. Als Erinnerungsort erhalten Sie eine
+      Seekarte mit den Koordinaten; manche Reedereien bieten auch spätere Ausfahrten zum
+      Jahrestag an.
     </p>
-    <p>
-      Manche Reedereien bieten zudem an, zu einem späteren Zeitpunkt erneut zum Beisetzungsort
-      hinauszufahren, etwa zu einem Jahrestag. Wir informieren Sie gern über diese
-      Möglichkeiten, sofern sie von der jeweiligen Reederei angeboten werden.
-    </p>
+  </div>
 
-    <div class="hinweisbox">
-      <p>
-        <strong>Hinweis:</strong> Seebestattungen sind nur an behördlich zugelassenen
-        Seebestattungsplätzen zulässig und unterliegen bestimmten rechtlichen Vorgaben. Wir
-        klären die aktuell geltenden Bestimmungen für Sie und übernehmen die Anmeldung bei der
-        zuständigen Reederei.
-      </p>
-    </div>
+  <HintBox>
+    Seebestattungen unterliegen rechtlichen Vorgaben. Wir klären die aktuell geltenden
+    Bestimmungen und übernehmen die Anmeldung bei der Reederei.
+  </HintBox>
 
+  <div class="prose">
     <p>
-      Gern beraten wir Sie zu den Möglichkeiten und dem konkreten Ablauf einer Seebestattung.
-      Einen Überblick über weitere Bestattungsarten finden Sie auf unserer Seite
-      <a href="/bestattungsarten/">Bestattungsarten</a>, Informationen zur vorausschauenden
-      Planung auf der Seite <a href="/bestattungsvorsorge/">Bestattungsvorsorge</a>.
+      Weitere Bestattungsarten im Überblick: <a href="/bestattungsarten/">Bestattungsarten</a> ·
+      vorausschauend planen: <a href="/bestattungsvorsorge/">Bestattungsvorsorge</a>.
     </p>
   </div>
 </PageLayout>
-
-<style>
-  .hinweisbox {
-    background: var(--surface-cream);
-    border-left: 4px solid var(--brand-gold);
-    padding: var(--space-md);
-    border-radius: var(--radius-sm);
-    max-width: 46rem;
-    color: var(--text-muted);
-  }
-</style>

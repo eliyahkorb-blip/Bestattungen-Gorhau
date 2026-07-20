@@ -1,5 +1,32 @@
 # Changelog
 
+## 1.3.0 – Visuelle Neuinszenierung, weniger Textlast, mehr Bildsprache
+
+### Neu
+- **Neues Design-System** (`src/components/ui/`, `src/components/icons/`): handgezeichnete
+  Linien-Icons in Markenfarbe (kein Bestatter-Clipart, kein Kerzen-/Tauben-/Blumen-Symbol –
+  stattdessen abstrahierte Motive wie Geborgenheit, Blatt, Fenster mit Licht, Kompass),
+  `IconFeature`-Kacheln, `Quote`-Zitatblock, `FactStrip`-Faktenleiste, barrierefreies
+  `AccordionItem` (natives `<details>`/`<summary>`, Inhalt bleibt im HTML, voll
+  tastaturbedienbar), `HintBox`, `WaveDivider` (organischer Sektionsübergang), `HeroVisual`
+  (zurückhaltende abstrakte Illustration – da noch kein echtes Unternehmensfoto vorliegt,
+  bewusst keine erfundene Stockfoto-/KI-Bildsprache).
+- **Startseite komplett neu inszeniert:** kurze zweispaltige Hero-Sektion (Text + Illustration,
+  zwei klare CTAs „Im Trauerfall anrufen“ / „Vorsorge besprechen“), vier Schnellzugriff-Kacheln
+  (Im Trauerfall, Bestattungsarten, Vorsorge, Abschiedsraum), dreiteilige Philosophie mit Icons,
+  Faktenleiste, kompakte „Was uns ausmacht“-Kacheln, alternierender Sektionsrhythmus
+  (Creme/Beige/Weiß statt durchgehend Weiß). Von 10 auf 8 klar unterscheidbare Module verdichtet.
+- **Textlast auf allen Detailseiten reduziert:** Leistungs- und Bestattungsarten-Unterseiten von
+  je 5–7 aufeinanderfolgenden H2-Textblöcken auf 2–4 kondensiert; lange Zusatzlisten in
+  Akkordeons verschoben (Inhalt bleibt crawlbar, ist aber nicht mehr als Textwand sichtbar);
+  einheitliche Chip-Listen statt Aufzählungspunkte für kurze Fakten.
+- Generische weiße 3-Spalten-Kartenraster (identisch auf mehreren Seiten) durch `IconFeature`-
+  Kacheln, Chip-Listen, Mini-Step-Listen und Fact-Strips ersetzt – visuelle Sprache variiert
+  jetzt je Seite statt sich zu wiederholen.
+- WCAG-Regression durch neue Hero-Buttons behoben (Touch-Target-Abstand auf Mobil).
+- Erneut vollständig verifiziert: axe-core auf allen 25 Seiten 0 Verstöße, Lighthouse auf allen
+  8 Kern-Seitentypen (Desktop + Mobil) 100/100/100/100, Multi-Page-SEO-Report weiterhin 0 Befunde.
+
 ## 1.2.0 – Multi-Page-Vertiefung, Inhaltsausbau, vollständige Einzelseiten-Prüfung
 
 ### Neu

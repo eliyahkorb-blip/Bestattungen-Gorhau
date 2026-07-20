@@ -1,75 +1,121 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaSection from '../components/CtaSection.astro';
+import HeroVisual from '../components/ui/HeroVisual.astro';
+import IconFeature from '../components/ui/IconFeature.astro';
+import FactStrip from '../components/ui/FactStrip.astro';
+import Quote from '../components/ui/Quote.astro';
+import WaveDivider from '../components/ui/WaveDivider.astro';
+import Icon from '../components/icons/Icon.astro';
 import { company } from '../data/company';
 
-const services = [
+const orientation = [
   {
+    icon: 'compass' as const,
     title: 'Im Trauerfall',
-    text: 'Erste Schritte, wenn ein Mensch verstorben ist – wir übernehmen die Organisation und begleiten Sie ruhig durch alle Formalitäten.',
+    text: 'Erste Schritte, ruhig und ohne Zeitdruck erklärt.',
     href: '/im-trauerfall/',
   },
   {
+    icon: 'leaf' as const,
     title: 'Bestattungsarten',
-    text: 'Erd-, Feuer-, See- und anonyme Bestattung. Wir erläutern die Möglichkeiten und finden gemeinsam den passenden Abschied.',
+    text: 'Erd-, Feuer-, See- und anonyme Bestattung im Überblick.',
     href: '/bestattungsarten/',
   },
   {
-    title: 'Überführungen',
-    text: 'Überführungen im In- und Ausland, würdevoll und zuverlässig organisiert.',
-    href: '/leistungen/ueberfuehrungen/',
-  },
-  {
-    title: 'Thanatopraxie',
-    text: 'Hygienische und ästhetische Versorgung der verstorbenen Person durch geschulte Fachkräfte.',
-    href: '/leistungen/thanatopraxie/',
-  },
-  {
-    title: 'Abschiedsraum',
-    text: 'Unser hauseigener Abschiedsraum gibt Raum und Zeit für einen persönlichen Abschied im kleinen Kreis.',
-    href: '/abschiedsraum/',
-  },
-  {
-    title: 'Bestattungsvorsorge',
-    text: 'Regeln Sie Ihre Wünsche zu Lebzeiten und entlasten Sie Ihre Angehörigen – individuell und unverbindlich beraten.',
+    icon: 'document' as const,
+    title: 'Vorsorge',
+    text: 'Wünsche zu Lebzeiten festhalten, Angehörige entlasten.',
     href: '/bestattungsvorsorge/',
   },
+  {
+    icon: 'window-light' as const,
+    title: 'Abschiedsraum',
+    text: 'Raum und Zeit für einen persönlichen Abschied.',
+    href: '/abschiedsraum/',
+  },
+];
+
+const reasons = [
+  {
+    icon: 'family' as const,
+    title: 'Familiengeführt seit 1970',
+    text: 'Kein anonymes Unternehmen – feste Ansprechpartner vor Ort.',
+    href: '/ueber-uns/',
+  },
+  {
+    icon: 'clock' as const,
+    title: 'Tag und Nacht erreichbar',
+    text: 'Im Trauerfall sind wir jederzeit für Sie da.',
+    href: '/kontakt/',
+  },
+  {
+    icon: 'embrace' as const,
+    title: 'Alles aus einer Hand',
+    text: 'Überführung, Formalitäten und Trauerfeier – koordiniert.',
+    href: '/leistungen/',
+  },
+  {
+    icon: 'window-light' as const,
+    title: 'Individuelle Abschiednahme',
+    text: 'Im Abschiedsraum, kirchlich oder in stillem Rahmen.',
+    href: '/abschiedsraum/',
+  },
+];
+
+const facts = [
+  { value: '1970', label: 'gegründet' },
+  { value: '1980', label: 'in der Reuterstraße' },
+  { value: '2004', label: 'Abschiedsraum eröffnet' },
+  { value: '24/7', label: 'im Trauerfall erreichbar' },
 ];
 ---
 
 <BaseLayout
   title="Bestattungen Gorhau in Würzburg-Heidingsfeld | Bestatter seit 1970"
-  description="Bestattungs- und Überführungs-Institut Gorhau in Würzburg-Heidingsfeld: familiengeführt seit 1970. Zuhören, beraten, begleiten – persönlich und zuverlässig im Trauerfall. Tag und Nacht erreichbar."
+  description="Bestattungs- und Überführungs-Institut Gorhau in Würzburg-Heidingsfeld: familiengeführt seit 1970. Persönlich an Ihrer Seite im Trauerfall, bei der Vorsorge und beim würdevollen Abschied."
   path="/"
   includeBusinessLd={true}
 >
   <!-- Hero -->
   <section class="hero">
     <div class="container hero__inner">
-      <p class="eyebrow">Familienunternehmen seit 1970 · Würzburg-Heidingsfeld</p>
-      <h1>Bestattungen Gorhau in Würzburg-Heidingsfeld</h1>
-      <p class="hero__sub">
-        Zuhören, beraten und begleiten – persönlich und zuverlässig im Trauerfall.
-      </p>
-      <p class="hero__text">
-        Der Tod eines nahen Menschen verändert alles. In dieser Zeit stehen wir Ihnen ruhig
-        und verständnisvoll zur Seite: Wir hören zu, beraten Sie in aller Ruhe und übernehmen
-        die Organisation – vom ersten Anruf bis zum würdevollen Abschied. Als familiengeführtes
-        Institut in Würzburg-Heidingsfeld begleiten wir Trauerfamilien aus Würzburg und der
-        Region bereits seit 1970 – mit der gleichen Sorgfalt, die schon am Anfang stand.
-      </p>
-      <div class="hero__actions">
-        <a class="btn btn--primary" href={`tel:${company.phoneRaw}`}>
-          <span aria-hidden="true">☎</span> Im Trauerfall anrufen: {company.phone}
-        </a>
-        <a class="btn btn--secondary" href="/bestattungsvorsorge/">Vorsorgegespräch vereinbaren</a>
+      <div class="hero__text-col">
+        <p class="eyebrow">Familienunternehmen seit 1970 · Würzburg-Heidingsfeld</p>
+        <h1>Bestattungen Gorhau in Würzburg</h1>
+        <p class="hero__sub">
+          Persönlich an Ihrer Seite – im Trauerfall, bei der Vorsorge und bei allen Fragen rund
+          um einen würdevollen Abschied.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href={`tel:${company.phoneRaw}`}>
+            <span aria-hidden="true">☎</span> Im Trauerfall anrufen
+          </a>
+          <a class="btn btn--secondary" href="/bestattungsvorsorge/">Vorsorge besprechen</a>
+        </div>
+        <p class="hero__note">{company.emergencyNote}</p>
       </div>
-      <p class="hero__note">{company.emergencyNote}</p>
+      <div class="hero__visual-col" aria-hidden="true">
+        <HeroVisual />
+      </div>
+    </div>
+  </section>
+
+  <WaveDivider fill="var(--surface-beige)" />
+
+  <!-- Schnelle Orientierung -->
+  <section class="section section--beige">
+    <div class="container">
+      <p class="eyebrow">Schnelle Orientierung</p>
+      <h2>Wobei können wir Ihnen helfen?</h2>
+      <div class="tile-grid">
+        {orientation.map((o) => <IconFeature icon={o.icon} title={o.title} text={o.text} href={o.href} />)}
+      </div>
     </div>
   </section>
 
   <!-- Philosophie -->
-  <section class="section section--beige philosophy">
+  <section class="section section--white philosophy">
     <div class="container">
       <p class="eyebrow">Unsere Haltung</p>
       <h2 class="philosophy__words">
@@ -78,219 +124,127 @@ const services = [
         <span>Begleiten</span>
       </h2>
       <p class="philosophy__text">
-        Seit 1970 begleiten wir als Familienunternehmen Menschen aus Würzburg und der Region
-        in Zeiten der Trauer. Für uns bedeutet Bestattungskultur, dass jeder Abschied so
-        persönlich sein darf wie das Leben, an das er erinnert.
+        So arbeiten wir seit 1970 als Familienunternehmen – persönlich, ohne Druck und mit
+        offenem Ohr für das, was Ihnen wichtig ist.
       </p>
-      <div class="philosophy__grid">
-        <div>
+      <div class="pillar-row">
+        <div class="pillar">
+          <Icon name="embrace" size={28} class="pillar__icon" />
           <h3>Zuhören</h3>
-          <p>
-            Am Anfang steht das Gespräch – nicht das Formular. Wir nehmen uns Zeit, zu
-            verstehen, was Ihnen und der verstorbenen Person wichtig war, bevor wir über
-            Ablauf und Organisation sprechen.
-          </p>
+          <p>Erst das Gespräch, dann das Formular.</p>
         </div>
-        <div>
+        <div class="pillar">
+          <Icon name="document" size={28} class="pillar__icon" />
           <h3>Beraten</h3>
-          <p>
-            Wir erläutern die Möglichkeiten offen und verständlich – ohne Druck, ohne
-            Fachjargon und ohne unnötige Empfehlungen. Sie entscheiden, wir zeigen die
-            Optionen auf.
-          </p>
+          <p>Offen und ohne Fachjargon – Sie entscheiden.</p>
         </div>
-        <div>
+        <div class="pillar">
+          <Icon name="family" size={28} class="pillar__icon" />
           <h3>Begleiten</h3>
-          <p>
-            Von den ersten Formalitäten bis zur Trauerfeier und darüber hinaus bleiben wir
-            Ihr fester Ansprechpartner – persönlich, verlässlich und mit einem offenen Ohr,
-            auch nach der Bestattung.
-          </p>
+          <p>Vom ersten Anruf bis über die Bestattung hinaus.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Leistungen -->
-  <section class="section section--white">
+  <!-- Fakten -->
+  <section class="section section--cream fact-band">
     <div class="container">
-      <h2>Wie wir Sie begleiten</h2>
-      <hr class="accent-rule" />
-      <div class="grid grid--3">
-        {
-          services.map((s) => (
-            <article class="card">
-              <h3>{s.title}</h3>
-              <p>{s.text}</p>
-              <a class="card__link" href={s.href}>
-                Mehr erfahren<span class="visually-hidden"> – {s.title}</span> →
-              </a>
-            </article>
-          ))
-        }
-      </div>
+      <FactStrip facts={facts} />
     </div>
   </section>
 
-  <!-- Warum Gorhau -->
+  <!-- Was uns ausmacht -->
   <section class="section section--white">
     <div class="container">
-      <h2>Was uns als Bestattungsinstitut ausmacht</h2>
-      <hr class="accent-rule" />
-      <p class="lead">
-        Ein Trauerfall lässt sich nicht standardisieren. Deshalb arbeiten wir bewusst nicht
-        nach starrem Schema, sondern richten uns nach dem, was in Ihrer Situation gebraucht
-        wird.
+      <p class="eyebrow">Was uns ausmacht</p>
+      <h2>Kein Standardablauf, sondern Ihre Situation</h2>
+      <div class="tile-grid">
+        {reasons.map((r) => <IconFeature icon={r.icon} title={r.title} text={r.text} href={r.href} />)}
+      </div>
+      <p class="leistungen-links">
+        Weitere Leistungen: <a href="/leistungen/ueberfuehrungen/">Überführungen</a> ·
+        <a href="/leistungen/thanatopraxie/">Thanatopraxie</a> ·
+        <a href="/leistungen/trauerfeier-und-trauerdruck/">Trauerfeier &amp; Trauerdruck</a> ·
+        <a href="/leistungen/">alle Leistungen im Überblick →</a>
       </p>
-      <div class="grid grid--2">
-        <div class="reason">
-          <h3>Familiengeführt seit 1970</h3>
-          <p>
-            Wir sind ein inhabergeführtes Institut, keine anonyme Kette. Sie sprechen mit
-            Menschen, die in Würzburg-Heidingsfeld verwurzelt sind und seit Generationen
-            Verantwortung für ihre Arbeit übernehmen.
-          </p>
-        </div>
-        <div class="reason">
-          <h3>Erreichbar, wenn Sie uns brauchen</h3>
-          <p>
-            Ein Todesfall hält sich nicht an Bürozeiten. Im Trauerfall erreichen Sie uns
-            deshalb Tag und Nacht – für die organisatorischen Fragen stehen wir Ihnen zu
-            unseren regulären Bürozeiten zur Verfügung.
-          </p>
-        </div>
-        <div class="reason">
-          <h3>Alles aus einer Hand</h3>
-          <p>
-            Überführung, Formalitäten, Trauerfeier, Trauerdruck und Bestattung – wir
-            koordinieren die einzelnen Schritte, damit Sie nicht selbst zwischen mehreren
-            Ansprechpartnern vermitteln müssen.
-          </p>
-        </div>
-        <div class="reason">
-          <h3>Individuelle Abschiednahme</h3>
-          <p>
-            Ob im hauseigenen Abschiedsraum, bei einer kirchlichen Feier oder in stillem
-            Rahmen – wir gestalten den Abschied so, wie er zu der verstorbenen Person und
-            ihrer Familie passt.
-          </p>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- Abschiedsraum -->
-  <section class="section section--cream">
+  <section class="section section--beige">
     <div class="container split">
       <div>
         <p class="eyebrow">Raum und Zeit</p>
         <h2>Unser hauseigener Abschiedsraum</h2>
-        <hr class="accent-rule" />
         <p>
-          Bereits seit 2004 bieten wir in Würzburg einen eigenen Abschiedsraum. Hier können
-          Sie im kleinen Kreis in Ruhe Abschied nehmen – ohne Zeitdruck und in einer würdigen,
-          geschützten Atmosphäre.
+          Seit 2004 bieten wir in Würzburg einen eigenen Abschiedsraum – für einen persönlichen
+          Abschied im kleinen Kreis, ganz ohne Zeitdruck.
         </p>
         <p><a class="btn btn--secondary" href="/abschiedsraum/">Abschiedsraum kennenlernen</a></p>
       </div>
       <div class="split__aside">
-        <blockquote>
-          „Ein persönlicher Abschied braucht vor allem eines: Zeit. Genau die möchten wir
-          Ihnen geben.“
-        </blockquote>
+        <Quote text="Ein persönlicher Abschied braucht vor allem eines: Zeit. Genau die möchten wir Ihnen geben." />
       </div>
     </div>
   </section>
 
-  <!-- Vorsorge + Qualifikation -->
+  <!-- Vorsorge + Über uns -->
   <section class="section section--white">
     <div class="container grid grid--2">
-      <article class="card">
+      <article class="mini-card">
         <h2>Bestattungsvorsorge</h2>
         <p>
-          Mit einer Bestattungsvorsorge legen Sie zu Lebzeiten fest, wie Ihr Abschied gestaltet
-          werden soll. Das gibt Ihnen Sicherheit und entlastet Ihre Angehörigen in einer
-          schweren Zeit – organisatorisch wie finanziell.
+          Legen Sie zu Lebzeiten fest, wie Ihr Abschied gestaltet werden soll, und entlasten Sie
+          Ihre Angehörigen – organisatorisch wie finanziell.
         </p>
         <a class="card__link" href="/bestattungsvorsorge/">Zur Vorsorge →</a>
       </article>
-      <article class="card">
-        <h2>Qualifikation &amp; Erfahrung</h2>
+      <article class="mini-card">
+        <h2>Über uns</h2>
         <p>
-          Als familiengeführtes Institut verbinden wir handwerkliches Können mit persönlicher
-          Nähe. Fachliche Qualifikation, Sorgfalt und regionale Verbundenheit prägen unsere
+          Handwerkliches Können, persönliche Nähe und regionale Verbundenheit prägen unsere
           Arbeit seit über fünf Jahrzehnten.
         </p>
-        <a class="card__link" href="/ueber-uns/">Über uns →</a>
+        <a class="card__link" href="/ueber-uns/">Mehr über uns →</a>
       </article>
     </div>
   </section>
 
   <!-- Geschichte -->
-  <section class="section section--beige">
+  <section class="section section--cream">
     <div class="container">
       <p class="eyebrow">Seit 1970</p>
       <h2>Eine Würzburger Geschichte</h2>
-      <hr class="accent-rule" />
-      <p>
-        1970 gegründet, ist unser Institut seit 1980 in der Reuterstraße in
-        Würzburg-Heidingsfeld zu Hause. Über die Jahrzehnte ist aus dem Familienbetrieb ein
-        fester Bestandteil der Region geworden – getragen von Vertrauen, das über Generationen
-        gewachsen ist. Seit 2004 gehört auch unser hauseigener Abschiedsraum zu diesem Weg:
-        ein Ort, der zeigt, dass sich Tradition und persönliche Weiterentwicklung nicht
-        ausschließen.
+      <p class="history-lead">
+        Aus einem Familienbetrieb ist über die Jahrzehnte ein fester Bestandteil der Region
+        geworden. Historische Aufnahmen und den Imagefilm finden Sie in unserer
+        <a href="/mediathek/">Mediathek</a>.
       </p>
-      <p>
-        Mehr zu den einzelnen Stationen unserer Geschichte sowie zu unserem Team und unserer
-        Arbeitsweise finden Sie auf den Seiten <a href="/ueber-uns/">Über uns</a> und
-        <a href="/ueber-uns/historie/">Historie seit 1970</a>.
-      </p>
-      <p><a class="btn btn--secondary" href="/ueber-uns/historie/">Unsere Historie</a></p>
-    </div>
-  </section>
-
-  <!-- Mediathek -->
-  <section class="section section--white">
-    <div class="container">
-      <h2>Mediathek</h2>
-      <hr class="accent-rule" />
-      <p>
-        In unserer Mediathek finden Sie den Imagefilm des Unternehmens sowie historische
-        Aufnahmen und Dokumente aus der Geschichte des Hauses Gorhau – unter anderem Anzeigen
-        und Flyer aus vergangenen Jahren, die wir bewusst als Archivmaterial kennzeichnen.
-      </p>
-      <p><a class="btn btn--secondary" href="/mediathek/">Zur Mediathek</a></p>
+      <FactStrip facts={facts.slice(0, 3)} />
+      <p class="history-link"><a class="btn btn--secondary" href="/ueber-uns/historie/">Unsere Historie ansehen</a></p>
     </div>
   </section>
 
   <!-- Kontakt / Standort -->
-  <section class="section section--cream">
+  <section class="section section--white">
     <div class="container split">
       <div>
         <h2>Kontakt &amp; Standort</h2>
-        <hr class="accent-rule" />
         <address class="contact-block">
           <strong>{company.name}</strong><br />
-          {company.street}<br />
-          {company.postalCode} {company.city}-{company.district}<br /><br />
-          <a href={`tel:${company.phoneRaw}`}>Telefon: {company.phone}</a><br />
+          {company.street}, {company.postalCode} {company.city}-{company.district}<br />
+          <a href={`tel:${company.phoneRaw}`}>{company.phone}</a> ·
           <a href={`mailto:${company.email}`}>{company.email}</a>
         </address>
         <p class="contact-block__hours">
-          <strong>Bürozeiten:</strong> Montag bis Freitag, 08:00 – 16:00 Uhr sowie nach
-          Vereinbarung.
-        </p>
-        <p class="contact-block__hours">
-          Unser Institut liegt in Würzburg-Heidingsfeld und ist von Würzburg sowie den
-          umliegenden Gemeinden gut erreichbar. Weitere Hinweise zur Anfahrt finden Sie auf
-          der <a href="/kontakt/">Kontaktseite</a>.
+          Mo–Fr 08:00–16:00 Uhr sowie nach Vereinbarung ·
+          <a href="/kontakt/">Anfahrt &amp; weitere Kontaktwege</a>
         </p>
       </div>
       <div class="split__aside">
         <p><a class="btn btn--primary" href="/kontakt/">Anfahrt &amp; Kontakt</a></p>
-        <p>
-          <a href={company.maps.osm} rel="noopener">Standort auf OpenStreetMap ansehen</a>
-        </p>
+        <p><a href={company.maps.osm} rel="noopener">Standort auf OpenStreetMap ansehen</a></p>
       </div>
     </div>
   </section>
@@ -301,37 +255,55 @@ const services = [
 <style>
   .hero {
     background: linear-gradient(180deg, var(--surface-cream), var(--brand-white));
-    padding-block: var(--space-3xl) var(--space-2xl);
+    padding-block: var(--space-2xl) var(--space-lg);
   }
   .hero__inner {
-    max-width: 52rem;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: var(--space-2xl);
+    align-items: center;
+  }
+  @media (max-width: 780px) {
+    .hero__inner {
+      grid-template-columns: 1fr;
+    }
+    .hero__visual-col {
+      order: -1;
+      max-width: 14rem;
+      margin-inline: auto;
+    }
   }
   .hero__sub {
     font-family: var(--font-heading);
-    font-size: clamp(1.2rem, 1rem + 1vw, 1.6rem);
+    font-size: clamp(1.1rem, 1rem + 0.6vw, 1.35rem);
     color: var(--brand-bordeaux);
     margin-top: var(--space-sm);
-    max-width: 40rem;
-  }
-  .hero__text {
-    margin-top: var(--space-md);
-    max-width: 40rem;
+    max-width: 34rem;
+    line-height: 1.5;
   }
   .hero__actions {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-md);
+    gap: var(--space-lg);
     margin-top: var(--space-lg);
   }
   .hero__note {
-    margin-top: var(--space-md);
+    margin-top: var(--space-lg);
     font-weight: 600;
     color: var(--brand-bordeaux);
   }
 
+  .tile-grid {
+    display: grid;
+    gap: var(--space-md);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+    margin-top: var(--space-lg);
+    max-width: none;
+  }
+
   .philosophy__words {
     font-family: var(--font-heading);
-    font-size: clamp(1.6rem, 1.2rem + 2vw, 2.6rem);
+    font-size: clamp(1.5rem, 1.2rem + 1.6vw, 2.2rem);
     color: var(--brand-bordeaux-dark);
     display: flex;
     flex-wrap: wrap;
@@ -343,30 +315,40 @@ const services = [
     color: var(--brand-gold);
   }
   .philosophy__text {
-    max-width: 46rem;
+    max-width: 38rem;
   }
-  .philosophy__grid {
+  .pillar-row {
     display: grid;
     gap: var(--space-lg);
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
     margin-top: var(--space-xl);
     max-width: none;
   }
-  .philosophy__grid h3 {
-    font-size: 1.15rem;
-    margin-bottom: var(--space-2xs);
+  .pillar {
+    text-align: left;
   }
-  .philosophy__grid p {
+  .pillar :global(.pillar__icon) {
+    color: var(--brand-gold-dark);
+    margin-bottom: var(--space-xs);
+  }
+  .pillar h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.2rem;
+  }
+  .pillar p {
     color: var(--text-muted);
     margin: 0;
+    font-size: 0.95rem;
   }
-  .reason h3 {
-    font-size: 1.1rem;
-    margin-bottom: var(--space-2xs);
+
+  .fact-band {
+    padding-block: var(--space-xl);
   }
-  .reason p {
+
+  .leistungen-links {
+    margin-top: var(--space-lg);
     color: var(--text-muted);
-    margin: 0;
+    max-width: none;
   }
 
   .split {
@@ -375,23 +357,30 @@ const services = [
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
     align-items: center;
   }
-  .split__aside blockquote {
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    color: var(--brand-bordeaux);
-    border-left: 3px solid var(--brand-gold);
-    padding-left: var(--space-md);
-    margin: 0;
-  }
   .split__aside p + p {
     margin-top: var(--space-md);
   }
   .contact-block {
     font-style: normal;
-    line-height: 1.9;
+    line-height: 1.8;
     margin-block: var(--space-md);
   }
   .contact-block__hours {
     margin-top: var(--space-sm);
+    color: var(--text-muted);
+  }
+
+  .mini-card h2 {
+    font-size: 1.3rem;
+  }
+  .mini-card p {
+    color: var(--text-muted);
+  }
+
+  .history-lead {
+    max-width: 40rem;
+  }
+  .history-link {
+    margin-top: var(--space-lg);
   }
 </style>

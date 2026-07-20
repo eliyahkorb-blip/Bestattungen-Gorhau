@@ -8,7 +8,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
   eyebrow="Leistungen"
   path="/leistungen/trauerfeier-und-trauerdruck/"
   heading="Trauerfeier, Trauerreden und Trauerdruck"
-  intro="Eine Trauerfeier ist ein persönlicher Abschied. Wir gestalten sie gemeinsam mit Ihnen – so, dass sie zu dem Menschen passt, an den sie erinnert."
+  intro="Kein Leben gleicht dem anderen – und so darf auch kein Abschied dem anderen gleichen."
   breadcrumbs={[
     { name: 'Leistungen', path: '/leistungen/' },
     { name: 'Trauerfeier & Trauerdruck', path: '/leistungen/trauerfeier-und-trauerdruck/' },
@@ -16,60 +16,70 @@ import PageLayout from '../../layouts/PageLayout.astro';
 >
   <div class="prose">
     <p>
-      Kein Leben gleicht dem anderen – und so darf auch kein Abschied dem anderen gleichen.
       Ob feierlich oder schlicht, kirchlich oder frei: Wir helfen Ihnen, eine Trauerfeier zu
-      gestalten, die den Charakter und die Wünsche der verstorbenen Person widerspiegelt.
+      gestalten, die den Charakter der verstorbenen Person widerspiegelt.
     </p>
-    <h2>Gestaltung der Trauerfeier</h2>
-    <p>
-      Wir stimmen Ort, Ablauf und Rahmen der Feier mit Ihnen ab und koordinieren die
-      Beteiligten – von der Feierhalle über die musikalische Begleitung bis zur Abstimmung mit
-      Geistlichen oder freien Rednerinnen und Rednern.
-    </p>
-    <h2>Trauerreden</h2>
-    <p>
-      Auf Wunsch vermitteln wir freie Trauerrednerinnen und Trauerredner oder stimmen den
-      Ablauf mit dem zuständigen Pfarramt ab, damit die persönlichen Worte einen würdigen
-      Rahmen finden.
-    </p>
-    <h2>Trauerdruck und Dekoration</h2>
-    <ul>
-      <li>Traueranzeigen und Danksagungen</li>
-      <li>Trauerkarten und Sterbebilder</li>
-      <li>Gestaltung von Trauerbriefen</li>
-      <li>Blumenschmuck und Dekoration für Sarg, Urne und Feierhalle</li>
-    </ul>
+  </div>
 
-    <h2>Musik und persönliche Elemente</h2>
+  <h2>Gestaltung der Feier und Trauerreden</h2>
+  <hr class="accent-rule" />
+  <div class="prose">
     <p>
-      Viele Trauerfeiern gewinnen durch persönliche Details an Bedeutung – ein bestimmtes
-      Musikstück, ein Foto, ein Gegenstand, der die verstorbene Person begleitet hat, oder
-      eigene Worte von Angehörigen. Wir beraten Sie, wie sich solche Elemente würdevoll in den
-      Ablauf einfügen lassen, unabhängig davon, ob die Feier kirchlich, weltlich oder in
-      stillem Rahmen stattfindet.
+      Wir stimmen Ort, Ablauf und Rahmen ab und koordinieren Feierhalle, Musik sowie Geistliche
+      oder freie Rednerinnen und Redner. Auf Wunsch vermitteln wir Trauerredner oder stimmen den
+      Ablauf mit dem Pfarramt ab, damit die persönlichen Worte einen würdigen Rahmen finden.
     </p>
+  </div>
 
-    <h2>Traueranzeigen und Danksagungen</h2>
+  <h2>Trauerdruck und Dekoration</h2>
+  <hr class="accent-rule" />
+  <ul class="chip-list">
+    <li>Traueranzeigen und Danksagungen</li>
+    <li>Trauerkarten und Sterbebilder</li>
+    <li>Trauerbriefe</li>
+    <li>Blumenschmuck und Dekoration</li>
+  </ul>
+  <div class="prose">
     <p>
-      Die Traueranzeige ist für viele Menschen die erste Nachricht vom Tod eines Angehörigen.
-      Wir unterstützen Sie bei der Formulierung und Gestaltung sowie bei der Abstimmung mit
-      Zeitungen und Druckereien. Auch für die Danksagung nach der Bestattung stehen wir Ihnen
-      mit Gestaltungsvorschlägen zur Seite.
+      Die Traueranzeige ist oft die erste Nachricht vom Tod eines Angehörigen – wir unterstützen
+      bei Formulierung, Gestaltung und der Abstimmung mit Zeitungen und Druckereien.
     </p>
+  </div>
 
-    <h2>Ablauf und Zusammenarbeit</h2>
+  <h2>Persönliche Elemente</h2>
+  <hr class="accent-rule" />
+  <div class="prose">
     <p>
-      In der Regel besprechen wir Trauerfeier und Trauerdruck gemeinsam mit den übrigen
-      organisatorischen Schritten in einem Termin. So stellen wir sicher, dass Ablauf,
-      Dekoration und Drucksachen aufeinander abgestimmt sind und termingerecht bereitstehen.
+      Ein Musikstück, ein Foto, eigene Worte von Angehörigen – solche Details geben einer Feier
+      Bedeutung. Wir beraten Sie, wie sie sich würdevoll einfügen, und besprechen Trauerfeier und
+      Trauerdruck in der Regel gemeinsam mit den übrigen organisatorischen Schritten.
     </p>
+  </div>
 
+  <div class="prose">
     <p>
-      Sprechen Sie uns auf Ihre Wünsche an – wir setzen sie mit Sorgfalt und Geschmack für Sie
-      um. Informationen zu den organisatorischen Schritten rund um die Trauerfeier finden Sie
-      auch auf unserer Seite <a href="/leistungen/formalitaeten/">Formalitäten</a>, Hinweise zu
-      unserem <a href="/abschiedsraum/">Abschiedsraum</a> für eine Feier im kleinen Kreis auf
-      der entsprechenden Seite.
+      Organisatorische Schritte: <a href="/leistungen/formalitaeten/">Formalitäten</a> · Feier im
+      kleinen Kreis: <a href="/abschiedsraum/">Abschiedsraum</a>.
     </p>
   </div>
 </PageLayout>
+
+<style>
+  .chip-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-md) 0 var(--space-xl);
+    max-width: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+  .chip-list li {
+    background: var(--surface-cream);
+    border-radius: 999px;
+    padding: 0.5em 1.1em;
+    font-size: 0.92rem;
+    color: var(--brand-bordeaux-dark);
+    font-weight: 600;
+  }
+</style>

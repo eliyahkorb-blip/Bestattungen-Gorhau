@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import HintBox from '../../components/ui/HintBox.astro';
 ---
 
 <PageLayout
@@ -8,7 +9,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
   eyebrow="Bestattungsarten"
   path="/bestattungsarten/erdbestattung/"
   heading="Erdbestattung"
-  intro="Bei der Erdbestattung wird der Sarg in einem Grab auf dem Friedhof beigesetzt. Sie ist eine traditionelle Form des Abschieds mit einem festen Ort der Erinnerung."
+  intro="Bei der Erdbestattung wird der Sarg in einem Grab auf dem Friedhof beigesetzt – mit einem festen Ort der Erinnerung."
   breadcrumbs={[
     { name: 'Bestattungsarten', path: '/bestattungsarten/' },
     { name: 'Erdbestattung', path: '/bestattungsarten/erdbestattung/' },
@@ -17,87 +18,77 @@ import PageLayout from '../../layouts/PageLayout.astro';
   <div class="prose">
     <p>
       Die Erdbestattung ist die klassische Bestattungsform. Der Sarg wird auf einem Friedhof
-      beigesetzt, die Grabstätte bietet Angehörigen einen dauerhaften Ort der Erinnerung und
-      der Grabpflege.
+      beigesetzt; die Grabstätte bietet einen dauerhaften Ort der Erinnerung und der Grabpflege.
     </p>
-    <h2>Grabarten bei der Erdbestattung</h2>
-    <ul>
-      <li>
-        <strong>Reihengrab:</strong> Wird der Reihe nach vergeben und für die Dauer der
-        Ruhezeit genutzt.
-      </li>
-      <li>
-        <strong>Wahlgrab:</strong> Ein frei wählbarer Grabplatz, dessen Nutzungsrecht verlängert
-        werden kann und der oft als Familiengrab dient.
-      </li>
-    </ul>
-    <h2>Warum viele Familien die Erdbestattung wählen</h2>
-    <p>
-      Für viele Angehörige ist entscheidend, dass ein festes, individuell gestaltbares Grab
-      entsteht – ein Ort, den man besuchen, mit Blumen schmücken und über Jahre pflegen kann.
-      Die Erdbestattung folgt zudem oft der Tradition innerhalb einer Familie und entspricht
-      häufig dem, was die verstorbene Person selbst so kannte und erwartet hätte.
-    </p>
+  </div>
 
-    <h2>Ablauf der Erdbestattung</h2>
-    <p>
-      Nach der Auswahl der Grabstätte stimmen wir Termin und Ablauf mit dem Friedhof ab. Die
-      Trauerfeier kann in der Friedhofskapelle, einer Kirche oder in freier Form stattfinden,
-      bevor der Sarg zur Grabstätte getragen und beigesetzt wird. Auf Wunsch begleiten wir Sie
-      und Ihre Angehörigen während der gesamten Zeremonie.
-    </p>
-
-    <h2>Sargauswahl</h2>
-    <p>
-      Für die Erdbestattung stehen unterschiedliche Sargmodelle und Holzarten zur Verfügung.
-      Wir beraten Sie zu den Möglichkeiten und berücksichtigen dabei sowohl gestalterische
-      Wünsche als auch praktische Aspekte wie die Maße der vorgesehenen Grabstätte.
-    </p>
-
-    <h2>Grabpflege und langfristige Verantwortung</h2>
-    <p>
-      Anders als bei pflegefreien Gemeinschaftsanlagen übernehmen Angehörige bei einem
-      Reihen- oder Wahlgrab in der Regel die Pflege der Grabstätte – entweder selbst oder über
-      einen Friedhofsgärtner. Wir informieren Sie gern über ortsansässige Ansprechpartner für
-      Grabpflege und Grabmalgestaltung.
-    </p>
-    <p>
-      Diese Verantwortung ist für viele Angehörige zugleich ein Trost: Ein Grab, das besucht
-      und gepflegt werden kann, bietet einen festen Ort für Trauer und Erinnerung – auch noch
-      Jahre nach der Bestattung.
-    </p>
-
-    <h2>Was wir für Sie übernehmen</h2>
-    <p>
-      Wir stimmen die Beisetzung mit dem Friedhof ab, organisieren Termin und Trauerfeier,
-      kümmern uns um den Sarg und beraten Sie zu Grabmal und Grabpflege.
-    </p>
-
-    <div class="hinweisbox">
-      <p>
-        <strong>Hinweis:</strong> Ruhezeiten, verfügbare Grabarten und Gebühren richten sich
-        nach der jeweiligen Friedhofssatzung und können von Friedhof zu Friedhof unterschiedlich
-        sein. Gern informieren wir Sie über die aktuell geltenden Regelungen vor Ort. Weitere
-        allgemeine Hinweise finden Sie auf unserer Seite
-        <a href="/friedhoefe-in-wuerzburg/">Friedhöfe in Würzburg</a>.
-      </p>
+  <div class="fact-grid">
+    <div class="fact-card">
+      <h3>Reihengrab</h3>
+      <p>Wird der Reihe nach vergeben, genutzt für die Dauer der Ruhezeit.</p>
     </div>
+    <div class="fact-card">
+      <h3>Wahlgrab</h3>
+      <p>Frei wählbar, verlängerbar – oft als Familiengrab genutzt.</p>
+    </div>
+  </div>
 
+  <h2>Ablauf und Sargauswahl</h2>
+  <hr class="accent-rule" />
+  <div class="prose">
     <p>
-      Sie sind unsicher, ob eine Erdbestattung oder eine andere Bestattungsart zu Ihnen passt?
-      Einen Überblick über die Alternativen finden Sie auf unserer Seite
+      Nach der Wahl der Grabstätte stimmen wir Termin und Ablauf mit dem Friedhof ab. Die
+      Trauerfeier findet in der Friedhofskapelle, einer Kirche oder frei gestaltet statt, bevor
+      der Sarg zur Grabstätte getragen wird. Für den Sarg stehen verschiedene Modelle und
+      Holzarten zur Wahl – wir beraten Sie zu Gestaltung und den Maßen der Grabstätte.
+    </p>
+  </div>
+
+  <h2>Grabpflege als Ort der Erinnerung</h2>
+  <hr class="accent-rule" />
+  <div class="prose">
+    <p>
+      Anders als bei pflegefreien Anlagen übernehmen Angehörige bei einem Reihen- oder Wahlgrab
+      meist selbst die Pflege – oder über einen Friedhofsgärtner. Für viele ist das zugleich ein
+      Trost: ein Ort, der besucht und gepflegt werden kann.
+    </p>
+  </div>
+
+  <HintBox>
+    Ruhezeiten, Grabarten und Gebühren richten sich nach der jeweiligen Friedhofssatzung und
+    können unterschiedlich sein. Mehr dazu auf unserer Seite
+    <a href="/friedhoefe-in-wuerzburg/">Friedhöfe in Würzburg</a>.
+  </HintBox>
+
+  <div class="prose">
+    <p>
+      Unsicher, ob eine Erdbestattung zu Ihnen passt? Alle Alternativen finden Sie auf der Seite
       <a href="/bestattungsarten/">Bestattungsarten</a>.
     </p>
   </div>
 </PageLayout>
 
 <style>
-  .hinweisbox {
+  .fact-grid {
+    display: grid;
+    gap: var(--space-md);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+    margin: var(--space-lg) 0 var(--space-xl);
+    max-width: 40rem;
+  }
+  .fact-card {
     background: var(--surface-cream);
-    border-left: 4px solid var(--brand-gold);
-    padding: var(--space-md);
-    border-radius: var(--radius-sm);
-    max-width: 46rem;
+    border-radius: var(--radius-md);
+    padding: var(--space-md) var(--space-lg);
+  }
+  .fact-card h3 {
+    font-size: 1.05rem;
+    color: var(--brand-bordeaux-dark);
+    margin-bottom: 0.2rem;
+  }
+  .fact-card p {
+    margin: 0;
     color: var(--text-muted);
+    font-size: 0.92rem;
   }
 </style>
