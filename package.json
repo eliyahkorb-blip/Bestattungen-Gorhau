@@ -10,6 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
+    "ingest": "python3 scripts/ingest-assets.py",
     "test:screenshots": "node tests/screenshots.mjs",
     "astro": "astro",
     "test": "node --test tests/build.test.mjs",

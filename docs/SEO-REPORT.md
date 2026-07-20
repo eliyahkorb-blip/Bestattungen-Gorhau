@@ -55,4 +55,20 @@ Würzburg · Thanatopraxie Würzburg · Hilfe im Trauerfall Würzburg.
 ## Prüfergebnisse
 - `npm run audit` (statischer SEO-/Struktur-Audit über dist): **0 Fehler, 0 Warnungen**,
   JSON-LD auf allen Seiten valide.
-- `npm run test:links`: **0 defekte interne Links**.
+- `npm run test:links`: **0 defekte interne Links** (1152 geprüft).
+- Lighthouse-SEO-Kategorie: **100** auf allen 8 geprüften Seitentypen (LH 13.4.0, lokal).
+
+## SEO-Realität: was diese Werte bedeuten (und was nicht)
+Verschiedene „SEO-Scores" messen Unterschiedliches. Ein grüner eigener Audit ist **keine**
+Garantie für einen bestimmten Seobility-Score oder für Google-Rankings.
+
+| Signal | Was es misst | Status hier |
+|---|---|---|
+| **Eigener statischer Audit** (`npm run audit`) | technische Onpage-Struktur (H1, Meta, Alt, JSON-LD) | 0 Fehler – vollständig kontrollierbar |
+| **Lighthouse SEO** | technische Crawlbarkeit/Basics einer Seite | 100 (lokal) – Lab-Wert |
+| **Seobility Onpage** | eigener, breiterer Kriterienkatalog | **nicht garantiert 100**; erst nach Live-Crawl messbar. Der Relaunch behebt die bekannten 56-%-Mängel, der reale Score ist nach Deployment zu prüfen. |
+| **Google Search Console** | echte Indexierung/Performance bei Google | erst nach Deployment + Sitemap-Einreichung verfügbar |
+| **Externe Faktoren / Backlinks** | Autorität, Erwähnungen | **nicht per Code lösbar** → `OFFPAGE-LOCAL-SEO-PLAN.md` |
+
+Kurz: Der eigene Audit mit 0 Fehlern und Lighthouse-SEO 100 sind belastbare technische
+Grundlagen. Ein „garantierter Seobility-Score von 100" wird **ausdrücklich nicht** behauptet.

@@ -23,6 +23,26 @@
   Smoke-Tests, Desktop/Mobil-Screenshots.
 - Dokumentation unter `docs/` und Inventare unter `audit/`.
 
+## 1.1.0 – Vorbereitung Originaldateien & echte Audits
+
+### Neu
+- **Asset-Ingestion-Pipeline** (`scripts/ingest-assets.py`, `npm run ingest`): entpackt
+  `original-site.zip` nach `archive/`, erstellt Hash-Inventar/Duplikaterkennung, integriert das
+  echte Logo, erzeugt Favicons/OG-Bild daraus, optimiert Bilder (AVIF/WebP), konvertiert Medien
+  (FLV→MP4/WebM, Audio→MP3/OGG mit mitgeliefertem ffmpeg), extrahiert Markenfarben. Idempotent,
+  mit synthetischen Fixtures end-to-end getestet.
+- **`incoming-assets/`**-Ablage mit Anleitung; Logo-Komponente erkennt und verwendet das echte
+  Logo automatisch, sobald es eingespielt ist (Platzhalter nur als Fallback).
+- **Echte Lighthouse-Läufe** (LH 13.4.0, lokal): Startseite + 7 weitere Seitentypen und mobil –
+  **Performance/Accessibility/Best-Practices/SEO je 100**, LCP ~1,1 s, CLS 0.
+- **Lighthouse CI** GitHub-Actions-Workflow (`.github/workflows/lighthouse.yml`, `lighthouserc.json`).
+- axe-Test deckt jetzt **alle 25 Seiten** automatisch ab (statt 12).
+- Zwei WCAG-2.2-Punkte behoben: Label-in-Name am Logo-Link, Touch-Target der Telefon-Schaltfläche.
+- Zusätzliche Leistungen aufgenommen (Umbettungen, Graböffnungen, gekühlte Aufbewahrung) mit
+  Bestätigungs-Flag; Leistungs-Matrix `docs/SERVICE-COVERAGE.md`.
+- SEO-Report um „SEO-Realität"-Abschnitt (eigener Audit vs. Lighthouse vs. Seobility vs. GSC vs.
+  Backlinks) ergänzt.
+
 ### Bekannt / offen (dokumentiert)
 - Original-Logo, Fotos und Medien konnten wegen gesperrter Quelldomain (HTTP 403) nicht geladen
   werden → Platzhalter-/Beschreibungszustände, siehe `docs/LOGO-SOURCE.md`,

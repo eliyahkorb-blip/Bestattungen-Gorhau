@@ -1,4 +1,6 @@
 ---
+import fs from 'node:fs';
+import nodePath from 'node:path';
 import { company } from '../data/company';
 
 export interface Props {
@@ -16,7 +18,11 @@ const { title, description, path, ogType = 'website', noindex = false, jsonLd = 
 
 const canonical = new URL(path, site + '/').href;
 const fullTitle = title.includes('Gorhau') ? title : `${title} | ${company.shortName} Würzburg`;
-const ogImage = new URL('/img/og-default.svg', site + '/').href;
+// Bevorzugt das aus dem echten Logo erzeugte OG-Bild, sonst das SVG-Standardbild.
+const ogFile = fs.existsSync(nodePath.resolve('public/img/og-default.png'))
+  ? '/img/og-default.png'
+  : '/img/og-default.svg';
+const ogImage = new URL(ogFile, site + '/').href;
 ---
 
 <title>{fullTitle}</title>

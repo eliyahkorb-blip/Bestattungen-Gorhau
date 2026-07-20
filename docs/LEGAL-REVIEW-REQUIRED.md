@@ -41,6 +41,10 @@ Markiert in `src/pages/datenschutz.astro` (Abschnitt „Hosting und Server-Logfi
   konkrete unbestätigte Titel.
 - Thanatopraxie / nationale und internationale Überführungen: als Leistung dargestellt –
   bestätigen, dass diese weiterhin angeboten werden.
+- **Zusätzlich aufgenommene, noch zu bestätigende Leistungen** (auf `/leistungen/`, Abschnitt
+  „Weitere Leistungen"): **Umbettungen, Graböffnungen, gekühlte Aufbewahrung (Klimaraum)**.
+  Aus öffentlichen Profilen übernommen; bitte bestätigen oder streichen. Vollständige Matrix:
+  `docs/SERVICE-COVERAGE.md`. Der endgültige Abgleich erfolgt gegen `original-site.zip`.
 
 ## 6. Medien & Bilder
 - Original-Logo, Fotos, Videos und Audios bereitstellen (siehe `docs/LOGO-SOURCE.md`,

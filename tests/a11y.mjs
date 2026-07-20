@@ -6,7 +6,7 @@
  * Nutzt playwright-core mit der Umgebungs-Chromium-Binary; kein Browser-Download.
  */
 import { createServer } from 'node:http';
-import { readFile, stat } from 'node:fs/promises';
+import { readFile, stat, readdir } from 'node:fs/promises';
 import { join, extname } from 'node:path';
 import { chromium } from 'playwright-core';
 import { AxeBuilder } from '@axe-core/playwright';
@@ -63,20 +63,21 @@ const server = createServer(async (req, res) => {
   }
 });
 
-const pages = [
-  '/',
-  '/im-trauerfall/',
-  '/leistungen/',
-  '/bestattungsarten/',
-  '/bestattungsvorsorge/',
-  '/abschiedsraum/',
-  '/ueber-uns/',
-  '/mediathek/',
-  '/kontakt/',
-  '/impressum/',
-  '/datenschutz/',
-  '/barrierefreiheit/',
-];
+// Alle gebauten Seiten automatisch ermitteln (jede index.html -> URL-Pfad, plus 404).
+async function discoverPages(dir, prefix = '') {
+  const out = [];
+  for (const e of await readdir(dir, { withFileTypes: true })) {
+    if (e.isDirectory()) {
+      out.push(...(await discoverPages(join(dir, e.name), `${prefix}/${e.name}`)));
+    } else if (e.name === 'index.html') {
+      out.push(prefix === '' ? '/' : `${prefix}/`);
+    } else if (e.name === '404.html') {
+      out.push('/404.html');
+    }
+  }
+  return out;
+}
+const pages = (await discoverPages(DIST)).sort();
 
 await new Promise((r) => server.listen(0, r));
 const port = server.address().port;

@@ -10,8 +10,9 @@ const isActive = (href: string) =>
 
 <header class="site-header">
   <div class="container site-header__inner">
-    <a href="/" class="site-header__logo" aria-label="Zur Startseite – Bestattungen Gorhau">
+    <a href="/" class="site-header__logo">
       <Logo />
+      <span class="visually-hidden">Zur Startseite</span>
     </a>
 
     <a class="site-header__phone" href={`tel:${company.phoneRaw}`}>
@@ -74,8 +75,10 @@ const isActive = (href: string) =>
   .site-header__inner {
     display: flex;
     align-items: center;
-    gap: var(--space-md);
+    column-gap: var(--space-md);
+    row-gap: 1.5rem;
     min-height: var(--header-height);
+    padding-block: 0.5rem;
     flex-wrap: wrap;
   }
   .site-header__logo {
@@ -86,6 +89,9 @@ const isActive = (href: string) =>
     display: inline-flex;
     align-items: center;
     gap: 0.4em;
+    min-height: 44px;
+    padding: 0.35em 0.5em;
+    border-radius: var(--radius-sm);
     font-weight: 700;
     color: var(--brand-bordeaux);
     text-decoration: none;

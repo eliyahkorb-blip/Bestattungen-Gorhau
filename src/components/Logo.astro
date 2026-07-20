@@ -1,42 +1,85 @@
 ---
 /*
- * PLATZHALTER-WORTMARKE.
- * Die originale Gorhau-Bildmarke (Kreuz, Pfeile, Wortmarke) konnte aus der
- * gesperrten Quelldomain nicht heruntergeladen werden (siehe docs/LOGO-SOURCE.md).
- * Diese zurückhaltende typografische Darstellung ist ein Stand-in und KEIN
- * Redesign der Marke. Vor Live-Schaltung durch die Original-Logodatei ersetzen:
- * public/img/logo.svg  bzw.  src/assets/brand/logo-optimized/.
+ * Logo-Komponente.
+ * Sobald das echte Gorhau-Logo per Ingest bereitgestellt wurde
+ * (public/img/logo.png + public/img/logo-meta.json), wird es automatisch
+ * verwendet – das Markendesign wird dabei NICHT verändert.
+ * Solange keine Originaldatei vorliegt, dient eine zurückhaltende typografische
+ * Platzhalter-Wortmarke als Stand-in (kein Redesign der Marke).
+ * Siehe docs/LOGO-SOURCE.md und scripts/ingest-assets.py.
  */
+import fs from 'node:fs';
+import path from 'node:path';
+
 export interface Props {
   variant?: 'default' | 'light';
 }
 const { variant = 'default' } = Astro.props;
+
+// Echtes Logo erkennen (Build-Zeit, statisch)
+const metaPath = path.resolve('public/img/logo-meta.json');
+let realLogo: { width: number; height: number; src: string; webp: string; srcset: string } | null =
+  null;
+try {
+  if (fs.existsSync(metaPath)) {
+    realLogo = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+  }
+} catch {
+  realLogo = null;
+}
+
+// Zielhöhe im Header; Breite proportional (kein CLS)
+const targetH = 42;
+const displayW = realLogo ? Math.round((realLogo.width / realLogo.height) * targetH) : 0;
+
 const wordColor = variant === 'light' ? '#fbf7f0' : '#521720';
 const subColor = variant === 'light' ? '#e3d9c8' : '#5c544c';
 const gold = '#b8933d';
 ---
 
-<span class="logo" aria-hidden="false">
-  <svg
-    class="logo__mark"
-    width="34"
-    height="42"
-    viewBox="0 0 34 42"
-    role="img"
-    aria-label="Gorhau Bestattungen"
-    focusable="false"
-  >
-    <!-- Kreuz-Motiv (Platzhalter, an die Marke angelehnt) -->
-    <rect x="14.5" y="2" width="5" height="38" rx="1" fill={gold} />
-    <rect x="4" y="12" width="26" height="5" rx="1" fill={gold} />
-  </svg>
-  <span class="logo__text">
-    <span class="logo__word" style={`color:${wordColor}`}>GORHAU</span>
-    <span class="logo__sub" style={`color:${subColor}`}>Bestattungen · seit 1970</span>
-  </span>
-</span>
+{
+  realLogo ? (
+    <img
+      class="logo-img"
+      src={realLogo.src}
+      srcset={realLogo.srcset}
+      sizes={`${displayW}px`}
+      width={displayW}
+      height={targetH}
+      alt="Bestattungen Gorhau – Bestattungs- und Überführungs-Institut, Würzburg-Heidingsfeld"
+      decoding="async"
+    />
+  ) : (
+    <span class="logo" aria-hidden="false">
+      <svg
+        class="logo__mark"
+        width="34"
+        height="42"
+        viewBox="0 0 34 42"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <rect x="14.5" y="2" width="5" height="38" rx="1" fill={gold} />
+        <rect x="4" y="12" width="26" height="5" rx="1" fill={gold} />
+      </svg>
+      <span class="logo__text">
+        <span class="logo__word" style={`color:${wordColor}`}>
+          GORHAU
+        </span>
+        <span class="logo__sub" style={`color:${subColor}`}>
+          Bestattungen · seit 1970
+        </span>
+      </span>
+    </span>
+  )
+}
 
 <style>
+  .logo-img {
+    height: 42px;
+    width: auto;
+    display: block;
+  }
   .logo {
     display: inline-flex;
     align-items: center;

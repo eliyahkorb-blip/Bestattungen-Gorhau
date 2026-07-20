@@ -27,25 +27,36 @@ externe Ressourcen, kein Framework-Runtime, keine Webfont-Ladezeit, keine Layout
 - **Caching & Kompression:** `.htaccess`/`vercel.json` setzen `Cache-Control: immutable` für
   Assets, `must-revalidate` für HTML; Brotli/Gzip serverseitig aktiviert.
 
-## Lighthouse
-Lighthouse sollte gegen die **deployte** Seite laufen (aussagekräftiger als gegen einen
-lokalen Dev-Server) und mehrfach, um Ausreißer zu vermeiden:
+## Lighthouse – tatsächlich durchgeführte Läufe (Lab)
 
-```bash
-npx lighthouse https://www.gorhau-bestattungen.de/ \
-  --preset=desktop --view
-npx lighthouse https://www.gorhau-bestattungen.de/ \
-  --form-factor=mobile --view
-```
+Ausgeführt mit **Lighthouse 13.4.0** im vorinstallierten Chromium gegen den lokal
+ausgelieferten `dist/`-Ordner (Lab-Daten, nicht Feld/CrUX):
 
-**Erwartung** aufgrund der gemessenen Struktur (0 externe JS/CSS, keine Webfonts, statisch,
-keine Drittanbieter): Performance und SEO im oberen Bereich, Accessibility 100 (axe: 0 Verstöße),
-Best Practices hoch. Zielwerte: LCP < 2,5 s, INP < 200 ms, CLS < 0,1.
+| Seite | Performance | Accessibility | Best Practices | SEO | LCP | CLS |
+|---|---|---|---|---|---|---|
+| Startseite (Desktop) | 100 | 100 | 100 | 100 | 1,1 s | 0 |
+| Im Trauerfall | 100 | 100 | 100 | 100 | 1,1 s | 0 |
+| Leistungen | 100 | 100 | 100 | 100 | 1,1 s | 0 |
+| Bestattungsart (Feuerbestattung) | 100 | 100 | 100 | 100 | 1,1 s | 0 |
+| Abschiedsraum | 100 | 100 | 100 | 100 | 1,1 s | 0 |
+| Über uns | 100 | 100 | 100 | 100 | 0,9 s | 0 |
+| Mediathek | 100 | 100 | 100 | 100 | 1,1 s | 0 |
+| Kontakt | 100 | 100 | 100 | 100 | 1,1 s | 0 |
+| **Startseite (Mobil)** | 100 | 100 | 100 | 100 | 1,1 s | 0 |
 
-> Hinweis: In dieser Build-Umgebung konnte Lighthouse nicht selbst ausgeführt werden (kein
-> stabiler Headless-Chrome-Lauf mit vollständigem Lighthouse-Runner verfügbar). Die obigen
-> Kennzahlen sind direkt aus dem Build gemessen; die Lighthouse-Läufe sind nach dem Deployment
-> mit den genannten Befehlen nachzuholen und hier zu ergänzen.
+TBT durchgehend ≤ 10 ms. Zwei WCAG-2.2-Punkte, die Lighthouse anfangs auf der Kontaktseite
+zeigte (Label-in-Name am Logo-Link, Touch-Target-Abstand der Telefon-Schaltfläche), wurden
+behoben; danach alle Seiten 100.
+
+> **Einordnung:** Dies sind **lokale Lab-Werte** gegen den statischen Build. Nach dem Deployment
+> sollten die Läufe gegen die Live-URL wiederholt werden (reale Serverlatenz/Kompression), am
+> besten mehrfach:
+> ```bash
+> npx lighthouse https://www.gorhau-bestattungen.de/ --preset=desktop --view
+> npx lighthouse https://www.gorhau-bestattungen.de/ --form-factor=mobile --view
+> ```
+> Automatisiert in CI: `.github/workflows/lighthouse.yml` (Lighthouse CI, 8 Seitentypen,
+> 3 Läufe je Seite, Accessibility als Fehlerschwelle).
 
 ## Datenschutz-Netzwerkcheck
 Beim Erstaufruf jeder Seite werden **keine** Drittanbieter kontaktiert (kein Google Fonts, kein

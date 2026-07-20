@@ -21,8 +21,21 @@ npm run test:a11y      # axe-core-Accessibility-Test (Chromium)
 npm run test:links     # interner Linkcheck
 npm run audit          # SEO-/Struktur-Audit (H1, Titles, Alt, JSON-LD …)
 npm run test:screenshots  # Desktop/Mobil-Screenshots → audit/screenshots/
+npm run ingest         # Originaldateien aus incoming-assets/ verarbeiten (Logo, Bilder, Medien)
 npm run format         # Prettier
 ```
+
+## Originaldateien einspielen (Logo, Fotos, Medien)
+Legen Sie die Originale in **`incoming-assets/`** ab (Details: `incoming-assets/README.md`) und
+führen Sie aus:
+```bash
+npm run ingest && npm run build
+```
+Der Ingest ist idempotent und überschreibt keine Originale. Er integriert das echte Logo
+(ersetzt automatisch den Platzhalter), erzeugt Favicons/OG-Bild aus dem echten Logo, optimiert
+Bilder (AVIF/WebP), konvertiert Medien (FLV→MP4/WebM, Audio→MP3/OGG, via mitgeliefertem ffmpeg)
+und extrahiert Markenfarben. Benötigt Python 3 mit Pillow und `imageio-ffmpeg`
+(`pip install Pillow imageio-ffmpeg`).
 > `test:a11y` und `test:screenshots` benötigen ein Chromium. In dieser Umgebung ist es unter
 > `/opt/pw-browsers/chromium-1194/chrome-linux/chrome` vorinstalliert; sonst `CHROMIUM_PATH` setzen.
 

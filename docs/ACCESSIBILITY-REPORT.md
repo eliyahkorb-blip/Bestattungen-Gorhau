@@ -3,28 +3,32 @@
 **Ziel:** WCAG 2.2 Level AA. Keine Accessibility-Overlays – Zugänglichkeit ist direkt in die
 Website integriert.
 
-## Automatisierte Tests (axe-core)
+## Automatisierte Tests (axe-core) – ALLE Seiten
 Getestet mit `@axe-core/playwright` im vorinstallierten Chromium über den gebauten `dist/`-Ordner
-(`npm run test:a11y`). Regelsätze: `wcag2a, wcag2aa, wcag21a, wcag21aa, wcag22aa`.
+(`npm run test:a11y`). Der Test ermittelt die Seiten **automatisch aus dem Build** und prüft
+**alle 24 indexierbaren Seiten plus die 404-Seite (25 URLs)** – nicht nur eine Auswahl.
+Regelsätze: `wcag2a, wcag2aa, wcag21a, wcag21aa, wcag22aa`.
 
-| Seite | Verstöße | kritisch | schwer |
-|---|---|---|---|
-| / | 0 | 0 | 0 |
-| /im-trauerfall/ | 0 | 0 | 0 |
-| /leistungen/ | 0 | 0 | 0 |
-| /bestattungsarten/ | 0 | 0 | 0 |
-| /bestattungsvorsorge/ | 0 | 0 | 0 |
-| /abschiedsraum/ | 0 | 0 | 0 |
-| /ueber-uns/ | 0 | 0 | 0 |
-| /mediathek/ | 0 | 0 | 0 |
-| /kontakt/ | 0 | 0 | 0 |
-| /impressum/ | 0 | 0 | 0 |
-| /datenschutz/ | 0 | 0 | 0 |
-| /barrierefreiheit/ | 0 | 0 | 0 |
+| Kennzahl | Wert |
+|---|---|
+| Indexierbare Seiten gesamt | 24 |
+| Geprüfte Seiten (axe) | **25** (alle indexierbaren + 404) |
+| Nicht geprüfte Seiten | keine |
+| Kritische Verstöße | **0** |
+| Schwere Verstöße | **0** |
 
-**Ergebnis: 0 kritische, 0 schwere Verstöße.** (Erst-Lauf zeigte 9 color-contrast-Verstöße –
-alle behoben durch `--brand-gold-text` #7a5e1a für Gold-Text auf hellem Grund und Korrektur der
-Button-Farbe in dunklen Sektionen.)
+Jede der 25 URLs meldet 0 Verstöße (vollständige Liste im Konsolen-Output von `npm run test:a11y`).
+
+### Zusätzlich: Lighthouse-Accessibility (LH 13.4.0)
+Accessibility-Kategorie **100** auf allen 8 geprüften Seitentypen (Desktop) und mobil.
+
+### Behobene Befunde
+- **9 color-contrast-Verstöße** (Erst-Lauf axe): behoben über `--brand-gold-text #7a5e1a`
+  (Gold-Text auf hellem Grund) und Korrektur der Button-Farbe in dunklen Sektionen.
+- **Label-in-Name** (WCAG 2.5.3) am Logo-Link: behoben – der sichtbare Text ist im
+  Accessible Name enthalten.
+- **Target-Size/Abstand** (WCAG 2.5.8) der Telefon-Schaltfläche im Header: behoben – Zielgröße
+  ≥ 44 px und ausreichender Abstand zur Navigationszeile.
 
 ## Umgesetzte Maßnahmen
 - Semantisches HTML5 mit Landmarks (`header`, `nav`, `main`, `footer`), `main#hauptinhalt`.

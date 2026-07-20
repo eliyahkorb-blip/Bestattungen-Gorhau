@@ -1,0 +1,4 @@
+# Python-Abhängigkeiten für scripts/ingest-assets.py
+# Installation:  pip install -r scripts/requirements.txt
+Pillow>=10.0          # Bildoptimierung (AVIF/WebP), Logo, Favicons, OG-Bild, Farbanalyse
+imageio-ffmpeg>=0.5   # liefert ein vollwertiges statisches ffmpeg (H.264/AAC/VP9/MP3/OGG)
