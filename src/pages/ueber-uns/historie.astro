@@ -1,0 +1,86 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const milestones = [
+  { year: '1970', text: 'Gründung des Bestattungsinstituts durch Manfred und Ingrid Gorhau. Eröffnung am 11. Mai 1970.' },
+  { year: '1980', text: 'Umzug in die Reuterstraße 2 nach Würzburg-Heidingsfeld, dem bis heute bestehenden Standort.' },
+  { year: '2004', text: 'Einrichtung eines hauseigenen Abschiedsraums – als eines der ersten Häuser in Würzburg, das Angehörigen bewusst „Raum und Zeit“ für den Abschied bietet.' },
+  { year: 'Heute', text: 'Fortführung des Unternehmens als familiengeführtes Institut unter Inhaber Thomas Gorhau – der Tradition verpflichtet, für die Gegenwart gerüstet.' },
+];
+---
+
+<PageLayout
+  title="Unsere Historie seit 1970 | Bestattungen Gorhau Würzburg"
+  description="Die Geschichte des Bestattungsinstituts Gorhau: gegründet 1970, seit 1980 in Würzburg-Heidingsfeld, seit 2004 mit hauseigenem Abschiedsraum. Ein Familienunternehmen."
+  eyebrow="Unsere Geschichte"
+  path="/ueber-uns/historie/"
+  heading="Unternehmensgeschichte seit 1970"
+  intro="Aus einem Familienbetrieb ist über die Jahrzehnte ein fester Bestandteil der Würzburger Bestattungskultur geworden. Ein kurzer Blick auf unsere Geschichte."
+  breadcrumbs={[
+    { name: 'Über uns', path: '/ueber-uns/' },
+    { name: 'Historie', path: '/ueber-uns/historie/' },
+  ]}
+>
+  <ol class="timeline">
+    {
+      milestones.map((m) => (
+        <li class="timeline__item">
+          <span class="timeline__year">{m.year}</span>
+          <p>{m.text}</p>
+        </li>
+      ))
+    }
+  </ol>
+  <div class="prose">
+    <p>
+      Was 1970 begann, tragen wir bis heute weiter: die Überzeugung, dass jeder Mensch einen
+      würdevollen Abschied verdient und dass gute Begleitung vor allem Zeit, Zuwendung und
+      Verlässlichkeit bedeutet.
+    </p>
+    <p class="src-note">
+      Einzelne historische Angaben stammen aus öffentlich zugänglichen Unternehmensprofilen
+      und den bisherigen Website-Inhalten. Historische Aufnahmen finden Sie in unserer
+      <a href="/ueber-uns/galerie/">Galerie</a> und in der <a href="/mediathek/">Mediathek</a>.
+    </p>
+  </div>
+</PageLayout>
+
+<style>
+  .timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-lg);
+    max-width: 44rem;
+    border-left: 3px solid var(--brand-gold);
+  }
+  .timeline__item {
+    padding: 0 0 var(--space-lg) var(--space-lg);
+    position: relative;
+  }
+  .timeline__item::before {
+    content: '';
+    position: absolute;
+    left: -0.6rem;
+    top: 0.3rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: var(--brand-bordeaux);
+  }
+  .timeline__year {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--brand-bordeaux-dark);
+    margin-bottom: var(--space-2xs);
+  }
+  .timeline__item p {
+    margin: 0;
+    color: var(--text-muted);
+  }
+  .src-note {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+</style>

@@ -1,0 +1,30 @@
+# Netlify Redirects – Bestattungen Gorhau
+# Alte URLs -> neue Zielseiten (301)
+/index.html  /  301
+/institut/hauptstelle.html  /ueber-uns/  301
+/institut/  /ueber-uns/  301
+/institut/abschiedsraum.html  /abschiedsraum/  301
+/institut/mediathek.html  /mediathek/  301
+/institut/historie.html  /ueber-uns/historie/  301
+/institut/galerie.html  /ueber-uns/galerie/  301
+/dienstleistung/thanatopraxie.html  /leistungen/thanatopraxie/  301
+/dienstleistung/  /leistungen/  301
+/dienstleistung/index.html  /leistungen/  301
+/vorsorge/index.html  /bestattungsvorsorge/  301
+/vorsorge/  /bestattungsvorsorge/  301
+/trauerfall/index.html  /im-trauerfall/  301
+/trauerfall/  /im-trauerfall/  301
+/bestattungsarten/index.html  /bestattungsarten/  301
+/kontakt/kontakt.html  /kontakt/  301
+/kontakt/anfahrt.html  /kontakt/  301
+/kontakt/impressum.html  /impressum/  301
+/kontakt/datenschutz.html  /datenschutz/  301
+/kontakt/index.html  /kontakt/  301
+/institut/mediathek/gorhau_imagefilm.flv  /mediathek/  301
+/institut/mediathek/mz_imagespot_2010.flv  /mediathek/  301
+/institut/mediathek/mz_fernsehspot.flv  /mediathek/  301
+/institut/mediathek/radiospot_11_2009.flv  /mediathek/  301
+/institut/mediathek/tagderoffenentuer2012.jpg  /mediathek/  301
+/institut/mediathek/flyer_2009.jpg  /mediathek/  301
+/vorsorge/GN750.pdf  /bestattungsvorsorge/  301
+/bestattungsarten/urnengarten.pdf  /bestattungsarten/feuerbestattung/  301

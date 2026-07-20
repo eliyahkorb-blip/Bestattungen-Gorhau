@@ -1,0 +1,253 @@
+---
+import Logo from './Logo.astro';
+import { mainNav } from '../data/navigation';
+import { company } from '../data/company';
+
+const current = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === '/' ? current === '/' : current === href || current.startsWith(href);
+---
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a href="/" class="site-header__logo" aria-label="Zur Startseite – Bestattungen Gorhau">
+      <Logo />
+    </a>
+
+    <a class="site-header__phone" href={`tel:${company.phoneRaw}`}>
+      <span aria-hidden="true">☎</span>
+      <span>{company.phone}</span>
+    </a>
+
+    <button
+      type="button"
+      class="nav-toggle"
+      aria-expanded="false"
+      aria-controls="hauptnavigation"
+    >
+      <span class="nav-toggle__bars" aria-hidden="true"></span>
+      <span class="nav-toggle__label">Menü</span>
+    </button>
+
+    <nav id="hauptnavigation" class="site-nav" aria-label="Hauptnavigation">
+      <ul class="site-nav__list">
+        {
+          mainNav.map((item) => (
+            <li class="site-nav__item">
+              <a
+                href={item.href}
+                class="site-nav__link"
+                aria-current={isActive(item.href) ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+              {item.children && (
+                <ul class="site-nav__sub">
+                  {item.children.map((child) => (
+                    <li>
+                      <a
+                        href={child.href}
+                        aria-current={current === child.href ? 'page' : undefined}
+                      >
+                        {child.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--brand-white);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    min-height: var(--header-height);
+    flex-wrap: wrap;
+  }
+  .site-header__logo {
+    text-decoration: none;
+    margin-right: auto;
+  }
+  .site-header__phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    font-weight: 700;
+    color: var(--brand-bordeaux);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .site-header__phone:hover {
+    text-decoration: underline;
+  }
+
+  .nav-toggle {
+    display: none;
+    align-items: center;
+    gap: 0.5em;
+    min-height: 48px;
+    padding: 0 0.9em;
+    background: var(--brand-bordeaux);
+    color: var(--brand-white);
+    border: 0;
+    border-radius: var(--radius-md);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .nav-toggle__bars,
+  .nav-toggle__bars::before,
+  .nav-toggle__bars::after {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    position: relative;
+  }
+  .nav-toggle__bars::before,
+  .nav-toggle__bars::after {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+  .nav-toggle__bars::before {
+    top: -6px;
+  }
+  .nav-toggle__bars::after {
+    top: 6px;
+  }
+
+  .site-nav {
+    flex-basis: 100%;
+  }
+  .site-nav__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem 0.4rem;
+    max-width: none;
+  }
+  .site-nav__item {
+    position: relative;
+  }
+  .site-nav__link {
+    display: inline-block;
+    padding: 0.6em 0.75em;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+  }
+  .site-nav__link:hover {
+    background: var(--surface-cream);
+    color: var(--brand-bordeaux);
+  }
+  .site-nav__link[aria-current='page'] {
+    color: var(--brand-bordeaux);
+    box-shadow: inset 0 -3px 0 var(--brand-gold);
+  }
+
+  .site-nav__sub {
+    list-style: none;
+    margin: 0;
+    padding: var(--space-xs);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 15rem;
+    background: var(--brand-white);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    display: none;
+    z-index: 10;
+  }
+  .site-nav__item:hover .site-nav__sub,
+  .site-nav__item:focus-within .site-nav__sub {
+    display: block;
+  }
+  .site-nav__sub a {
+    display: block;
+    padding: 0.55em 0.7em;
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+  }
+  .site-nav__sub a:hover,
+  .site-nav__sub a[aria-current='page'] {
+    background: var(--surface-cream);
+    color: var(--brand-bordeaux);
+  }
+
+  /* Mobil */
+  @media (max-width: 960px) {
+    .nav-toggle {
+      display: inline-flex;
+    }
+    .site-nav {
+      display: none;
+    }
+    .site-nav.is-open {
+      display: block;
+      padding-block: var(--space-sm);
+    }
+    .site-nav__list {
+      flex-direction: column;
+      gap: 0;
+    }
+    .site-nav__item {
+      border-top: 1px solid var(--border-subtle);
+    }
+    .site-nav__link {
+      display: block;
+      padding: 0.85em 0.5em;
+    }
+    .site-nav__sub {
+      display: block;
+      position: static;
+      border: 0;
+      box-shadow: none;
+      padding-left: var(--space-md);
+      background: transparent;
+    }
+  }
+</style>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('.nav-toggle');
+  const nav = document.getElementById('hauptnavigation');
+
+  if (toggle && nav) {
+    const closeMenu = () => {
+      nav.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    };
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    // Escape schließt das Menü und gibt den Fokus an den Button zurück.
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+        closeMenu();
+        toggle.focus();
+      }
+    });
+  }
+</script>

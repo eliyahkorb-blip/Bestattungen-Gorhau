@@ -1,0 +1,41 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const leistungen = [
+  { t: 'Überführungen', d: 'Würdevolle Überführungen im In- und Ausland – zuverlässig organisiert.', href: '/leistungen/ueberfuehrungen/' },
+  { t: 'Thanatopraxie', d: 'Hygienische und ästhetische Versorgung durch geschulte Fachkräfte.', href: '/leistungen/thanatopraxie/' },
+  { t: 'Trauerfeier & Trauerdruck', d: 'Gestaltung der Trauerfeier, Trauerreden, Drucksachen und Dekoration.', href: '/leistungen/trauerfeier-und-trauerdruck/' },
+  { t: 'Formalitäten', d: 'Behördengänge und organisatorische Unterstützung – wir nehmen Ihnen den Papierkram ab.', href: '/leistungen/formalitaeten/' },
+  { t: 'Bestattungsarten', d: 'Erd-, Feuer-, See- und anonyme Bestattung – wir erläutern alle Möglichkeiten.', href: '/bestattungsarten/' },
+  { t: 'Bestattungsvorsorge', d: 'Regeln Sie Ihre Wünsche zu Lebzeiten und entlasten Sie Ihre Angehörigen.', href: '/bestattungsvorsorge/' },
+];
+---
+
+<PageLayout
+  title="Leistungen – Bestattungen Gorhau Würzburg"
+  description="Das Leistungsspektrum von Bestattungen Gorhau in Würzburg: Überführungen, Thanatopraxie, Trauerfeier und Trauerdruck, Formalitäten sowie alle Bestattungsarten."
+  eyebrow="Unser Leistungsspektrum"
+  path="/leistungen/"
+  heading="Leistungen"
+  intro="Von der ersten Beratung bis zum würdevollen Abschied begleiten wir Sie umfassend. Alle organisatorischen und gestalterischen Aufgaben übernehmen wir für Sie."
+  breadcrumbs={[{ name: 'Leistungen', path: '/leistungen/' }]}
+>
+  <div class="prose">
+    <p>
+      Als familiengeführtes Institut bieten wir Ihnen alle Leistungen rund um eine Bestattung
+      aus einer Hand. Dabei ist uns wichtig, dass jede Entscheidung in Ruhe und nach Ihren
+      persönlichen Vorstellungen getroffen werden kann.
+    </p>
+  </div>
+  <div class="grid grid--3">
+    {
+      leistungen.map((l) => (
+        <article class="card">
+          <h2 style="font-size:1.3rem">{l.t}</h2>
+          <p>{l.d}</p>
+          <a class="card__link" href={l.href}>Mehr erfahren →</a>
+        </article>
+      ))
+    }
+  </div>
+</PageLayout>

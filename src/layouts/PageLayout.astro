@@ -1,0 +1,73 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CtaSection from '../components/CtaSection.astro';
+import { breadcrumbLd } from '../data/jsonld';
+import type { Crumb } from '../components/Breadcrumbs.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  path: string;
+  heading: string;
+  intro?: string;
+  eyebrow?: string;
+  breadcrumbs: Crumb[];
+  cta?: boolean;
+  jsonLd?: Record<string, unknown>[];
+}
+
+const {
+  title,
+  description,
+  path,
+  heading,
+  intro,
+  eyebrow,
+  breadcrumbs,
+  cta = true,
+  jsonLd = [],
+} = Astro.props;
+
+const crumbLd = breadcrumbLd([
+  { name: 'Start', path: '/' },
+  ...breadcrumbs,
+]);
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  jsonLd={[crumbLd, ...jsonLd]}
+>
+  <Breadcrumbs slot="breadcrumbs" items={breadcrumbs} />
+
+  <div class="page-head">
+    <div class="container">
+      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+      <h1>{heading}</h1>
+      {intro && <p class="lead">{intro}</p>}
+    </div>
+  </div>
+
+  <div class="section section--white">
+    <div class="container">
+      <slot />
+    </div>
+  </div>
+
+  {cta && <CtaSection />}
+</BaseLayout>
+
+<style>
+  .page-head {
+    background: var(--surface-cream);
+    padding-block: var(--space-2xl) var(--space-xl);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .page-head .lead {
+    margin-top: var(--space-md);
+    max-width: 46rem;
+  }
+</style>

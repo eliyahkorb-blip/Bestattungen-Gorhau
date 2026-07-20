@@ -1,0 +1,174 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/institut/hauptstelle.html",
+      "destination": "/ueber-uns/",
+      "permanent": true
+    },
+    {
+      "source": "/institut/",
+      "destination": "/ueber-uns/",
+      "permanent": true
+    },
+    {
+      "source": "/institut/abschiedsraum.html",
+      "destination": "/abschiedsraum/",
+      "permanent": true
+    },
+    {
+      "source": "/institut/mediathek.html",
+      "destination": "/mediathek/",
+      "permanent": true
+    },
+    {
+      "source": "/institut/historie.html",
+      "destination": "/ueber-uns/historie/",
+      "permanent": true
+    },
+    {
+      "source": "/institut/galerie.html",
+      "destination": "/ueber-uns/galerie/",
+      "permanent": true
+    },
+    {
+      "source": "/dienstleistung/thanatopraxie.html",
+      "destination": "/leistungen/thanatopraxie/",
+      "permanent": true
+    },
+    {
+      "source": "/dienstleistung/",
+      "destination": "/leistungen/",
+      "permanent": true
+    },
+    {
+      "source": "/dienstleistung/index.html",
+      "destination": "/leistungen/",
+      "permanent": true
+    },
+    {
+      "source": "/vorsorge/index.html",
+      "destination": "/bestattungsvorsorge/",
+      "permanent": true
+    },
+    {
+      "source": "/vorsorge/",
+      "destination": "/bestattungsvorsorge/",
+      "permanent": true
+    },
+    {
+      "source": "/trauerfall/index.html",
+      "destination": "/im-trauerfall/",
+      "permanent": true
+    },
+    {
+      "source": "/trauerfall/",
+      "destination": "/im-trauerfall/",
+      "permanent": true
+    },
+    {
+      "source": "/bestattungsarten/index.html",
+      "destination": "/bestattungsarten/",
+      "permanent": true
+    },
+    {
+      "source": "/kontakt/kontakt.html",
+      "destination": "/kontakt/",
+      "permanent": true
+    },
+    {
+      "source": "/kontakt/anfahrt.html",
+      "destination": "/kontakt/",
+      "permanent": true
+    },
+    {
+      "source": "/kontakt/impressum.html",
+      "destination": "/impressum/",
+      "permanent": true
+    },
+    {
+      "source": "/kontakt/datenschutz.html",
+      "destination": "/datenschutz/",
+      "permanent": true
+    },
+    {
+      "source": "/kontakt/index.html",
+      "destination": "/kontakt/",
+      "permanent": true
+    },
+    {
+      "source": "/institut/mediathek/gorhau_imagefilm.flv",
+      "destination": "/mediathek/",
+      "permanent": true
+    },
+    {
+      "source": "/institut/mediathek/mz_imagespot_2010.flv",
+      "destination": "/mediathek/",
+      "permanent": true
+    },
+    {
+      "source": "/institut/mediathek/mz_fernsehspot.flv",
+      "destination": "/mediathek/",
+      "permanent": true
+    },
+    {
+      "source": "/institut/mediathek/radiospot_11_2009.flv",
+      "destination": "/mediathek/",
+      "permanent": true
+    },
+    {
+      "source": "/institut/mediathek/tagderoffenentuer2012.jpg",
+      "destination": "/mediathek/",
+      "permanent": true
+    },
+    {
+      "source": "/institut/mediathek/flyer_2009.jpg",
+      "destination": "/mediathek/",
+      "permanent": true
+    },
+    {
+      "source": "/vorsorge/GN750.pdf",
+      "destination": "/bestattungsvorsorge/",
+      "permanent": true
+    },
+    {
+      "source": "/bestattungsarten/urnengarten.pdf",
+      "destination": "/bestattungsarten/feuerbestattung/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "geolocation=(), camera=(), microphone=(), payment=()"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(avif|webp|jpg|jpeg|png|svg|woff2|mp4|webm|mp3)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}

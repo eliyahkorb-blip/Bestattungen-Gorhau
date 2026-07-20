@@ -1,0 +1,64 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="Friedhöfe in Würzburg – Informationen & Grabarten | Bestattungen Gorhau"
+  description="Hilfreiche Informationen zu Friedhöfen, Grabarten und Ruhezeiten in Würzburg. Bestattungen Gorhau berät Sie zu den aktuell geltenden Regelungen vor Ort."
+  eyebrow="Ratgeber"
+  path="/friedhoefe-in-wuerzburg/"
+  heading="Friedhöfe in Würzburg"
+  intro="Rund um Friedhöfe, Grabarten und Ruhezeiten stellen sich viele Fragen. Wir geben Ihnen einen allgemeinen Überblick und beraten Sie zu den konkreten Regelungen vor Ort."
+  breadcrumbs={[{ name: 'Friedhöfe in Würzburg', path: '/friedhoefe-in-wuerzburg/' }]}
+>
+  <div class="prose">
+    <p>
+      In Würzburg und den umliegenden Gemeinden gibt es verschiedene Friedhöfe mit
+      unterschiedlichen Grabarten und Möglichkeiten der Beisetzung. Welche Grabform verfügbar
+      ist und welche Bedingungen gelten, ist in der jeweiligen Friedhofssatzung geregelt.
+    </p>
+
+    <h2>Häufige Grabarten</h2>
+    <ul>
+      <li><strong>Reihengrab</strong> – wird der Reihe nach für die Dauer der Ruhezeit vergeben.</li>
+      <li><strong>Wahlgrab</strong> – frei wählbar, verlängerbar und oft als Familiengrab genutzt.</li>
+      <li><strong>Urnengrab</strong> – für die Beisetzung einer oder mehrerer Urnen.</li>
+      <li><strong>Gemeinschafts- und Urnengartenanlagen</strong> – gepflegte Anlagen mit geringem Pflegeaufwand.</li>
+      <li><strong>Baumgrab</strong> – Urnenbeisetzung an einem Baum in dafür ausgewiesenen Bereichen.</li>
+      <li><strong>Anonyme oder teilanonyme Grabfelder</strong> – Beisetzung ohne bzw. mit zentraler Namensnennung.</li>
+    </ul>
+
+    <h2>Ruhezeiten und Gebühren</h2>
+    <p class="note">
+      Ruhezeiten, verfügbare Grabarten und die Höhe der Gebühren unterscheiden sich je nach
+      Friedhof und Gemeinde und werden durch die jeweilige Satzung festgelegt. Sie können sich
+      ändern. Wir informieren Sie gern über die aktuell geltenden Regelungen für den von Ihnen
+      gewünschten Friedhof.
+    </p>
+
+    <h2>Wir begleiten Sie</h2>
+    <p>
+      Bei der Auswahl einer Grabstätte, der Abstimmung mit der Friedhofsverwaltung und allen
+      damit verbundenen Formalitäten stehen wir Ihnen zur Seite. Sprechen Sie uns an – wir
+      finden gemeinsam eine Lösung, die zu Ihnen passt.
+    </p>
+    <p class="src-note">
+      Dieser Beitrag dient der allgemeinen Information und stellt keine Rechtsberatung dar.
+    </p>
+  </div>
+</PageLayout>
+
+<style>
+  .note {
+    background: var(--surface-cream);
+    border-left: 4px solid var(--brand-gold);
+    padding: var(--space-md);
+    border-radius: var(--radius-sm);
+    max-width: none;
+    color: var(--text-muted);
+  }
+  .src-note {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+</style>

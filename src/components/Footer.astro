@@ -1,0 +1,114 @@
+---
+import { company } from '../data/company';
+import { mainNav, legalNav } from '../data/navigation';
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__grid">
+    <div>
+      <p class="site-footer__name">{company.name}</p>
+      <address class="site-footer__address">
+        {company.street}<br />
+        {company.postalCode} {company.city}-{company.district}<br />
+        <a href={`tel:${company.phoneRaw}`}>Telefon: {company.phone}</a><br />
+        <span>Fax: {company.fax}</span><br />
+        <a href={`mailto:${company.email}`}>{company.email}</a>
+      </address>
+      <p class="site-footer__hours">
+        <strong>Bürozeiten:</strong><br />
+        Montag bis Freitag, 08:00 – 16:00 Uhr<br />
+        sowie nach Vereinbarung
+      </p>
+      <p class="site-footer__emergency">Im Trauerfall sind wir Tag und Nacht für Sie erreichbar.</p>
+    </div>
+
+    <nav aria-label="Footer-Navigation">
+      <h2 class="site-footer__heading">Übersicht</h2>
+      <ul class="site-footer__links">
+        <li><a href="/">Startseite</a></li>
+        {mainNav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+      </ul>
+    </nav>
+
+    <nav aria-label="Rechtliches">
+      <h2 class="site-footer__heading">Rechtliches</h2>
+      <ul class="site-footer__links">
+        {legalNav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+      </ul>
+      <p class="site-footer__philosophy">Zuhören · Beraten · Begleiten</p>
+    </nav>
+  </div>
+
+  <div class="site-footer__bar">
+    <div class="container">
+      <p>
+        © {new Date().getFullYear()} {company.legalName}. Familienunternehmen seit {company.foundingYear}.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--surface-dark);
+    color: var(--text-on-dark);
+    margin-top: var(--space-3xl);
+  }
+  .site-footer__grid {
+    display: grid;
+    gap: var(--space-xl);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    padding-block: var(--space-2xl);
+  }
+  .site-footer a {
+    color: var(--brand-gold);
+  }
+  .site-footer a:hover {
+    color: var(--brand-white);
+  }
+  .site-footer__name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--brand-gold);
+    margin-bottom: var(--space-sm);
+  }
+  .site-footer__address {
+    font-style: normal;
+    line-height: 1.9;
+  }
+  .site-footer__hours,
+  .site-footer__emergency {
+    margin-top: var(--space-md);
+  }
+  .site-footer__emergency {
+    color: var(--brand-gold);
+    font-weight: 600;
+  }
+  .site-footer__heading {
+    font-size: 1.05rem;
+    color: var(--brand-gold);
+    margin-bottom: var(--space-sm);
+  }
+  .site-footer__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 2;
+  }
+  .site-footer__philosophy {
+    margin-top: var(--space-lg);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--brand-gold);
+  }
+  .site-footer__bar {
+    border-top: 1px solid rgba(251, 247, 240, 0.15);
+    padding-block: var(--space-md);
+    font-size: 0.85rem;
+  }
+  .site-footer__bar p {
+    max-width: none;
+    margin: 0;
+  }
+</style>

@@ -1,0 +1,47 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const arten = [
+  { t: 'Erdbestattung', d: 'Die klassische Beisetzung des Sarges in einem Reihen- oder Wahlgrab.', href: '/bestattungsarten/erdbestattung/' },
+  { t: 'Feuerbestattung', d: 'Die Beisetzung der Urne nach der Einäscherung – mit vielfältigen Grabformen.', href: '/bestattungsarten/feuerbestattung/' },
+  { t: 'Seebestattung', d: 'Die Beisetzung der Urne auf See – ein Abschied in weitem, freiem Raum.', href: '/bestattungsarten/seebestattung/' },
+  { t: 'Anonyme Bestattung', d: 'Die Beisetzung ohne namentliche Kennzeichnung auf einer Gemeinschaftsfläche.', href: '/bestattungsarten/anonyme-bestattung/' },
+];
+---
+
+<PageLayout
+  title="Bestattungsarten im Überblick | Bestattungen Gorhau Würzburg"
+  description="Erd-, Feuer-, See- und anonyme Bestattung: Bestattungen Gorhau in Würzburg erläutert die Bestattungsarten und hilft Ihnen, den passenden Abschied zu finden."
+  eyebrow="Möglichkeiten des Abschieds"
+  path="/bestattungsarten/"
+  heading="Bestattungsarten"
+  intro="Es gibt viele Formen, Abschied zu nehmen. Wir stellen Ihnen die gängigen Bestattungsarten vor und beraten Sie, welche zu den Wünschen der verstorbenen Person und zu Ihnen passt."
+  breadcrumbs={[{ name: 'Bestattungsarten', path: '/bestattungsarten/' }]}
+>
+  <div class="prose">
+    <p>
+      Welche Bestattungsart die richtige ist, ist eine sehr persönliche Entscheidung. Sie kann
+      im Vorfeld – etwa im Rahmen einer Bestattungsvorsorge – festgelegt worden sein oder wird
+      im Kreis der Angehörigen getroffen. Wir nehmen uns Zeit, Ihnen die Möglichkeiten in Ruhe
+      zu erläutern.
+    </p>
+  </div>
+  <div class="grid grid--2">
+    {
+      arten.map((a) => (
+        <article class="card">
+          <h2 style="font-size:1.3rem">{a.t}</h2>
+          <p>{a.d}</p>
+          <a class="card__link" href={a.href}>Mehr erfahren →</a>
+        </article>
+      ))
+    }
+  </div>
+  <div class="prose">
+    <p>
+      Die konkreten Möglichkeiten und Gebühren unterscheiden sich je nach Friedhof und
+      Gemeinde. Gern informieren wir Sie über die aktuell geltenden Regelungen in Würzburg und
+      Umgebung.
+    </p>
+  </div>
+</PageLayout>

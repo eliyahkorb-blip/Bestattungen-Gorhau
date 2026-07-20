@@ -1,0 +1,38 @@
+{
+  "name": "gorhau-bestattungen-relaunch",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "Relaunch der Website des Bestattungs- und Überführungs-Instituts Gorhau, Würzburg-Heidingsfeld",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "test:screenshots": "node tests/screenshots.mjs",
+    "astro": "astro",
+    "test": "node --test tests/build.test.mjs",
+    "test:a11y": "node tests/a11y.mjs",
+    "test:links": "node tests/links.mjs",
+    "audit": "node tests/audit.mjs",
+    "format": "prettier --write \"src/**/*.{astro,ts,js,css,md}\" \"*.{js,mjs,json,md}\"",
+    "format:check": "prettier --check \"src/**/*.{astro,ts,js,css,md}\"",
+    "lint": "eslint . --ext .js,.mjs,.ts,.astro || true"
+  },
+  "dependencies": {
+    "astro": "^4.16.18"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@axe-core/playwright": "^4.10.1",
+    "axe-core": "^4.10.2",
+    "playwright-core": "^1.49.1",
+    "prettier": "^3.4.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

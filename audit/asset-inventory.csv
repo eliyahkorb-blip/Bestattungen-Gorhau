@@ -1,0 +1,18 @@
+origin_url,local_archive_path,mime,filesize,width,height,duration,hash,used_on_page,existing_alt,recommended_alt,category,historic,recommendation,converted_formats,status
+https://www.gorhau-bestattungen.de/images/header_logo.png,(nicht gesichert – 403),,,,,,,/mediathek/ bzw. /ueber-uns/,,,Logo/Marke,aktuell,verwenden,—,nicht ladbar (403)
+https://www.gorhau-bestattungen.de/images/1_front.png,(nicht gesichert – 403),,,,,,,/mediathek/ bzw. /ueber-uns/,,,Foto (Gebäude),historisch,historisch verwenden,—,nicht ladbar (403)
+https://www.gorhau-bestattungen.de/institut/mediathek/gorhau_imagefilm.flv,(nicht gesichert – 403),,,,,,,/mediathek/ bzw. /ueber-uns/,,,Video,aktuell,verwenden,—,nicht ladbar (403)
+https://www.gorhau-bestattungen.de/institut/mediathek/mz_imagespot_2010.flv,(nicht gesichert – 403),,,,,,,/mediathek/ bzw. /ueber-uns/,,,Video,historisch,historisch verwenden,—,nicht ladbar (403)
+https://www.gorhau-bestattungen.de/institut/mediathek/mz_fernsehspot.flv,(nicht gesichert – 403),,,,,,,/mediathek/ bzw. /ueber-uns/,,,Video,historisch,historisch verwenden,—,nicht ladbar (403)
+https://www.gorhau-bestattungen.de/institut/mediathek/radiospot_11_2009.flv,(nicht gesichert – 403),,,,,,,/mediathek/ bzw. /ueber-uns/,,,Audio,historisch,historisch verwenden,—,nicht ladbar (403)
+https://www.gorhau-bestattungen.de/institut/mediathek/tagderoffenentuer2012.jpg,(nicht gesichert – 403),,,,,,,/mediathek/ bzw. /ueber-uns/,,,Flyer,historisch,archivieren,—,nicht ladbar (403)
+https://www.gorhau-bestattungen.de/institut/mediathek/flyer_2009.jpg,(nicht gesichert – 403),,,,,,,/mediathek/ bzw. /ueber-uns/,,,Anzeige,historisch,archivieren,—,nicht ladbar (403)
+https://www.gorhau-bestattungen.de/vorsorge/GN750.pdf,(nicht gesichert – 403),,,,,,,/mediathek/ bzw. /ueber-uns/,,,Dokument (PDF),archiv,prüfen/ersetzen,—,nicht ladbar (403)
+https://www.gorhau-bestattungen.de/bestattungsarten/urnengarten.pdf,(nicht gesichert – 403),,,,,,,/mediathek/ bzw. /ueber-uns/,,,Dokument (PDF),archiv,prüfen/ersetzen,—,nicht ladbar (403)
+/favicon.ico,public/favicon.ico,,,,,,,diverse,,,Favicon,aktuell,verwenden,—,erstellt
+/favicon.svg,public/favicon.svg,,,,,,,diverse,,,Favicon,aktuell,verwenden,—,erstellt
+/apple-touch-icon.png,public/apple-touch-icon.png,,,,,,,diverse,,,Icon,aktuell,verwenden,—,erstellt
+/img/icon-192.png,public/img/icon-192.png,,,,,,,diverse,,,Icon,aktuell,verwenden,—,erstellt
+/img/icon-512.png,public/img/icon-512.png,,,,,,,diverse,,,Icon,aktuell,verwenden,—,erstellt
+/img/icon-512-maskable.png,public/img/icon-512-maskable.png,,,,,,,diverse,,,Icon,aktuell,verwenden,—,erstellt
+/img/og-default.svg,public/img/og-default.svg,,,,,,,diverse,,,Social-Preview,aktuell,verwenden,—,erstellt

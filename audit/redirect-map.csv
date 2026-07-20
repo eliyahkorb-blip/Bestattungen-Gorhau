@@ -1,0 +1,29 @@
+old_url,new_url,status,reason,content_match,tested
+https://www.gorhau-bestattungen.de/index.html,https://www.gorhau-bestattungen.de/,301,Startseite,exakt,ja
+https://www.gorhau-bestattungen.de/institut/hauptstelle.html,https://www.gorhau-bestattungen.de/ueber-uns/,301,Unternehmensvorstellung,inhaltlich,ja
+https://www.gorhau-bestattungen.de/institut/,https://www.gorhau-bestattungen.de/ueber-uns/,301,Institut-Bereich,inhaltlich,ja
+https://www.gorhau-bestattungen.de/institut/abschiedsraum.html,https://www.gorhau-bestattungen.de/abschiedsraum/,301,Abschiedsraum,exakt,ja
+https://www.gorhau-bestattungen.de/institut/mediathek.html,https://www.gorhau-bestattungen.de/mediathek/,301,Mediathek,exakt,ja
+https://www.gorhau-bestattungen.de/institut/historie.html,https://www.gorhau-bestattungen.de/ueber-uns/historie/,301,Historie,exakt,ja
+https://www.gorhau-bestattungen.de/institut/galerie.html,https://www.gorhau-bestattungen.de/ueber-uns/galerie/,301,Galerie,exakt,ja
+https://www.gorhau-bestattungen.de/dienstleistung/thanatopraxie.html,https://www.gorhau-bestattungen.de/leistungen/thanatopraxie/,301,Thanatopraxie,exakt,ja
+https://www.gorhau-bestattungen.de/dienstleistung/,https://www.gorhau-bestattungen.de/leistungen/,301,Leistungsbereich,inhaltlich,ja
+https://www.gorhau-bestattungen.de/dienstleistung/index.html,https://www.gorhau-bestattungen.de/leistungen/,301,Leistungsuebersicht,inhaltlich,ja
+https://www.gorhau-bestattungen.de/vorsorge/index.html,https://www.gorhau-bestattungen.de/bestattungsvorsorge/,301,Vorsorge,exakt,ja
+https://www.gorhau-bestattungen.de/vorsorge/,https://www.gorhau-bestattungen.de/bestattungsvorsorge/,301,Vorsorge,exakt,ja
+https://www.gorhau-bestattungen.de/trauerfall/index.html,https://www.gorhau-bestattungen.de/im-trauerfall/,301,Trauerfall,exakt,ja
+https://www.gorhau-bestattungen.de/trauerfall/,https://www.gorhau-bestattungen.de/im-trauerfall/,301,Trauerfall,exakt,ja
+https://www.gorhau-bestattungen.de/bestattungsarten/index.html,https://www.gorhau-bestattungen.de/bestattungsarten/,301,Bestattungsarten,exakt,ja
+https://www.gorhau-bestattungen.de/kontakt/kontakt.html,https://www.gorhau-bestattungen.de/kontakt/,301,Kontakt,exakt,ja
+https://www.gorhau-bestattungen.de/kontakt/anfahrt.html,https://www.gorhau-bestattungen.de/kontakt/,301,Anfahrt in Kontakt integriert,inhaltlich,ja
+https://www.gorhau-bestattungen.de/kontakt/impressum.html,https://www.gorhau-bestattungen.de/impressum/,301,Impressum,exakt,ja
+https://www.gorhau-bestattungen.de/kontakt/datenschutz.html,https://www.gorhau-bestattungen.de/datenschutz/,301,Datenschutz,exakt,ja
+https://www.gorhau-bestattungen.de/kontakt/index.html,https://www.gorhau-bestattungen.de/kontakt/,301,Kontakt,exakt,ja
+https://www.gorhau-bestattungen.de/institut/mediathek/gorhau_imagefilm.flv,https://www.gorhau-bestattungen.de/mediathek/,301,Imagefilm -> Mediathek,inhaltlich,ja
+https://www.gorhau-bestattungen.de/institut/mediathek/mz_imagespot_2010.flv,https://www.gorhau-bestattungen.de/mediathek/,301,Imagespot -> Mediathek,inhaltlich,ja
+https://www.gorhau-bestattungen.de/institut/mediathek/mz_fernsehspot.flv,https://www.gorhau-bestattungen.de/mediathek/,301,Fernsehspot -> Mediathek,inhaltlich,ja
+https://www.gorhau-bestattungen.de/institut/mediathek/radiospot_11_2009.flv,https://www.gorhau-bestattungen.de/mediathek/,301,Radiospot -> Mediathek,inhaltlich,ja
+https://www.gorhau-bestattungen.de/institut/mediathek/tagderoffenentuer2012.jpg,https://www.gorhau-bestattungen.de/mediathek/,301,Flyer -> Mediathek,inhaltlich,ja
+https://www.gorhau-bestattungen.de/institut/mediathek/flyer_2009.jpg,https://www.gorhau-bestattungen.de/mediathek/,301,Anzeige -> Mediathek,inhaltlich,ja
+https://www.gorhau-bestattungen.de/vorsorge/GN750.pdf,https://www.gorhau-bestattungen.de/bestattungsvorsorge/,301,Vorsorgebroschuere -> Vorsorge,inhaltlich,ja
+https://www.gorhau-bestattungen.de/bestattungsarten/urnengarten.pdf,https://www.gorhau-bestattungen.de/bestattungsarten/feuerbestattung/,301,Urnengarten -> Feuerbestattung,inhaltlich,ja

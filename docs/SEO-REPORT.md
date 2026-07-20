@@ -1,0 +1,58 @@
+# SEO-Report – Bestattungen Gorhau
+
+## Ausgangslage (Seobility-Onpage ≈ 56 %) und Behebung
+
+| Bekanntes Problem (alt) | Status neu | Umsetzung |
+|---|---|---|
+| H1 leer / fehlend | ✅ behoben | Jede Seite hat genau **eine** aussagekräftige H1 (per Audit geprüft). |
+| Leere/teilweise leere Überschriften | ✅ behoben | Durchgängig gefüllte, logische H1–H3-Struktur. |
+| Keine mobile Optimierung | ✅ behoben | Responsive Layout, mobile Navigation, Kontaktleiste. |
+| Kein Viewport-Meta | ✅ behoben | `<meta name="viewport" …>` in jedem Dokument. |
+| Fehlendes `lang="de"` | ✅ behoben | `<html lang="de">` überall. |
+| HTTP/HTTPS-Weiterleitung | ✅ behoben | `.htaccess` erzwingt HTTPS. |
+| www/Non-www uneinheitlich | ✅ behoben | Einheitliche Weiterleitung auf `www` (ein Redirect-Schritt). |
+| Fehlende Alt-Attribute (≥ 11 Bilder) | ✅ behoben | Alle `<img>` mit Alt; dekorative Elemente ohne Textbild. |
+| Nur ~135 Wörter auf Startseite | ✅ behoben | Deutlich ausgebaute, hilfreiche Inhalte. |
+| Titelbegriffe fehlen im Inhalt | ✅ behoben | Keywords sprachlich sinnvoll integriert. |
+| Kein Favicon / Apple-Touch-Icon | ✅ behoben | `favicon.ico`, `favicon.svg`, `apple-touch-icon.png`, Manifest-Icons. |
+| Fehlende Zeichensatzangabe | ✅ behoben | `<meta charset="utf-8">` + `AddDefaultCharset UTF-8`. |
+| Links ohne verständlichen Linktext | ✅ behoben | Sprechende Linktexte, versteckte Zusatztexte für Kontext. |
+| Veraltete XHTML-Struktur | ✅ behoben | Semantisches HTML5, statisch generiert (Astro). |
+| Schwache Seitenqualität | ✅ behoben | Neu geschriebene, fachlich fundierte Inhalte. |
+| Schwache externe Signale / Backlinks | ⚠️ Strategie | Nicht per Code lösbar → `docs/OFFPAGE-LOCAL-SEO-PLAN.md`. |
+
+## Technisches SEO
+- **Meta-Titles & -Descriptions:** je Seite einzigartig (per Audit auf Duplikate geprüft – 0
+  Duplikate). Zentral gepflegt über `src/components/Seo.astro`.
+- **Canonicals:** selbstreferenzierend, absolute HTTPS-www-URLs.
+- **Open Graph / Twitter:** vollständig, mit Standard-Vorschaubild (`/img/og-default.svg`).
+- **Strukturierte Daten (JSON-LD, valide):**
+  - `FuneralHome` (spezifischster LocalBusiness-Untertyp) mit NAP, Öffnungszeiten, Geo,
+    Leistungen – global identisch aus `src/data/company.ts`.
+  - `Organization`, `WebSite`, `WebPage`, `BreadcrumbList` (auf allen Unterseiten).
+  - `FAQPage` nur dort, wo FAQs **sichtbar** sind (`/im-trauerfall/`).
+  - **Keine** erfundenen AggregateRatings, Bewertungen, Preise, Auszeichnungen oder
+    Social-Profile.
+- **Sitemap:** `/sitemap.xml` (eigener Endpoint, alle 24 indexierbaren Seiten).
+- **robots.txt:** erlaubt alles, verweist auf Sitemap.
+- **404-Seite:** hilfreich, `noindex`.
+- **URLs:** sprechend, kleingeschrieben, mit Trailing Slash; Verzeichnisstruktur.
+- **Breadcrumbs:** auf allen Unterseiten (nicht auf der Startseite), inkl. `BreadcrumbList`.
+
+## NAP-Konsistenz
+Name, Adresse und Telefonnummer stammen aus einer einzigen Quelle (`src/data/company.ts`) und
+sind auf allen Seiten sowie in allen JSON-LD-Blöcken identisch.
+
+## Geokoordinaten
+`49.7691, 9.9469` (Reuterstraße 2, 97084 Würzburg), aus Kartenquelle abgeleitet. **Vor
+Verwendung in produktiven Kartendiensten final gegen die exakte Hausadresse prüfen.**
+
+## Keyword-Fokus (sprachlich integriert, kein Stuffing)
+Bestatter Würzburg · Bestattungen Würzburg · Bestattungsinstitut Würzburg · Bestatter
+Würzburg-Heidingsfeld · Bestattungsvorsorge Würzburg · Abschiedsraum Würzburg · Überführungen
+Würzburg · Thanatopraxie Würzburg · Hilfe im Trauerfall Würzburg.
+
+## Prüfergebnisse
+- `npm run audit` (statischer SEO-/Struktur-Audit über dist): **0 Fehler, 0 Warnungen**,
+  JSON-LD auf allen Seiten valide.
+- `npm run test:links`: **0 defekte interne Links**.

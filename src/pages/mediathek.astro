@@ -1,0 +1,171 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+/*
+ * Die Originalmedien (FLV-Videos, Audios, Flyer-Scans, PDFs) liegen auf der
+ * gesperrten Quelldomain und konnten in dieser Umgebung nicht heruntergeladen
+ * werden. Der geplante Verarbeitungsweg ist in docs/ACCESSIBILITY-REPORT.md und
+ * audit/media-inventory.md dokumentiert: FLV → MP4 (H.264/AAC) + WebM, Audio →
+ * MP3/OGG, mit Vorschaubild, Untertiteln und Transkript, selbst gehostet und ohne
+ * Autoplay. Sobald die Dateien vorliegen, werden sie hier eingebunden.
+ */
+const filme = [
+  { t: 'Imagefilm des Unternehmens', jahr: 'Aktuell', desc: 'Vorstellung des Instituts, unserer Haltung und unserer Räume.', prio: true },
+];
+const historisch = [
+  { t: 'Imagespot (Mainpost)', jahr: '2010', desc: 'Historischer Kurzspot.' },
+  { t: 'Fernsehspot', jahr: 'Archiv', desc: 'Historischer Fernsehspot des Instituts.' },
+  { t: 'Radiospot', jahr: '2009', desc: 'Historischer Hörfunkspot.' },
+];
+const dokumente = [
+  { t: 'Flyer „Tag der offenen Tür“', jahr: '2012', desc: 'Historischer Veranstaltungsflyer.' },
+  { t: 'Historische Anzeige', jahr: '2009', desc: 'Zeitungsanzeige des Instituts.' },
+  { t: 'Vorsorgebroschüre', jahr: 'Archiv', desc: 'Informationsbroschüre zur Bestattungsvorsorge.' },
+  { t: 'Urnengarten (Info-PDF)', jahr: 'Archiv', desc: 'Information zum Urnengarten.' },
+];
+---
+
+<PageLayout
+  title="Mediathek – Imagefilm, Videos und historische Medien | Bestattungen Gorhau"
+  description="Die Mediathek von Bestattungen Gorhau in Würzburg: Imagefilm des Unternehmens sowie historische Videos, Audios, Flyer und Dokumente aus der Firmengeschichte."
+  eyebrow="Sehen und hören"
+  path="/mediathek/"
+  heading="Mediathek"
+  intro="In unserer Mediathek finden Sie den Imagefilm des Unternehmens sowie historische Aufnahmen und Dokumente. Medien starten nicht automatisch – Sie entscheiden, was Sie ansehen möchten."
+  breadcrumbs={[{ name: 'Mediathek', path: '/mediathek/' }]}
+>
+  <div class="prose">
+    <p class="notice">
+      <strong>Hinweis:</strong> Die selbst gehosteten Video- und Audiodateien werden
+      barrierefrei (mit Untertiteln bzw. Transkript, ohne Autoplay und ohne externe Player)
+      eingebunden, sobald die Originaldateien vorliegen. Bis dahin sind die vorgesehenen
+      Inhalte hier aufgeführt.
+    </p>
+  </div>
+
+  <h2>Imagefilm des Unternehmens</h2>
+  <hr class="accent-rule" />
+  <ul class="media-list">
+    {
+      filme.map((m) => (
+        <li class="media-item media-item--feature">
+          <div class="media-item__thumb" role="img" aria-label={`Vorschau: ${m.t}`} />
+          <div>
+            <span class="media-item__tag">{m.jahr}</span>
+            <h3>{m.t}</h3>
+            <p>{m.desc}</p>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+
+  <h2>Historische Videos und Audios</h2>
+  <hr class="accent-rule" />
+  <p class="prose">Diese Aufnahmen sind Archivmaterial und geben den Stand ihrer Entstehungszeit wieder.</p>
+  <ul class="media-grid">
+    {
+      historisch.map((m) => (
+        <li class="media-card">
+          <span class="media-item__tag">{m.jahr}</span>
+          <h3>{m.t}</h3>
+          <p>{m.desc}</p>
+        </li>
+      ))
+    }
+  </ul>
+
+  <h2>Flyer, Anzeigen und Dokumente</h2>
+  <hr class="accent-rule" />
+  <ul class="media-grid">
+    {
+      dokumente.map((m) => (
+        <li class="media-card">
+          <span class="media-item__tag media-item__tag--doc">{m.jahr}</span>
+          <h3>{m.t}</h3>
+          <p>{m.desc}</p>
+        </li>
+      ))
+    }
+  </ul>
+</PageLayout>
+
+<style>
+  .notice {
+    background: var(--surface-cream);
+    border-left: 4px solid var(--brand-gold);
+    padding: var(--space-md);
+    border-radius: var(--radius-sm);
+    max-width: none;
+    color: var(--text-muted);
+  }
+  .media-list {
+    list-style: none;
+    padding: 0;
+    max-width: none;
+  }
+  .media-item--feature {
+    display: grid;
+    grid-template-columns: minmax(0, 22rem) 1fr;
+    gap: var(--space-lg);
+    align-items: center;
+  }
+  @media (max-width: 640px) {
+    .media-item--feature {
+      grid-template-columns: 1fr;
+    }
+  }
+  .media-item__thumb {
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--surface-dark), var(--brand-bordeaux));
+    position: relative;
+  }
+  .media-item__thumb::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 1rem 0 1rem 1.6rem;
+    border-color: transparent transparent transparent var(--brand-gold);
+  }
+  .media-item__tag {
+    display: inline-block;
+    background: var(--brand-bordeaux);
+    color: var(--brand-white);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.2em 0.6em;
+    border-radius: var(--radius-sm);
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-xs);
+  }
+  .media-item__tag--doc {
+    background: var(--brand-gold-dark);
+  }
+  .media-grid {
+    list-style: none;
+    padding: 0;
+    max-width: none;
+    display: grid;
+    gap: var(--space-lg);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  }
+  .media-card {
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+  }
+  .media-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-2xs);
+  }
+  .media-card p {
+    color: var(--text-muted);
+    margin: 0;
+  }
+</style>

@@ -1,0 +1,113 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+/*
+ * Die Original-Bilddateien (Gebäudeansicht, historische Aufnahmen, Räume) konnten
+ * aus der gesperrten Quelldomain nicht heruntergeladen werden. Sobald die
+ * Originaldateien vorliegen, werden sie hier als optimierte AVIF/WebP-Bilder mit
+ * korrekten Alt-Texten und Bildunterschriften eingebunden (siehe audit/media-inventory.md).
+ */
+const planned = [
+  { t: 'Unser Haus in der Reuterstraße', cat: 'Aktuell', desc: 'Außenansicht des Instituts in Würzburg-Heidingsfeld.' },
+  { t: 'Abschiedsraum', cat: 'Aktuell', desc: 'Blick in unseren hauseigenen Abschiedsraum.' },
+  { t: 'Gebäudeansicht (Panorama)', cat: 'Historisch', desc: 'Historische Panoramaaufnahme der Hauptstelle.' },
+  { t: 'Tag der offenen Tür 2012', cat: 'Historisch', desc: 'Aufnahme vom Tag der offenen Tür.' },
+];
+---
+
+<PageLayout
+  title="Galerie – aktuelle und historische Bilder | Bestattungen Gorhau Würzburg"
+  description="Galerie von Bestattungen Gorhau in Würzburg: aktuelle und historische Aufnahmen unseres Hauses, des Abschiedsraums und aus der Unternehmensgeschichte."
+  eyebrow="Einblicke"
+  path="/ueber-uns/galerie/"
+  heading="Galerie"
+  intro="Aktuelle und historische Aufnahmen unseres Hauses geben Ihnen einen Eindruck von unserem Institut und seiner Geschichte."
+  breadcrumbs={[
+    { name: 'Über uns', path: '/ueber-uns/' },
+    { name: 'Galerie', path: '/ueber-uns/galerie/' },
+  ]}
+>
+  <div class="prose">
+    <p>
+      Historische Aufnahmen kennzeichnen wir bewusst als solche, damit ältere Bilder nicht mit
+      aktuellen Ansichten verwechselt werden.
+    </p>
+    <p class="notice">
+      <strong>Hinweis:</strong> Die optimierten Bilddateien werden eingebunden, sobald die
+      Originalaufnahmen des Unternehmens vorliegen. Die geplanten Motive sind unten aufgeführt.
+    </p>
+  </div>
+
+  <ul class="gallery">
+    {
+      planned.map((p) => (
+        <li class="gallery__item">
+          <div class="gallery__frame" role="img" aria-label={`Platzhalter für: ${p.t}`}>
+            <span class="gallery__tag">{p.cat}</span>
+          </div>
+          <h2 class="gallery__title">{p.t}</h2>
+          <p>{p.desc}</p>
+        </li>
+      ))
+    }
+  </ul>
+</PageLayout>
+
+<style>
+  .notice {
+    background: var(--surface-cream);
+    border-left: 4px solid var(--brand-gold);
+    padding: var(--space-md);
+    border-radius: var(--radius-sm);
+    max-width: none;
+    color: var(--text-muted);
+  }
+  .gallery {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-lg) 0 0;
+    max-width: none;
+    display: grid;
+    gap: var(--space-lg);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  }
+  .gallery__frame {
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--surface-beige), var(--surface-cream));
+    border: 1px solid var(--border-subtle);
+    position: relative;
+    display: grid;
+    place-items: center;
+  }
+  .gallery__frame::after {
+    content: '';
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--brand-gold);
+    -webkit-mask: linear-gradient(#000 0 0) center/3px 100% no-repeat,
+      linear-gradient(#000 0 0) center/100% 3px no-repeat;
+    mask: linear-gradient(#000 0 0) center/3px 100% no-repeat,
+      linear-gradient(#000 0 0) center/100% 3px no-repeat;
+    opacity: 0.5;
+  }
+  .gallery__tag {
+    position: absolute;
+    top: var(--space-xs);
+    left: var(--space-xs);
+    background: var(--brand-bordeaux);
+    color: var(--brand-white);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.2em 0.6em;
+    border-radius: var(--radius-sm);
+    letter-spacing: 0.05em;
+  }
+  .gallery__title {
+    font-size: 1.15rem;
+    margin-top: var(--space-sm);
+  }
+  .gallery__item p {
+    color: var(--text-muted);
+  }
+</style>

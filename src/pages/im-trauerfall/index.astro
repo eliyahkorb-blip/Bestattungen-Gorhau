@@ -1,0 +1,187 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { company } from '../../data/company';
+
+const steps = [
+  {
+    t: 'Ruhe bewahren und uns anrufen',
+    d: 'Es besteht kein Zeitdruck. Rufen Sie uns an – wir besprechen mit Ihnen die nächsten Schritte und sind Tag und Nacht erreichbar.',
+  },
+  {
+    t: 'Ärztliche Todesbescheinigung',
+    d: 'Ein Arzt oder eine Ärztin stellt die Todesbescheinigung aus. Zu Hause verständigen Sie dazu den Hausarzt oder den ärztlichen Bereitschaftsdienst; in einer Einrichtung übernimmt dies das Personal.',
+  },
+  {
+    t: 'Überführung in unsere Obhut',
+    d: 'Nach Vorliegen der Todesbescheinigung holen wir die verstorbene Person ab und überführen sie würdevoll in unsere Räume.',
+  },
+  {
+    t: 'Persönliches Beratungsgespräch',
+    d: 'In Ruhe besprechen wir Bestattungsart, Ablauf und persönliche Wünsche. Bringen Sie – soweit vorhanden – die benötigten Unterlagen mit.',
+  },
+  {
+    t: 'Organisation & Formalitäten',
+    d: 'Wir übernehmen die Behördengänge, die Abstimmung mit Friedhof oder Krematorium und die Gestaltung von Trauerfeier und Trauerdruck.',
+  },
+];
+
+const faqs = [
+  {
+    q: 'Was muss ich als Erstes tun, wenn jemand verstorben ist?',
+    a: 'Bewahren Sie Ruhe – es besteht kein Zeitdruck. Verständigen Sie zunächst einen Arzt für die Todesbescheinigung und rufen Sie uns dann an. Wir übernehmen alle weiteren Schritte gemeinsam mit Ihnen.',
+  },
+  {
+    q: 'Sind Sie auch nachts und am Wochenende erreichbar?',
+    a: 'Ja. Im Trauerfall sind wir für Sie Tag und Nacht erreichbar. Für organisatorische Fragen erreichen Sie unser Büro zu den regulären Zeiten von Montag bis Freitag, 08:00 – 16:00 Uhr.',
+  },
+  {
+    q: 'Welche Unterlagen werden benötigt?',
+    a: 'Benötigt werden je nach Familienstand unter anderem der Personalausweis, die Geburts- oder Heiratsurkunde sowie die Todesbescheinigung. Eine vollständige Übersicht finden Sie auf der Seite „Benötigte Dokumente“.',
+  },
+  {
+    q: 'Was kostet ein erstes Beratungsgespräch?',
+    a: 'Das erste Gespräch ist für Sie unverbindlich. Wir nehmen uns Zeit, hören zu und beraten Sie zu allen Möglichkeiten – ohne Verpflichtung.',
+  },
+];
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<PageLayout
+  title="Im Trauerfall – Erste Schritte | Bestattungen Gorhau Würzburg"
+  description="Was ist im Trauerfall zu tun? Bestattungen Gorhau in Würzburg begleitet Sie ruhig durch die ersten Schritte – Tag und Nacht erreichbar. Erste Hilfe und Checkliste."
+  path="/im-trauerfall/"
+  eyebrow="Erste Hilfe im Trauerfall"
+  heading="Im Trauerfall sind wir für Sie da"
+  intro="Wenn ein Mensch verstorben ist, stellt sich vieles gleichzeitig. Sie müssen jetzt nichts allein regeln – wir begleiten Sie Schritt für Schritt."
+  breadcrumbs={[{ name: 'Im Trauerfall', path: '/im-trauerfall/' }]}
+  jsonLd={[faqLd]}
+>
+  <div class="prose">
+    <p class="urgent">
+      <strong>Sie brauchen jetzt Hilfe?</strong> Rufen Sie uns an – wir sind Tag und Nacht
+      für Sie erreichbar:
+      <a href={`tel:${company.phoneRaw}`}>{company.phone}</a>.
+    </p>
+    <p>
+      Der Verlust eines nahen Menschen ist ein tiefer Einschnitt. In den ersten Stunden wirkt
+      vieles überwältigend. Das Wichtigste zuerst: Es besteht kein Zeitdruck. Nehmen Sie sich
+      einen Moment. Die notwendigen Schritte gehen wir anschließend gemeinsam.
+    </p>
+  </div>
+
+  <h2>Die ersten Schritte im Überblick</h2>
+  <hr class="accent-rule" />
+  <ol class="steps">
+    {
+      steps.map((s) => (
+        <li class="steps__item">
+          <h3>{s.t}</h3>
+          <p>{s.d}</p>
+        </li>
+      ))
+    }
+  </ol>
+
+  <div class="prose">
+    <p>
+      <a class="btn btn--secondary" href="/im-trauerfall/benoetigte-dokumente/">
+        Benötigte Dokumente ansehen
+      </a>
+    </p>
+  </div>
+
+  <h2>Häufige Fragen im Trauerfall</h2>
+  <hr class="accent-rule" />
+  <div class="faq">
+    {
+      faqs.map((f) => (
+        <details class="faq__item">
+          <summary>{f.q}</summary>
+          <p>{f.a}</p>
+        </details>
+      ))
+    }
+  </div>
+</PageLayout>
+
+<style>
+  .urgent {
+    background: var(--surface-cream);
+    border-left: 4px solid var(--brand-bordeaux);
+    padding: var(--space-md);
+    border-radius: var(--radius-sm);
+    max-width: none;
+  }
+  .steps {
+    list-style: none;
+    counter-reset: step;
+    padding: 0;
+    display: grid;
+    gap: var(--space-md);
+    max-width: none;
+    margin-block: var(--space-md) var(--space-lg);
+  }
+  .steps__item {
+    counter-increment: step;
+    position: relative;
+    padding: var(--space-lg);
+    padding-left: 4.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+  }
+  .steps__item::before {
+    content: counter(step);
+    position: absolute;
+    left: var(--space-lg);
+    top: var(--space-lg);
+    width: 2.2rem;
+    height: 2.2rem;
+    display: grid;
+    place-items: center;
+    background: var(--brand-bordeaux);
+    color: var(--brand-white);
+    border-radius: 50%;
+    font-family: var(--font-heading);
+    font-weight: 700;
+  }
+  .steps__item h3 {
+    margin-bottom: var(--space-2xs);
+  }
+  .steps__item p {
+    color: var(--text-muted);
+    margin: 0;
+  }
+  .faq {
+    max-width: 46rem;
+  }
+  .faq__item {
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: var(--space-sm) var(--space-md);
+    margin-bottom: var(--space-sm);
+    background: var(--surface);
+  }
+  .faq__item summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--brand-bordeaux-dark);
+    padding: var(--space-2xs) 0;
+  }
+  .faq__item summary:hover {
+    color: var(--brand-bordeaux);
+  }
+  .faq__item p {
+    margin-top: var(--space-sm);
+    color: var(--text-muted);
+  }
+</style>

@@ -1,0 +1,65 @@
+---
+/*
+ * PLATZHALTER-WORTMARKE.
+ * Die originale Gorhau-Bildmarke (Kreuz, Pfeile, Wortmarke) konnte aus der
+ * gesperrten Quelldomain nicht heruntergeladen werden (siehe docs/LOGO-SOURCE.md).
+ * Diese zurückhaltende typografische Darstellung ist ein Stand-in und KEIN
+ * Redesign der Marke. Vor Live-Schaltung durch die Original-Logodatei ersetzen:
+ * public/img/logo.svg  bzw.  src/assets/brand/logo-optimized/.
+ */
+export interface Props {
+  variant?: 'default' | 'light';
+}
+const { variant = 'default' } = Astro.props;
+const wordColor = variant === 'light' ? '#fbf7f0' : '#521720';
+const subColor = variant === 'light' ? '#e3d9c8' : '#5c544c';
+const gold = '#b8933d';
+---
+
+<span class="logo" aria-hidden="false">
+  <svg
+    class="logo__mark"
+    width="34"
+    height="42"
+    viewBox="0 0 34 42"
+    role="img"
+    aria-label="Gorhau Bestattungen"
+    focusable="false"
+  >
+    <!-- Kreuz-Motiv (Platzhalter, an die Marke angelehnt) -->
+    <rect x="14.5" y="2" width="5" height="38" rx="1" fill={gold} />
+    <rect x="4" y="12" width="26" height="5" rx="1" fill={gold} />
+  </svg>
+  <span class="logo__text">
+    <span class="logo__word" style={`color:${wordColor}`}>GORHAU</span>
+    <span class="logo__sub" style={`color:${subColor}`}>Bestattungen · seit 1970</span>
+  </span>
+</span>
+
+<style>
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    line-height: 1.05;
+  }
+  .logo__mark {
+    flex: none;
+  }
+  .logo__text {
+    display: flex;
+    flex-direction: column;
+  }
+  .logo__word {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 0.06em;
+  }
+  .logo__sub {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+</style>

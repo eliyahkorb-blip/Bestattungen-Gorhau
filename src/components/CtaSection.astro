@@ -1,0 +1,51 @@
+---
+import { company } from '../data/company';
+export interface Props {
+  heading?: string;
+  text?: string;
+}
+const {
+  heading = 'Wir sind für Sie da',
+  text = 'Ob im akuten Trauerfall oder für ein Vorsorgegespräch – sprechen Sie uns an. Wir nehmen uns Zeit für Sie.',
+} = Astro.props;
+---
+
+<section class="section section--dark cta">
+  <div class="container cta__inner">
+    <div>
+      <h2>{heading}</h2>
+      <p>{text}</p>
+    </div>
+    <div class="cta__actions">
+      <a class="btn btn--gold" href={`tel:${company.phoneRaw}`}>
+        <span aria-hidden="true">☎</span> {company.phone}
+      </a>
+      <a class="btn btn--secondary cta__mail" href={`mailto:${company.email}`}>E-Mail schreiben</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta__inner {
+    display: grid;
+    gap: var(--space-lg);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    align-items: center;
+  }
+  .cta__inner p {
+    max-width: 40rem;
+  }
+  .cta__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+  .cta__mail {
+    color: var(--brand-gold);
+    border-color: var(--brand-gold);
+  }
+  .cta__mail:hover {
+    background: var(--brand-gold);
+    color: var(--brand-charcoal);
+  }
+</style>

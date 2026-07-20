@@ -1,0 +1,109 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { company } from '../data/company';
+---
+
+<PageLayout
+  title="Kontakt & Anfahrt | Bestattungen Gorhau Würzburg-Heidingsfeld"
+  description="Kontakt zu Bestattungen Gorhau in Würzburg-Heidingsfeld: Reuterstraße 2, Telefon 0931 61 00 00. Bürozeiten Mo–Fr 08:00–16:00 Uhr, im Trauerfall Tag und Nacht erreichbar."
+  eyebrow="So erreichen Sie uns"
+  path="/kontakt/"
+  heading="Kontakt & Anfahrt"
+  intro="Ob im Trauerfall oder für ein Vorsorgegespräch – wir sind für Sie da. Rufen Sie uns an, schreiben Sie uns oder besuchen Sie uns in Würzburg-Heidingsfeld."
+  breadcrumbs={[{ name: 'Kontakt', path: '/kontakt/' }]}
+>
+  <div class="contact-grid">
+    <section aria-labelledby="k-daten">
+      <h2 id="k-daten">Ihre Ansprechpartner</h2>
+      <hr class="accent-rule" />
+      <address class="contact-block">
+        <strong>{company.legalName}</strong><br />
+        {company.street}<br />
+        {company.postalCode} {company.city}-{company.district}
+      </address>
+      <ul class="contact-lines">
+        <li>
+          <span class="contact-lines__label">Telefon</span>
+          <a href={`tel:${company.phoneRaw}`}>{company.phone}</a>
+        </li>
+        <li>
+          <span class="contact-lines__label">Fax</span>
+          <span>{company.fax}</span>
+        </li>
+        <li>
+          <span class="contact-lines__label">E-Mail</span>
+          <a href={`mailto:${company.email}`}>{company.email}</a>
+        </li>
+      </ul>
+
+      <h2>Bürozeiten</h2>
+      <hr class="accent-rule" />
+      <p>Montag bis Freitag, 08:00 – 16:00 Uhr<br />sowie nach Vereinbarung.</p>
+      <p class="emergency"><strong>Im Trauerfall sind wir für Sie Tag und Nacht erreichbar.</strong></p>
+    </section>
+
+    <section aria-labelledby="k-anfahrt">
+      <h2 id="k-anfahrt">Anfahrt</h2>
+      <hr class="accent-rule" />
+      <p>
+        Sie finden uns in der Reuterstraße 2 in Würzburg-Heidingsfeld. Parkmöglichkeiten sind
+        in der Umgebung vorhanden.
+      </p>
+      <p>
+        Aus Datenschutzgründen laden wir keine Kartendienste automatisch. Sie können den
+        Standort direkt bei einem Kartenanbieter Ihrer Wahl öffnen:
+      </p>
+      <ul class="map-links">
+        <li><a class="btn btn--secondary" href={company.maps.osm} rel="noopener">Auf OpenStreetMap öffnen</a></li>
+        <li><a class="btn btn--secondary" href={company.maps.google} rel="noopener">Auf Google Maps öffnen</a></li>
+      </ul>
+      <p class="src-note">
+        Beim Öffnen dieser Links werden Sie auf die Seite des jeweiligen Anbieters
+        weitergeleitet, wobei Daten an diesen übertragen werden können.
+      </p>
+    </section>
+  </div>
+</PageLayout>
+
+<style>
+  .contact-grid {
+    display: grid;
+    gap: var(--space-2xl);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  }
+  .contact-block {
+    font-style: normal;
+    line-height: 1.8;
+    margin-bottom: var(--space-md);
+  }
+  .contact-lines {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-lg);
+  }
+  .contact-lines li {
+    display: flex;
+    gap: var(--space-md);
+    padding: 0.4em 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .contact-lines__label {
+    min-width: 5rem;
+    font-weight: 700;
+    color: var(--text-muted);
+  }
+  .emergency {
+    color: var(--brand-bordeaux);
+  }
+  .map-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+  .src-note {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+</style>

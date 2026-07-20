@@ -1,0 +1,48 @@
+---
+/* Zurückhaltende mobile Kontaktleiste – nur auf kleinen Viewports sichtbar. */
+import { company } from '../data/company';
+---
+
+<div class="contact-bar" role="region" aria-label="Schnellkontakt">
+  <a class="contact-bar__btn contact-bar__btn--call" href={`tel:${company.phoneRaw}`}>
+    <span aria-hidden="true">☎</span> Anrufen
+  </a>
+  <a class="contact-bar__btn contact-bar__btn--mail" href={`mailto:${company.email}`}>
+    <span aria-hidden="true">✉</span> E-Mail
+  </a>
+</div>
+
+<style>
+  .contact-bar {
+    display: none;
+  }
+  @media (max-width: 640px) {
+    .contact-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      position: sticky;
+      bottom: 0;
+      z-index: 90;
+      background: var(--border-subtle);
+      border-top: 1px solid var(--border-subtle);
+    }
+    .contact-bar__btn {
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4em;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .contact-bar__btn--call {
+      background: var(--brand-bordeaux);
+      color: var(--brand-white);
+    }
+    .contact-bar__btn--mail {
+      background: var(--brand-white);
+      color: var(--brand-bordeaux);
+    }
+  }
+</style>

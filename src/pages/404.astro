@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { company } from '../data/company';
+import { mainNav } from '../data/navigation';
+---
+
+<BaseLayout
+  title="Seite nicht gefunden (404) | Bestattungen Gorhau Würzburg"
+  description="Die aufgerufene Seite wurde nicht gefunden. Nutzen Sie die Navigation oder kontaktieren Sie Bestattungen Gorhau in Würzburg."
+  path="/404.html"
+  noindex={true}
+>
+  <section class="section section--white">
+    <div class="container prose">
+      <p class="eyebrow">Fehler 404</p>
+      <h1>Diese Seite konnten wir leider nicht finden</h1>
+      <p>
+        Die von Ihnen aufgerufene Seite existiert nicht oder wurde verschoben. Das tut uns leid.
+        Vielleicht hilft Ihnen einer der folgenden Wege weiter.
+      </p>
+      <p>
+        <a class="btn btn--primary" href="/">Zur Startseite</a>
+        <a class="btn btn--secondary" href={`tel:${company.phoneRaw}`}>Anrufen: {company.phone}</a>
+      </p>
+      <h2>Beliebte Seiten</h2>
+      <ul>
+        {mainNav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+        <li><a href="/kontakt/">Kontakt &amp; Anfahrt</a></li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

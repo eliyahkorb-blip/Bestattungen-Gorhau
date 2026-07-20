@@ -1,0 +1,89 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const groups = [
+  {
+    t: 'Bei ledigen Verstorbenen',
+    items: ['Personalausweis oder Reisepass', 'Geburtsurkunde'],
+  },
+  {
+    t: 'Bei verheirateten Verstorbenen',
+    items: ['Personalausweis oder Reisepass', 'Heiratsurkunde bzw. Familienstammbuch'],
+  },
+  {
+    t: 'Bei verwitweten Verstorbenen',
+    items: [
+      'Personalausweis oder Reisepass',
+      'Heiratsurkunde bzw. Familienstammbuch',
+      'Sterbeurkunde des Ehepartners',
+    ],
+  },
+  {
+    t: 'Bei geschiedenen Verstorbenen',
+    items: [
+      'Personalausweis oder Reisepass',
+      'Heiratsurkunde bzw. Familienstammbuch',
+      'Rechtskräftiges Scheidungsurteil',
+    ],
+  },
+];
+
+const further = [
+  'Ärztliche Todesbescheinigung (wird vom Arzt ausgestellt)',
+  'Krankenversicherungskarte',
+  'Rentennummer bzw. Rentenbescheid, falls vorhanden',
+  'Unterlagen zu einer bestehenden Bestattungsvorsorge oder Sterbegeldversicherung',
+  'Grabdokumente bei einer vorhandenen Grabstätte',
+];
+---
+
+<PageLayout
+  title="Benötigte Dokumente im Trauerfall | Bestattungen Gorhau Würzburg"
+  description="Welche Unterlagen werden im Trauerfall benötigt? Übersicht der Dokumente – nach Familienstand geordnet. Bestattungen Gorhau in Würzburg hilft Ihnen weiter."
+  eyebrow="Checkliste"
+  path="/im-trauerfall/benoetigte-dokumente/"
+  heading="Benötigte Unterlagen und Dokumente"
+  intro="Damit wir für Sie alle Formalitäten erledigen können, benötigen wir einige Unterlagen. Welche das sind, hängt vom Familienstand der verstorbenen Person ab."
+  breadcrumbs={[
+    { name: 'Im Trauerfall', path: '/im-trauerfall/' },
+    { name: 'Benötigte Dokumente', path: '/im-trauerfall/benoetigte-dokumente/' },
+  ]}
+>
+  <div class="prose">
+    <p>
+      Bitte machen Sie sich keine Sorgen, wenn nicht alle Unterlagen sofort auffindbar sind.
+      Wir gehen die Liste gemeinsam mit Ihnen durch und finden für fehlende Dokumente eine
+      Lösung.
+    </p>
+  </div>
+
+  <h2>Persönliche Urkunden nach Familienstand</h2>
+  <hr class="accent-rule" />
+  <div class="grid grid--2">
+    {
+      groups.map((g) => (
+        <article class="card">
+          <h3>{g.t}</h3>
+          <ul>
+            {g.items.map((i) => (
+              <li>{i}</li>
+            ))}
+          </ul>
+        </article>
+      ))
+    }
+  </div>
+
+  <h2>Weitere hilfreiche Unterlagen</h2>
+  <hr class="accent-rule" />
+  <ul class="prose">
+    {further.map((f) => <li>{f}</li>)}
+  </ul>
+
+  <div class="prose">
+    <p>
+      Sie sind unsicher, welche Unterlagen in Ihrer Situation notwendig sind? Rufen Sie uns
+      an – wir helfen Ihnen gern weiter.
+    </p>
+  </div>
+</PageLayout>

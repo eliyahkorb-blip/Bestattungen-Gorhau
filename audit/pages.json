@@ -1,0 +1,202 @@
+[
+  {
+    "url": "/404.html",
+    "title": "Seite nicht gefunden (404) | Bestattungen Gorhau Würzburg",
+    "description": "Die aufgerufene Seite wurde nicht gefunden. Nutzen Sie die Navigation oder kontaktieren Sie Bestattungen Gorhau in Würzburg.",
+    "h1count": 1,
+    "canonical": "https://www.gorhau-bestattungen.de/404.html",
+    "jsonld": 1
+  },
+  {
+    "url": "/abschiedsraum/",
+    "title": "Abschiedsraum in Würzburg | Bestattungen Gorhau",
+    "description": "Unser hauseigener Abschiedsraum in Würzburg-Heidingsfeld gibt Raum und Zeit für einen persönlichen Abschied im kleinen Kreis – bereits seit 2004.",
+    "h1count": 1,
+    "canonical": "https://www.gorhau-bestattungen.de/abschiedsraum/",
+    "jsonld": 2
+  },
+  {
+    "url": "/barrierefreiheit/",
+    "title": "Barrierefreiheit | Bestattungen Gorhau Würzburg",
+    "description": "Erklärung zur Barrierefreiheit der Website von Bestattungen Gorhau in Würzburg: umgesetzte Maßnahmen, bekannte Einschränkungen und Kontakt für Hinweise.",
+    "h1count": 1,
+    "canonical": "https://www.gorhau-bestattungen.de/barrierefreiheit/",
+    "jsonld": 2
+  },
+  {
+    "url": "/bestattungsarten/anonyme-bestattung/",
+    "title": "Anonyme Bestattung | Bestattungen Gorhau Würzburg",
+    "description": "Die anonyme Bestattung: Beisetzung ohne namentliche Kennzeichnung auf einer Gemeinschaftsfläche. Bestattungen Gorhau in Würzburg berät Sie einfühlsam.",
+    "h1count": 1,
+    "canonical": "https://www.gorhau-bestattungen.de/bestattungsarten/anonyme-bestattung/",
+    "jsonld": 2
+  },
+  {
+    "url": "/bestattungsarten/erdbestattung/",
+    "title": "Erdbestattung | Bestattungen Gorhau Würzburg",
+    "description": "Die Erdbestattung: klassische Beisetzung im Sarg als Reihen- oder Wahlgrab. Bestattungen Gorhau in Würzburg begleitet Sie bei allen Schritten und Formalitäten.",
+    "h1count": 1,
+    "canonical": "https://www.gorhau-bestattungen.de/bestattungsarten/erdbestattung/",
+    "jsonld": 2
+  },
+  {
+    "url": "/bestattungsarten/feuerbestattung/",
+    "title": "Feuerbestattung | Bestattungen Gorhau Würzburg",
+    "description": "Die Feuerbestattung: Beisetzung der Urne nach der Einäscherung mit vielfältigen Grabformen. Bestattungen Gorhau in Würzburg berät Sie zu allen Möglichkeiten.",
+    "h1count": 1,
+    "canonical": "https://www.gorhau-bestattungen.de/bestattungsarten/feuerbestattung/",
+    "jsonld": 2
+  },
+  {
+    "url": "/bestattungsarten/",
+    "title": "Bestattungsarten im Überblick | Bestattungen Gorhau Würzburg",
+    "description": "Erd-, Feuer-, See- und anonyme Bestattung: Bestattungen Gorhau in Würzburg erläutert die Bestattungsarten und hilft Ihnen, den passenden Abschied zu finden.",
+    "h1count": 1,
+    "canonical": "https://www.gorhau-bestattungen.de/bestattungsarten/",
+    "jsonld": 2
+  },
+  {
+    "url": "/bestattungsarten/seebestattung/",
+    "title": "Seebestattung | Bestattungen Gorhau Würzburg",
+    "description": "Die Seebestattung: Beisetzung der Urne auf offener See. Bestattungen Gorhau in Würzburg organisiert die Seebestattung würdevoll und mit allen Formalitäten.",
+    "h1count": 1,
+    "canonical": "https://www.gorhau-bestattungen.de/bestattungsarten/seebestattung/",
+    "jsonld": 2
+  },
+  {
+    "url": "/bestattungsvorsorge/",
+    "title": "Bestattungsvorsorge in Würzburg | Bestattungen Gorhau",
+    "description": "Bestattungsvorsorge bei Bestattungen Gorhau in Würzburg: Regeln Sie Ihre Wünsche zu Lebzeiten und entlasten Sie Ihre Angehörigen. Vorsorgevertrag und Beratung.",
+    "h1count": 1,
+    "canonical": "https://www.gorhau-bestattungen.de/bestattungsvorsorge/",
+    "jsonld": 2
+  },
+  {
+    "url": "/datenschutz/",
+    "title": "Datenschutzerklärung | Bestattungen Gorhau Würzburg",
+    "description": "Datenschutzerklärung von Bestattungen Gorhau in Würzburg gemäß DSGVO. Informationen zur Verarbeitung personenbezogener Daten auf dieser Website.",
+    "h1count": 1,
+    "canonical": "https://www.gorhau-bestattungen.de/datenschutz/",
+    "jsonld": 2
+  },
+  {
+    "url": "/friedhoefe-in-wuerzburg/",
+    "title": "Friedhöfe in Würzburg – Informationen &amp; Grabarten | Bestattungen Gorhau",
+    "description": "Hilfreiche Informationen zu Friedhöfen, Grabarten und Ruhezeiten in Würzburg. Bestattungen Gorhau berät Sie zu den aktuell geltenden Regelungen vor Ort.",
+    "h1count": 1,
+    "canonical": "https://www.gorhau-bestattungen.de/friedhoefe-in-wuerzburg/",
+    "jsonld": 2
+  },
+  {
+    "url": "/im-trauerfall/benoetigte-dokumente/",
+    "title": "Benötigte Dokumente im Trauerfall | Bestattungen Gorhau Würzburg",
+    "description": "Welche Unterlagen werden im Trauerfall benötigt? Übersicht der Dokumente – nach Familienstand geordnet. Bestattungen Gorhau in Würzburg hilft Ihnen weiter.",
+    "h1count": 1,
+    "canonical": "https://www.gorhau-bestattungen.de/im-trauerfall/benoetigte-dokumente/",
+    "jsonld": 2
+  },
+  {
+    "url": "/im-trauerfall/",
+    "title": "Im Trauerfall – Erste Schritte | Bestattungen Gorhau Würzburg",
+    "description": "Was ist im Trauerfall zu tun? Bestattungen Gorhau in Würzburg begleitet Sie ruhig durch die ersten Schritte – Tag und Nacht erreichbar. Erste Hilfe und Checkliste.",
+    "h1count": 1,
+    "canonical": "https://www.gorhau-bestattungen.de/im-trauerfall/",
+    "jsonld": 3
+  },
+  {
+    "url": "/impressum/",
+    "title": "Impressum | Bestattungen Gorhau Würzburg",
+    "description": "Impressum des Bestattungs- und Überführungs-Instituts Gorhau, Inh. Thomas Gorhau e.K., Reuterstraße 2, 97084 Würzburg-Heidingsfeld.",
+    "h1count": 1,
+    "canonical": "https://www.gorhau-bestattungen.de/impressum/",
+    "jsonld": 2
+  },
+  {
+    "url": "/",
+    "title": "Bestattungen Gorhau in Würzburg-Heidingsfeld | Bestatter seit 1970",
+    "description": "Bestattungs- und Überführungs-Institut Gorhau in Würzburg-Heidingsfeld: familiengeführt seit 1970. Zuhören, beraten, begleiten – persönlich und zuverlässig im Trauerfall. Tag und Nacht erreichbar.",
+    "h1count": 1,
+    "canonical": "https://www.gorhau-bestattungen.de/",
+    "jsonld": 3
+  },
+  {
+    "url": "/kontakt/",
+    "title": "Kontakt &amp; Anfahrt | Bestattungen Gorhau Würzburg-Heidingsfeld",
+    "description": "Kontakt zu Bestattungen Gorhau in Würzburg-Heidingsfeld: Reuterstraße 2, Telefon 0931 61 00 00. Bürozeiten Mo–Fr 08:00–16:00 Uhr, im Trauerfall Tag und Nacht erreichbar.",
+    "h1count": 1,
+    "canonical": "https://www.gorhau-bestattungen.de/kontakt/",
+    "jsonld": 2
+  },
+  {
+    "url": "/leistungen/formalitaeten/",
+    "title": "Behördengänge und Formalitäten | Bestattungen Gorhau Würzburg",
+    "description": "Bestattungen Gorhau in Würzburg übernimmt für Sie die Formalitäten: Sterbeurkunde, Abmeldungen, Anträge und Behördengänge. Wir nehmen Ihnen den Papierkram ab.",
+    "h1count": 1,
+    "canonical": "https://www.gorhau-bestattungen.de/leistungen/formalitaeten/",
+    "jsonld": 2
+  },
+  {
+    "url": "/leistungen/",
+    "title": "Leistungen – Bestattungen Gorhau Würzburg",
+    "description": "Das Leistungsspektrum von Bestattungen Gorhau in Würzburg: Überführungen, Thanatopraxie, Trauerfeier und Trauerdruck, Formalitäten sowie alle Bestattungsarten.",
+    "h1count": 1,
+    "canonical": "https://www.gorhau-bestattungen.de/leistungen/",
+    "jsonld": 2
+  },
+  {
+    "url": "/leistungen/thanatopraxie/",
+    "title": "Thanatopraxie und hygienische Versorgung | Bestattungen Gorhau Würzburg",
+    "description": "Thanatopraxie bei Bestattungen Gorhau in Würzburg: die hygienische und ästhetische Versorgung verstorbener Menschen durch geschulte Fachkräfte – für einen würdigen Abschied.",
+    "h1count": 1,
+    "canonical": "https://www.gorhau-bestattungen.de/leistungen/thanatopraxie/",
+    "jsonld": 2
+  },
+  {
+    "url": "/leistungen/trauerfeier-und-trauerdruck/",
+    "title": "Trauerfeier, Trauerreden und Trauerdruck | Bestattungen Gorhau Würzburg",
+    "description": "Trauerfeier, Trauerreden, Drucksachen und Blumenschmuck: Bestattungen Gorhau in Würzburg gestaltet mit Ihnen einen persönlichen Abschied nach Ihren Wünschen.",
+    "h1count": 1,
+    "canonical": "https://www.gorhau-bestattungen.de/leistungen/trauerfeier-und-trauerdruck/",
+    "jsonld": 2
+  },
+  {
+    "url": "/leistungen/ueberfuehrungen/",
+    "title": "Überführungen national und international | Bestattungen Gorhau Würzburg",
+    "description": "Überführungen im In- und Ausland: Bestattungen Gorhau in Würzburg organisiert die würdevolle Überführung verstorbener Menschen zuverlässig und mit allen Formalitäten.",
+    "h1count": 1,
+    "canonical": "https://www.gorhau-bestattungen.de/leistungen/ueberfuehrungen/",
+    "jsonld": 2
+  },
+  {
+    "url": "/mediathek/",
+    "title": "Mediathek – Imagefilm, Videos und historische Medien | Bestattungen Gorhau",
+    "description": "Die Mediathek von Bestattungen Gorhau in Würzburg: Imagefilm des Unternehmens sowie historische Videos, Audios, Flyer und Dokumente aus der Firmengeschichte.",
+    "h1count": 1,
+    "canonical": "https://www.gorhau-bestattungen.de/mediathek/",
+    "jsonld": 2
+  },
+  {
+    "url": "/ueber-uns/galerie/",
+    "title": "Galerie – aktuelle und historische Bilder | Bestattungen Gorhau Würzburg",
+    "description": "Galerie von Bestattungen Gorhau in Würzburg: aktuelle und historische Aufnahmen unseres Hauses, des Abschiedsraums und aus der Unternehmensgeschichte.",
+    "h1count": 1,
+    "canonical": "https://www.gorhau-bestattungen.de/ueber-uns/galerie/",
+    "jsonld": 2
+  },
+  {
+    "url": "/ueber-uns/historie/",
+    "title": "Unsere Historie seit 1970 | Bestattungen Gorhau Würzburg",
+    "description": "Die Geschichte des Bestattungsinstituts Gorhau: gegründet 1970, seit 1980 in Würzburg-Heidingsfeld, seit 2004 mit hauseigenem Abschiedsraum. Ein Familienunternehmen.",
+    "h1count": 1,
+    "canonical": "https://www.gorhau-bestattungen.de/ueber-uns/historie/",
+    "jsonld": 2
+  },
+  {
+    "url": "/ueber-uns/",
+    "title": "Über uns – Familienunternehmen seit 1970 | Bestattungen Gorhau Würzburg",
+    "description": "Bestattungen Gorhau in Würzburg-Heidingsfeld: ein Familienunternehmen seit 1970. Zuhören, beraten, begleiten – persönliche Begleitung mit fachlicher Qualifikation.",
+    "h1count": 1,
+    "canonical": "https://www.gorhau-bestattungen.de/ueber-uns/",
+    "jsonld": 2
+  }
+]

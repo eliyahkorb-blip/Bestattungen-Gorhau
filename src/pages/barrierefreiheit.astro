@@ -1,0 +1,91 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { company } from '../data/company';
+---
+
+<PageLayout
+  title="Barrierefreiheit | Bestattungen Gorhau Würzburg"
+  description="Erklärung zur Barrierefreiheit der Website von Bestattungen Gorhau in Würzburg: umgesetzte Maßnahmen, bekannte Einschränkungen und Kontakt für Hinweise."
+  eyebrow="Zugänglichkeit"
+  path="/barrierefreiheit/"
+  heading="Erklärung zur Barrierefreiheit"
+  intro="Wir möchten, dass unsere Website von möglichst allen Menschen gut genutzt werden kann. Auf dieser Seite erläutern wir, was wir dafür umgesetzt haben und woran wir noch arbeiten."
+  breadcrumbs={[{ name: 'Barrierefreiheit', path: '/barrierefreiheit/' }]}
+  cta={false}
+>
+  <div class="prose legal">
+    <p>
+      Diese Website wurde mit dem Ziel entwickelt, den Anforderungen der Web Content
+      Accessibility Guidelines (WCAG) 2.2 auf Stufe AA weitgehend zu entsprechen.
+    </p>
+
+    <h2>Umgesetzte Maßnahmen</h2>
+    <ul>
+      <li>durchgängig semantisches HTML mit Landmark-Bereichen und einer sinnvollen Überschriftenstruktur</li>
+      <li>genau eine H1 pro Seite und eine logische Reihenfolge der Überschriften</li>
+      <li>ein „Zum Inhalt springen“-Link am Seitenanfang</li>
+      <li>vollständige Bedienbarkeit per Tastatur, sichtbare Fokusmarkierungen</li>
+      <li>ausreichende Farbkontraste; Informationen werden nicht allein über Farbe vermittelt</li>
+      <li>skalierbarer Text und nutzbare Darstellung bis mindestens 200 % Zoom</li>
+      <li>Berücksichtigung von „prefers-reduced-motion“ (reduzierte Bewegung)</li>
+      <li>keine automatisch startenden Videos oder Töne</li>
+      <li>beschreibende Alternativtexte für informative Bilder, leere Alternativtexte für rein dekorative Bilder</li>
+      <li>ausreichend große Klick- und Touchflächen</li>
+      <li>Verzicht auf Accessibility-Overlays; die Zugänglichkeit ist direkt in die Website integriert</li>
+    </ul>
+
+    <h2>Bekannte Einschränkungen</h2>
+    <p>
+      Wir prüfen die Website fortlaufend. Zum aktuellen Stand bestehen folgende bekannte
+      Einschränkungen:
+    </p>
+    <ul>
+      <li>
+        Video- und Audioinhalte in der Mediathek werden erst nach Bereitstellung der
+        Originaldateien vollständig mit Untertiteln und Transkript eingebunden. Bis dahin sind
+        die vorgesehenen Inhalte lediglich beschrieben.
+      </li>
+      <li>
+        Einzelne Bildergalerien werden ergänzt, sobald die Originalaufnahmen vorliegen; die
+        Motive sind derzeit textlich beschrieben.
+      </li>
+    </ul>
+
+    <h2>Stand der Prüfung</h2>
+    <p>
+      Die Zugänglichkeit wurde mit automatisierten Werkzeugen sowie durch manuelle Prüfungen
+      (Tastaturbedienung, Zoom, Kontrast, Fokusreihenfolge) getestet. Diese Erklärung gibt den
+      Stand zum Zeitpunkt der Erstellung der Website wieder und wird bei Änderungen
+      aktualisiert.
+    </p>
+    <p class="src-note">
+      Rechtlicher Hinweis: Diese Website ist ein Informationsangebot. Sie enthält keinen
+      Online-Buchungs-, Checkout- oder digitalen Vertragsabschlussprozess. Unabhängig von der
+      gesetzlichen Einordnung streben wir eine Umsetzung nach WCAG 2.2 AA an.
+    </p>
+
+    <h2>Hinweise und Kontakt</h2>
+    <p>
+      Sind Ihnen Barrieren aufgefallen oder benötigen Sie Inhalte in einer zugänglicheren Form?
+      Bitte teilen Sie uns das mit – wir helfen gern weiter und verbessern unsere Website:
+    </p>
+    <p>
+      Telefon: <a href={`tel:${company.phoneRaw}`}>{company.phone}</a><br />
+      E-Mail: <a href={`mailto:${company.email}`}>{company.email}</a>
+    </p>
+  </div>
+</PageLayout>
+
+<style>
+  .legal h2 {
+    font-size: 1.25rem;
+    margin-top: var(--space-xl);
+  }
+  .legal p {
+    max-width: 46rem;
+  }
+  .src-note {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+</style>

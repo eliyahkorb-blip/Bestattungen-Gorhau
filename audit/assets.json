@@ -1,0 +1,138 @@
+[
+  {
+    "url": "/images/header_logo.png",
+    "category": "Logo/Marke",
+    "historic": "aktuell",
+    "recommendation": "verwenden",
+    "status": "nicht ladbar (403)",
+    "note": "Original-Logo; siehe LOGO-SOURCE.md"
+  },
+  {
+    "url": "/images/1_front.png",
+    "category": "Foto (Gebäude)",
+    "historic": "historisch",
+    "recommendation": "historisch verwenden",
+    "status": "nicht ladbar (403)",
+    "note": "Gebäudepanorama"
+  },
+  {
+    "url": "/institut/mediathek/gorhau_imagefilm.flv",
+    "category": "Video",
+    "historic": "aktuell",
+    "recommendation": "verwenden",
+    "status": "nicht ladbar (403)",
+    "note": "Imagefilm → MP4/WebM konvertieren"
+  },
+  {
+    "url": "/institut/mediathek/mz_imagespot_2010.flv",
+    "category": "Video",
+    "historic": "historisch",
+    "recommendation": "historisch verwenden",
+    "status": "nicht ladbar (403)",
+    "note": "Imagespot 2010"
+  },
+  {
+    "url": "/institut/mediathek/mz_fernsehspot.flv",
+    "category": "Video",
+    "historic": "historisch",
+    "recommendation": "historisch verwenden",
+    "status": "nicht ladbar (403)",
+    "note": "Fernsehspot"
+  },
+  {
+    "url": "/institut/mediathek/radiospot_11_2009.flv",
+    "category": "Audio",
+    "historic": "historisch",
+    "recommendation": "historisch verwenden",
+    "status": "nicht ladbar (403)",
+    "note": "Radiospot 2009 → MP3/OGG"
+  },
+  {
+    "url": "/institut/mediathek/tagderoffenentuer2012.jpg",
+    "category": "Flyer",
+    "historic": "historisch",
+    "recommendation": "archivieren",
+    "status": "nicht ladbar (403)",
+    "note": "Tag der offenen Tür 2012"
+  },
+  {
+    "url": "/institut/mediathek/flyer_2009.jpg",
+    "category": "Anzeige",
+    "historic": "historisch",
+    "recommendation": "archivieren",
+    "status": "nicht ladbar (403)",
+    "note": "Anzeige 2009"
+  },
+  {
+    "url": "/vorsorge/GN750.pdf",
+    "category": "Dokument (PDF)",
+    "historic": "archiv",
+    "recommendation": "prüfen/ersetzen",
+    "status": "nicht ladbar (403)",
+    "note": "Vorsorgebroschüre – Inhalt auf Aktualität prüfen"
+  },
+  {
+    "url": "/bestattungsarten/urnengarten.pdf",
+    "category": "Dokument (PDF)",
+    "historic": "archiv",
+    "recommendation": "prüfen/ersetzen",
+    "status": "nicht ladbar (403)",
+    "note": "Urnengarten – Preise nicht als aktuell übernehmen"
+  },
+  {
+    "url": "/favicon.ico",
+    "category": "Favicon",
+    "historic": "aktuell",
+    "recommendation": "verwenden",
+    "status": "erstellt",
+    "note": "16/32/48"
+  },
+  {
+    "url": "/favicon.svg",
+    "category": "Favicon",
+    "historic": "aktuell",
+    "recommendation": "verwenden",
+    "status": "erstellt",
+    "note": "SVG"
+  },
+  {
+    "url": "/apple-touch-icon.png",
+    "category": "Icon",
+    "historic": "aktuell",
+    "recommendation": "verwenden",
+    "status": "erstellt",
+    "note": "180×180"
+  },
+  {
+    "url": "/img/icon-192.png",
+    "category": "Icon",
+    "historic": "aktuell",
+    "recommendation": "verwenden",
+    "status": "erstellt",
+    "note": "Manifest"
+  },
+  {
+    "url": "/img/icon-512.png",
+    "category": "Icon",
+    "historic": "aktuell",
+    "recommendation": "verwenden",
+    "status": "erstellt",
+    "note": "Manifest"
+  },
+  {
+    "url": "/img/icon-512-maskable.png",
+    "category": "Icon",
+    "historic": "aktuell",
+    "recommendation": "verwenden",
+    "status": "erstellt",
+    "note": "maskable"
+  },
+  {
+    "url": "/img/og-default.svg",
+    "category": "Social-Preview",
+    "historic": "aktuell",
+    "recommendation": "verwenden",
+    "status": "erstellt",
+    "note": "Open-Graph-Standardbild"
+  }
+]
