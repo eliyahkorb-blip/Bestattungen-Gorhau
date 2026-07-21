@@ -1,22 +1,31 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
-import Motif from '../../components/illustrations/Motif.astro';
+import PhotoFigure from '../../components/ui/PhotoFigure.astro';
 import { withBase } from '../../utils/url';
 
-const themen = [
-  { name: 'gebaeude' as const, t: 'Unser Haus', href: '/kontakt/' },
-  { name: 'abschiedsraum' as const, t: 'Abschiedsraum', href: '/abschiedsraum/' },
-  { name: 'historie' as const, t: 'Historie seit 1970', href: '/ueber-uns/historie/' },
+const fotos = [
+  { name: 'bestattungsinstitut-gorhau-aussenansicht-panorama', alt: 'Außenansicht des Bestattungsinstituts Gorhau in der Reuterstraße, Würzburg-Heidingsfeld' },
+  { name: 'abschiedsraum-bestattungen-gorhau-panorama', alt: 'Abschiedsraum des Bestattungsinstituts Gorhau' },
+  { name: 'beratungsbuero-bestattungen-gorhau', alt: 'Beratungsbüro im Bestattungsinstitut Gorhau' },
+  { name: 'versorgungsraum-bestattungen-gorhau', alt: 'Versorgungsraum des Bestattungsinstituts Gorhau' },
+  { name: 'sargausstellung-detail-1', alt: 'Detailansicht der Sargausstellung' },
+  { name: 'sargausstellung-detail-2', alt: 'Weitere Detailansicht der Sargausstellung' },
+  { name: 'fahrzeuge-vor-bestattungsinstitut', alt: 'Bestattungsfahrzeuge vor dem Bestattungsinstitut Gorhau' },
+  { name: 'bestattungsinstitut-gorhau-innenhof-panorama-2', alt: 'Innenhof des Bestattungsinstituts Gorhau in Würzburg-Heidingsfeld' },
+  { name: 'historisches-gebaeude-reuterstrasse', alt: 'Historische Ansicht des Gebäudes in der Reuterstraße' },
+  { name: 'filiale-erthalstrasse-wuerzburg', alt: 'Frühere Filiale des Bestattungsinstituts Gorhau in der Erthalstraße' },
+  { name: 'historische-filiale-muenzstrasse', alt: 'Historische Filiale des Bestattungsinstituts in der Münzstraße' },
+  { name: 'historische-filiale-uffenheim', alt: 'Historische Filiale des Bestattungsinstituts in Uffenheim' },
 ];
 ---
 
 <PageLayout
   title="Galerie | Bestattungen Gorhau Würzburg"
-  description="Einblicke in Bestattungen Gorhau in Würzburg: unser Haus, der Abschiedsraum und die Unternehmensgeschichte seit 1970."
+  description="Einblicke in Bestattungen Gorhau in Würzburg: unser Haus, der Abschiedsraum, die Sargausstellung und frühere Standorte."
   eyebrow="Einblicke"
   path="/ueber-uns/galerie/"
   heading="Galerie"
-  intro="Ein erster Eindruck von unserem Institut, dem Abschiedsraum und unserer Geschichte."
+  intro="Ein erster Eindruck von unserem Institut, dem Abschiedsraum, der Sargausstellung und unserer Geschichte."
   breadcrumbs={[
     { name: 'Über uns', path: '/ueber-uns/' },
     { name: 'Galerie', path: '/ueber-uns/galerie/' },
@@ -24,14 +33,11 @@ const themen = [
   ctaLabel="Persönliche Beratung anfragen"
   ctaHref={withBase('/kontakt/')}
 >
-  <ul class="theme-grid">
+  <ul class="photo-grid">
     {
-      themen.map((th) => (
+      fotos.map((f, i) => (
         <li>
-          <a class="theme-tile" href={withBase(th.href)}>
-            <Motif name={th.name} label={th.t} class="theme-tile__img" />
-            <h2 class="theme-tile__title">{th.t}</h2>
-          </a>
+          <PhotoFigure name={f.name} alt={f.alt} width={208} height={126} priority={i === 0} class="photo-grid__item" />
         </li>
       ))
     }
@@ -40,43 +46,28 @@ const themen = [
   <div class="prose gallery-outro">
     <p>
       Ein historisches Dokument aus unserem Firmenarchiv – die Anzeige zum Tag der offenen Tür
-      2009 – finden Sie in der <a href={withBase('/mediathek/')}>Mediathek</a>.
+      2009 – finden Sie in der <a href={withBase('/mediathek/')}>Mediathek</a>. Mehr über unsere
+      Geschichte seit 1970 lesen Sie auf der Seite <a href={withBase('/ueber-uns/historie/')}>Historie</a>.
     </p>
   </div>
 </PageLayout>
 
 <style>
-  .theme-grid {
+  .photo-grid {
     list-style: none;
     padding: 0;
     margin: var(--space-lg) 0 0;
     max-width: none;
     display: grid;
-    gap: var(--space-lg);
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    gap: var(--space-md);
+    grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
   }
-  .theme-tile {
-    display: block;
-    background: var(--surface-cream);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-lg);
-    padding: var(--space-lg);
-    text-decoration: none;
-    color: inherit;
-    transition: border-color 0.2s ease, transform 0.2s ease;
-  }
-  .theme-tile:hover {
-    border-color: var(--brand-gold);
-    transform: translateY(-2px);
-  }
-  .theme-tile :global(.theme-tile__img) {
-    max-width: 9rem;
-    margin: 0 auto var(--space-sm);
-  }
-  .theme-tile__title {
-    font-size: 1.1rem;
-    text-align: center;
+  .photo-grid :global(.photo-grid__item) {
     margin: 0;
+  }
+  .photo-grid :global(.photo-grid__item img) {
+    width: 100%;
+    height: auto;
   }
   .gallery-outro {
     margin-top: var(--space-xl);

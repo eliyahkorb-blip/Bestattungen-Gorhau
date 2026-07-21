@@ -1,0 +1,50 @@
+---
+/*
+ * Echtes Unternehmensfoto (aus dem Medienpaket), responsiv mit WebP + PNG-Fallback,
+ * festen Abmessungen (kein Layout-Sprung) und Pflicht-Alt-Text.
+ */
+import { withBase } from '../../utils/url';
+
+export interface Props {
+  name: string;
+  alt: string;
+  width: number;
+  height: number;
+  caption?: string;
+  priority?: boolean;
+  class?: string;
+}
+const { name, alt, width, height, caption, priority = false, class: klass = '' } = Astro.props;
+---
+
+<figure class={`photo-figure ${klass}`}>
+  <picture>
+    <source type="image/webp" srcset={withBase(`/images/${name}.webp`)} />
+    <img
+      src={withBase(`/images/${name}.png`)}
+      width={width}
+      height={height}
+      alt={alt}
+      loading={priority ? 'eager' : 'lazy'}
+      decoding="async"
+    />
+  </picture>
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>
+
+<style>
+  .photo-figure {
+    margin: 0;
+  }
+  .photo-figure img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-subtle);
+  }
+  .photo-figure figcaption {
+    margin-top: var(--space-sm);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+</style>

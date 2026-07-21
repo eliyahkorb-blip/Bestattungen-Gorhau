@@ -1,7 +1,7 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import IconFeature from '../../components/ui/IconFeature.astro';
-import Motif from '../../components/illustrations/Motif.astro';
+import PhotoFigure from '../../components/ui/PhotoFigure.astro';
 import { company } from '../../data/company';
 import { withBase } from '../../utils/url';
 
@@ -22,9 +22,14 @@ const links = [
   intro="Seit über fünf Jahrzehnten begleiten wir Menschen aus Würzburg und der Region in Zeiten der Trauer."
   breadcrumbs={[{ name: 'Über uns', path: '/ueber-uns/' }]}
 >
-  <figure class="page-motif">
-    <Motif name="gebaeude" label="Symbolisches Gebäudemotiv" />
-  </figure>
+  <PhotoFigure
+    name="bestattungsinstitut-gorhau-innenhof-panorama-1"
+    alt="Innenhof des Bestattungsinstituts Gorhau in Würzburg-Heidingsfeld"
+    width={979}
+    height={280}
+    priority
+    class="page-photo"
+  />
 
   <div class="prose">
     <p>

@@ -1,6 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
-import Motif from '../../components/illustrations/Motif.astro';
+import PhotoFigure from '../../components/ui/PhotoFigure.astro';
 import { withBase } from '../../utils/url';
 
 const milestones = [
@@ -23,9 +23,14 @@ const milestones = [
     { name: 'Historie', path: '/ueber-uns/historie/' },
   ]}
 >
-  <figure class="page-motif">
-    <Motif name="historie" label="Zeitleiste mit mehreren Stationen" />
-  </figure>
+  <PhotoFigure
+    name="bestattungen-gorhau-historische-fahrzeuge-panorama"
+    alt="Historische Bestattungsfahrzeuge des Instituts Gorhau"
+    width={979}
+    height={280}
+    priority
+    class="page-photo"
+  />
 
   <div class="prose">
     <p>
@@ -48,12 +53,39 @@ const milestones = [
       ))
     }
   </ol>
+
+  <PhotoFigure
+    name="historischer-bestattungswagen-gorhau-panorama"
+    alt="Historischer Bestattungswagen des Instituts Gorhau"
+    width={979}
+    height={280}
+    class="page-photo page-photo--inline"
+  />
+
   <div class="prose">
     <p>
       Was 1970 begann, tragen wir bis heute weiter: die Überzeugung, dass jeder Mensch einen
       würdevollen Abschied verdient. Die Haltung „Zuhören, beraten, begleiten“ ist dabei mehr als
       ein Leitspruch – sie zeigt sich etwa in der Einrichtung des Abschiedsraums 2004.
     </p>
+  </div>
+
+  <PhotoFigure
+    name="bestattungen-gorhau-historie-bildleiste"
+    alt="Historische Ansichten früherer Filialen und Fahrzeuge des Instituts Gorhau"
+    width={830}
+    height={99}
+    class="page-photo page-photo--inline"
+  />
+  <PhotoFigure
+    name="thomas-und-manfred-gorhau-historisch"
+    alt="Thomas und Manfred Gorhau, historische Aufnahme"
+    width={208}
+    height={126}
+    class="page-motif page-motif--inline"
+  />
+
+  <div class="prose">
     <p>
       Mehr über unser heutiges Leistungsspektrum erfahren Sie auf der Seite
       <a href={withBase('/ueber-uns/')}>Über uns</a>, mehr über unseren
@@ -61,7 +93,7 @@ const milestones = [
     </p>
     <p class="src-note">
       Einzelne historische Angaben stammen aus öffentlich zugänglichen Unternehmensprofilen
-      und den bisherigen Website-Inhalten. Historische Aufnahmen finden Sie in unserer
+      und den bisherigen Website-Inhalten. Weitere Aufnahmen finden Sie in unserer
       <a href={withBase('/ueber-uns/galerie/')}>Galerie</a> und in der <a href={withBase('/mediathek/')}>Mediathek</a>.
     </p>
   </div>

@@ -1,7 +1,7 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import HintBox from '../components/ui/HintBox.astro';
-import Motif from '../components/illustrations/Motif.astro';
+import PhotoFigure from '../components/ui/PhotoFigure.astro';
 import { withBase } from '../utils/url';
 ---
 
@@ -16,9 +16,14 @@ import { withBase } from '../utils/url';
   ctaLabel="Anfahrt öffnen"
   ctaHref={withBase('/kontakt/')}
 >
-  <figure class="page-motif">
-    <Motif name="friedhoefe" label="Ruhiger Friedhofsweg mit Baumbestand" />
-  </figure>
+  <PhotoFigure
+    name="urnengemeinschaftsgrabanlage"
+    alt="Urnengemeinschaftsgrabanlage auf einem Friedhof mit Blumenschmuck"
+    width={260}
+    height={160}
+    class="page-motif"
+    priority
+  />
 
   <div class="prose">
     <p>

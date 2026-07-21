@@ -2,6 +2,7 @@
 import PageLayout from '../../layouts/PageLayout.astro';
 import HintBox from '../../components/ui/HintBox.astro';
 import Motif from '../../components/illustrations/Motif.astro';
+import PhotoFigure from '../../components/ui/PhotoFigure.astro';
 import { withBase } from '../../utils/url';
 ---
 
@@ -20,9 +21,14 @@ import { withBase } from '../../utils/url';
   ctaHref={withBase('/kontakt/')}
   ctaHint="Unsicher, welche Bestattungsart passt? Wir beraten Sie in Ruhe."
 >
-  <figure class="page-motif">
-    <Motif name="seebestattung" label="Horizont über dem Meer mit sanften Wellen" />
-  </figure>
+  <PhotoFigure
+    name="seebestattung-bestattungsschiff"
+    alt="Urne vor dem Meer als Sinnbild der Seebestattung"
+    width={260}
+    height={160}
+    class="page-motif"
+    priority
+  />
 
   <div class="prose">
     <p>

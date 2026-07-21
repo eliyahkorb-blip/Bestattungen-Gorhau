@@ -2,7 +2,7 @@
 import PageLayout from '../../layouts/PageLayout.astro';
 import IconFeature from '../../components/ui/IconFeature.astro';
 import AccordionItem from '../../components/ui/AccordionItem.astro';
-import Motif from '../../components/illustrations/Motif.astro';
+import PhotoFigure from '../../components/ui/PhotoFigure.astro';
 import { withBase } from '../../utils/url';
 
 const leistungen = [
@@ -24,9 +24,14 @@ const leistungen = [
   intro="Von der ersten Beratung bis zum würdevollen Abschied begleiten wir Sie umfassend – alle organisatorischen und gestalterischen Aufgaben aus einer Hand."
   breadcrumbs={[{ name: 'Leistungen', path: '/leistungen/' }]}
 >
-  <figure class="page-motif">
-    <Motif name="begleitung" label="Zwei Figuren, die sich stützend zur Seite stehen" />
-  </figure>
+  <PhotoFigure
+    name="sargausstellung-bestattungen-gorhau-panorama"
+    alt="Sargausstellung im Bestattungsinstitut Gorhau"
+    width={979}
+    height={280}
+    priority
+    class="page-photo"
+  />
 
   <div class="prose">
     <p>

@@ -196,6 +196,14 @@ a[href^='mailto:']:hover {
   max-width: 20rem;
   margin: var(--space-lg) auto;
 }
+.page-photo {
+  max-width: 100%;
+  margin: 0 0 var(--space-xl);
+}
+.page-photo--inline {
+  max-width: 100%;
+  margin: var(--space-lg) 0;
+}
 .page-motif figcaption {
   text-align: center;
   color: var(--text-muted);

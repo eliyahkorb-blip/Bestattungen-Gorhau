@@ -1,6 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-import Motif from '../components/illustrations/Motif.astro';
+import PhotoFigure from '../components/ui/PhotoFigure.astro';
 import { company } from '../data/company';
 ---
 
@@ -14,9 +14,14 @@ import { company } from '../data/company';
   breadcrumbs={[{ name: 'Kontakt', path: '/kontakt/' }]}
   cta={false}
 >
-  <figure class="page-motif">
-    <Motif name="gebaeude" label="Symbolisches Gebäudemotiv" />
-  </figure>
+  <PhotoFigure
+    name="bestattungsinstitut-gorhau-aussenansicht-panorama"
+    alt="Außenansicht des Bestattungsinstituts Gorhau in der Reuterstraße, Würzburg-Heidingsfeld"
+    width={979}
+    height={280}
+    priority
+    class="page-photo"
+  />
 
   <div class="contact-grid">
     <section aria-labelledby="k-daten" class="contact-section">

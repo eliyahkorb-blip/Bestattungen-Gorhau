@@ -1,7 +1,7 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import Quote from '../components/ui/Quote.astro';
-import Motif from '../components/illustrations/Motif.astro';
+import PhotoFigure from '../components/ui/PhotoFigure.astro';
 import { withBase } from '../utils/url';
 ---
 
@@ -16,9 +16,14 @@ import { withBase } from '../utils/url';
   ctaLabel="Fragen zum Abschiedsraum"
   ctaHref={withBase('/kontakt/')}
 >
-  <figure class="page-motif">
-    <Motif name="abschiedsraum" label="Fenster mit sanftem Lichteinfall als Sinnbild des Abschiedsraums" />
-  </figure>
+  <PhotoFigure
+    name="abschiedsraum-bestattungen-gorhau-panorama"
+    alt="Unser Abschiedsraum in Würzburg-Heidingsfeld mit Sitzgelegenheiten, Blumenschmuck und Kerzen"
+    width={979}
+    height={280}
+    priority
+    class="page-photo"
+  />
 
   <div class="prose">
     <p>
