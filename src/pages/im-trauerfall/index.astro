@@ -2,6 +2,7 @@
 import PageLayout from '../../layouts/PageLayout.astro';
 import { company } from '../../data/company';
 import { withBase } from '../../utils/url';
+import Motif from '../../components/illustrations/Motif.astro';
 
 const steps = [
   {
@@ -65,7 +66,14 @@ const faqLd = {
   intro="Wenn ein Mensch verstorben ist, stellt sich vieles gleichzeitig. Sie müssen jetzt nichts allein regeln – wir begleiten Sie Schritt für Schritt."
   breadcrumbs={[{ name: 'Im Trauerfall', path: '/im-trauerfall/' }]}
   jsonLd={[faqLd]}
+  ctaLabel="Im Trauerfall anrufen"
+  ctaHref={`tel:${company.phoneRaw}`}
+  ctaHint="Wir sind Tag und Nacht erreichbar."
 >
+  <figure class="page-motif">
+    <Motif name="begleitung" label="Zwei Figuren, die sich stützend zur Seite stehen" />
+  </figure>
+
   <div class="prose">
     <p class="urgent">
       <strong>Sie brauchen jetzt Hilfe?</strong> Rufen Sie uns an – wir sind Tag und Nacht
@@ -99,6 +107,10 @@ const faqLd = {
       </a>
     </p>
   </div>
+
+  <figure class="page-motif page-motif--inline">
+    <Motif name="formalitaeten" label="Dokument mit Häkchen als Symbol für erledigte Formalitäten" />
+  </figure>
 
   <h2>Häufige Fragen im Trauerfall</h2>
   <hr class="accent-rule" />

@@ -4,11 +4,24 @@ import CtaSection from '../components/CtaSection.astro';
 import HeroVisual from '../components/ui/HeroVisual.astro';
 import IconFeature from '../components/ui/IconFeature.astro';
 import FactStrip from '../components/ui/FactStrip.astro';
-import Quote from '../components/ui/Quote.astro';
 import WaveDivider from '../components/ui/WaveDivider.astro';
 import Icon from '../components/icons/Icon.astro';
+import Motif from '../components/illustrations/Motif.astro';
 import { company } from '../data/company';
 import { withBase } from '../utils/url';
+
+const leistungenAuswahl = [
+  { name: 'ueberfuehrung' as const, t: 'Überführungen', d: 'Im In- und Ausland würdevoll organisiert.', href: '/leistungen/ueberfuehrungen/' },
+  { name: 'thanatopraxie' as const, t: 'Thanatopraxie', d: 'Hygienische und ästhetische Versorgung.', href: '/leistungen/thanatopraxie/' },
+  { name: 'trauerfeier' as const, t: 'Trauerfeier & Trauerdruck', d: 'Reden, Drucksachen, Dekoration.', href: '/leistungen/trauerfeier-und-trauerdruck/' },
+];
+
+const bestattungsartenAuswahl = [
+  { name: 'erdbestattung' as const, t: 'Erdbestattung', href: '/bestattungsarten/erdbestattung/' },
+  { name: 'feuerbestattung' as const, t: 'Feuerbestattung', href: '/bestattungsarten/feuerbestattung/' },
+  { name: 'seebestattung' as const, t: 'Seebestattung', href: '/bestattungsarten/seebestattung/' },
+  { name: 'anonyme-bestattung' as const, t: 'Anonyme Bestattung', href: '/bestattungsarten/anonyme-bestattung/' },
+];
 
 const orientation = [
   {
@@ -155,6 +168,44 @@ const facts = [
     </div>
   </section>
 
+  <!-- Unternehmensbild und kurze Vorstellung -->
+  <section class="section section--white">
+    <div class="container split split--reverse">
+      <div class="split__aside">
+        <Motif name="gebaeude" label="Symbolisches Gebäudemotiv" />
+      </div>
+      <div>
+        <p class="eyebrow">Wer wir sind</p>
+        <h2>Ein Familienunternehmen in Würzburg-Heidingsfeld</h2>
+        <p>
+          Seit 1970 sind wir in der Reuterstraße für die Menschen in Würzburg und der Region da –
+          inhabergeführt, mit festen Ansprechpartnern statt anonymer Zentrale.
+        </p>
+        <p><a class="card__link" href={withBase('/ueber-uns/')}>Mehr über uns →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ausgewählte Leistungen -->
+  <section class="section section--beige">
+    <div class="container">
+      <p class="eyebrow">Unser Leistungsspektrum</p>
+      <h2>Ausgewählte Leistungen</h2>
+      <div class="motif-tile-grid">
+        {leistungenAuswahl.map((l) => (
+          <a class="motif-tile" href={withBase(l.href)}>
+            <Motif name={l.name} label={l.t} class="motif-tile__img" />
+            <h3>{l.t}</h3>
+            <p>{l.d}</p>
+          </a>
+        ))}
+      </div>
+      <p class="leistungen-links">
+        <a href={withBase('/leistungen/')}>Alle Leistungen im Überblick →</a>
+      </p>
+    </div>
+  </section>
+
   <!-- Was uns ausmacht -->
   <section class="section section--white">
     <div class="container">
@@ -163,17 +214,30 @@ const facts = [
       <div class="tile-grid">
         {reasons.map((r) => <IconFeature icon={r.icon} title={r.title} text={r.text} href={r.href} />)}
       </div>
+    </div>
+  </section>
+
+  <!-- Bestattungsarten als visuelle Auswahl -->
+  <section class="section section--cream">
+    <div class="container">
+      <p class="eyebrow">Möglichkeiten des Abschieds</p>
+      <h2>Bestattungsarten im Überblick</h2>
+      <div class="motif-tile-grid motif-tile-grid--four">
+        {bestattungsartenAuswahl.map((b) => (
+          <a class="motif-tile" href={withBase(b.href)}>
+            <Motif name={b.name} label={b.t} class="motif-tile__img" />
+            <h3>{b.t}</h3>
+          </a>
+        ))}
+      </div>
       <p class="leistungen-links">
-        Weitere Leistungen: <a href={withBase('/leistungen/ueberfuehrungen/')}>Überführungen</a> ·
-        <a href={withBase('/leistungen/thanatopraxie/')}>Thanatopraxie</a> ·
-        <a href={withBase('/leistungen/trauerfeier-und-trauerdruck/')}>Trauerfeier &amp; Trauerdruck</a> ·
-        <a href={withBase('/leistungen/')}>alle Leistungen im Überblick →</a>
+        <a href={withBase('/bestattungsarten/')}>Alle Bestattungsarten im Vergleich →</a>
       </p>
     </div>
   </section>
 
   <!-- Abschiedsraum -->
-  <section class="section section--beige">
+  <section class="section section--white">
     <div class="container split">
       <div>
         <p class="eyebrow">Raum und Zeit</p>
@@ -185,7 +249,22 @@ const facts = [
         <p><a class="btn btn--secondary" href={withBase('/abschiedsraum/')}>Abschiedsraum kennenlernen</a></p>
       </div>
       <div class="split__aside">
-        <Quote text="Ein persönlicher Abschied braucht vor allem eines: Zeit. Genau die möchten wir Ihnen geben." />
+        <Motif name="abschiedsraum" label="Fenster mit sanftem Lichteinfall" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Imagefilm-Teaser -->
+  <section class="section section--beige imagefilm-teaser">
+    <div class="container split">
+      <div class="imagefilm-teaser__thumb" aria-hidden="true">
+        <Icon name="film" size={40} />
+      </div>
+      <div>
+        <p class="eyebrow">Sehen und hören</p>
+        <h2>Lernen Sie uns im Imagefilm kennen</h2>
+        <p>Ein kurzer Einblick in unser Haus, unsere Räume und unsere Haltung.</p>
+        <p><a class="btn btn--secondary" href={withBase('/mediathek/#imagefilm')}>Imagefilm ansehen</a></p>
       </div>
     </div>
   </section>
@@ -358,8 +437,68 @@ const facts = [
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
     align-items: center;
   }
+  .split--reverse {
+    direction: rtl;
+  }
+  .split--reverse > * {
+    direction: ltr;
+  }
   .split__aside p + p {
     margin-top: var(--space-md);
+  }
+  .split__aside :global(.motif) {
+    max-width: 20rem;
+    margin-inline: auto;
+  }
+
+  .motif-tile-grid {
+    display: grid;
+    gap: var(--space-md);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    margin-top: var(--space-lg);
+    max-width: none;
+  }
+  .motif-tile-grid--four {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  }
+  .motif-tile {
+    display: block;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+  .motif-tile:hover {
+    border-color: var(--brand-gold);
+    transform: translateY(-2px);
+  }
+  .motif-tile :global(.motif-tile__img) {
+    max-width: 8rem;
+    margin: 0 auto var(--space-sm);
+  }
+  .motif-tile h3 {
+    font-size: 1rem;
+    color: var(--brand-bordeaux-dark);
+    text-align: center;
+    margin-bottom: 0.2rem;
+  }
+  .motif-tile p {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    text-align: center;
+    margin: 0;
+  }
+
+  .imagefilm-teaser__thumb {
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--surface-dark), var(--brand-bordeaux));
+    display: grid;
+    place-items: center;
+    color: var(--brand-gold);
   }
   .contact-block {
     font-style: normal;

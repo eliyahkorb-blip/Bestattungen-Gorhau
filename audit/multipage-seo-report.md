@@ -1,6 +1,6 @@
 # Multi-Page-SEO-Report
 
-Automatisiert erzeugt am 2026-07-20 über `npm run test:multipage`. Prüft **jede** aus dem Build erzeugte HTML-Seite einzeln (kein Sampling).
+Automatisiert erzeugt am 2026-07-21 über `npm run test:multipage`. Prüft **jede** aus dem Build erzeugte HTML-Seite einzeln (kein Sampling).
 
 ## Zusammenfassung
 
@@ -24,28 +24,28 @@ Automatisiert erzeugt am 2026-07-20 über `npm run test:multipage`. Prüft **jed
 | URL | H1 | Title eindeutig | Description eindeutig | Canonical | Sitemap | Interne Links (aus/ein) | Befunde |
 |---|---|---|---|---|---|---|---|
 | `/404.html` | ✓ | – | – | ✓ | noindex | 49 / 0 | — |
-| `/abschiedsraum/` | ✓ | ✓ | ✓ | ✓ | ✓ | 42 / 59 | — |
+| `/abschiedsraum/` | ✓ | ✓ | ✓ | ✓ | ✓ | 43 / 59 | — |
 | `/barrierefreiheit/` | ✓ | ✓ | ✓ | ✓ | ✓ | 39 / 24 | — |
-| `/bestattungsarten/anonyme-bestattung/` | ✓ | ✓ | ✓ | ✓ | ✓ | 42 / 26 | — |
-| `/bestattungsarten/erdbestattung/` | ✓ | ✓ | ✓ | ✓ | ✓ | 42 / 25 | — |
-| `/bestattungsarten/feuerbestattung/` | ✓ | ✓ | ✓ | ✓ | ✓ | 43 / 25 | — |
-| `/bestattungsarten/` | ✓ | ✓ | ✓ | ✓ | ✓ | 45 / 86 | — |
-| `/bestattungsarten/seebestattung/` | ✓ | ✓ | ✓ | ✓ | ✓ | 42 / 26 | — |
-| `/bestattungsvorsorge/` | ✓ | ✓ | ✓ | ✓ | ✓ | 41 / 57 | — |
+| `/bestattungsarten/anonyme-bestattung/` | ✓ | ✓ | ✓ | ✓ | ✓ | 43 / 27 | — |
+| `/bestattungsarten/erdbestattung/` | ✓ | ✓ | ✓ | ✓ | ✓ | 43 / 26 | — |
+| `/bestattungsarten/feuerbestattung/` | ✓ | ✓ | ✓ | ✓ | ✓ | 45 / 26 | — |
+| `/bestattungsarten/` | ✓ | ✓ | ✓ | ✓ | ✓ | 46 / 88 | — |
+| `/bestattungsarten/seebestattung/` | ✓ | ✓ | ✓ | ✓ | ✓ | 43 / 27 | — |
+| `/bestattungsvorsorge/` | ✓ | ✓ | ✓ | ✓ | ✓ | 42 / 57 | — |
 | `/datenschutz/` | ✓ | ✓ | ✓ | ✓ | ✓ | 39 / 24 | — |
-| `/friedhoefe-in-wuerzburg/` | ✓ | ✓ | ✓ | ✓ | ✓ | 41 / 53 | — |
+| `/friedhoefe-in-wuerzburg/` | ✓ | ✓ | ✓ | ✓ | ✓ | 42 / 53 | — |
 | `/im-trauerfall/benoetigte-dokumente/` | ✓ | ✓ | ✓ | ✓ | ✓ | 42 / 26 | — |
 | `/im-trauerfall/` | ✓ | ✓ | ✓ | ✓ | ✓ | 40 / 80 | — |
 | `/impressum/` | ✓ | ✓ | ✓ | ✓ | ✓ | 39 / 24 | — |
-| `/` | ✓ | ✓ | ✓ | ✓ | ✓ | 58 / 72 | — |
-| `/kontakt/` | ✓ | ✓ | ✓ | ✓ | ✓ | 39 / 53 | — |
-| `/leistungen/formalitaeten/` | ✓ | ✓ | ✓ | ✓ | ✓ | 42 / 28 | — |
-| `/leistungen/` | ✓ | ✓ | ✓ | ✓ | ✓ | 48 / 80 | — |
-| `/leistungen/thanatopraxie/` | ✓ | ✓ | ✓ | ✓ | ✓ | 43 / 27 | — |
-| `/leistungen/trauerfeier-und-trauerdruck/` | ✓ | ✓ | ✓ | ✓ | ✓ | 42 / 26 | — |
-| `/leistungen/ueberfuehrungen/` | ✓ | ✓ | ✓ | ✓ | ✓ | 42 / 26 | — |
-| `/mediathek/` | ✓ | ✓ | ✓ | ✓ | ✓ | 41 / 53 | — |
-| `/ueber-uns/galerie/` | ✓ | ✓ | ✓ | ✓ | ✓ | 43 / 28 | — |
-| `/ueber-uns/historie/` | ✓ | ✓ | ✓ | ✓ | ✓ | 44 / 28 | — |
-| `/ueber-uns/` | ✓ | ✓ | ✓ | ✓ | ✓ | 44 / 78 | — |
+| `/` | ✓ | ✓ | ✓ | ✓ | ✓ | 65 / 72 | — |
+| `/kontakt/` | ✓ | ✓ | ✓ | ✓ | ✓ | 39 / 68 | — |
+| `/leistungen/formalitaeten/` | ✓ | ✓ | ✓ | ✓ | ✓ | 43 / 28 | — |
+| `/leistungen/` | ✓ | ✓ | ✓ | ✓ | ✓ | 49 / 80 | — |
+| `/leistungen/thanatopraxie/` | ✓ | ✓ | ✓ | ✓ | ✓ | 44 / 27 | — |
+| `/leistungen/trauerfeier-und-trauerdruck/` | ✓ | ✓ | ✓ | ✓ | ✓ | 43 / 26 | — |
+| `/leistungen/ueberfuehrungen/` | ✓ | ✓ | ✓ | ✓ | ✓ | 43 / 26 | — |
+| `/mediathek/` | ✓ | ✓ | ✓ | ✓ | ✓ | 41 / 55 | — |
+| `/ueber-uns/galerie/` | ✓ | ✓ | ✓ | ✓ | ✓ | 44 / 28 | — |
+| `/ueber-uns/historie/` | ✓ | ✓ | ✓ | ✓ | ✓ | 45 / 28 | — |
+| `/ueber-uns/` | ✓ | ✓ | ✓ | ✓ | ✓ | 45 / 79 | — |
 

@@ -1,6 +1,8 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import Quote from '../components/ui/Quote.astro';
+import HintBox from '../components/ui/HintBox.astro';
+import Motif from '../components/illustrations/Motif.astro';
 import { withBase } from '../utils/url';
 ---
 
@@ -12,7 +14,13 @@ import { withBase } from '../utils/url';
   heading="Unser hauseigener Abschiedsraum"
   intro="Ein persönlicher Abschied braucht vor allem eines: Zeit und einen geschützten Ort."
   breadcrumbs={[{ name: 'Abschiedsraum', path: '/abschiedsraum/' }]}
+  ctaLabel="Fragen zum Abschiedsraum"
+  ctaHref={withBase('/kontakt/')}
 >
+  <figure class="page-motif">
+    <Motif name="abschiedsraum" label="Fenster mit sanftem Lichteinfall als Sinnbild des Abschiedsraums" />
+  </figure>
+
   <div class="prose">
     <p>
       Bereits seit 2004 bieten wir in Würzburg einen eigenen Abschiedsraum – als eines der
@@ -48,13 +56,15 @@ import { withBase } from '../utils/url';
     </p>
   </div>
 
-  <div class="prose">
-    <p>
-      Sprechen Sie uns an, wenn Sie den Raum nutzen möchten. Planen Sie bereits für die Zukunft?
-      Informieren Sie sich über unsere <a href={withBase('/bestattungsvorsorge/')}>Bestattungsvorsorge</a>.
-      Aufnahmen unserer Räume finden Sie in der <a href={withBase('/ueber-uns/galerie/')}>Galerie</a>.
-    </p>
-  </div>
+  <HintBox>
+    Aktuelle Fotos unseres Abschiedsraums sind in Planung und folgen in Kürze auf dieser Seite
+    sowie in der <a href={withBase('/ueber-uns/galerie/')}>Galerie</a>. Bis dahin verschaffen wir Ihnen im
+    persönlichen Gespräch gern einen Eindruck vor Ort.
+  </HintBox>
+
+  <p class="related-link">
+    Verwandtes Thema: <a href={withBase('/bestattungsvorsorge/')}>Bestattungsvorsorge</a>
+  </p>
 </PageLayout>
 
 <style>

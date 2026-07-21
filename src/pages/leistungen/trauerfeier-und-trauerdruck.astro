@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import Motif from '../../components/illustrations/Motif.astro';
 import { withBase } from '../../utils/url';
 ---
 
@@ -15,6 +16,10 @@ import { withBase } from '../../utils/url';
     { name: 'Trauerfeier & Trauerdruck', path: '/leistungen/trauerfeier-und-trauerdruck/' },
   ]}
 >
+  <figure class="page-motif">
+    <Motif name="trauerfeier" label="Kranzmotiv als Sinnbild einer persönlich gestalteten Trauerfeier" />
+  </figure>
+
   <div class="prose">
     <p>
       Ob feierlich oder schlicht, kirchlich oder frei: Wir helfen Ihnen, eine Trauerfeier zu
@@ -57,12 +62,10 @@ import { withBase } from '../../utils/url';
     </p>
   </div>
 
-  <div class="prose">
-    <p>
-      Organisatorische Schritte: <a href={withBase('/leistungen/formalitaeten/')}>Formalitäten</a> · Feier im
-      kleinen Kreis: <a href={withBase('/abschiedsraum/')}>Abschiedsraum</a>.
-    </p>
-  </div>
+  <p class="related-link">
+    Verwandte Themen: <a href={withBase('/leistungen/formalitaeten/')}>Formalitäten</a> ·
+    <a href={withBase('/abschiedsraum/')}>Abschiedsraum</a>
+  </p>
 </PageLayout>
 
 <style>

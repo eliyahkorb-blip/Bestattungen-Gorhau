@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import HintBox from '../../components/ui/HintBox.astro';
+import Motif from '../../components/illustrations/Motif.astro';
 import { withBase } from '../../utils/url';
 ---
 
@@ -15,7 +16,14 @@ import { withBase } from '../../utils/url';
     { name: 'Bestattungsarten', path: '/bestattungsarten/' },
     { name: 'Seebestattung', path: '/bestattungsarten/seebestattung/' },
   ]}
+  ctaLabel="Bestattungsarten besprechen"
+  ctaHref={withBase('/kontakt/')}
+  ctaHint="Unsicher, welche Bestattungsart passt? Wir beraten Sie in Ruhe."
 >
+  <figure class="page-motif">
+    <Motif name="seebestattung" label="Horizont über dem Meer mit sanften Wellen" />
+  </figure>
+
   <div class="prose">
     <p>
       Die Seebestattung ist eine besondere Form der Feuerbestattung. Die Asche wird in einer
@@ -44,6 +52,10 @@ import { withBase } from '../../utils/url';
     </p>
   </div>
 
+  <figure class="page-motif page-motif--inline">
+    <Motif name="anonyme-bestattung" label="Weiter, offener Horizont" />
+  </figure>
+
   <h2>Kein festes Grab, aber ein Ort der Erinnerung</h2>
   <hr class="accent-rule" />
   <div class="prose">
@@ -60,10 +72,8 @@ import { withBase } from '../../utils/url';
     Bestimmungen und übernehmen die Anmeldung bei der Reederei.
   </HintBox>
 
-  <div class="prose">
-    <p>
-      Weitere Bestattungsarten im Überblick: <a href={withBase('/bestattungsarten/')}>Bestattungsarten</a> ·
-      vorausschauend planen: <a href={withBase('/bestattungsvorsorge/')}>Bestattungsvorsorge</a>.
-    </p>
-  </div>
+  <p class="related-link">
+    Verwandte Themen: <a href={withBase('/bestattungsarten/')}>Bestattungsarten im Überblick</a> ·
+    <a href={withBase('/bestattungsvorsorge/')}>Bestattungsvorsorge</a>
+  </p>
 </PageLayout>

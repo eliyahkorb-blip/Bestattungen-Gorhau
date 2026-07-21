@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import Motif from '../../components/illustrations/Motif.astro';
 import { withBase } from '../../utils/url';
 
 const milestones = [
@@ -22,6 +23,10 @@ const milestones = [
     { name: 'Historie', path: '/ueber-uns/historie/' },
   ]}
 >
+  <figure class="page-motif">
+    <Motif name="historie" label="Zeitleiste mit mehreren Stationen" />
+  </figure>
+
   <div class="prose">
     <p>
       Manche Unternehmen lassen sich in wenigen Sätzen beschreiben – bei einem Familienbetrieb,

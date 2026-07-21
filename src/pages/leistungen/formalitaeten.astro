@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import AccordionItem from '../../components/ui/AccordionItem.astro';
+import Motif from '../../components/illustrations/Motif.astro';
 import { withBase } from '../../utils/url';
 ---
 
@@ -16,6 +17,10 @@ import { withBase } from '../../utils/url';
     { name: 'Formalitäten', path: '/leistungen/formalitaeten/' },
   ]}
 >
+  <figure class="page-motif">
+    <Motif name="formalitaeten" label="Dokument mit Häkchen als Symbol für erledigte Formalitäten" />
+  </figure>
+
   <h2>Formalitäten, die wir für Sie übernehmen</h2>
   <hr class="accent-rule" />
   <ul class="chip-list">
@@ -46,12 +51,10 @@ import { withBase } from '../../utils/url';
     </p>
   </AccordionItem>
 
-  <div class="prose">
-    <p>
-      Benötigte Unterlagen: <a href={withBase('/im-trauerfall/benoetigte-dokumente/')}>Benötigte Dokumente</a>
-      · erste Schritte: <a href={withBase('/im-trauerfall/')}>Im Trauerfall</a>.
-    </p>
-  </div>
+  <p class="related-link">
+    Verwandte Themen: <a href={withBase('/im-trauerfall/benoetigte-dokumente/')}>Benötigte Dokumente</a> ·
+    <a href={withBase('/im-trauerfall/')}>Im Trauerfall</a>
+  </p>
 </PageLayout>
 
 <style>

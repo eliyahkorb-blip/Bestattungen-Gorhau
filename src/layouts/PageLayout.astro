@@ -1,8 +1,9 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import CtaSection from '../components/CtaSection.astro';
+import PageCta from '../components/ui/PageCta.astro';
 import { breadcrumbLd } from '../data/jsonld';
+import { withBase } from '../utils/url';
 import type { Crumb } from '../components/Breadcrumbs.astro';
 
 export interface Props {
@@ -14,6 +15,10 @@ export interface Props {
   eyebrow?: string;
   breadcrumbs: Crumb[];
   cta?: boolean;
+  /** Zurückhaltender Abschluss-CTA (ein Link statt vollem Bordeaux-Panel). */
+  ctaLabel?: string;
+  ctaHref?: string;
+  ctaHint?: string;
   jsonLd?: Record<string, unknown>[];
 }
 
@@ -26,6 +31,9 @@ const {
   eyebrow,
   breadcrumbs,
   cta = true,
+  ctaLabel = 'Persönliche Beratung anfragen',
+  ctaHref = withBase('/kontakt/'),
+  ctaHint,
   jsonLd = [],
 } = Astro.props;
 
@@ -54,10 +62,9 @@ const crumbLd = breadcrumbLd([
   <div class="section section--white">
     <div class="container">
       <slot />
+      {cta && <PageCta label={ctaLabel} href={ctaHref} hint={ctaHint} />}
     </div>
   </div>
-
-  {cta && <CtaSection />}
 </BaseLayout>
 
 <style>

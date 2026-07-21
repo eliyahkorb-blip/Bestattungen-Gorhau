@@ -1,0 +1,192 @@
+---
+/*
+ * Farbige Linien-Illustrationen als ergänzendes visuelles Element je Themenseite
+ * (Referenzprinzip: "farbige Linienillustrationen als Ergänzung" zu echten Fotos).
+ * Es liegen keine echten Fotos für allgemeine Bestattungsarten, Räume oder Fahrzeuge vor
+ * (siehe docs/IMAGE-SOURCE-AND-LICENSES.md) – anstatt KI-generierte Stockfotos als "echt"
+ * auszugeben, erhält jedes Thema ein eigenständiges, warmes Motiv in den Gorhau-Markenfarben.
+ * Sobald echte Fotos vorliegen (docs/PHOTO-SHOOT-LIST.md), können sie diese Motive ergänzen
+ * oder ablösen.
+ */
+export interface Props {
+  name:
+    | 'erdbestattung'
+    | 'feuerbestattung'
+    | 'seebestattung'
+    | 'anonyme-bestattung'
+    | 'thanatopraxie'
+    | 'vorsorge'
+    | 'formalitaeten'
+    | 'trauerfeier'
+    | 'ueberfuehrung'
+    | 'abschiedsraum'
+    | 'historie'
+    | 'friedhoefe'
+    | 'gebaeude'
+    | 'begleitung';
+  label: string;
+  class?: string;
+}
+const { name, label, class: klass = '' } = Astro.props;
+---
+
+<svg
+  class={`motif motif--${name} ${klass}`}
+  viewBox="0 0 480 300"
+  role="img"
+  aria-label={label}
+  preserveAspectRatio="xMidYMid meet"
+>
+  <defs>
+    <radialGradient id={`glow-${name}`} cx="50%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#fbeee9" />
+      <stop offset="100%" stop-color="#f7ece9" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect x="0" y="0" width="480" height="300" fill={`url(#glow-${name})`} />
+
+  {name === 'erdbestattung' && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M40 250h400" stroke="#8c6d28" stroke-width="3" opacity="0.5" />
+      <path d="M210 250v-90a30 30 0 0 1 60 0v90z" stroke="#882020" stroke-width="4" />
+      <path d="M225 250v-70 M255 250v-70" stroke="#b8933d" stroke-width="2" opacity="0.6" />
+      <path d="M120 250c0-18 14-32 32-32s32 14 32 32" stroke="#5c7a52" stroke-width="3" opacity="0.75" />
+      <path d="M296 250c0-14 11-26 26-26s26 12 26 26" stroke="#5c7a52" stroke-width="3" opacity="0.6" />
+      <circle cx="152" cy="205" r="5" fill="#a02828" opacity="0.7" />
+      <circle cx="168" cy="212" r="4" fill="#b8933d" opacity="0.7" />
+    </g>
+  )}
+
+  {name === 'feuerbestattung' && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M215 260c-14 0-25-10-25-24 0-20 20-30 20-52 0-10-4-16-4-16s26 8 26 34c6-8 8-18 8-18s16 16 16 40c0 20-13 36-31 36z"
+        stroke="#a02828" stroke-width="3.5" opacity="0.85" />
+      <path d="M200 262h60" stroke="#8c6d28" stroke-width="3" opacity="0.5" />
+      <path d="M180 262c0-70 24-108 50-130" stroke="#b8933d" stroke-width="1.5" opacity="0.35" />
+      <path d="M300 262c0-70-24-108-50-130" stroke="#b8933d" stroke-width="1.5" opacity="0.35" />
+    </g>
+  )}
+
+  {name === 'seebestattung' && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M60 150l120-46 120 46" stroke="#882020" stroke-width="3" opacity="0.7" />
+      <path d="M180 104v100" stroke="#8c6d28" stroke-width="3" opacity="0.5" />
+      <path d="M40 210c20-10 40-10 60 0s40 10 60 0 40-10 60 0 40 10 60 0 40-10 60 0"
+        stroke="#4c7f8c" stroke-width="3" />
+      <path d="M40 236c20-10 40-10 60 0s40 10 60 0 40-10 60 0 40 10 60 0 40-10 60 0"
+        stroke="#4c7f8c" stroke-width="2" opacity="0.55" />
+    </g>
+  )}
+
+  {name === 'anonyme-bestattung' && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 220c60-30 120-30 180 0s150 30 260 0" stroke="#5c7a52" stroke-width="3" opacity="0.7" />
+      <path d="M120 220c0-40 16-64 34-64s34 24 34 64" stroke="#8c6d28" stroke-width="2.5" opacity="0.55" />
+      <path d="M300 220c0-30 12-48 26-48s26 18 26 48" stroke="#8c6d28" stroke-width="2.5" opacity="0.4" />
+      <path d="M60 150c8-6 16-6 24 0M400 140c8-6 16-6 24 0M200 130c8-6 16-6 24 0"
+        stroke="#b8933d" stroke-width="2" opacity="0.5" />
+    </g>
+  )}
+
+  {name === 'thanatopraxie' && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M170 190c-20-8-34-26-34-46 0-24 20-40 40-40 14 0 24 8 24 8s10-8 24-8c20 0 40 16 40 40 0 20-14 38-34 46"
+        stroke="#882020" stroke-width="3.5" opacity="0.8" />
+      <circle cx="240" cy="150" r="6" fill="#b8933d" opacity="0.85" />
+      <path d="M150 230c30-12 60-12 90 0s60 12 90 0" stroke="#8c6d28" stroke-width="2" opacity="0.4" />
+    </g>
+  )}
+
+  {name === 'vorsorge' && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M150 130c0-14 10-24 24-24h40c14 0 24 10 24 24v30c0 14-10 24-24 24h-30l-20 18v-18h-14c-14 0-24-10-24-24z"
+        stroke="#882020" stroke-width="3" opacity="0.85" />
+      <path d="M280 170c0-11 8-19 19-19h30c11 0 19 8 19 19v22c0 11-8 19-19 19h-8l-14 13v-13h-8c-11 0-19-8-19-19z"
+        stroke="#b8933d" stroke-width="2.5" opacity="0.7" />
+      <path d="M180 138h34 M180 150h24" stroke="#8c6d28" stroke-width="2" opacity="0.55" />
+    </g>
+  )}
+
+  {name === 'formalitaeten' && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="170" y="110" width="90" height="118" rx="6" stroke="#8c6d28" stroke-width="2" opacity="0.4" />
+      <rect x="190" y="90" width="90" height="118" rx="6" stroke="#882020" stroke-width="3" fill="#fffefd" />
+      <path d="M210 118h50 M210 134h50 M210 150h30" stroke="#8c6d28" stroke-width="2.5" opacity="0.7" />
+      <path d="M212 178l12 12 22-26" stroke="#5c7a52" stroke-width="3.5" opacity="0.85" />
+    </g>
+  )}
+
+  {name === 'trauerfeier' && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="240" cy="170" r="46" stroke="#5c7a52" stroke-width="3" opacity="0.7" />
+      <path d="M240 124c6 12 6 24 0 36M286 170c-12-6-24-6-36 0M240 216c-6-12-6-24 0-36M194 170c12 6 24 6 36 0"
+        stroke="#5c7a52" stroke-width="2.5" opacity="0.55" />
+      <circle cx="240" cy="170" r="10" fill="#a02828" opacity="0.75" />
+      <path d="M180 240h120" stroke="#8c6d28" stroke-width="2" opacity="0.4" />
+    </g>
+  )}
+
+  {name === 'ueberfuehrung' && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M40 220h400" stroke="#8c6d28" stroke-width="3" opacity="0.5" />
+      <path d="M100 220v-8a10 10 0 0 1 10-10h240a10 10 0 0 1 10 10v8"
+        stroke="#882020" stroke-width="3.5" />
+      <path d="M140 202l16-26h60l10 26" stroke="#882020" stroke-width="3.5" />
+      <circle cx="150" cy="222" r="12" fill="none" stroke="#b8933d" stroke-width="3" />
+      <circle cx="330" cy="222" r="12" fill="none" stroke="#b8933d" stroke-width="3" />
+    </g>
+  )}
+
+  {name === 'abschiedsraum' && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M100 260V120l140-70 140 70v140" stroke="#8c6d28" stroke-width="3" opacity="0.55" />
+      <rect x="150" y="150" width="180" height="110" stroke="#882020" stroke-width="3.5" />
+      <path d="M150 150l70-40 70 40" stroke="#882020" stroke-width="3.5" />
+      <path d="M240 190v70" stroke="#b8933d" stroke-width="2" opacity="0.6" />
+      <path d="M150 230h180" stroke="#b8933d" stroke-width="2" opacity="0.5" />
+    </g>
+  )}
+
+  {name === 'historie' && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M60 200h360" stroke="#8c6d28" stroke-width="2.5" opacity="0.55" />
+      <circle cx="120" cy="200" r="10" fill="#882020" opacity="0.8" />
+      <circle cx="240" cy="200" r="10" fill="#b8933d" opacity="0.85" />
+      <circle cx="360" cy="200" r="10" fill="#882020" opacity="0.8" />
+      <path d="M120 200v-40 M240 200v-56 M360 200v-40" stroke="#8c6d28" stroke-width="2" opacity="0.4" />
+    </g>
+  )}
+
+  {name === 'friedhoefe' && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 240c80-14 160-14 220 0s160 14 220 0" stroke="#5c7a52" stroke-width="3" opacity="0.65" />
+      <path d="M110 240c0-30 14-50 30-50s30 20 30 50" stroke="#5c7a52" stroke-width="2.5" opacity="0.5" />
+      <path d="M270 240c0-38 16-62 36-62s36 24 36 62" stroke="#5c7a52" stroke-width="2.5" opacity="0.6" />
+      <path d="M190 240v-70a14 14 0 0 1 28 0v70z" stroke="#882020" stroke-width="3" opacity="0.7" />
+    </g>
+  )}
+
+  {name === 'gebaeude' && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M80 240V130l90-46 90 46v110" stroke="#882020" stroke-width="3.5" />
+      <path d="M110 240v-70h50v70 M200 160h40v40h-40z" stroke="#8c6d28" stroke-width="2.5" opacity="0.6" />
+      <path d="M60 240h240" stroke="#b8933d" stroke-width="2" opacity="0.5" />
+    </g>
+  )}
+
+  {name === 'begleitung' && (
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M170 210c0-28 16-50 40-50s40 22 40 50" stroke="#882020" stroke-width="3.5" opacity="0.85" />
+      <path d="M182 216c4-4 10-3 12 0 M232 216c4-4 10-3 12 0" stroke="#b8933d" stroke-width="3" opacity="0.7" />
+      <path d="M150 240c40-14 90-14 130 0" stroke="#8c6d28" stroke-width="2" opacity="0.4" />
+    </g>
+  )}
+</svg>
+
+<style>
+  .motif {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+</style>

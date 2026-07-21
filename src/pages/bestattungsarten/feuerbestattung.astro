@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import HintBox from '../../components/ui/HintBox.astro';
+import Motif from '../../components/illustrations/Motif.astro';
 import { withBase } from '../../utils/url';
 ---
 
@@ -15,7 +16,14 @@ import { withBase } from '../../utils/url';
     { name: 'Bestattungsarten', path: '/bestattungsarten/' },
     { name: 'Feuerbestattung', path: '/bestattungsarten/feuerbestattung/' },
   ]}
+  ctaLabel="Bestattungsarten besprechen"
+  ctaHref={withBase('/kontakt/')}
+  ctaHint="Unsicher, welche Bestattungsart passt? Wir beraten Sie in Ruhe."
 >
+  <figure class="page-motif">
+    <Motif name="feuerbestattung" label="Stilisierte, ruhig aufsteigende Flamme als Sinnbild der Feuerbestattung" />
+  </figure>
+
   <div class="prose">
     <p>
       Die Feuerbestattung gehört heute zu den am häufigsten gewählten Bestattungsformen. Nach der
@@ -44,6 +52,10 @@ import { withBase } from '../../utils/url';
     </p>
   </div>
 
+  <figure class="page-motif page-motif--inline">
+    <Motif name="friedhoefe" label="Baumbestand am Wegrand als Sinnbild naturnaher Grabformen" />
+  </figure>
+
   <h2>Warum viele sich dafür entscheiden</h2>
   <hr class="accent-rule" />
   <div class="prose">
@@ -59,6 +71,10 @@ import { withBase } from '../../utils/url';
     Beisetzungsformen und Gebühren hängen vom jeweiligen Friedhof ab. Allgemeine Hinweise finden
     Sie auf unserer Seite <a href={withBase('/friedhoefe-in-wuerzburg/')}>Friedhöfe in Würzburg</a>.
   </HintBox>
+
+  <p class="related-link">
+    Verwandtes Thema: <a href={withBase('/bestattungsarten/')}>Alle Bestattungsarten im Überblick</a>
+  </p>
 </PageLayout>
 
 <style>

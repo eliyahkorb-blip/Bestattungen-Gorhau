@@ -1,6 +1,8 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import IconFeature from '../../components/ui/IconFeature.astro';
+import HintBox from '../../components/ui/HintBox.astro';
+import Motif from '../../components/illustrations/Motif.astro';
 import { company } from '../../data/company';
 import { withBase } from '../../utils/url';
 
@@ -21,6 +23,10 @@ const links = [
   intro="Seit über fünf Jahrzehnten begleiten wir Menschen aus Würzburg und der Region in Zeiten der Trauer."
   breadcrumbs={[{ name: 'Über uns', path: '/ueber-uns/' }]}
 >
+  <figure class="page-motif">
+    <Motif name="gebaeude" label="Symbolisches Gebäudemotiv" />
+  </figure>
+
   <div class="prose">
     <p>
       1970 gegründet, sind wir seit 1980 in der Reuterstraße in Würzburg-Heidingsfeld zu Hause.
@@ -28,6 +34,11 @@ const links = [
       Familie hinweg.
     </p>
   </div>
+
+  <HintBox>
+    Aktuelle Team- und Gebäudefotos sind in Planung. Bis dahin steht Ihnen dieses symbolische
+    Motiv stellvertretend – ein echtes Foto ersetzt es, sobald es vorliegt.
+  </HintBox>
 
   <h2>Unsere Haltung: Zuhören, beraten, begleiten</h2>
   <hr class="accent-rule" />

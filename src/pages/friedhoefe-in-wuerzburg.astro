@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import HintBox from '../components/ui/HintBox.astro';
+import Motif from '../components/illustrations/Motif.astro';
 import { withBase } from '../utils/url';
 ---
 
@@ -12,7 +13,13 @@ import { withBase } from '../utils/url';
   heading="Friedhöfe in Würzburg"
   intro="Rund um Friedhöfe, Grabarten und Ruhezeiten stellen sich viele Fragen. Ein allgemeiner Überblick."
   breadcrumbs={[{ name: 'Friedhöfe in Würzburg', path: '/friedhoefe-in-wuerzburg/' }]}
+  ctaLabel="Anfahrt öffnen"
+  ctaHref={withBase('/kontakt/')}
 >
+  <figure class="page-motif">
+    <Motif name="friedhoefe" label="Ruhiger Friedhofsweg mit Baumbestand" />
+  </figure>
+
   <div class="prose">
     <p>
       In Würzburg und den umliegenden Gemeinden gibt es verschiedene Friedhöfe mit
@@ -57,16 +64,13 @@ import { withBase } from '../utils/url';
     </p>
   </div>
 
-  <div class="prose">
-    <p>
-      Bei Auswahl und Formalitäten stehen wir Ihnen zur Seite. Übersicht der
-      <a href={withBase('/bestattungsarten/')}>Bestattungsarten</a> · erste Schritte:
-      <a href={withBase('/im-trauerfall/')}>Im Trauerfall</a>.
-    </p>
-    <p class="src-note">
-      Dieser Beitrag dient der allgemeinen Information und stellt keine Rechtsberatung dar.
-    </p>
-  </div>
+  <p class="related-link">
+    Verwandte Themen: <a href={withBase('/bestattungsarten/')}>Bestattungsarten</a> ·
+    <a href={withBase('/im-trauerfall/')}>Im Trauerfall</a>
+  </p>
+  <p class="src-note">
+    Dieser Beitrag dient der allgemeinen Information und stellt keine Rechtsberatung dar.
+  </p>
 </PageLayout>
 
 <style>

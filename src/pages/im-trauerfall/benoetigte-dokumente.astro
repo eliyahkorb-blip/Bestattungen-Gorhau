@@ -1,5 +1,7 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import Motif from '../../components/illustrations/Motif.astro';
+import { company } from '../../data/company';
 import { withBase } from '../../utils/url';
 
 const groups = [
@@ -49,7 +51,14 @@ const further = [
     { name: 'Im Trauerfall', path: '/im-trauerfall/' },
     { name: 'Benötigte Dokumente', path: '/im-trauerfall/benoetigte-dokumente/' },
   ]}
+  ctaLabel="Im Trauerfall anrufen"
+  ctaHref={`tel:${company.phoneRaw}`}
+  ctaHint="Unsicher wegen fehlender Unterlagen? Wir helfen sofort weiter."
 >
+  <figure class="page-motif">
+    <Motif name="formalitaeten" label="Dokument mit Häkchen als Symbol für vollständige Unterlagen" />
+  </figure>
+
   <div class="prose">
     <p>
       Bitte machen Sie sich keine Sorgen, wenn nicht alle Unterlagen sofort auffindbar sind.
@@ -90,13 +99,12 @@ const further = [
 
   <div class="prose">
     <p>
-      Sie sind unsicher, welche Unterlagen in Ihrer Situation notwendig sind? Rufen Sie uns
-      an – wir helfen Ihnen gern weiter. Sollten einzelne Urkunden fehlen, unterstützen wir Sie
-      auch dabei, Ersatzausfertigungen beim zuständigen Standesamt zu beantragen.
-    </p>
-    <p>
-      Eine Übersicht über die ersten Schritte nach einem Todesfall finden Sie auf unserer Seite
-      <a href={withBase('/im-trauerfall/')}>Im Trauerfall</a>.
+      Sollten einzelne Urkunden fehlen, unterstützen wir Sie auch dabei, Ersatzausfertigungen
+      beim zuständigen Standesamt zu beantragen.
     </p>
   </div>
+
+  <p class="related-link">
+    Verwandtes Thema: <a href={withBase('/im-trauerfall/')}>Erste Schritte im Trauerfall</a>
+  </p>
 </PageLayout>

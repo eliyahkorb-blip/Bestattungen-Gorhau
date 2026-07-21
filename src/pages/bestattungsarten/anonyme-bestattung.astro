@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import HintBox from '../../components/ui/HintBox.astro';
+import Motif from '../../components/illustrations/Motif.astro';
 import { withBase } from '../../utils/url';
 ---
 
@@ -15,7 +16,14 @@ import { withBase } from '../../utils/url';
     { name: 'Bestattungsarten', path: '/bestattungsarten/' },
     { name: 'Anonyme Bestattung', path: '/bestattungsarten/anonyme-bestattung/' },
   ]}
+  ctaLabel="Bestattungsarten besprechen"
+  ctaHref={withBase('/kontakt/')}
+  ctaHint="Unsicher, welche Bestattungsart passt? Wir beraten Sie in Ruhe."
 >
+  <figure class="page-motif">
+    <Motif name="anonyme-bestattung" label="Ruhige, offene Landschaft mit weitem Horizont" />
+  </figure>
+
   <div class="prose">
     <p>
       Die anonyme Bestattung erfolgt auf einer gemeinschaftlichen Grabfläche ohne individuelle
@@ -39,6 +47,10 @@ import { withBase } from '../../utils/url';
       werden muss.
     </p>
   </div>
+
+  <figure class="page-motif page-motif--inline">
+    <Motif name="friedhoefe" label="Ruhiger Friedhofsweg mit Baumbestand" />
+  </figure>
 
   <h2>Warum sich Menschen dafür entscheiden</h2>
   <hr class="accent-rule" />

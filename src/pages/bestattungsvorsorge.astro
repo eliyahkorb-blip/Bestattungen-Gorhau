@@ -2,6 +2,7 @@
 import PageLayout from '../layouts/PageLayout.astro';
 import HintBox from '../components/ui/HintBox.astro';
 import Quote from '../components/ui/Quote.astro';
+import Motif from '../components/illustrations/Motif.astro';
 import { withBase } from '../utils/url';
 ---
 
@@ -13,7 +14,13 @@ import { withBase } from '../utils/url';
   heading="Bestattungsvorsorge"
   intro="Mit einer Bestattungsvorsorge legen Sie zu Lebzeiten fest, wie Ihr Abschied gestaltet werden soll – und entlasten Ihre Angehörigen in einer schweren Zeit."
   breadcrumbs={[{ name: 'Bestattungsvorsorge', path: '/bestattungsvorsorge/' }]}
+  ctaLabel="Vorsorgegespräch vereinbaren"
+  ctaHref={withBase('/kontakt/')}
 >
+  <figure class="page-motif">
+    <Motif name="vorsorge" label="Zwei Sprechblasen als Sinnbild eines vertrauensvollen Gesprächs" />
+  </figure>
+
   <div class="prose">
     <p>
       Ein Todesfall trifft Angehörige oft unerwartet – selbst wenn er absehbar war. Eine Vorsorge
@@ -55,13 +62,10 @@ import { withBase } from '../utils/url';
 
   <Quote text="Vorsorgen heißt nicht, an das Ende zu denken – sondern der eigenen Familie Klarheit zu schenken." />
 
-  <div class="prose">
-    <p>
-      Vereinbaren Sie ein unverbindliches Gespräch. Mehr zu den Möglichkeiten:
-      <a href={withBase('/bestattungsarten/')}>Bestattungsarten</a> ·
-      <a href={withBase('/abschiedsraum/')}>Abschiedsraum</a>.
-    </p>
-  </div>
+  <p class="related-link">
+    Verwandte Themen: <a href={withBase('/bestattungsarten/')}>Bestattungsarten</a> ·
+    <a href={withBase('/abschiedsraum/')}>Abschiedsraum</a>
+  </p>
 </PageLayout>
 
 <style>

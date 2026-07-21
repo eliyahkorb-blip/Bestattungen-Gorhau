@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import HintBox from '../../components/ui/HintBox.astro';
+import Motif from '../../components/illustrations/Motif.astro';
 import { withBase } from '../../utils/url';
 ---
 
@@ -16,6 +17,10 @@ import { withBase } from '../../utils/url';
     { name: 'Überführungen', path: '/leistungen/ueberfuehrungen/' },
   ]}
 >
+  <figure class="page-motif">
+    <Motif name="ueberfuehrung" label="Abstraktes Symbol für einen würdevollen Transport" />
+  </figure>
+
   <div class="prose">
     <p>
       Ein Todesfall kann sich fernab des Heimatortes ereignen – auf Reisen oder in einer

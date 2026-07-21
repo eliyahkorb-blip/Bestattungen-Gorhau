@@ -1,5 +1,34 @@
 # Changelog
 
+## 1.5.0 – Referenzinspirierte visuelle Überarbeitung
+
+### Neu
+- **Neues Illustrationssystem** (`src/components/illustrations/Motif.astro`): 14 eigenständige,
+  farbige Linien-Illustrationen (Erd-/Feuer-/See-/anonyme Bestattung, Thanatopraxie, Vorsorge,
+  Formalitäten, Trauerfeier, Überführung, Abschiedsraum, Historie, Friedhöfe, Gebäude,
+  Begleitung) als ehrlicher Ersatz für nicht vorhandenes echtes Fotomaterial – orientiert am
+  Referenzprinzip „farbige Linienillustrationen als Ergänzung", ohne Fotos/Personen/Räume/
+  Fahrzeuge zu erfinden oder als echt auszugeben.
+- **Zurückhaltender Abschluss-CTA** (`src/components/ui/PageCta.astro`) ersetzt das bisher auf
+  jeder Themenseite automatisch eingebundene volltonige Bordeaux-CTA-Panel; jede Seite hat
+  jetzt eine passende, seitenspezifische CTA-Beschriftung statt eines generischen Buttons. Das
+  volltonige Panel bleibt als einzelner „starker Moment" der Startseite vorbehalten.
+- **Alle 20 Themenseiten strukturell überarbeitet:** visuelles Element direkt im oberen
+  Bereich, maximal zwei aufeinanderfolgende Textblöcke ohne visuellen/strukturellen Wechsel,
+  verwandte Themen, Abschluss-CTA.
+- **Startseite neu sequenziert:** Hero → Orientierung → Zuhören-Beraten-Begleiten → Fakten →
+  Unternehmensbild/Vorstellung → ausgewählte Leistungen (Motiv-Kacheln) → „Was uns ausmacht" →
+  Bestattungsarten als visuelle Auswahl (4 Motiv-Kacheln) → Abschiedsraum → Imagefilm-Teaser →
+  Vorsorge/Über uns → Historie/Mediathek → Kontakt → CTA.
+- **Farbbalance angepasst:** Bordeaux-Vollflächen sitendweit von 20 auf 1 reduziert (nur noch
+  der finale CTA-Block der Startseite), Weiß/Creme/Beige dominieren wie vorgegeben.
+- Neue Dokumentation: `docs/IMAGE-SOURCE-AND-LICENSES.md`, `docs/PHOTO-SHOOT-LIST.md`,
+  `audit/reference-inspired-design-review.md`, `audit/page-image-coverage.md`.
+- 48 neue Screenshots (24 Seiten × Desktop/Mobil) in `audit/screenshots/`
+  (`scripts/screenshot-all-pages.mjs`).
+- Erneut vollständig verifiziert: axe-core 0 Verstöße auf allen 25 Seiten, 0 defekte interne
+  Links, GitHub-Pages-Vorschaubuild weiterhin fehlerfrei (24/24 Status 200).
+
 ## 1.4.0 – Öffentliche GitHub-Pages-Vorschau (dualer Build)
 
 ### Neu

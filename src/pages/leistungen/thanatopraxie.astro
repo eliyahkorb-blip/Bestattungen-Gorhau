@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import Motif from '../../components/illustrations/Motif.astro';
 import { withBase } from '../../utils/url';
 ---
 
@@ -15,6 +16,10 @@ import { withBase } from '../../utils/url';
     { name: 'Thanatopraxie', path: '/leistungen/thanatopraxie/' },
   ]}
 >
+  <figure class="page-motif">
+    <Motif name="thanatopraxie" label="Sanft geschlossener Kreis als zurückhaltendes Sinnbild der Fürsorge" />
+  </figure>
+
   <div class="prose">
     <p>
       Für viele Angehörige ist es wichtig, die verstorbene Person noch einmal in Ruhe sehen zu
@@ -45,6 +50,10 @@ import { withBase } from '../../utils/url';
     </p>
   </div>
 
+  <figure class="page-motif page-motif--inline">
+    <Motif name="abschiedsraum" label="Fenster mit sanftem Lichteinfall" />
+  </figure>
+
   <h2>Kein Zwang, immer mit Sorgfalt</h2>
   <hr class="accent-rule" />
   <div class="prose">
@@ -55,10 +64,8 @@ import { withBase } from '../../utils/url';
     </p>
   </div>
 
-  <div class="prose">
-    <p>
-      Mehr zur Abschiednahme: <a href={withBase('/abschiedsraum/')}>Abschiedsraum</a> · erste Schritte nach
-      einem Todesfall: <a href={withBase('/im-trauerfall/')}>Im Trauerfall</a>.
-    </p>
-  </div>
+  <p class="related-link">
+    Verwandte Themen: <a href={withBase('/abschiedsraum/')}>Abschiedsraum</a> ·
+    <a href={withBase('/im-trauerfall/')}>Im Trauerfall</a>
+  </p>
 </PageLayout>
