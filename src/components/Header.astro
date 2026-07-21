@@ -1,5 +1,6 @@
 ---
 import Logo from './Logo.astro';
+import Icon from './icons/Icon.astro';
 import { mainNav } from '../data/navigation';
 import { company } from '../data/company';
 import { withBase } from '../utils/url';
@@ -19,8 +20,10 @@ const isActive = (href: string) => {
     </a>
 
     <a class="site-header__phone" href={`tel:${company.phoneRaw}`}>
-      <span aria-hidden="true">☎</span>
-      <span>{company.phone}</span>
+      <span class="site-header__phone-icon" aria-hidden="true">
+        <Icon name="phone" size={16} />
+      </span>
+      <span class="site-header__phone-number">{company.phone}</span>
     </a>
 
     <button
@@ -91,17 +94,44 @@ const isActive = (href: string) => {
   .site-header__phone {
     display: inline-flex;
     align-items: center;
-    gap: 0.4em;
+    gap: 0.6em;
     min-height: 44px;
-    padding: 0.35em 0.5em;
-    border-radius: var(--radius-sm);
+    padding: 0.3em 1em 0.3em 0.3em;
+    border-radius: 999px;
+    background: var(--surface-cream);
+    border: 1px solid var(--border-subtle);
     font-weight: 700;
-    color: var(--brand-bordeaux);
+    font-size: 0.95rem;
+    color: var(--brand-bordeaux-dark);
     text-decoration: none;
     white-space: nowrap;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
   }
   .site-header__phone:hover {
-    text-decoration: underline;
+    background: var(--surface-beige);
+    border-color: var(--brand-gold);
+    text-decoration: none;
+  }
+  .site-header__phone-icon {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--brand-bordeaux);
+    color: var(--brand-white);
+  }
+  .site-header__phone-number {
+    letter-spacing: 0.01em;
+  }
+  @media (max-width: 480px) {
+    .site-header__phone-number {
+      display: none;
+    }
+    .site-header__phone {
+      padding: 0.3em;
+    }
   }
 
   .nav-toggle {

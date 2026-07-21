@@ -1,0 +1,1 @@
+import"./hoisted.CwVUU371.js";document.querySelectorAll("[data-video-player]").forEach(e=>{const o=e.querySelector("[data-play-btn]"),a=e.querySelector("[data-poster]"),t=e.querySelector("[data-video]"),d=e.querySelector("[data-pending]");o?.addEventListener("click",()=>{a?.setAttribute("hidden",""),t?(t.hidden=!1,t.play().catch(()=>{})):d&&(d.hidden=!1)})});

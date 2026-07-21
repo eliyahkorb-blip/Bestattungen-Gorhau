@@ -1,5 +1,35 @@
 # Changelog
 
+## 1.5.1 – Feinkorrektur: Typografie, Header-Kontakt, Video, Farbbalance
+
+### Verbessert
+- **Globaler Abstands-/Typografie-Pass** (`src/styles/tokens.css`, `src/styles/global.css`):
+  großzügigerer vertikaler Rhythmus zwischen Überschriften/Absätzen/Karten (Owl-Selector-Muster
+  `* + h2`, `* + p` usw.), line-height leicht erhöht (1.7 Fließtext, 1.2 Headings), größere
+  Spaltenabstände in 2-Spalten-Layouts, mehr Luft in Info-/Hinweiskästen.
+- **Header-Telefon neu gestaltet** (`src/components/Header.astro`): kein Emoji mehr, stattdessen
+  SVG-Telefon-Icon in rundem Bordeaux-Badge als edler Kontaktchip; gleiche Behandlung für die
+  mobile Kontaktleiste (`ContactBar.astro`) und die Telefon-Buttons in `CtaSection.astro` und auf
+  der Startseite.
+- **Tel-/Mail-Links ohne Unterstreichung** (global, `a[href^="tel:"]`/`a[href^="mailto:"]`):
+  wirken jetzt wie hochwertige Kontaktdaten statt roher Standardlinks; normale Textlinks im
+  Fließtext bleiben unverändert unterstrichen.
+- **Kontaktseite aufgeräumt** (`src/pages/kontakt.astro`): klar getrennte Abschnitte, mehr
+  Abstand nach der HintBox, gruppierte Anfahrt-Buttons, ruhigere Kontaktzeilen.
+- **Funktionsfähiger Video-Player** (`src/components/ui/VideoPlayer.astro`, neu): Posterbild,
+  Play-Overlay, Klick startet die Wiedergabe direkt im `<video>`-Element mit nativen Controls
+  (inkl. Vollbild), kein Autoplay. Eingesetzt im neuen Imagefilm-Modul der Startseite und in der
+  Mediathek. Es liegt noch keine echte Videodatei vor – ein Klick zeigt daher einen klaren,
+  funktional wirkenden Hinweis statt eines kaputten Players oder eines erfundenen Platzhalterfilms.
+- **Farbgewichtung verfeinert:** Globale Heading-Farbe (h2–h4) von Bordeaux auf ein neutrales
+  Dunkelbraun umgestellt (h1 bleibt Bordeaux als einziger starker Markenmoment pro Seite);
+  Chip-/Fact-/Fragen-Listen-Text auf allen Themenseiten von Bordeaux auf neutral umgestellt;
+  Hero-Subline der Startseite entschärft.
+
+### Behoben
+- Entdeckter Anzeige-Bug im neuen Video-Player (Pending-Hinweis war durch `display`-Kollision mit
+  dem `hidden`-Attribut dauerhaft sichtbar) noch vor dem Deployment gefunden und behoben.
+
 ## 1.5.0 – Referenzinspirierte visuelle Überarbeitung
 
 ### Neu

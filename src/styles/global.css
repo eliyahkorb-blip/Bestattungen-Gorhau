@@ -56,9 +56,12 @@ h3,
 h4 {
   font-family: var(--font-heading);
   line-height: var(--lh-heading);
-  color: var(--brand-bordeaux-dark);
+  color: var(--text-primary);
   font-weight: 600;
   text-wrap: balance;
+}
+h1 {
+  color: var(--brand-bordeaux-dark);
 }
 
 h1 {
@@ -69,6 +72,32 @@ h2 {
 }
 h3 {
   font-size: clamp(1.2rem, 1.05rem + 0.7vw, 1.45rem);
+}
+
+/* Großzügigerer vertikaler Rhythmus: Überschriften/Absätze/Listen/Karten erhalten
+   automatisch Abstand zum vorherigen Geschwisterelement (nicht zum ersten Kind). */
+* + h1,
+* + h2 {
+  margin-top: var(--space-2xl);
+}
+* + h3,
+* + h4 {
+  margin-top: var(--space-xl);
+}
+.eyebrow + h1,
+.eyebrow + h2,
+.eyebrow + h3 {
+  margin-top: var(--space-2xs);
+}
+* + p,
+* + ul,
+* + ol,
+* + dl,
+* + .card,
+* + .grid,
+* + .hintbox,
+* + .page-motif {
+  margin-top: var(--space-md);
 }
 
 p,
@@ -84,6 +113,18 @@ a {
 }
 a:hover {
   color: var(--brand-red);
+}
+
+/* Telefon-/E-Mail-Links wirken als hochwertige Kontaktdaten, nicht als rohe
+   Standard-Links – normale Textlinks im Fließtext bleiben unterstrichen. */
+a[href^='tel:'],
+a[href^='mailto:'] {
+  text-decoration: none;
+  font-weight: 600;
+}
+a[href^='tel:']:hover,
+a[href^='mailto:']:hover {
+  text-decoration: underline;
 }
 
 /* ---------- Fokus ---------- */
@@ -118,7 +159,7 @@ a:hover {
   padding-left: 1.4em;
 }
 .prose li + li {
-  margin-top: var(--space-2xs);
+  margin-top: var(--space-xs);
 }
 
 .section {
@@ -230,7 +271,7 @@ a:hover {
 /* ---------- Karten / Grids ---------- */
 .grid {
   display: grid;
-  gap: var(--space-lg);
+  gap: var(--space-xl) var(--space-2xl);
 }
 .grid--2 {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
@@ -243,11 +284,11 @@ a:hover {
   background: var(--surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: var(--space-lg);
+  padding: var(--space-lg) var(--space-xl);
   box-shadow: var(--shadow-sm);
 }
 .card h3 {
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-sm);
 }
 .card p {
   color: var(--text-muted);
@@ -255,7 +296,7 @@ a:hover {
 .card a.card__link {
   font-weight: 600;
   display: inline-block;
-  margin-top: var(--space-sm);
+  margin-top: var(--space-md);
 }
 
 /* ---------- Akzentleiste ---------- */
@@ -264,7 +305,7 @@ a:hover {
   height: 3px;
   background: var(--brand-gold);
   border: 0;
-  margin: var(--space-sm) 0 var(--space-md);
+  margin: var(--space-sm) 0 var(--space-lg);
 }
 
 /* ---------- Skip-Link ---------- */

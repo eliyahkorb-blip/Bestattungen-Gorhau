@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import VideoPlayer from '../components/ui/VideoPlayer.astro';
 import { withBase } from '../utils/url';
 
 /*
@@ -57,7 +58,7 @@ const dokumente = [
     {
       filme.map((m) => (
         <li class="media-item media-item--feature">
-          <div class="media-item__thumb" role="img" aria-label={`Vorschau: ${m.t}`} />
+          <VideoPlayer title={m.t} posterMotif="gebaeude" />
           <div>
             <span class="media-item__tag">{m.jahr}</span>
             <h3>{m.t}</h3>
@@ -153,23 +154,6 @@ const dokumente = [
     .media-item--feature {
       grid-template-columns: 1fr;
     }
-  }
-  .media-item__thumb {
-    aspect-ratio: 16 / 9;
-    border-radius: var(--radius-md);
-    background: linear-gradient(135deg, var(--surface-dark), var(--brand-bordeaux));
-    position: relative;
-  }
-  .media-item__thumb::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 1rem 0 1rem 1.6rem;
-    border-color: transparent transparent transparent var(--brand-gold);
   }
   .media-item__tag {
     display: inline-block;

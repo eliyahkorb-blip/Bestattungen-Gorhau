@@ -7,6 +7,7 @@ import FactStrip from '../components/ui/FactStrip.astro';
 import WaveDivider from '../components/ui/WaveDivider.astro';
 import Icon from '../components/icons/Icon.astro';
 import Motif from '../components/illustrations/Motif.astro';
+import VideoPlayer from '../components/ui/VideoPlayer.astro';
 import { company } from '../data/company';
 import { withBase } from '../utils/url';
 
@@ -103,7 +104,7 @@ const facts = [
         </p>
         <div class="hero__actions">
           <a class="btn btn--primary" href={`tel:${company.phoneRaw}`}>
-            <span aria-hidden="true">☎</span> Im Trauerfall anrufen
+            <Icon name="phone" size={18} /> Im Trauerfall anrufen
           </a>
           <a class="btn btn--secondary" href={withBase('/bestattungsvorsorge/')}>Vorsorge besprechen</a>
         </div>
@@ -257,14 +258,14 @@ const facts = [
   <!-- Imagefilm-Teaser -->
   <section class="section section--beige imagefilm-teaser">
     <div class="container split">
-      <div class="imagefilm-teaser__thumb" aria-hidden="true">
-        <Icon name="film" size={40} />
+      <div class="imagefilm-teaser__player">
+        <VideoPlayer title="Imagefilm des Unternehmens" posterMotif="gebaeude" />
       </div>
       <div>
         <p class="eyebrow">Sehen und hören</p>
         <h2>Lernen Sie uns im Imagefilm kennen</h2>
         <p>Ein kurzer Einblick in unser Haus, unsere Räume und unsere Haltung.</p>
-        <p><a class="btn btn--secondary" href={withBase('/mediathek/#imagefilm')}>Imagefilm ansehen</a></p>
+        <p><a href={withBase('/mediathek/')}>Weitere Medien in der Mediathek →</a></p>
       </div>
     </div>
   </section>
@@ -356,10 +357,10 @@ const facts = [
   .hero__sub {
     font-family: var(--font-heading);
     font-size: clamp(1.1rem, 1rem + 0.6vw, 1.35rem);
-    color: var(--brand-bordeaux);
-    margin-top: var(--space-sm);
+    color: var(--text-primary);
+    margin-top: var(--space-md);
     max-width: 34rem;
-    line-height: 1.5;
+    line-height: 1.55;
   }
   .hero__actions {
     display: flex;
@@ -492,13 +493,8 @@ const facts = [
     margin: 0;
   }
 
-  .imagefilm-teaser__thumb {
-    aspect-ratio: 16 / 9;
-    border-radius: var(--radius-md);
-    background: linear-gradient(135deg, var(--surface-dark), var(--brand-bordeaux));
-    display: grid;
-    place-items: center;
-    color: var(--brand-gold);
+  .imagefilm-teaser__player {
+    min-width: 0;
   }
   .contact-block {
     font-style: normal;

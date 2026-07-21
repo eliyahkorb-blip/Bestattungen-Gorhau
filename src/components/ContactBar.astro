@@ -1,14 +1,17 @@
 ---
 /* Zurückhaltende mobile Kontaktleiste – nur auf kleinen Viewports sichtbar. */
+import Icon from './icons/Icon.astro';
 import { company } from '../data/company';
 ---
 
 <div class="contact-bar" role="region" aria-label="Schnellkontakt">
   <a class="contact-bar__btn contact-bar__btn--call" href={`tel:${company.phoneRaw}`}>
-    <span aria-hidden="true">☎</span> Anrufen
+    <Icon name="phone" size={18} />
+    <span>Anrufen</span>
   </a>
   <a class="contact-bar__btn contact-bar__btn--mail" href={`mailto:${company.email}`}>
-    <span aria-hidden="true">✉</span> E-Mail
+    <Icon name="mail" size={18} />
+    <span>E-Mail</span>
   </a>
 </div>
 

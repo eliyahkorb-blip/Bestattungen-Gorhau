@@ -25,7 +25,7 @@ import { company } from '../data/company';
   </HintBox>
 
   <div class="contact-grid">
-    <section aria-labelledby="k-daten">
+    <section aria-labelledby="k-daten" class="contact-section">
       <h2 id="k-daten">Ihre Ansprechpartner</h2>
       <hr class="accent-rule" />
       <address class="contact-block">
@@ -48,13 +48,15 @@ import { company } from '../data/company';
         </li>
       </ul>
 
-      <h2>Bürozeiten</h2>
-      <hr class="accent-rule" />
-      <p>Montag bis Freitag, 08:00 – 16:00 Uhr<br />sowie nach Vereinbarung.</p>
-      <p class="emergency"><strong>Im Trauerfall sind wir für Sie Tag und Nacht erreichbar.</strong></p>
+      <div class="contact-hours">
+        <h2>Bürozeiten</h2>
+        <hr class="accent-rule" />
+        <p>Montag bis Freitag, 08:00 – 16:00 Uhr<br />sowie nach Vereinbarung.</p>
+        <p class="emergency"><strong>Im Trauerfall sind wir für Sie Tag und Nacht erreichbar.</strong></p>
+      </div>
     </section>
 
-    <section aria-labelledby="k-anfahrt">
+    <section aria-labelledby="k-anfahrt" class="contact-section">
       <h2 id="k-anfahrt">Anfahrt</h2>
       <hr class="accent-rule" />
       <p>
@@ -65,10 +67,10 @@ import { company } from '../data/company';
         Aus Datenschutzgründen laden wir keine Kartendienste automatisch. Sie können den
         Standort direkt bei einem Kartenanbieter Ihrer Wahl öffnen:
       </p>
-      <ul class="map-links">
-        <li><a class="btn btn--secondary" href={company.maps.osm} rel="noopener">Auf OpenStreetMap öffnen</a></li>
-        <li><a class="btn btn--secondary" href={company.maps.google} rel="noopener">Auf Google Maps öffnen</a></li>
-      </ul>
+      <div class="map-links">
+        <a class="btn btn--secondary" href={company.maps.osm} rel="noopener">Auf OpenStreetMap öffnen</a>
+        <a class="btn btn--secondary" href={company.maps.google} rel="noopener">Auf Google Maps öffnen</a>
+      </div>
       <p class="src-note">
         Beim Öffnen dieser Links werden Sie auf die Seite des jeweiligen Anbieters
         weitergeleitet, wobei Daten an diesen übertragen werden können.
@@ -80,24 +82,34 @@ import { company } from '../data/company';
 <style>
   .contact-grid {
     display: grid;
-    gap: var(--space-2xl);
+    gap: var(--space-2xl) var(--space-2xl);
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+    margin-top: var(--space-2xl);
+  }
+  .contact-section > * + * {
+    margin-top: var(--space-md);
   }
   .contact-block {
     font-style: normal;
-    line-height: 1.8;
-    margin-bottom: var(--space-md);
+    line-height: 1.85;
+  }
+  .contact-hours {
+    margin-top: var(--space-xl);
   }
   .contact-lines {
     list-style: none;
     padding: 0;
-    margin: 0 0 var(--space-lg);
+    margin-top: var(--space-lg);
   }
   .contact-lines li {
     display: flex;
+    align-items: baseline;
     gap: var(--space-md);
-    padding: 0.4em 0;
+    padding: 0.65em 0;
     border-bottom: 1px solid var(--border-subtle);
+  }
+  .contact-lines li:first-child {
+    padding-top: 0;
   }
   .contact-lines__label {
     min-width: 5rem;
@@ -106,16 +118,17 @@ import { company } from '../data/company';
   }
   .emergency {
     color: var(--brand-bordeaux);
+    margin-top: var(--space-sm);
   }
   .map-links {
-    list-style: none;
-    padding: 0;
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-md);
+    margin-top: var(--space-lg);
   }
   .src-note {
     color: var(--text-muted);
     font-size: 0.95rem;
+    margin-top: var(--space-lg);
   }
 </style>

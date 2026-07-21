@@ -44,8 +44,8 @@
     'Noto Sans', sans-serif;
 
   --fs-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-  --lh-base: 1.65;
-  --lh-heading: 1.18;
+  --lh-base: 1.7;
+  --lh-heading: 1.2;
 
   /* Abstände */
   --space-2xs: 0.25rem;
