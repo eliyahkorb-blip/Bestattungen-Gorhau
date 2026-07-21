@@ -1,13 +1,12 @@
 ---
 export interface Props {
-  label?: string;
   tone?: 'gold' | 'bordeaux';
 }
-const { label = 'Hinweis', tone = 'gold' } = Astro.props;
+const { tone = 'gold' } = Astro.props;
 ---
 
 <div class={`hintbox hintbox--${tone}`}>
-  <p><strong>{label}:</strong> <slot /></p>
+  <p><slot /></p>
 </div>
 
 <style>
