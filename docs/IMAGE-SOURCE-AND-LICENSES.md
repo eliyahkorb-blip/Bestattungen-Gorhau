@@ -16,9 +16,17 @@ ein selbst gestaltetes, markenkonformes Illustrationssystem zum Einsatz (siehe u
 | Datei | Quelle | Status | Lizenz/Rechte |
 |---|---|---|---|
 | Logo (`public/img/logo*.png/webp`, Favicons, OG-Bild) | `incoming-assets/header_logo.png` (Original-Unternehmenslogo) | Eingebunden, pixelgenau zugeschnitten, unverändertes Markendesign | Unternehmenseigentum (Auftraggeber), vollständige Rechte vorhanden |
-| Historischer Flyer 2009 (`public/img/content/flyer_2009.*`) | `incoming-assets/flyer_2009.jpg` (Original-Scan) | Eingebunden in Mediathek, mit Alt-Text und Kontext-Hinweis zum historischen Stand | Unternehmenseigentum (Auftraggeber), vollständige Rechte vorhanden |
+| Historischer Flyer 2009 (`public/img/content/flyer_2009.*`) | `incoming-assets/flyer_2009.jpg` (Original-Scan) | Eingebunden in Mediathek, mit Alt-Text und Kontext-Hinweis zum historischen Stand | Unternehmenseigentum (Auftraggeber), vollständige Rechte vorhanden – **siehe Datenschutz-Hinweis unten** |
 
 Details zur technischen Aufbereitung des Logos: `docs/LOGO-SOURCE.md`.
+
+**Datenschutz-Hinweis zum Flyer 2009:** Der Scan enthält als Teil der Gesamtseite mehrere
+eingedruckte Fotos mit erkennbaren Personen (u. a. ein Familienfoto mit vermutlich damals
+minderjährigen Kindern). Das Dokument wird ausschließlich als unverändertes historisches
+Ganzes gezeigt (keine Ausschnitte/Vergrößerungen einzelner Personen). Diese Einzelfotos wurden
+bewusst **nicht** herausgeschnitten oder als eigenständige Bilder (z. B. „Team“/„Inhaber“)
+weiterverwendet. Empfehlung: Freigabe der abgebildeten Personen einholen, bevor das Dokument
+weiter genutzt (z. B. vergrößert oder in Ausschnitten gezeigt) wird.
 
 ## 2. Selbst gestaltetes Illustrationssystem (kein Fotomaterial)
 

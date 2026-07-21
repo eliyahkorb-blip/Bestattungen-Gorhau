@@ -31,8 +31,8 @@ kein echtes Foto vorgesehen bis zum Fototermin) oder **offen – siehe PHOTO-SHO
 | Abschiedsraum | 1 | 1 (abschiedsraum) | Motiv „abschiedsraum" (Fenster/Licht) | – | Motiv | vorhanden | Hauptaufnahme + 4–8 Detailfotos (Priorität 1) | offen – siehe PHOTO-SHOOT-LIST.md |
 | Über uns | 5 | 1 Motiv + 4 Icons | Motiv „gebaeude" | 4x Icon (Historie/Galerie/Abschiedsraum/Mediathek) | Motiv + Icon | vorhanden | Inhaber-/Teamfoto, Gebäudefoto | offen – siehe PHOTO-SHOOT-LIST.md |
 | Historie | 1 | 1 (historie) | Motiv „historie" (Zeitleiste) | Text-Timeline mit 4 Meilensteinen (strukturiert, kein Bild je Eintrag) | Motiv | vorhanden | Historische Fotos (Fahrzeuge, Geschäftsräume) | offen – siehe PHOTO-SHOOT-LIST.md |
-| Galerie | 4 | 4 Platzhalter-Rahmen (klar als „Aktuell"/„Historisch" gekennzeichnet) | Platzhalter-Rahmen-Raster | Notice-Hinweis zum fehlenden Material | Platzhalter | vorhanden (`aria-label` je Platzhalter) | Alle 4 gelisteten Motive als echte Fotos | offen – siehe PHOTO-SHOOT-LIST.md |
-| Mediathek | 1 | 1 (Flyer 2009, echtes Foto) | Media-Item-Vorschau (Imagefilm, Platzhalter-Thumb) | Flyer-Abbildung (echt), 2 Karten-Raster (Text) | **Flyer 2009 (echt)** | vorhanden, inkl. historischem Kontexthinweis | Imagefilm-Datei, historische Video-/Audiodateien | offen – siehe PHOTO-SHOOT-LIST.md |
+| Galerie | 3 | 3 Motive (gebaeude, abschiedsraum, historie) | Motiv-Kachel-Raster (Themenlinks, kein Platzhalter) | Link zum echten Dokument in der Mediathek | Motiv | vorhanden | Aktuelle Innen-/Außenaufnahmen | offen – siehe PHOTO-SHOOT-LIST.md |
+| Mediathek | 1 | 1 (Flyer 2009, echtes Foto) | Flyer-Abbildung (echt) | – | **Flyer 2009 (echt)** | vorhanden, inkl. historischem Kontexthinweis | Imagefilm-Datei (aktuell nicht angeteasert) | offen – siehe PHOTO-SHOOT-LIST.md |
 | Friedhöfe in Würzburg | 1 | 1 (friedhoefe) | Motiv „friedhoefe" | Chip-Liste (Grabarten) | Motiv | vorhanden | – | entfällt |
 | Kontakt | 1 | 1 (gebaeude) | Motiv „gebaeude" | Kontaktdaten (Text, kein Bild) | Motiv | vorhanden | Echtes Außenfoto | offen – siehe PHOTO-SHOOT-LIST.md |
 | Impressum | 0 | 0 | – | – | – | – | – | entfällt (Ausnahmeseite lt. Vorgabe) |

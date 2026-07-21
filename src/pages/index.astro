@@ -7,7 +7,6 @@ import FactStrip from '../components/ui/FactStrip.astro';
 import WaveDivider from '../components/ui/WaveDivider.astro';
 import Icon from '../components/icons/Icon.astro';
 import Motif from '../components/illustrations/Motif.astro';
-import VideoPlayer from '../components/ui/VideoPlayer.astro';
 import { company } from '../data/company';
 import { withBase } from '../utils/url';
 
@@ -255,21 +254,6 @@ const facts = [
     </div>
   </section>
 
-  <!-- Imagefilm-Teaser -->
-  <section class="section section--beige imagefilm-teaser">
-    <div class="container split">
-      <div class="imagefilm-teaser__player">
-        <VideoPlayer title="Imagefilm des Unternehmens" posterMotif="gebaeude" />
-      </div>
-      <div>
-        <p class="eyebrow">Sehen und hören</p>
-        <h2>Lernen Sie uns im Imagefilm kennen</h2>
-        <p>Ein kurzer Einblick in unser Haus, unsere Räume und unsere Haltung.</p>
-        <p><a href={withBase('/mediathek/')}>Weitere Medien in der Mediathek →</a></p>
-      </div>
-    </div>
-  </section>
-
   <!-- Vorsorge + Über uns -->
   <section class="section section--white">
     <div class="container grid grid--2">
@@ -299,7 +283,7 @@ const facts = [
       <h2>Eine Würzburger Geschichte</h2>
       <p class="history-lead">
         Aus einem Familienbetrieb ist über die Jahrzehnte ein fester Bestandteil der Region
-        geworden. Historische Aufnahmen und den Imagefilm finden Sie in unserer
+        geworden. Ein historisches Dokument aus unserem Archiv finden Sie in unserer
         <a href={withBase('/mediathek/')}>Mediathek</a>.
       </p>
       <FactStrip facts={facts.slice(0, 3)} />
@@ -493,9 +477,6 @@ const facts = [
     margin: 0;
   }
 
-  .imagefilm-teaser__player {
-    min-width: 0;
-  }
   .contact-block {
     font-style: normal;
     line-height: 1.8;

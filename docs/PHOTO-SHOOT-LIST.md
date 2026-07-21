@@ -28,11 +28,11 @@ Vorgabe verlangt hier ausdrücklich echte Aufnahmen (großes Hauptbild + 4–8 w
 
 ## Priorität 3 – Galerie/Mediathek (Ergänzung, kein Blocker)
 
-- [ ] Weitere aktuelle Innen-/Außenaufnahmen für die Galerie-Kategorien „Aktuell“
+- [ ] Aktuelle Innen-/Außenaufnahmen für eine spätere Bildergalerie
 - [ ] Digitalisierung weiterer historischer Aufnahmen/Anzeigen aus dem Firmenarchiv (falls
       vorhanden), zusätzlich zum bereits eingebundenen Flyer 2009
-- [ ] Imagefilm: Aufnahme/Produktion, sofern noch nicht vorhanden (Mediathek teasert die
-      Position bereits an, das Video selbst fehlt noch)
+- [ ] Imagefilm: Aufnahme/Produktion (aktuell nirgends auf der Website angeteasert – wird erst
+      nach Vorliegen einer echten Videodatei ergänzt)
 
 ## Hinweise für den Fototermin
 

@@ -1,7 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import Quote from '../components/ui/Quote.astro';
-import HintBox from '../components/ui/HintBox.astro';
 import Motif from '../components/illustrations/Motif.astro';
 import { withBase } from '../utils/url';
 ---
@@ -55,12 +54,6 @@ import { withBase } from '../utils/url';
       Versorgung</a> ab.
     </p>
   </div>
-
-  <HintBox>
-    Aktuelle Fotos unseres Abschiedsraums sind in Planung und folgen in Kürze auf dieser Seite
-    sowie in der <a href={withBase('/ueber-uns/galerie/')}>Galerie</a>. Bis dahin verschaffen wir Ihnen im
-    persönlichen Gespräch gern einen Eindruck vor Ort.
-  </HintBox>
 
   <p class="related-link">
     Verwandtes Thema: <a href={withBase('/bestattungsvorsorge/')}>Bestattungsvorsorge</a>

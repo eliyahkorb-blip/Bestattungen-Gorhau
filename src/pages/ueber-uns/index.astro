@@ -1,16 +1,15 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import IconFeature from '../../components/ui/IconFeature.astro';
-import HintBox from '../../components/ui/HintBox.astro';
 import Motif from '../../components/illustrations/Motif.astro';
 import { company } from '../../data/company';
 import { withBase } from '../../utils/url';
 
 const links = [
   { icon: 'history' as const, title: 'Historie seit 1970', text: 'Die Stationen unserer Geschichte.', href: '/ueber-uns/historie/' },
-  { icon: 'film' as const, title: 'Galerie', text: 'Aktuelle und historische Bilder.', href: '/ueber-uns/galerie/' },
+  { icon: 'film' as const, title: 'Galerie', text: 'Einblicke in Haus, Abschiedsraum und Geschichte.', href: '/ueber-uns/galerie/' },
   { icon: 'window-light' as const, title: 'Abschiedsraum', text: 'Unser hauseigener Raum für den Abschied.', href: '/abschiedsraum/' },
-  { icon: 'film' as const, title: 'Mediathek', text: 'Imagefilm und historische Aufnahmen.', href: '/mediathek/' },
+  { icon: 'film' as const, title: 'Mediathek', text: 'Historisches Pressematerial aus unserem Archiv.', href: '/mediathek/' },
 ];
 ---
 
@@ -34,11 +33,6 @@ const links = [
       Familie hinweg.
     </p>
   </div>
-
-  <HintBox>
-    Aktuelle Team- und Gebäudefotos sind in Planung. Bis dahin steht Ihnen dieses symbolische
-    Motiv stellvertretend – ein echtes Foto ersetzt es, sobald es vorliegt.
-  </HintBox>
 
   <h2>Unsere Haltung: Zuhören, beraten, begleiten</h2>
   <hr class="accent-rule" />

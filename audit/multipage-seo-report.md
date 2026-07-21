@@ -24,7 +24,7 @@ Automatisiert erzeugt am 2026-07-21 über `npm run test:multipage`. Prüft **jed
 | URL | H1 | Title eindeutig | Description eindeutig | Canonical | Sitemap | Interne Links (aus/ein) | Befunde |
 |---|---|---|---|---|---|---|---|
 | `/404.html` | ✓ | – | – | ✓ | noindex | 49 / 0 | — |
-| `/abschiedsraum/` | ✓ | ✓ | ✓ | ✓ | ✓ | 43 / 59 | — |
+| `/abschiedsraum/` | ✓ | ✓ | ✓ | ✓ | ✓ | 42 / 59 | — |
 | `/barrierefreiheit/` | ✓ | ✓ | ✓ | ✓ | ✓ | 39 / 24 | — |
 | `/bestattungsarten/anonyme-bestattung/` | ✓ | ✓ | ✓ | ✓ | ✓ | 43 / 27 | — |
 | `/bestattungsarten/erdbestattung/` | ✓ | ✓ | ✓ | ✓ | ✓ | 43 / 26 | — |
@@ -37,15 +37,15 @@ Automatisiert erzeugt am 2026-07-21 über `npm run test:multipage`. Prüft **jed
 | `/im-trauerfall/benoetigte-dokumente/` | ✓ | ✓ | ✓ | ✓ | ✓ | 42 / 26 | — |
 | `/im-trauerfall/` | ✓ | ✓ | ✓ | ✓ | ✓ | 40 / 80 | — |
 | `/impressum/` | ✓ | ✓ | ✓ | ✓ | ✓ | 39 / 24 | — |
-| `/` | ✓ | ✓ | ✓ | ✓ | ✓ | 65 / 72 | — |
-| `/kontakt/` | ✓ | ✓ | ✓ | ✓ | ✓ | 39 / 68 | — |
+| `/` | ✓ | ✓ | ✓ | ✓ | ✓ | 64 / 72 | — |
+| `/kontakt/` | ✓ | ✓ | ✓ | ✓ | ✓ | 39 / 71 | — |
 | `/leistungen/formalitaeten/` | ✓ | ✓ | ✓ | ✓ | ✓ | 43 / 28 | — |
 | `/leistungen/` | ✓ | ✓ | ✓ | ✓ | ✓ | 49 / 80 | — |
 | `/leistungen/thanatopraxie/` | ✓ | ✓ | ✓ | ✓ | ✓ | 44 / 27 | — |
 | `/leistungen/trauerfeier-und-trauerdruck/` | ✓ | ✓ | ✓ | ✓ | ✓ | 43 / 26 | — |
 | `/leistungen/ueberfuehrungen/` | ✓ | ✓ | ✓ | ✓ | ✓ | 43 / 26 | — |
-| `/mediathek/` | ✓ | ✓ | ✓ | ✓ | ✓ | 41 / 55 | — |
-| `/ueber-uns/galerie/` | ✓ | ✓ | ✓ | ✓ | ✓ | 44 / 28 | — |
+| `/mediathek/` | ✓ | ✓ | ✓ | ✓ | ✓ | 42 / 53 | — |
+| `/ueber-uns/galerie/` | ✓ | ✓ | ✓ | ✓ | ✓ | 45 / 27 | — |
 | `/ueber-uns/historie/` | ✓ | ✓ | ✓ | ✓ | ✓ | 45 / 28 | — |
 | `/ueber-uns/` | ✓ | ✓ | ✓ | ✓ | ✓ | 45 / 79 | — |
 
