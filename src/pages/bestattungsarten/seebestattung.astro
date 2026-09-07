@@ -1,8 +1,8 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import HintBox from '../../components/ui/HintBox.astro';
-import Motif from '../../components/illustrations/Motif.astro';
 import PhotoFigure from '../../components/ui/PhotoFigure.astro';
+import StockPhoto from '../../components/ui/StockPhoto.astro';
 import { withBase } from '../../utils/url';
 ---
 
@@ -21,13 +21,11 @@ import { withBase } from '../../utils/url';
   ctaHref={withBase('/kontakt/')}
   ctaHint="Unsicher, welche Bestattungsart passt? Wir beraten Sie in Ruhe."
 >
-  <PhotoFigure
-    name="seebestattung-bestattungsschiff"
-    alt="Urne vor dem Meer als Sinnbild der Seebestattung"
-    width={260}
-    height={160}
-    class="page-motif"
+  <StockPhoto
+    name="meer-horizont"
+    alt="Ruhige See mit weitem Horizont unter bewölktem Himmel"
     priority
+    class="page-stock"
   />
 
   <div class="prose">
@@ -58,9 +56,19 @@ import { withBase } from '../../utils/url';
     </p>
   </div>
 
-  <figure class="page-motif page-motif--inline">
-    <Motif name="anonyme-bestattung" label="Weiter, offener Horizont" />
-  </figure>
+  <StockPhoto
+    name="meer-tiefblau"
+    alt="Tiefblaues Meer mit heller Gischt aus der Vogelperspektive"
+    class="page-stock page-stock--inline"
+  />
+
+  <PhotoFigure
+    name="seebestattung-bestattungsschiff"
+    alt="Urne vor dem Meer als Sinnbild der Seebestattung"
+    width={260}
+    height={160}
+    class="page-motif page-motif--inline"
+  />
 
   <h2>Kein festes Grab, aber ein Ort der Erinnerung</h2>
   <hr class="accent-rule" />

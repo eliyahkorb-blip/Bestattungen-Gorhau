@@ -53,38 +53,195 @@ Datei: `src/components/icons/Icon.astro` – kleine einfarbige Linien-Icons (Nav
 Kachel-Icons), bereits vor dieser Überarbeitung projekteigen erstellt. Keine Änderung in
 diesem Auftrag, hier nur der Vollständigkeit halber gelistet.
 
-## 4. Zusätzliche lizenzierte Bilder für allgemeine Bestattungsarten
+## 4. Allgemeine Stockmotive (Unsplash-Auswahl des Auftraggebers)
 
-**Es wurden keine zusätzlichen externen Stockfotos beschafft.** Grund: Diese Entwicklungsumgebung
-hat keinen Zugriff auf das allgemeine Internet (ausgehende Verbindungen werden von der
-Netzwerk-Policy auf wenige Entwicklungs-Domains beschränkt; Versuche, z. B. Bildagenturen oder
-die Referenzseite selbst zu erreichen, wurden mit HTTP 403 auf Proxy-Ebene abgewiesen – siehe
-`audit/reference-inspired-design-review.md`, Abschnitt „Zugriff auf die Referenzseite“). Anstatt
-an dieser Stelle ungeprüfte oder KI-generierte Bilder einzusetzen und als lizenzierte
-Stockfotos auszugeben, wurde konsequent auf das selbst gezeichnete Illustrationssystem
-(Abschnitt 2) zurückgegriffen. Das ist ehrlicher als ein unbelegtes „Lizenz vorhanden“ und
-entspricht der Vorgabe „nur rechtlich nutzbare Bilder, Quelle und Lizenz dokumentieren“ –
-hier lautet die Quelle „projekteigene Neuerstellung“, nicht eine externe Lizenz.
+Der Auftraggeber hat eine eigene Bildauswahl bereitgestellt und für dieses Webprojekt
+freigegeben. Damit ist der frühere Stand dieses Abschnitts – „es wurden keine externen
+Stockfotos beschafft“ – überholt. Die Bilder wurden nicht selbst im Netz gesucht, sondern
+als Paket geliefert; die Originale liegen unverändert unter
+`incoming-assets/unsplash-originals/`.
 
-**Wenn zu einem späteren Zeitpunkt echte Lizenzbilder beschafft werden sollen** (z. B. für
-Erdbestattung/Friedhof, Feuerbestattung/Urne, Seebestattung/Küste, anonyme
-Bestattung/Landschaft), empfiehlt sich:
-1. Bildagentur mit lückenloser Lizenzkette (z. B. redaktionell/kommerziell freigegebene
-   Stock-Bildagenturen), Lizenztyp (Royalty-free/Extended) und Bild-ID hier ergänzen.
-2. Bilder dürfen keine erkennbaren Personen, Firmenlogos Dritter oder Markenprodukte zeigen.
-3. Diese Tabelle um Zeilen mit Bildagentur, Lizenznummer, Downloaddatum und verantwortlicher
-   Person ergänzen, bevor das Bild eingebunden wird.
+Der folgende Block wird aus `scripts/stock-images.config.mjs` erzeugt
+(`npm run audit:images`) und darf nicht von Hand bearbeitet werden. Die vollständige
+Bewertung jedes Ausgangsbildes – inklusive der bewusst verworfenen Motive – steht in
+`audit/unsplash-image-inventory.md`.
+
+<!-- STOCK:BEGIN -->
+
+_Automatisch erzeugt von `scripts/report-images.mjs` – nicht von Hand bearbeiten._
+
+Der Dateiname der gelieferten Originale enthält bei den meisten Bildern Fotograf und
+Unsplash-Bild-ID; daraus ergibt sich die Quellenangabe. Wo der Originaldateiname nicht
+mehr vorlag, ist die Quelle als vom Auftraggeber bereitgestellt markiert und **nicht**
+rekonstruiert worden.
+
+**Keines dieser Bilder zeigt Räume, Fahrzeuge, Gebäude, Mitarbeitende oder Kundschaft des
+Bestattungsinstituts Gorhau.** Alt-Texte und Bildunterschriften sind entsprechend neutral
+formuliert.
+
+### wuerzburg-panorama
+
+- **Lokale Dateien:** `public/images/stock/wuerzburg-panorama-{Breite}.{avif,webp,jpg}`
+- **Ursprünglicher Dateiname:** `salah-ait-mokhtar-EBzTou1x5WM-unsplash.jpg`
+- **Fotograf:** Salah Ait Mokhtar
+- **Quelle:** Unsplash – https://unsplash.com/photos/EBzTou1x5WM
+- **Lizenz:** Unsplash-Lizenz (kostenlose kommerzielle Nutzung, keine Namensnennung verpflichtend); Auswahl und Freigabe durch den Auftraggeber
+- **Motiv:** Blick über Würzburg im Abendlicht, Festung Marienberg auf dem Hügel
+- **Eingesetzt auf:** /
+- **Einsatzzweck:** Startseite – Hero
+- **Alt-Text:** „Blick über Würzburg im warmen Abendlicht, im Hintergrund die Festung Marienberg“
+- **Original:** 5472 × 2844 px
+- **Hinweis:** allgemeines Stockmotiv, kein Gorhau-Unternehmensfoto
+
+### wuerzburg-kaeppele-herbst
+
+- **Lokale Dateien:** `public/images/stock/wuerzburg-kaeppele-herbst-{Breite}.{avif,webp,jpg}`
+- **Ursprünglicher Dateiname:** `cristian-lopez-lWMMK0teQK8-unsplash.jpg`
+- **Fotograf:** Cristian López
+- **Quelle:** Unsplash – https://unsplash.com/photos/lWMMK0teQK8
+- **Lizenz:** Unsplash-Lizenz (kostenlose kommerzielle Nutzung, keine Namensnennung verpflichtend); Auswahl und Freigabe durch den Auftraggeber
+- **Motiv:** Würzburger Hang mit Käppele und Kirche im Herbstlaub
+- **Eingesetzt auf:** /ueber-uns/
+- **Einsatzzweck:** Über uns – regionale Verbundenheit
+- **Alt-Text:** „Herbstlicher Blick auf einen Würzburger Hang mit Kirche und Weinbergen“
+- **Original:** 5672 × 3781 px
+- **Hinweis:** allgemeines Stockmotiv, kein Gorhau-Unternehmensfoto
+
+### sonnenlicht-ueber-wolken
+
+- **Lokale Dateien:** `public/images/stock/sonnenlicht-ueber-wolken-{Breite}.{avif,webp,jpg}`
+- **Ursprünglicher Dateiname:** `dan-meyers-f1WMJR8pLqo-unsplash.jpg`
+- **Fotograf:** Dan Meyers
+- **Quelle:** Unsplash – https://unsplash.com/photos/f1WMJR8pLqo
+- **Lizenz:** Unsplash-Lizenz (kostenlose kommerzielle Nutzung, keine Namensnennung verpflichtend); Auswahl und Freigabe durch den Auftraggeber
+- **Motiv:** Sonne über einer weiten Wolkendecke
+- **Eingesetzt auf:** /bestattungsarten/anonyme-bestattung/
+- **Einsatzzweck:** Anonyme Bestattung – weiter, ruhiger Horizont
+- **Alt-Text:** „Sonnenlicht über einer weiten, ruhigen Wolkendecke“
+- **Original:** 5464 × 3640 px
+- **Hinweis:** allgemeines Stockmotiv, kein Gorhau-Unternehmensfoto
+
+### trauernde-umarmung
+
+- **Lokale Dateien:** `public/images/stock/trauernde-umarmung-{Breite}.{avif,webp,jpg}`
+- **Ursprünglicher Dateiname:** `vidar-nordli-mathisen-nvlB39rzdQE-unsplash.jpg`
+- **Fotograf:** Vidar Nordli-Mathisen
+- **Quelle:** Unsplash – https://unsplash.com/photos/nvlB39rzdQE
+- **Lizenz:** Unsplash-Lizenz (kostenlose kommerzielle Nutzung, keine Namensnennung verpflichtend); Auswahl und Freigabe durch den Auftraggeber
+- **Motiv:** Zwei Trauernde von hinten, eine Person lehnt den Kopf an die Schulter
+- **Eingesetzt auf:** /im-trauerfall/
+- **Einsatzzweck:** Im Trauerfall – menschliche Nähe
+- **Alt-Text:** „Zwei trauernde Menschen stehen eng beieinander, von hinten aufgenommen“
+- **Original:** 3500 × 2597 px
+- **Hinweis:** allgemeines Stockmotiv, kein Gorhau-Unternehmensfoto
+
+### gedenkkerzen
+
+- **Lokale Dateien:** `public/images/stock/gedenkkerzen-{Breite}.{avif,webp,jpg}`
+- **Ursprünglicher Dateiname:** `eli-solitas-q6e4zwgtUcM-unsplash.jpg`
+- **Fotograf:** Eli Solitas
+- **Quelle:** Unsplash – https://unsplash.com/photos/q6e4zwgtUcM
+- **Lizenz:** Unsplash-Lizenz (kostenlose kommerzielle Nutzung, keine Namensnennung verpflichtend); Auswahl und Freigabe durch den Auftraggeber
+- **Motiv:** Brennende Gedenkkerzen, warmes Licht
+- **Eingesetzt auf:** /leistungen/thanatopraxie/
+- **Einsatzzweck:** Thanatopraxie – zurückhaltendes, warmes Detail
+- **Alt-Text:** „Mehrere brennende Gedenkkerzen mit warmem Licht“
+- **Original:** 4592 × 3056 px
+- **Hinweis:** allgemeines Stockmotiv, kein Gorhau-Unternehmensfoto
+
+### blumen-auf-sarg
+
+- **Lokale Dateien:** `public/images/stock/blumen-auf-sarg-{Breite}.{avif,webp,jpg}`
+- **Ursprünglicher Dateiname:** `mayron-oliveira-mibn6LLm9kA-unsplash.jpg`
+- **Fotograf:** Mayron Oliveira
+- **Quelle:** Unsplash – https://unsplash.com/photos/mibn6LLm9kA
+- **Lizenz:** Unsplash-Lizenz (kostenlose kommerzielle Nutzung, keine Namensnennung verpflichtend); Auswahl und Freigabe durch den Auftraggeber
+- **Motiv:** Zarter Blumenstrauß auf einem Holzsarg, von oben fotografiert
+- **Eingesetzt auf:** /leistungen/trauerfeier-und-trauerdruck/, /bestattungsarten/
+- **Einsatzzweck:** Trauerfeier & Trauerdruck sowie Bestattungsarten-Übersicht
+- **Alt-Text:** „Zarter Strauß aus rosa und weißen Blüten auf einem Holzsarg“
+- **Original:** 5926 × 3951 px
+- **Hinweis:** allgemeines Stockmotiv, kein Gorhau-Unternehmensfoto
+
+### meer-horizont
+
+- **Lokale Dateien:** `public/images/stock/meer-horizont-{Breite}.{avif,webp,jpg}`
+- **Ursprünglicher Dateiname:** `inline-03.jpg`
+- **Fotograf:** nicht überliefert
+- **Quelle:** Quelle vom Auftraggeber bereitgestellt / Unsplash-Auswahl (Originaldateiname lag nicht vor)
+- **Lizenz:** Unsplash-Lizenz (kostenlose kommerzielle Nutzung, keine Namensnennung verpflichtend); Auswahl und Freigabe durch den Auftraggeber
+- **Motiv:** Ruhige See mit Horizont und Wolkenhimmel
+- **Eingesetzt auf:** /bestattungsarten/seebestattung/
+- **Einsatzzweck:** Seebestattung – Hauptmotiv
+- **Alt-Text:** „Ruhige See mit weitem Horizont unter bewölktem Himmel“
+- **Original:** 2000 × 1333 px
+- **Hinweis:** allgemeines Stockmotiv, kein Gorhau-Unternehmensfoto
+
+### meer-tiefblau
+
+- **Lokale Dateien:** `public/images/stock/meer-tiefblau-{Breite}.{avif,webp,jpg}`
+- **Ursprünglicher Dateiname:** `inline-02.jpg`
+- **Fotograf:** nicht überliefert
+- **Quelle:** Quelle vom Auftraggeber bereitgestellt / Unsplash-Auswahl (Originaldateiname lag nicht vor)
+- **Lizenz:** Unsplash-Lizenz (kostenlose kommerzielle Nutzung, keine Namensnennung verpflichtend); Auswahl und Freigabe durch den Auftraggeber
+- **Motiv:** Tiefblaues Meer mit heller Gischt von oben
+- **Eingesetzt auf:** /bestattungsarten/seebestattung/
+- **Einsatzzweck:** Seebestattung – zweites Motiv im Textverlauf
+- **Alt-Text:** „Tiefblaues Meer mit heller Gischt aus der Vogelperspektive“
+- **Original:** 2000 × 1333 px
+- **Hinweis:** allgemeines Stockmotiv, kein Gorhau-Unternehmensfoto
+
+### friedhof-graeber-blumen
+
+- **Lokale Dateien:** `public/images/stock/friedhof-graeber-blumen-{Breite}.{avif,webp,jpg}`
+- **Ursprünglicher Dateiname:** `inline-04.jpg`
+- **Fotograf:** nicht überliefert
+- **Quelle:** Quelle vom Auftraggeber bereitgestellt / Unsplash-Auswahl (Originaldateiname lag nicht vor)
+- **Lizenz:** Unsplash-Lizenz (kostenlose kommerzielle Nutzung, keine Namensnennung verpflichtend); Auswahl und Freigabe durch den Auftraggeber
+- **Motiv:** Gepflegte Gräberreihe mit Blumenbepflanzung und Grablichtern im Sonnenlicht
+- **Eingesetzt auf:** /friedhoefe-in-wuerzburg/
+- **Einsatzzweck:** Friedhöfe in Würzburg – Hauptmotiv
+- **Alt-Text:** „Gepflegte Gräberreihe mit Blumenbepflanzung und Grablichtern im Sonnenlicht“
+- **Original:** 2000 × 1333 px
+- **Hinweis:** allgemeines Stockmotiv, kein Gorhau-Unternehmensfoto
+
+### Nicht eingesetzte Motive
+
+#### `inline-01.jpg`
+
+- **Motiv:** Blumengeschmückter Weidensarg vor einem Kremationsofen
+- **Status:** nicht verwenden
+- **Begründung:** Zeigt technische Anlagentechnik eines fremden Krematoriums samt englischsprachiger Sicherheitsaufkleber. Für die Feuerbestattungsseite zu konfrontierend und nicht zur angestrebten warmen, hellen Bildsprache passend. Die Seite hat bereits ein echtes Gorhau-Foto mit Urnendekoration.
+
+#### `inline-05.jpg`
+
+- **Motiv:** Trauerengel aus Bronze auf einem historischen Grabmal, Herbststimmung
+- **Status:** nicht verwenden
+- **Begründung:** Sehr dunkel (Helligkeit 20 %) und mit Trauerengel-Symbolik deutlich schwermütig – gegenläufig zur angestrebten hellen, einladenden Wirkung. Zusätzlich sind auf den Grabmalen Namen realer Verstorbener gut lesbar.
+
+### Originaldateien
+
+Die unbearbeiteten Originale liegen unter `incoming-assets/unsplash-originals/` und
+gehen nicht in den Produktionsbuild ein. Ausgeliefert werden ausschließlich die
+optimierten Varianten unter `public/images/stock/`, erzeugt mit `npm run images:stock`.
+
+<!-- STOCK:END -->
 
 ## 5. Explizit NICHT verwendet
 
 - Keine KI-generierten Mitarbeiter-, Team- oder Inhaberbilder.
 - Keine KI-generierten Innenraum- oder Gebäudeaufnahmen, die als „echtes Gorhau-Haus“
   ausgegeben werden.
-- Kein fremdes Fahrzeug, das als Gorhau-Fahrzeug dargestellt wird (die Seite „Überführungen“
-  nutzt ein bewusst abstraktes Symbolmotiv, keine Fahrzeugfotografie).
+- Kein fremdes Fahrzeug, das als Gorhau-Fahrzeug dargestellt wird. Die Seite „Überführungen“
+  zeigt inzwischen eine **echte** Aufnahme der Gorhau-Fahrzeuge aus dem Medienpaket des
+  Auftraggebers, in nativer Größe und ohne Hochskalierung.
 - Keine erfundenen Kundenstimmen, Preisangaben oder Unternehmensgeschichten.
+- Kein Stockbild wird als Gorhau-Raum, -Gebäude, -Fahrzeug, -Personal oder -Kundschaft
+  ausgegeben. Die Stockmotive stehen ausschließlich für allgemeine Themen (Natur, Meer,
+  Blumen, Kerzen, Stadtansicht Würzburg, Trauer als Situation).
 
 ## 6. Prüfstatus je Bild-Einsatzort
 
 Die vollständige Zuordnung „welches Bild/Motiv auf welcher Seite“ inkl. Alt-Texten und
-offenem Fotobedarf steht in `audit/page-image-coverage.md`.
+offenem Fotobedarf steht in `audit/page-image-coverage.md` sowie – auf dem aktuellen Stand
+nach der Stockbild-Integration – in `audit/final-image-coverage.md`.

@@ -1,0 +1,121 @@
+---
+/*
+ * Allgemeines Stockfoto (Unsplash-Auswahl des Auftraggebers), responsiv als
+ * AVIF/WebP mit JPG-Fallback.
+ *
+ * WICHTIG: Diese Komponente zeigt ausdrücklich KEINE Aufnahmen des
+ * Bestattungsinstituts Gorhau. Alt-Texte und Bildunterschriften dürfen deshalb
+ * nie behaupten, ein Raum, Fahrzeug, Gebäude oder eine Person gehöre zum
+ * Unternehmen. Für echte Unternehmensfotos gibt es PhotoFigure.astro.
+ *
+ * Breiten und Abmessungen stammen aus src/data/stock-images.json, das von
+ * scripts/build-stock-images.mjs erzeugt wird – dadurch stimmen width/height
+ * immer mit den tatsächlichen Dateien überein (kein Layout-Shift).
+ */
+import { withBase } from '../../utils/url';
+import manifest from '../../data/stock-images.json';
+
+export interface Props {
+  /** Basisname aus src/data/stock-images.json, z. B. "meer-horizont". */
+  name: string;
+  alt: string;
+  /** sizes-Attribut; Standard passt zur normalen Inhaltsspalte. */
+  sizes?: string;
+  /** Zusätzlicher, schmalerer Zuschnitt für kleine Viewports (Art Direction). */
+  mobileName?: string;
+  mobileMedia?: string;
+  mobileSizes?: string;
+  /** true = Hero/LCP: eager laden und hoch priorisieren, sonst lazy. */
+  priority?: boolean;
+  caption?: string;
+  class?: string;
+}
+
+const {
+  name,
+  alt,
+  sizes = '(min-width: 60rem) 46rem, 92vw',
+  mobileName,
+  mobileMedia = '(max-width: 40rem)',
+  mobileSizes = '100vw',
+  priority = false,
+  caption,
+  class: klass = '',
+} = Astro.props;
+
+const entry = (manifest as Record<string, { widths: number[]; width: number; height: number }>)[name];
+if (!entry) {
+  throw new Error(
+    `StockPhoto: "${name}" fehlt in src/data/stock-images.json – zuerst "npm run images:stock" ausführen.`
+  );
+}
+const mobileEntry = mobileName
+  ? (manifest as Record<string, { widths: number[]; width: number; height: number }>)[mobileName]
+  : undefined;
+if (mobileName && !mobileEntry) {
+  throw new Error(`StockPhoto: Mobil-Variante "${mobileName}" fehlt in src/data/stock-images.json.`);
+}
+
+const srcset = (base: string, widths: number[], ext: string) =>
+  widths.map((w) => `${withBase(`/images/stock/${base}-${w}.${ext}`)} ${w}w`).join(', ');
+
+const fallback = withBase(`/images/stock/${name}-${entry.widths.at(-1)}.jpg`);
+---
+
+<figure class={`stock-photo ${klass}`}>
+  <picture>
+    {
+      mobileEntry && (
+        <>
+          <source
+            media={mobileMedia}
+            type="image/avif"
+            srcset={srcset(mobileName!, mobileEntry.widths, 'avif')}
+            sizes={mobileSizes}
+            width={mobileEntry.width}
+            height={mobileEntry.height}
+          />
+          <source
+            media={mobileMedia}
+            type="image/webp"
+            srcset={srcset(mobileName!, mobileEntry.widths, 'webp')}
+            sizes={mobileSizes}
+            width={mobileEntry.width}
+            height={mobileEntry.height}
+          />
+        </>
+      )
+    }
+    <source type="image/avif" srcset={srcset(name, entry.widths, 'avif')} sizes={sizes} />
+    <source type="image/webp" srcset={srcset(name, entry.widths, 'webp')} sizes={sizes} />
+    <img
+      src={fallback}
+      srcset={srcset(name, entry.widths, 'jpg')}
+      sizes={sizes}
+      width={entry.width}
+      height={entry.height}
+      alt={alt}
+      loading={priority ? 'eager' : 'lazy'}
+      fetchpriority={priority ? 'high' : 'auto'}
+      decoding={priority ? 'sync' : 'async'}
+    />
+  </picture>
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>
+
+<style>
+  .stock-photo {
+    margin: 0;
+  }
+  .stock-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+  }
+  .stock-photo figcaption {
+    margin-top: var(--space-sm);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+</style>

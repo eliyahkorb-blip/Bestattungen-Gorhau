@@ -1,7 +1,7 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import HintBox from '../../components/ui/HintBox.astro';
-import Motif from '../../components/illustrations/Motif.astro';
+import PhotoFigure from '../../components/ui/PhotoFigure.astro';
 import { withBase } from '../../utils/url';
 ---
 
@@ -17,9 +17,14 @@ import { withBase } from '../../utils/url';
     { name: 'Überführungen', path: '/leistungen/ueberfuehrungen/' },
   ]}
 >
-  <figure class="page-motif">
-    <Motif name="ueberfuehrung" label="Abstraktes Symbol für einen würdevollen Transport" />
-  </figure>
+  <PhotoFigure
+    name="fahrzeuge-vor-bestattungsinstitut"
+    alt="Bestattungsfahrzeuge vor dem Bestattungsinstitut Gorhau"
+    width={208}
+    height={126}
+    priority
+    class="page-photo page-photo--thumb"
+  />
 
   <div class="prose">
     <p>

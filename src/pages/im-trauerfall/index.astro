@@ -3,6 +3,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
 import { company } from '../../data/company';
 import { withBase } from '../../utils/url';
 import Motif from '../../components/illustrations/Motif.astro';
+import StockPhoto from '../../components/ui/StockPhoto.astro';
 
 const steps = [
   {
@@ -70,9 +71,12 @@ const faqLd = {
   ctaHref={`tel:${company.phoneRaw}`}
   ctaHint="Wir sind Tag und Nacht erreichbar."
 >
-  <figure class="page-motif">
-    <Motif name="begleitung" label="Zwei Figuren, die sich stützend zur Seite stehen" />
-  </figure>
+  <StockPhoto
+    name="trauernde-umarmung"
+    alt="Zwei trauernde Menschen stehen eng beieinander, von hinten aufgenommen"
+    priority
+    class="page-stock"
+  />
 
   <div class="prose">
     <p class="urgent">

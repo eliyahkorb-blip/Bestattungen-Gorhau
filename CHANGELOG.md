@@ -1,5 +1,47 @@
 # Changelog
 
+## 1.7.0 – Visuelle Finalisierung mit den bereitgestellten Unsplash-Bildern
+
+### Neu
+- **Bildpipeline für Stockmotive** (`scripts/stock-images.config.mjs`,
+  `scripts/build-stock-images.mjs`, `npm run images:stock`): erzeugt aus den Originalen unter
+  `incoming-assets/unsplash-originals/` responsive AVIF-, WebP- und JPG-Varianten in
+  `public/images/stock/` – 120 Dateien, 8,7 MB. Zuschnitte werden pro Motiv festgelegt
+  (2:1-Band fürs Hero, 3:2 für Inhaltsbilder), nichts wird verzerrt oder hochskaliert.
+- **`StockPhoto.astro`**: `<picture>` mit AVIF/WebP/JPG, `srcset`/`sizes`, festen `width`/`height`
+  aus dem generierten Manifest (`src/data/stock-images.json`), `loading="lazy"` unterhalb des
+  Folds und eigener, schmalerer Zuschnitt für kleine Viewports (Art Direction beim Hero).
+  Die Komponente ist bewusst von `PhotoFigure.astro` getrennt, damit Stockmotive nie mit echten
+  Unternehmensfotos verwechselt werden.
+- **Berichte** (`npm run audit:images`): `audit/unsplash-image-inventory.md`/`.json`,
+  `audit/final-image-coverage.md` und der generierte Stock-Abschnitt in
+  `docs/IMAGE-SOURCE-AND-LICENSES.md` werden aus dem tatsächlichen Build erzeugt.
+- **`tests/perf.mjs`**: misst LCP, CLS und Übertragungsgewicht pro Seite nach Bildänderungen.
+
+### Verbessert
+- **Startseite**: echtes Würzburg-Panorama als Hero (eager, `fetchpriority="high"`), dazu zwei
+  **echte** Gorhau-Fotos an prominenter Stelle – Außenansicht und Abschiedsraum ersetzen die
+  bisherigen Illustrationen.
+- **Neun Seiten neu bebildert**: Im Trauerfall, Bestattungsarten-Übersicht, Seebestattung (zwei
+  Motive), anonyme Bestattung, Friedhöfe, Trauerfeier & Trauerdruck sowie Über uns erhalten
+  allgemeine Stockmotive; Überführungen und Thanatopraxie bekommen **echte** Gorhau-Aufnahmen
+  (Fahrzeuge, Versorgungsraum) in nativer Größe statt hochskalierter Thumbnails.
+- **Screenshot-Test** deckt jetzt alle 24 indexierbaren Seiten ab (48 Aufnahmen) und liefert
+  AVIF/WebP/JPG mit korrektem MIME-Typ aus.
+
+### Geprüft
+- Lighthouse (Desktop): Performance 100, Accessibility 100, Best Practices 100, SEO 100 auf
+  Startseite, Im Trauerfall und Seebestattung. LCP 0,3–0,5 s, CLS 0, Startseite 156 KiB.
+- Alle bisherigen Tests unverändert grün: Build, A11y (0 Verstöße), interne Links (0 defekt),
+  GitHub-Pages-Vorschau (0 fehlgeschlagene Requests, kein horizontales Scrollen).
+
+### Hinweis
+- Zwei der elf gelieferten Motive wurden bewusst **nicht** eingesetzt (Kremationsofen mit
+  fremder Anlagentechnik, dunkler Trauerengel mit lesbaren Namen realer Verstorbener) –
+  Begründung in `audit/unsplash-image-inventory.md`.
+- Ohne Bild bleiben weiterhin Bestattungsvorsorge, Benötigte Dokumente und Formalitäten: für
+  diese Dokument-/Papiermotive lag im Paket kein passendes Bild vor.
+
 ## 1.5.1 – Feinkorrektur: Typografie, Header-Kontakt, Video, Farbbalance
 
 ### Verbessert

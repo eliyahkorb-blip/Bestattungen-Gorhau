@@ -2,6 +2,7 @@
 import PageLayout from '../../layouts/PageLayout.astro';
 import IconFeature from '../../components/ui/IconFeature.astro';
 import PhotoFigure from '../../components/ui/PhotoFigure.astro';
+import StockPhoto from '../../components/ui/StockPhoto.astro';
 import { company } from '../../data/company';
 import { withBase } from '../../utils/url';
 
@@ -65,6 +66,13 @@ const links = [
       <a href={withBase('/leistungen/')}>Leistungen</a>.
     </p>
   </div>
+
+  <StockPhoto
+    name="wuerzburg-kaeppele-herbst"
+    alt="Herbstlicher Blick auf einen Würzburger Hang mit Kirche und Weinbergen"
+    caption="Würzburg – die Stadt, in der wir seit 1970 zu Hause sind."
+    class="page-stock page-stock--inline"
+  />
 
   <h2>Mehr über uns</h2>
   <hr class="accent-rule" />

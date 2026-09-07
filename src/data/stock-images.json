@@ -1,0 +1,132 @@
+{
+  "wuerzburg-panorama": {
+    "widths": [
+      800,
+      1200,
+      1600,
+      2000,
+      2400
+    ],
+    "width": 2400,
+    "height": 1200,
+    "ratio": 2,
+    "alt": "Blick über Würzburg im warmen Abendlicht, im Hintergrund die Festung Marienberg",
+    "mobil": false
+  },
+  "wuerzburg-panorama-hochkant": {
+    "widths": [
+      480,
+      720,
+      960
+    ],
+    "width": 960,
+    "height": 640,
+    "ratio": 1.5,
+    "alt": "Blick über Würzburg im warmen Abendlicht, im Hintergrund die Festung Marienberg",
+    "mobil": true
+  },
+  "wuerzburg-kaeppele-herbst": {
+    "widths": [
+      480,
+      800,
+      1200,
+      1600
+    ],
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5001,
+    "alt": "Herbstlicher Blick auf einen Würzburger Hang mit Kirche und Weinbergen",
+    "mobil": false
+  },
+  "sonnenlicht-ueber-wolken": {
+    "widths": [
+      480,
+      800,
+      1200,
+      1600
+    ],
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "alt": "Sonnenlicht über einer weiten, ruhigen Wolkendecke",
+    "mobil": false
+  },
+  "trauernde-umarmung": {
+    "widths": [
+      480,
+      800,
+      1200,
+      1600
+    ],
+    "width": 1600,
+    "height": 1187,
+    "ratio": 1.3477,
+    "alt": "Zwei trauernde Menschen stehen eng beieinander, von hinten aufgenommen",
+    "mobil": false
+  },
+  "gedenkkerzen": {
+    "widths": [
+      480,
+      800,
+      1200,
+      1600
+    ],
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.5,
+    "alt": "Mehrere brennende Gedenkkerzen mit warmem Licht",
+    "mobil": false
+  },
+  "blumen-auf-sarg": {
+    "widths": [
+      480,
+      800,
+      1200,
+      1600
+    ],
+    "width": 1600,
+    "height": 1067,
+    "ratio": 1.4999,
+    "alt": "Zarter Strauß aus rosa und weißen Blüten auf einem Holzsarg",
+    "mobil": false
+  },
+  "meer-horizont": {
+    "widths": [
+      480,
+      800,
+      1200,
+      1600
+    ],
+    "width": 1600,
+    "height": 1066,
+    "ratio": 1.5004,
+    "alt": "Ruhige See mit weitem Horizont unter bewölktem Himmel",
+    "mobil": false
+  },
+  "meer-tiefblau": {
+    "widths": [
+      480,
+      800,
+      1200,
+      1600
+    ],
+    "width": 1600,
+    "height": 1066,
+    "ratio": 1.5004,
+    "alt": "Tiefblaues Meer mit heller Gischt aus der Vogelperspektive",
+    "mobil": false
+  },
+  "friedhof-graeber-blumen": {
+    "widths": [
+      480,
+      800,
+      1200,
+      1600
+    ],
+    "width": 1600,
+    "height": 1066,
+    "ratio": 1.5004,
+    "alt": "Gepflegte Gräberreihe mit Blumenbepflanzung und Grablichtern im Sonnenlicht",
+    "mobil": false
+  }
+}

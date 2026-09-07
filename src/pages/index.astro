@@ -1,12 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaSection from '../components/CtaSection.astro';
-import HeroVisual from '../components/ui/HeroVisual.astro';
 import IconFeature from '../components/ui/IconFeature.astro';
 import FactStrip from '../components/ui/FactStrip.astro';
 import WaveDivider from '../components/ui/WaveDivider.astro';
 import Icon from '../components/icons/Icon.astro';
 import Motif from '../components/illustrations/Motif.astro';
+import PhotoFigure from '../components/ui/PhotoFigure.astro';
+import StockPhoto from '../components/ui/StockPhoto.astro';
 import { company } from '../data/company';
 import { withBase } from '../utils/url';
 
@@ -93,7 +94,7 @@ const facts = [
 >
   <!-- Hero -->
   <section class="hero">
-    <div class="container hero__inner">
+    <div class="container">
       <div class="hero__text-col">
         <p class="eyebrow">Familienunternehmen seit 1970 · Würzburg-Heidingsfeld</p>
         <h1>Bestattungen Gorhau in Würzburg</h1>
@@ -109,9 +110,16 @@ const facts = [
         </div>
         <p class="hero__note">{company.emergencyNote}</p>
       </div>
-      <div class="hero__visual-col" aria-hidden="true">
-        <HeroVisual />
-      </div>
+
+      <StockPhoto
+        name="wuerzburg-panorama"
+        mobileName="wuerzburg-panorama-hochkant"
+        alt="Blick über Würzburg im warmen Abendlicht, im Hintergrund die Festung Marienberg"
+        sizes="(min-width: 71rem) 1120px, 92vw"
+        mobileSizes="92vw"
+        priority
+        class="hero__band"
+      />
     </div>
   </section>
 
@@ -172,7 +180,13 @@ const facts = [
   <section class="section section--white">
     <div class="container split split--reverse">
       <div class="split__aside">
-        <Motif name="gebaeude" label="Symbolisches Gebäudemotiv" />
+        <PhotoFigure
+          name="bestattungsinstitut-gorhau-aussenansicht-panorama"
+          alt="Außenansicht des Bestattungsinstituts Gorhau in der Reuterstraße, Würzburg-Heidingsfeld"
+          width={979}
+          height={280}
+          class="split__photo"
+        />
       </div>
       <div>
         <p class="eyebrow">Wer wir sind</p>
@@ -249,7 +263,13 @@ const facts = [
         <p><a class="btn btn--secondary" href={withBase('/abschiedsraum/')}>Abschiedsraum kennenlernen</a></p>
       </div>
       <div class="split__aside">
-        <Motif name="abschiedsraum" label="Fenster mit sanftem Lichteinfall" />
+        <PhotoFigure
+          name="abschiedsraum-bestattungen-gorhau-panorama"
+          alt="Unser Abschiedsraum in Würzburg-Heidingsfeld mit Sitzgelegenheiten und Blumenschmuck"
+          width={979}
+          height={280}
+          class="split__photo"
+        />
       </div>
     </div>
   </section>
@@ -322,21 +342,19 @@ const facts = [
     background: linear-gradient(180deg, var(--surface-cream), var(--brand-white));
     padding-block: var(--space-2xl) var(--space-lg);
   }
-  .hero__inner {
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: var(--space-2xl);
-    align-items: center;
+  .hero__text-col {
+    max-width: 46rem;
   }
-  @media (max-width: 780px) {
-    .hero__inner {
-      grid-template-columns: 1fr;
-    }
-    .hero__visual-col {
-      order: -1;
-      max-width: 14rem;
-      margin-inline: auto;
-    }
+  /* Ruhiges Bildband statt hoher Bildfläche: feste Anzeigehöhe, daher kein
+     Layout-Shift, und das Stadtmotiv bleibt mittig im Ausschnitt. */
+  .hero :global(.hero__band) {
+    margin-top: var(--space-xl);
+  }
+  .hero :global(.hero__band img) {
+    height: clamp(11rem, 28vw, 22rem);
+    object-fit: cover;
+    object-position: center 55%;
+    border-radius: var(--radius-lg);
   }
   .hero__sub {
     font-family: var(--font-heading);
@@ -434,6 +452,9 @@ const facts = [
   .split__aside :global(.motif) {
     max-width: 20rem;
     margin-inline: auto;
+  }
+  .split__aside :global(.split__photo img) {
+    border-radius: var(--radius-lg);
   }
 
   .motif-tile-grid {

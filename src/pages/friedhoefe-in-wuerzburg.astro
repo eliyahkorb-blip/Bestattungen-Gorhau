@@ -2,6 +2,7 @@
 import PageLayout from '../layouts/PageLayout.astro';
 import HintBox from '../components/ui/HintBox.astro';
 import PhotoFigure from '../components/ui/PhotoFigure.astro';
+import StockPhoto from '../components/ui/StockPhoto.astro';
 import { withBase } from '../utils/url';
 ---
 
@@ -16,13 +17,11 @@ import { withBase } from '../utils/url';
   ctaLabel="Anfahrt öffnen"
   ctaHref={withBase('/kontakt/')}
 >
-  <PhotoFigure
-    name="urnengemeinschaftsgrabanlage"
-    alt="Urnengemeinschaftsgrabanlage auf einem Friedhof mit Blumenschmuck"
-    width={260}
-    height={160}
-    class="page-motif"
+  <StockPhoto
+    name="friedhof-graeber-blumen"
+    alt="Gepflegte Gräberreihe mit Blumenbepflanzung und Grablichtern im Sonnenlicht"
     priority
+    class="page-stock"
   />
 
   <div class="prose">
@@ -57,6 +56,14 @@ import { withBase } from '../utils/url';
     Ruhezeiten, Grabarten und Gebühren unterscheiden sich je nach Friedhof und Gemeinde und
     können sich ändern. Wir informieren Sie über die aktuell geltenden Regelungen vor Ort.
   </HintBox>
+
+  <PhotoFigure
+    name="urnengemeinschaftsgrabanlage"
+    alt="Urnengemeinschaftsgrabanlage auf einem Friedhof mit Blumenschmuck"
+    width={260}
+    height={160}
+    class="page-motif page-motif--inline"
+  />
 
   <h2>Den passenden Friedhof finden</h2>
   <hr class="accent-rule" />

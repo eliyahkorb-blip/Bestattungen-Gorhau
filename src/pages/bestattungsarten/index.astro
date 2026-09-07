@@ -2,6 +2,7 @@
 import PageLayout from '../../layouts/PageLayout.astro';
 import IconFeature from '../../components/ui/IconFeature.astro';
 import HintBox from '../../components/ui/HintBox.astro';
+import StockPhoto from '../../components/ui/StockPhoto.astro';
 import { withBase } from '../../utils/url';
 
 const arten = [
@@ -23,6 +24,13 @@ const arten = [
   ctaLabel="Bestattungsarten besprechen"
   ctaHref={withBase('/kontakt/')}
 >
+  <StockPhoto
+    name="blumen-auf-sarg"
+    alt="Zarter Strauß aus rosa und weißen Blüten auf einem Holzsarg"
+    priority
+    class="page-stock"
+  />
+
   <div class="prose">
     <p>
       Welche Bestattungsart die richtige ist, ist eine persönliche Entscheidung – oft im Vorfeld

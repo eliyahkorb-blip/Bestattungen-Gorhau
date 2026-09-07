@@ -204,6 +204,21 @@ a[href^='mailto:']:hover {
   max-width: 100%;
   margin: var(--space-lg) 0;
 }
+/* Echte Gorhau-Aufnahmen, die nur als 208x126-Thumbnail vorliegen: auf ihre
+   native Breite begrenzt, damit sie nicht hochskaliert und unscharf werden. */
+.page-photo--thumb {
+  max-width: 208px;
+}
+/* Allgemeine Stockmotive: etwas schmaler als die volle Textbreite, damit sie als
+   ruhige Bildpause wirken und nicht mit den echten Unternehmensfotos konkurrieren. */
+.page-stock {
+  max-width: 46rem;
+  margin: 0 0 var(--space-xl);
+}
+.page-stock--inline {
+  max-width: 46rem;
+  margin: var(--space-xl) 0;
+}
 .page-motif figcaption {
   text-align: center;
   color: var(--text-muted);

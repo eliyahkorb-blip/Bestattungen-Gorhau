@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import Motif from '../../components/illustrations/Motif.astro';
+import PhotoFigure from '../../components/ui/PhotoFigure.astro';
 import { withBase } from '../../utils/url';
 ---
 
@@ -16,9 +17,14 @@ import { withBase } from '../../utils/url';
     { name: 'Thanatopraxie', path: '/leistungen/thanatopraxie/' },
   ]}
 >
-  <figure class="page-motif">
-    <Motif name="thanatopraxie" label="Sanft geschlossener Kreis als zurückhaltendes Sinnbild der Fürsorge" />
-  </figure>
+  <PhotoFigure
+    name="versorgungsraum-bestattungen-gorhau"
+    alt="Versorgungsraum des Bestattungsinstituts Gorhau"
+    width={208}
+    height={126}
+    priority
+    class="page-photo page-photo--thumb"
+  />
 
   <div class="prose">
     <p>

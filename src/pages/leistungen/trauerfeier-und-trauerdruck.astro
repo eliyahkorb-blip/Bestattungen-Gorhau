@@ -1,6 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
-import Motif from '../../components/illustrations/Motif.astro';
+import StockPhoto from '../../components/ui/StockPhoto.astro';
 import { withBase } from '../../utils/url';
 ---
 
@@ -16,9 +16,12 @@ import { withBase } from '../../utils/url';
     { name: 'Trauerfeier & Trauerdruck', path: '/leistungen/trauerfeier-und-trauerdruck/' },
   ]}
 >
-  <figure class="page-motif">
-    <Motif name="trauerfeier" label="Kranzmotiv als Sinnbild einer persönlich gestalteten Trauerfeier" />
-  </figure>
+  <StockPhoto
+    name="gedenkkerzen"
+    alt="Mehrere brennende Gedenkkerzen mit warmem Licht"
+    priority
+    class="page-stock"
+  />
 
   <div class="prose">
     <p>

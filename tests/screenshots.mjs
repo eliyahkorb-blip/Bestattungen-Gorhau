@@ -11,7 +11,7 @@ const DIST = join(process.cwd(), 'dist');
 const OUT = join(process.cwd(), 'audit', 'screenshots');
 await mkdir(OUT, { recursive: true });
 
-const MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml', '.png': 'image/png', '.ico': 'image/x-icon', '.json': 'application/json', '.xml': 'application/xml', '.webmanifest': 'application/manifest+json' };
+const MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml', '.png': 'image/png', '.ico': 'image/x-icon', '.json': 'application/json', '.xml': 'application/xml', '.webmanifest': 'application/manifest+json', '.avif': 'image/avif', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg' };
 
 const server = createServer(async (req, res) => {
   let p = decodeURIComponent(req.url.split('?')[0]);
@@ -30,17 +30,32 @@ const server = createServer(async (req, res) => {
 await new Promise((r) => server.listen(0, r));
 const base = `http://127.0.0.1:${server.address().port}`;
 
+// Alle indexierbaren Seiten – Desktop und Mobil ergeben zusammen 48 Aufnahmen.
 const pages = [
   ['/', 'startseite'],
   ['/im-trauerfall/', 'im-trauerfall'],
+  ['/im-trauerfall/benoetigte-dokumente/', 'benoetigte-dokumente'],
   ['/leistungen/', 'leistungen'],
+  ['/leistungen/ueberfuehrungen/', 'leistungen-ueberfuehrungen'],
+  ['/leistungen/thanatopraxie/', 'leistungen-thanatopraxie'],
+  ['/leistungen/trauerfeier-und-trauerdruck/', 'leistungen-trauerfeier'],
+  ['/leistungen/formalitaeten/', 'leistungen-formalitaeten'],
+  ['/bestattungsarten/', 'bestattungsarten'],
+  ['/bestattungsarten/erdbestattung/', 'bestattungsarten-erdbestattung'],
+  ['/bestattungsarten/feuerbestattung/', 'bestattungsarten-feuerbestattung'],
+  ['/bestattungsarten/seebestattung/', 'bestattungsarten-seebestattung'],
+  ['/bestattungsarten/anonyme-bestattung/', 'bestattungsarten-anonyme-bestattung'],
   ['/abschiedsraum/', 'abschiedsraum'],
   ['/bestattungsvorsorge/', 'vorsorge'],
+  ['/friedhoefe-in-wuerzburg/', 'friedhoefe-in-wuerzburg'],
   ['/ueber-uns/', 'ueber-uns'],
+  ['/ueber-uns/historie/', 'ueber-uns-historie'],
+  ['/ueber-uns/galerie/', 'ueber-uns-galerie'],
   ['/mediathek/', 'mediathek'],
   ['/kontakt/', 'kontakt'],
   ['/impressum/', 'impressum'],
   ['/datenschutz/', 'datenschutz'],
+  ['/barrierefreiheit/', 'barrierefreiheit'],
 ];
 
 const browser = await chromium.launch({

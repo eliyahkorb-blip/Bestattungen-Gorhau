@@ -1,0 +1,461 @@
+[
+  {
+    "datei": "cristian-lopez-lWMMK0teQK8-unsplash.jpg",
+    "herkunft": "Unsplash-Auswahl des Auftraggebers (Originaldateiname erhalten)",
+    "breite": 5672,
+    "hoehe": 3781,
+    "seitenverhaeltnis": 1.5,
+    "seitenverhaeltnis_text": "~3:2",
+    "megapixel": 21.4,
+    "dateigroesse_kb": 3033,
+    "helligkeit_prozent": 51,
+    "farben": [
+      {
+        "hex": "#a0a6a6",
+        "name": "Hellgrau",
+        "anteil": 20
+      },
+      {
+        "hex": "#615944",
+        "name": "Orange",
+        "anteil": 19
+      },
+      {
+        "hex": "#615c56",
+        "name": "Grau",
+        "anteil": 9
+      }
+    ],
+    "motiv": "Würzburger Hang mit Käppele und Kirche, Herbstlaub, Weinberg und Festungsmauer",
+    "stimmung": "warm, herbstlich, ruhig, regional",
+    "personen_sichtbar": false,
+    "marken_logos_sichtbar": false,
+    "rechtliche_hinweise": "Öffentliche Stadtansicht; parkende Autos nur klein und ohne lesbare Kennzeichen.",
+    "eignung_hero": "technisch möglich",
+    "eignung_content": "ja",
+    "eignung_mobil": "gut",
+    "moegliche_seiten": [
+      "/ueber-uns/"
+    ],
+    "status": "verwenden",
+    "eingesetzt_als": "wuerzburg-kaeppele-herbst",
+    "begruendung": "Über uns – regionale Verbundenheit"
+  },
+  {
+    "datei": "dan-meyers-f1WMJR8pLqo-unsplash.jpg",
+    "herkunft": "Unsplash-Auswahl des Auftraggebers (Originaldateiname erhalten)",
+    "breite": 5464,
+    "hoehe": 3640,
+    "seitenverhaeltnis": 1.501,
+    "seitenverhaeltnis_text": "~3:2",
+    "megapixel": 19.9,
+    "dateigroesse_kb": 2052,
+    "helligkeit_prozent": 45,
+    "farben": [
+      {
+        "hex": "#a38559",
+        "name": "Orange",
+        "anteil": 13
+      },
+      {
+        "hex": "#7b6446",
+        "name": "Orange",
+        "anteil": 12
+      },
+      {
+        "hex": "#7e8180",
+        "name": "Hellgrau",
+        "anteil": 7
+      }
+    ],
+    "motiv": "Sonne über einer geschlossenen Wolkendecke, Blick von oben",
+    "stimmung": "hell, weit, tröstlich, offen",
+    "personen_sichtbar": false,
+    "marken_logos_sichtbar": false,
+    "rechtliche_hinweise": "Reines Naturmotiv, unkritisch.",
+    "eignung_hero": "technisch möglich",
+    "eignung_content": "ja",
+    "eignung_mobil": "gut",
+    "moegliche_seiten": [
+      "/bestattungsarten/anonyme-bestattung/"
+    ],
+    "status": "verwenden",
+    "eingesetzt_als": "sonnenlicht-ueber-wolken",
+    "begruendung": "Anonyme Bestattung – weiter, ruhiger Horizont"
+  },
+  {
+    "datei": "eli-solitas-q6e4zwgtUcM-unsplash.jpg",
+    "herkunft": "Unsplash-Auswahl des Auftraggebers (Originaldateiname erhalten)",
+    "breite": 4592,
+    "hoehe": 3056,
+    "seitenverhaeltnis": 1.503,
+    "seitenverhaeltnis_text": "~3:2",
+    "megapixel": 14,
+    "dateigroesse_kb": 962,
+    "helligkeit_prozent": 30,
+    "farben": [
+      {
+        "hex": "#242320",
+        "name": "Anthrazit",
+        "anteil": 14
+      },
+      {
+        "hex": "#424342",
+        "name": "Grau",
+        "anteil": 11
+      },
+      {
+        "hex": "#626362",
+        "name": "Grau",
+        "anteil": 10
+      }
+    ],
+    "motiv": "Reihe brennender Opferkerzen, warmes Licht vor dunklem Hintergrund",
+    "stimmung": "warm, still, würdevoll",
+    "personen_sichtbar": false,
+    "marken_logos_sichtbar": false,
+    "rechtliche_hinweise": "Unkritisches Detailmotiv.",
+    "eignung_hero": "technisch möglich",
+    "eignung_content": "ja",
+    "eignung_mobil": "gut",
+    "moegliche_seiten": [
+      "/leistungen/thanatopraxie/"
+    ],
+    "status": "verwenden",
+    "eingesetzt_als": "gedenkkerzen",
+    "begruendung": "Thanatopraxie – zurückhaltendes, warmes Detail"
+  },
+  {
+    "datei": "inline-01.jpg",
+    "herkunft": "Vom Auftraggeber bereitgestellt (Einzel-Upload, ohne Originaldateinamen)",
+    "breite": 2000,
+    "hoehe": 1333,
+    "seitenverhaeltnis": 1.5,
+    "seitenverhaeltnis_text": "~3:2",
+    "megapixel": 2.7,
+    "dateigroesse_kb": 356,
+    "helligkeit_prozent": 57,
+    "farben": [
+      {
+        "hex": "#c3c1bb",
+        "name": "Hellgrau",
+        "anteil": 18
+      },
+      {
+        "hex": "#a5a29c",
+        "name": "Hellgrau",
+        "anteil": 15
+      },
+      {
+        "hex": "#dbdbd6",
+        "name": "Weiß",
+        "anteil": 6
+      }
+    ],
+    "motiv": "Blumengeschmückter Weidensarg auf einem Rollwagen vor einem geöffneten Kremationsofen",
+    "stimmung": "technisch, kühl trotz Blumenschmuck",
+    "personen_sichtbar": false,
+    "marken_logos_sichtbar": true,
+    "rechtliche_hinweise": "Englischsprachige Sicherheitsaufkleber und Anlagentechnik eines fremden Krematoriums deutlich sichtbar – könnte fälschlich als Gorhau-Ausstattung gelesen werden.",
+    "eignung_hero": "nein (zu klein oder zu hoch)",
+    "eignung_content": "ja",
+    "eignung_mobil": "eingeschränkt",
+    "moegliche_seiten": [],
+    "status": "nicht verwenden",
+    "eingesetzt_als": null,
+    "begruendung": "Zeigt technische Anlagentechnik eines fremden Krematoriums samt englischsprachiger Sicherheitsaufkleber. Für die Feuerbestattungsseite zu konfrontierend und nicht zur angestrebten warmen, hellen Bildsprache passend. Die Seite hat bereits ein echtes Gorhau-Foto mit Urnendekoration."
+  },
+  {
+    "datei": "inline-02.jpg",
+    "herkunft": "Vom Auftraggeber bereitgestellt (Einzel-Upload, ohne Originaldateinamen)",
+    "breite": 2000,
+    "hoehe": 1333,
+    "seitenverhaeltnis": 1.5,
+    "seitenverhaeltnis_text": "~3:2",
+    "megapixel": 2.7,
+    "dateigroesse_kb": 391,
+    "helligkeit_prozent": 41,
+    "farben": [
+      {
+        "hex": "#82b6c4",
+        "name": "Türkis",
+        "anteil": 15
+      },
+      {
+        "hex": "#0b2735",
+        "name": "Dunkelblau",
+        "anteil": 13
+      },
+      {
+        "hex": "#173a49",
+        "name": "Petrol",
+        "anteil": 10
+      }
+    ],
+    "motiv": "Tiefblaues Meer mit heller Gischt, Blick von oben",
+    "stimmung": "tief, klar, bewegt",
+    "personen_sichtbar": false,
+    "marken_logos_sichtbar": false,
+    "rechtliche_hinweise": "Reines Naturmotiv, unkritisch.",
+    "eignung_hero": "nein (zu klein oder zu hoch)",
+    "eignung_content": "ja",
+    "eignung_mobil": "gut",
+    "moegliche_seiten": [
+      "/bestattungsarten/seebestattung/"
+    ],
+    "status": "verwenden",
+    "eingesetzt_als": "meer-tiefblau",
+    "begruendung": "Seebestattung – zweites Motiv im Textverlauf"
+  },
+  {
+    "datei": "inline-03.jpg",
+    "herkunft": "Vom Auftraggeber bereitgestellt (Einzel-Upload, ohne Originaldateinamen)",
+    "breite": 2000,
+    "hoehe": 1333,
+    "seitenverhaeltnis": 1.5,
+    "seitenverhaeltnis_text": "~3:2",
+    "megapixel": 2.7,
+    "dateigroesse_kb": 345,
+    "helligkeit_prozent": 65,
+    "farben": [
+      {
+        "hex": "#bcc9c6",
+        "name": "Weiß",
+        "anteil": 22
+      },
+      {
+        "hex": "#dbe0d9",
+        "name": "Weiß",
+        "anteil": 14
+      },
+      {
+        "hex": "#a9bbbd",
+        "name": "Türkis",
+        "anteil": 13
+      }
+    ],
+    "motiv": "Ruhige See mit weitem Horizont unter Wolkenhimmel",
+    "stimmung": "weit, ruhig, hell",
+    "personen_sichtbar": false,
+    "marken_logos_sichtbar": false,
+    "rechtliche_hinweise": "Reines Naturmotiv, unkritisch.",
+    "eignung_hero": "nein (zu klein oder zu hoch)",
+    "eignung_content": "ja",
+    "eignung_mobil": "gut",
+    "moegliche_seiten": [
+      "/bestattungsarten/seebestattung/"
+    ],
+    "status": "verwenden",
+    "eingesetzt_als": "meer-horizont",
+    "begruendung": "Seebestattung – Hauptmotiv"
+  },
+  {
+    "datei": "inline-04.jpg",
+    "herkunft": "Vom Auftraggeber bereitgestellt (Einzel-Upload, ohne Originaldateinamen)",
+    "breite": 2000,
+    "hoehe": 1333,
+    "seitenverhaeltnis": 1.5,
+    "seitenverhaeltnis_text": "~3:2",
+    "megapixel": 2.7,
+    "dateigroesse_kb": 474,
+    "helligkeit_prozent": 43,
+    "farben": [
+      {
+        "hex": "#61605c",
+        "name": "Grau",
+        "anteil": 18
+      },
+      {
+        "hex": "#80817e",
+        "name": "Hellgrau",
+        "anteil": 15
+      },
+      {
+        "hex": "#42453b",
+        "name": "Grau",
+        "anteil": 14
+      }
+    ],
+    "motiv": "Gepflegte Gräberreihe mit Blumenbepflanzung und Grablichtern im Sonnenlicht",
+    "stimmung": "hell, gepflegt, ruhig",
+    "personen_sichtbar": false,
+    "marken_logos_sichtbar": false,
+    "rechtliche_hinweise": "Auf den Grabsteinen stehen Namen realer Verstorbener. In den ausgelieferten Größen sind sie nicht entzifferbar; das Original wird nicht veröffentlicht.",
+    "eignung_hero": "nein (zu klein oder zu hoch)",
+    "eignung_content": "ja",
+    "eignung_mobil": "gut",
+    "moegliche_seiten": [
+      "/friedhoefe-in-wuerzburg/"
+    ],
+    "status": "verwenden",
+    "eingesetzt_als": "friedhof-graeber-blumen",
+    "begruendung": "Friedhöfe in Würzburg – Hauptmotiv"
+  },
+  {
+    "datei": "inline-05.jpg",
+    "herkunft": "Vom Auftraggeber bereitgestellt (Einzel-Upload, ohne Originaldateinamen)",
+    "breite": 2000,
+    "hoehe": 1333,
+    "seitenverhaeltnis": 1.5,
+    "seitenverhaeltnis_text": "~3:2",
+    "megapixel": 2.7,
+    "dateigroesse_kb": 328,
+    "helligkeit_prozent": 20,
+    "farben": [
+      {
+        "hex": "#251c25",
+        "name": "Magenta",
+        "anteil": 36
+      },
+      {
+        "hex": "#362a2a",
+        "name": "Dunkelrot",
+        "anteil": 21
+      },
+      {
+        "hex": "#413a3a",
+        "name": "Grau",
+        "anteil": 12
+      }
+    ],
+    "motiv": "Bronzener Trauerengel auf einem historischen Grabmal, Herbstlaub",
+    "stimmung": "dunkel, schwermütig, melancholisch",
+    "personen_sichtbar": false,
+    "marken_logos_sichtbar": false,
+    "rechtliche_hinweise": "Namen realer Verstorbener auf den umliegenden Grabmalen sind gut lesbar.",
+    "eignung_hero": "nein (zu klein oder zu hoch)",
+    "eignung_content": "ja",
+    "eignung_mobil": "eingeschränkt",
+    "moegliche_seiten": [],
+    "status": "nicht verwenden",
+    "eingesetzt_als": null,
+    "begruendung": "Sehr dunkel (Helligkeit 20 %) und mit Trauerengel-Symbolik deutlich schwermütig – gegenläufig zur angestrebten hellen, einladenden Wirkung. Zusätzlich sind auf den Grabmalen Namen realer Verstorbener gut lesbar."
+  },
+  {
+    "datei": "mayron-oliveira-mibn6LLm9kA-unsplash.jpg",
+    "herkunft": "Unsplash-Auswahl des Auftraggebers (Originaldateiname erhalten)",
+    "breite": 5926,
+    "hoehe": 3951,
+    "seitenverhaeltnis": 1.5,
+    "seitenverhaeltnis_text": "~3:2",
+    "megapixel": 23.4,
+    "dateigroesse_kb": 2274,
+    "helligkeit_prozent": 50,
+    "farben": [
+      {
+        "hex": "#c3bec0",
+        "name": "Weiß",
+        "anteil": 12
+      },
+      {
+        "hex": "#60493a",
+        "name": "Orange",
+        "anteil": 9
+      },
+      {
+        "hex": "#837c78",
+        "name": "Hellgrau",
+        "anteil": 7
+      }
+    ],
+    "motiv": "Zarter Strauß aus rosa Lisianthus und weißen Astern auf einem Holzsarg, von oben",
+    "stimmung": "hell, zart, respektvoll",
+    "personen_sichtbar": false,
+    "marken_logos_sichtbar": false,
+    "rechtliche_hinweise": "Unkritisches Detailmotiv, kein Bezug zu einer konkreten Person.",
+    "eignung_hero": "nein (zu klein oder zu hoch)",
+    "eignung_content": "ja",
+    "eignung_mobil": "gut",
+    "moegliche_seiten": [
+      "/leistungen/trauerfeier-und-trauerdruck/",
+      "/bestattungsarten/"
+    ],
+    "status": "verwenden",
+    "eingesetzt_als": "blumen-auf-sarg",
+    "begruendung": "Trauerfeier & Trauerdruck sowie Bestattungsarten-Übersicht"
+  },
+  {
+    "datei": "salah-ait-mokhtar-EBzTou1x5WM-unsplash.jpg",
+    "herkunft": "Unsplash-Auswahl des Auftraggebers (Originaldateiname erhalten)",
+    "breite": 5472,
+    "hoehe": 2844,
+    "seitenverhaeltnis": 1.924,
+    "seitenverhaeltnis_text": "~2:1",
+    "megapixel": 15.6,
+    "dateigroesse_kb": 2723,
+    "helligkeit_prozent": 36,
+    "farben": [
+      {
+        "hex": "#1f291b",
+        "name": "Dunkelgrün",
+        "anteil": 22
+      },
+      {
+        "hex": "#283423",
+        "name": "Dunkelgrün",
+        "anteil": 21
+      },
+      {
+        "hex": "#7b9a82",
+        "name": "Grün",
+        "anteil": 10
+      }
+    ],
+    "motiv": "Weiter Blick über Würzburg im Abendlicht, Festung Marienberg auf dem Hügel, Weinberge rechts",
+    "stimmung": "warm, golden, weit, regional verankert",
+    "personen_sichtbar": false,
+    "marken_logos_sichtbar": false,
+    "rechtliche_hinweise": "Öffentliche Stadtansicht aus der Distanz; keine Personen, keine lesbaren Marken.",
+    "eignung_hero": "ja – als Hero eingesetzt",
+    "eignung_content": "ja",
+    "eignung_mobil": "gut – 3:2-Zuschnitt hält die Stadt vollständig im Bild",
+    "moegliche_seiten": [
+      "/"
+    ],
+    "status": "verwenden",
+    "eingesetzt_als": "wuerzburg-panorama",
+    "begruendung": "Startseite – Hero"
+  },
+  {
+    "datei": "vidar-nordli-mathisen-nvlB39rzdQE-unsplash.jpg",
+    "herkunft": "Unsplash-Auswahl des Auftraggebers (Originaldateiname erhalten)",
+    "breite": 3500,
+    "hoehe": 2597,
+    "seitenverhaeltnis": 1.348,
+    "seitenverhaeltnis_text": "~4:3",
+    "megapixel": 9.1,
+    "dateigroesse_kb": 956,
+    "helligkeit_prozent": 27,
+    "farben": [
+      {
+        "hex": "#040702",
+        "name": "Dunkelgrün",
+        "anteil": 24
+      },
+      {
+        "hex": "#1b190a",
+        "name": "Olive",
+        "anteil": 10
+      },
+      {
+        "hex": "#433925",
+        "name": "Braun",
+        "anteil": 8
+      }
+    ],
+    "motiv": "Zwei Trauernde von hinten, eine Person lehnt den Kopf an die Schulter der anderen",
+    "stimmung": "menschlich, nah, getragen",
+    "personen_sichtbar": true,
+    "marken_logos_sichtbar": false,
+    "rechtliche_hinweise": "Personen sind ausschließlich von hinten zu sehen, keine Gesichter erkennbar und damit nicht identifizierbar. Darf nie als Gorhau-Kundschaft oder -Personal bezeichnet werden.",
+    "eignung_hero": "nein (zu klein oder zu hoch)",
+    "eignung_content": "ja",
+    "eignung_mobil": "gut – bewusst ohne Zuschnitt, damit keine Köpfe angeschnitten werden",
+    "moegliche_seiten": [
+      "/im-trauerfall/"
+    ],
+    "status": "verwenden",
+    "eingesetzt_als": "trauernde-umarmung",
+    "begruendung": "Im Trauerfall – menschliche Nähe"
+  }
+]
