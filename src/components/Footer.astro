@@ -17,7 +17,7 @@ import { withBase } from '../utils/url';
       </address>
       <p class="site-footer__hours">
         <strong>Bürozeiten:</strong><br />
-        Montag bis Freitag, 08:00 – 16:00 Uhr<br />
+        Montag bis Freitag, 08:00 bis 16:00 Uhr<br />
         sowie nach Vereinbarung
       </p>
       <p class="site-footer__emergency">Im Trauerfall sind wir Tag und Nacht für Sie erreichbar.</p>
@@ -50,10 +50,12 @@ import { withBase } from '../utils/url';
 </footer>
 
 <style>
+  /* Heller, warmer Footer: trägt die Marke über Gold-Akzente und Typografie
+     statt über eine große dunkle oder rote Fläche. */
   .site-footer {
-    background: var(--surface-dark);
-    color: var(--text-on-dark);
-    margin-top: var(--space-3xl);
+    background: var(--surface-beige);
+    color: var(--text-primary);
+    border-top: 3px solid var(--brand-bordeaux);
   }
   .site-footer__grid {
     display: grid;
@@ -62,15 +64,15 @@ import { withBase } from '../utils/url';
     padding-block: var(--space-2xl);
   }
   .site-footer a {
-    color: var(--brand-gold);
+    color: var(--brand-bordeaux-dark);
   }
   .site-footer a:hover {
-    color: var(--brand-white);
+    color: var(--brand-bordeaux);
   }
   .site-footer__name {
     font-family: var(--font-heading);
     font-weight: 700;
-    color: var(--brand-gold);
+    color: var(--brand-bordeaux-dark);
     margin-bottom: var(--space-sm);
   }
   .site-footer__address {
@@ -82,30 +84,43 @@ import { withBase } from '../utils/url';
     margin-top: var(--space-md);
   }
   .site-footer__emergency {
-    color: var(--brand-gold);
+    color: var(--brand-bordeaux-dark);
     font-weight: 600;
   }
   .site-footer__heading {
     font-size: 1.05rem;
-    color: var(--brand-gold);
+    color: var(--text-primary);
     margin-bottom: var(--space-sm);
   }
+  /* Navigationsliste, kein Fließtext: ohne Dauerunterstreichung ruhiger,
+     beim Hover und im Fokus aber eindeutig als Link erkennbar. */
   .site-footer__links {
     list-style: none;
     padding: 0;
     margin: 0;
-    line-height: 2;
+    line-height: 2.1;
+  }
+  .site-footer__links a {
+    text-decoration: none;
+  }
+  .site-footer__links a:hover,
+  .site-footer__links a:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
   }
   .site-footer__philosophy {
     margin-top: var(--space-lg);
     letter-spacing: 0.1em;
     text-transform: uppercase;
     font-size: 0.8rem;
-    color: var(--brand-gold);
+    color: var(--brand-gold-text);
   }
+  /* Schmales Markenband als Seitenfuß: gibt Bordeaux einen festen Platz,
+     ohne eine große rote Fläche zu erzeugen. */
   .site-footer__bar {
-    border-top: 1px solid rgba(251, 247, 240, 0.15);
-    padding-block: var(--space-md);
+    background: var(--surface-brand);
+    color: var(--text-on-dark);
+    padding-block: var(--space-xl);
     font-size: 0.85rem;
   }
   .site-footer__bar p {

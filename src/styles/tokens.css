@@ -5,6 +5,93 @@
  * Dokumentation: docs/BRAND-GUIDELINES.md
  */
 
+/*
+ * Schriften: Source Serif 4 (Überschriften) und Source Sans 3 (Fließtext),
+ * beide SIL Open Font License 1.1. Die Dateien liegen unter public/fonts/ im
+ * Repository; es geht kein Request an Google Fonts oder ein anderes CDN.
+ * Erzeugt mit "npm run fonts:sync" (scripts/sync-fonts.mjs).
+ *
+ * Bewusst nur drei Schnitte je Familie und keine dünnen Schnitte.
+ *
+ * font-display: optional statt swap, zusammen mit dem Preload der beiden
+ * Schnitte des ersten Viewports.
+ *
+ * Hintergrund: Die Ersatzschrift baut den Hero-Text rund 88 Pixel flacher auf
+ * als die geladene Schrift. Mit "swap" schob dieser Nachbruch das Hero-Bild
+ * nach unten, gemessen CLS 0.24. Mit "optional" wartet der Browser kurz auf
+ * die Schrift und bleibt sonst bei der Ersatzschrift, statt mitten im Rendern
+ * umzubrechen. Gemessen: CLS 0 auf allen geprueften Seiten.
+ */
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url('/fonts/source-serif-4-latin-400-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+2013-2014, U+2018-201A,
+    U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+20AC, U+2122;
+}
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 700;
+  font-display: optional;
+  src: url('/fonts/source-sans-3-latin-400-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+2013-2014, U+2018-201A,
+    U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+20AC, U+2122;
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url('/fonts/source-serif-4-latin-700-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+2013-2014, U+2018-201A,
+    U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+20AC, U+2122;
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 600;
+  font-display: optional;
+  src: url('/fonts/source-sans-3-latin-600-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+2013-2014, U+2018-201A,
+    U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+20AC, U+2122;
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 700;
+  font-display: optional;
+  src: url('/fonts/source-sans-3-latin-700-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+2013-2014, U+2018-201A,
+    U+201C-201E, U+2020-2022, U+2026, U+2039-203A, U+20AC, U+2122;
+}
+
+/*
+ * Metrisch angepasste Fallbacks: verhindern einen Layout-Sprung, solange die
+ * Webfonts noch laden.
+ *
+ * Die size-adjust-Werte sind gemessen, nicht geschätzt: Source Sans 3 ist
+ * 92.8 % so breit wie Arial, Source Serif 4 im Schnitt 113.9 % so breit wie
+ * Georgia. Genau um diesen Faktor wird die Ersatzschrift skaliert, damit der
+ * Text vor und nach dem Laden gleich viele Zeilen belegt.
+ *
+ * Bewusst ohne ascent-/descent-override: die Zeilenhöhe ist überall als
+ * einheitenloser Faktor gesetzt und hängt daher an der Schriftgröße, nicht an
+ * den Schriftmetriken.
+ */
+@font-face {
+  font-family: 'Source Serif Fallback';
+  src: local('Georgia'), local('Times New Roman'), local('serif');
+  size-adjust: 113.9%;
+}
+@font-face {
+  font-family: 'Source Sans Fallback';
+  src: local('Arial'), local('Helvetica'), local('sans-serif');
+  size-adjust: 92.8%;
+}
+
 :root {
   /* Markenfarben – aus Original-Logo (header_logo.png) und Flyer 2009 extrahiert.
      Siehe docs/BRAND-COLORS-EXTRACTED.md und docs/BRAND-GUIDELINES.md. */
@@ -13,41 +100,55 @@
   --brand-red: #a02828; /* wärmerer Rotakzent */
   --brand-gold: #b8933d; /* Gold-Treatment des Logos (header_logo.png) */
   --brand-gold-dark: #8c6d28;
+  /* Helles Gold für Buttons auf dem Bordeaux-Band: erreicht dort die
+     geforderten 3:1 gegen den Untergrund und 4.5:1 zur Beschriftung. */
+  --brand-gold-on-brand: #d9b45c;
   /* Dunkleres Gold ausschließlich für Text auf hellen Flächen (WCAG-AA-tauglich). */
   --brand-gold-text: #7a5e1a;
   --brand-cream: #f7ece9; /* warmes Creme (Flyer-Papier #f0e0e0, für Flächen aufgehellt) */
   --brand-beige: #ecdcd6;
+  /* Ruhiges, tiefes Bordeaux für große Flächen (Footer, Abschlussband). Das
+     gesättigte --brand-bordeaux wirkt großflächig zu grell. */
+  --brand-bordeaux-deep: #73201f;
   --brand-white: #ffffff;
   --brand-charcoal: #2a2420;
 
   /* Semantische Farben */
   --text-primary: #2a2420;
   --text-muted: #5c544c;
-  --text-on-dark: #f7ece9;
-  --border-subtle: #e6d7d1;
+  --text-on-dark: #faf6f1;
+  --border-subtle: #e8dfd4;
   --focus-color: #882020;
   --focus-ring: #b8933d;
   --success: #2e6e4e;
   --warning: #8a5a0f;
   --error: #a32330;
 
-  /* Flächen */
+  /* Flächen
+     Creme und Beige sind bewusst von Rosa weg zu einem warmen Sandton gedreht:
+     der frühere Rotstich ließ ganze Seiten weinrot wirken. Das große Abschluss-
+     und Footerband trägt jetzt echtes Bordeaux statt eines fast schwarzen
+     Braun, das schwer und düster gewirkt hat. */
   --surface: #ffffff;
-  --surface-cream: #f7ece9;
-  --surface-beige: #ecdcd6;
+  --surface-cream: #faf6f1;
+  --surface-beige: #efe4d8;
+  --surface-brand: #73201f;
   --surface-dark: #3a1e20;
 
-  /* Typografie – lokal ohne externe Schriften (System-Font-Stacks) */
-  --font-heading: 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua',
-    Georgia, 'Times New Roman', serif;
-  --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-    'Noto Sans', sans-serif;
+  /* Typografie – zwei selbst gehostete Familien, siehe @font-face oben */
+  --font-heading: 'Source Serif 4', 'Source Serif Fallback', Georgia, 'Times New Roman', serif;
+  --font-body: 'Source Sans 3', 'Source Sans Fallback', system-ui, -apple-system, 'Segoe UI',
+    Arial, sans-serif;
 
-  --fs-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-  --lh-base: 1.7;
-  --lh-heading: 1.2;
+  --fs-base: clamp(1.0625rem, 1rem + 0.28vw, 1.1875rem);
+  --lh-base: 1.72;
+  --lh-heading: 1.18;
+  /* Große Serif-Überschriften vertragen etwas negative Laufweite, Fließtext nicht. */
+  --ls-heading: -0.012em;
+  --ls-eyebrow: 0.09em;
 
   /* Abstände */
+  --space-para: 1.25rem; /* Abstand zwischen zwei Fließtextabsätzen */
   --space-2xs: 0.25rem;
   --space-xs: 0.5rem;
   --space-sm: 0.75rem;

@@ -36,6 +36,24 @@ const baseLd = includeBusinessLd
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#882020" />
+    {/*
+      Die zwei Schnitte des ersten Viewports vorladen, damit sie die kurze
+      Wartezeit von font-display: optional zuverlaessig einhalten.
+    */}
+    <link
+      rel="preload"
+      href={withBase('/fonts/source-sans-3-latin-400-normal.woff2')}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href={withBase('/fonts/source-serif-4-latin-700-normal.woff2')}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="icon" href={withBase('/favicon.ico')} sizes="any" />
     <link rel="icon" href={withBase('/favicon.svg')} type="image/svg+xml" />
     <link rel="apple-touch-icon" href={withBase('/apple-touch-icon.png')} />

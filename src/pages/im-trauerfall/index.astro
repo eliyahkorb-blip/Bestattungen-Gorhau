@@ -8,7 +8,7 @@ import StockPhoto from '../../components/ui/StockPhoto.astro';
 const steps = [
   {
     t: 'Ruhe bewahren und uns anrufen',
-    d: 'Es besteht kein Zeitdruck. Rufen Sie uns an – wir besprechen mit Ihnen die nächsten Schritte und sind Tag und Nacht erreichbar.',
+    d: 'Es besteht kein Zeitdruck. Rufen Sie uns an. Wir besprechen mit Ihnen die nächsten Schritte und sind Tag und Nacht erreichbar.',
   },
   {
     t: 'Ärztliche Todesbescheinigung',
@@ -20,7 +20,7 @@ const steps = [
   },
   {
     t: 'Persönliches Beratungsgespräch',
-    d: 'In Ruhe besprechen wir Bestattungsart, Ablauf und persönliche Wünsche. Bringen Sie – soweit vorhanden – die benötigten Unterlagen mit.',
+    d: 'In Ruhe besprechen wir Bestattungsart, Ablauf und persönliche Wünsche. Bringen Sie die benötigten Unterlagen mit, soweit sie vorliegen.',
   },
   {
     t: 'Organisation & Formalitäten',
@@ -31,11 +31,11 @@ const steps = [
 const faqs = [
   {
     q: 'Was muss ich als Erstes tun, wenn jemand verstorben ist?',
-    a: 'Bewahren Sie Ruhe – es besteht kein Zeitdruck. Verständigen Sie zunächst einen Arzt für die Todesbescheinigung und rufen Sie uns dann an. Wir übernehmen alle weiteren Schritte gemeinsam mit Ihnen.',
+    a: 'Bewahren Sie Ruhe. Es besteht kein Zeitdruck. Verständigen Sie zunächst einen Arzt für die Todesbescheinigung und rufen Sie uns dann an. Wir übernehmen alle weiteren Schritte gemeinsam mit Ihnen.',
   },
   {
     q: 'Sind Sie auch nachts und am Wochenende erreichbar?',
-    a: 'Ja. Im Trauerfall sind wir für Sie Tag und Nacht erreichbar. Für organisatorische Fragen erreichen Sie unser Büro zu den regulären Zeiten von Montag bis Freitag, 08:00 – 16:00 Uhr.',
+    a: 'Ja. Im Trauerfall sind wir für Sie Tag und Nacht erreichbar. Für organisatorische Fragen erreichen Sie unser Büro zu den regulären Zeiten von Montag bis Freitag, 08:00 bis 16:00 Uhr.',
   },
   {
     q: 'Welche Unterlagen werden benötigt?',
@@ -43,7 +43,7 @@ const faqs = [
   },
   {
     q: 'Was kostet ein erstes Beratungsgespräch?',
-    a: 'Das erste Gespräch ist für Sie unverbindlich. Wir nehmen uns Zeit, hören zu und beraten Sie zu allen Möglichkeiten – ohne Verpflichtung.',
+    a: 'Das erste Gespräch ist für Sie unverbindlich. Wir nehmen uns Zeit, hören zu und beraten Sie zu allen Möglichkeiten, ohne Verpflichtung.',
   },
 ];
 
@@ -59,12 +59,12 @@ const faqLd = {
 ---
 
 <PageLayout
-  title="Im Trauerfall – Erste Schritte | Bestattungen Gorhau Würzburg"
-  description="Was ist im Trauerfall zu tun? Bestattungen Gorhau in Würzburg begleitet Sie ruhig durch die ersten Schritte – Tag und Nacht erreichbar. Erste Hilfe und Checkliste."
+  title="Im Trauerfall: Erste Schritte | Bestattungen Gorhau Würzburg"
+  description="Was ist im Trauerfall zu tun? Bestattungen Gorhau in Würzburg begleitet Sie ruhig durch die ersten Schritte. Tag und Nacht erreichbar. Erste Hilfe und Checkliste."
   path="/im-trauerfall/"
   eyebrow="Erste Hilfe im Trauerfall"
   heading="Im Trauerfall sind wir für Sie da"
-  intro="Wenn ein Mensch verstorben ist, stellt sich vieles gleichzeitig. Sie müssen jetzt nichts allein regeln – wir begleiten Sie Schritt für Schritt."
+  intro="Wenn ein Mensch verstorben ist, stellt sich vieles gleichzeitig. Sie müssen jetzt nichts allein regeln. Wir begleiten Sie Schritt für Schritt."
   breadcrumbs={[{ name: 'Im Trauerfall', path: '/im-trauerfall/' }]}
   jsonLd={[faqLd]}
   ctaLabel="Im Trauerfall anrufen"
@@ -80,7 +80,7 @@ const faqLd = {
 
   <div class="prose">
     <p class="urgent">
-      <strong>Sie brauchen jetzt Hilfe?</strong> Rufen Sie uns an – wir sind Tag und Nacht
+      <strong>Sie brauchen jetzt Hilfe?</strong> Rufen Sie uns an. Wir sind Tag und Nacht
       für Sie erreichbar:
       <a href={`tel:${company.phoneRaw}`}>{company.phone}</a>.
     </p>

@@ -1,0 +1,252 @@
+[
+  {
+    "datei": "cristian-lopez-lWMMK0teQK8-unsplash.jpg",
+    "aufloesung": "5672x3781",
+    "seitenverhaeltnis": "~3:2",
+    "motiv": "Würzburger Hang mit Käppele und Kirche, Herbstlaub, Weinberg und Festungsmauer",
+    "stimmung": "warm, herbstlich, ruhig, regional",
+    "qualitaet": "hoch",
+    "farben": [
+      "Hellgrau",
+      "Orange",
+      "Grau"
+    ],
+    "personen_sichtbar": false,
+    "marken_sichtbar": false,
+    "moegliche_seite": [
+      "/ueber-uns/"
+    ],
+    "hero_geeignet": "technisch möglich",
+    "content_geeignet": "ja",
+    "mobile_crop": "gut",
+    "risiken": "Öffentliche Stadtansicht; parkende Autos nur klein und ohne lesbare Kennzeichen.",
+    "einstufung": "verwenden"
+  },
+  {
+    "datei": "dan-meyers-f1WMJR8pLqo-unsplash.jpg",
+    "aufloesung": "5464x3640",
+    "seitenverhaeltnis": "~3:2",
+    "motiv": "Sonne über einer geschlossenen Wolkendecke, Blick von oben",
+    "stimmung": "hell, weit, tröstlich, offen",
+    "qualitaet": "hoch",
+    "farben": [
+      "Orange",
+      "Orange",
+      "Hellgrau"
+    ],
+    "personen_sichtbar": false,
+    "marken_sichtbar": false,
+    "moegliche_seite": [
+      "/bestattungsarten/anonyme-bestattung/"
+    ],
+    "hero_geeignet": "technisch möglich",
+    "content_geeignet": "ja",
+    "mobile_crop": "gut",
+    "risiken": "Reines Naturmotiv, unkritisch.",
+    "einstufung": "verwenden"
+  },
+  {
+    "datei": "eli-solitas-q6e4zwgtUcM-unsplash.jpg",
+    "aufloesung": "4592x3056",
+    "seitenverhaeltnis": "~3:2",
+    "motiv": "Reihe brennender Opferkerzen, warmes Licht vor dunklem Hintergrund",
+    "stimmung": "warm, still, würdevoll",
+    "qualitaet": "hoch",
+    "farben": [
+      "Anthrazit",
+      "Grau",
+      "Grau"
+    ],
+    "personen_sichtbar": false,
+    "marken_sichtbar": false,
+    "moegliche_seite": [
+      "/leistungen/thanatopraxie/"
+    ],
+    "hero_geeignet": "technisch möglich",
+    "content_geeignet": "ja",
+    "mobile_crop": "gut",
+    "risiken": "Unkritisches Detailmotiv.",
+    "einstufung": "verwenden"
+  },
+  {
+    "datei": "inline-01.jpg",
+    "aufloesung": "2000x1333",
+    "seitenverhaeltnis": "~3:2",
+    "motiv": "Blumengeschmückter Weidensarg auf einem Rollwagen vor einem geöffneten Kremationsofen",
+    "stimmung": "technisch, kühl trotz Blumenschmuck",
+    "qualitaet": "mittel",
+    "farben": [
+      "Hellgrau",
+      "Hellgrau",
+      "Weiß"
+    ],
+    "personen_sichtbar": false,
+    "marken_sichtbar": true,
+    "moegliche_seite": [],
+    "hero_geeignet": "nein (zu klein oder zu hoch)",
+    "content_geeignet": "ja",
+    "mobile_crop": "eingeschränkt",
+    "risiken": "Englischsprachige Sicherheitsaufkleber und Anlagentechnik eines fremden Krematoriums deutlich sichtbar – könnte fälschlich als Gorhau-Ausstattung gelesen werden.",
+    "einstufung": "nicht verwenden"
+  },
+  {
+    "datei": "inline-02.jpg",
+    "aufloesung": "2000x1333",
+    "seitenverhaeltnis": "~3:2",
+    "motiv": "Tiefblaues Meer mit heller Gischt, Blick von oben",
+    "stimmung": "tief, klar, bewegt",
+    "qualitaet": "mittel",
+    "farben": [
+      "Türkis",
+      "Dunkelblau",
+      "Petrol"
+    ],
+    "personen_sichtbar": false,
+    "marken_sichtbar": false,
+    "moegliche_seite": [
+      "/bestattungsarten/seebestattung/"
+    ],
+    "hero_geeignet": "nein (zu klein oder zu hoch)",
+    "content_geeignet": "ja",
+    "mobile_crop": "gut",
+    "risiken": "Reines Naturmotiv, unkritisch.",
+    "einstufung": "verwenden"
+  },
+  {
+    "datei": "inline-03.jpg",
+    "aufloesung": "2000x1333",
+    "seitenverhaeltnis": "~3:2",
+    "motiv": "Ruhige See mit weitem Horizont unter Wolkenhimmel",
+    "stimmung": "weit, ruhig, hell",
+    "qualitaet": "mittel",
+    "farben": [
+      "Weiß",
+      "Weiß",
+      "Türkis"
+    ],
+    "personen_sichtbar": false,
+    "marken_sichtbar": false,
+    "moegliche_seite": [
+      "/bestattungsarten/seebestattung/"
+    ],
+    "hero_geeignet": "nein (zu klein oder zu hoch)",
+    "content_geeignet": "ja",
+    "mobile_crop": "gut",
+    "risiken": "Reines Naturmotiv, unkritisch.",
+    "einstufung": "verwenden"
+  },
+  {
+    "datei": "inline-04.jpg",
+    "aufloesung": "2000x1333",
+    "seitenverhaeltnis": "~3:2",
+    "motiv": "Gepflegte Gräberreihe mit Blumenbepflanzung und Grablichtern im Sonnenlicht",
+    "stimmung": "hell, gepflegt, ruhig",
+    "qualitaet": "mittel",
+    "farben": [
+      "Grau",
+      "Hellgrau",
+      "Grau"
+    ],
+    "personen_sichtbar": false,
+    "marken_sichtbar": false,
+    "moegliche_seite": [
+      "/friedhoefe-in-wuerzburg/"
+    ],
+    "hero_geeignet": "nein (zu klein oder zu hoch)",
+    "content_geeignet": "ja",
+    "mobile_crop": "gut",
+    "risiken": "Auf den Grabsteinen stehen Namen realer Verstorbener. In den ausgelieferten Größen sind sie nicht entzifferbar; das Original wird nicht veröffentlicht.",
+    "einstufung": "verwenden"
+  },
+  {
+    "datei": "inline-05.jpg",
+    "aufloesung": "2000x1333",
+    "seitenverhaeltnis": "~3:2",
+    "motiv": "Bronzener Trauerengel auf einem historischen Grabmal, Herbstlaub",
+    "stimmung": "dunkel, schwermütig, melancholisch",
+    "qualitaet": "mittel",
+    "farben": [
+      "Magenta",
+      "Dunkelrot",
+      "Grau"
+    ],
+    "personen_sichtbar": false,
+    "marken_sichtbar": false,
+    "moegliche_seite": [],
+    "hero_geeignet": "nein (zu klein oder zu hoch)",
+    "content_geeignet": "ja",
+    "mobile_crop": "eingeschränkt",
+    "risiken": "Namen realer Verstorbener auf den umliegenden Grabmalen sind gut lesbar.",
+    "einstufung": "nicht verwenden"
+  },
+  {
+    "datei": "mayron-oliveira-mibn6LLm9kA-unsplash.jpg",
+    "aufloesung": "5926x3951",
+    "seitenverhaeltnis": "~3:2",
+    "motiv": "Zarter Strauß aus rosa Lisianthus und weißen Astern auf einem Holzsarg, von oben",
+    "stimmung": "hell, zart, respektvoll",
+    "qualitaet": "hoch",
+    "farben": [
+      "Weiß",
+      "Orange",
+      "Hellgrau"
+    ],
+    "personen_sichtbar": false,
+    "marken_sichtbar": false,
+    "moegliche_seite": [
+      "/leistungen/trauerfeier-und-trauerdruck/",
+      "/bestattungsarten/"
+    ],
+    "hero_geeignet": "nein (zu klein oder zu hoch)",
+    "content_geeignet": "ja",
+    "mobile_crop": "gut",
+    "risiken": "Unkritisches Detailmotiv, kein Bezug zu einer konkreten Person.",
+    "einstufung": "verwenden"
+  },
+  {
+    "datei": "salah-ait-mokhtar-EBzTou1x5WM-unsplash.jpg",
+    "aufloesung": "5472x2844",
+    "seitenverhaeltnis": "~2:1",
+    "motiv": "Weiter Blick über Würzburg im Abendlicht, Festung Marienberg auf dem Hügel, Weinberge rechts",
+    "stimmung": "warm, golden, weit, regional verankert",
+    "qualitaet": "hoch",
+    "farben": [
+      "Dunkelgrün",
+      "Dunkelgrün",
+      "Grün"
+    ],
+    "personen_sichtbar": false,
+    "marken_sichtbar": false,
+    "moegliche_seite": [
+      "/"
+    ],
+    "hero_geeignet": "ja – als Hero eingesetzt",
+    "content_geeignet": "ja",
+    "mobile_crop": "gut – 3:2-Zuschnitt hält die Stadt vollständig im Bild",
+    "risiken": "Öffentliche Stadtansicht aus der Distanz; keine Personen, keine lesbaren Marken.",
+    "einstufung": "verwenden"
+  },
+  {
+    "datei": "vidar-nordli-mathisen-nvlB39rzdQE-unsplash.jpg",
+    "aufloesung": "3500x2597",
+    "seitenverhaeltnis": "~4:3",
+    "motiv": "Zwei Trauernde von hinten, eine Person lehnt den Kopf an die Schulter der anderen",
+    "stimmung": "menschlich, nah, getragen",
+    "qualitaet": "hoch",
+    "farben": [
+      "Dunkelgrün",
+      "Olive",
+      "Braun"
+    ],
+    "personen_sichtbar": true,
+    "marken_sichtbar": false,
+    "moegliche_seite": [
+      "/im-trauerfall/"
+    ],
+    "hero_geeignet": "nein (zu klein oder zu hoch)",
+    "content_geeignet": "ja",
+    "mobile_crop": "gut – bewusst ohne Zuschnitt, damit keine Köpfe angeschnitten werden",
+    "risiken": "Personen sind ausschließlich von hinten zu sehen, keine Gesichter erkennbar und damit nicht identifizierbar. Darf nie als Gorhau-Kundschaft oder -Personal bezeichnet werden.",
+    "einstufung": "verwenden"
+  }
+]

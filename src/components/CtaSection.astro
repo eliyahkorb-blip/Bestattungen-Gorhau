@@ -7,7 +7,7 @@ export interface Props {
 }
 const {
   heading = 'Wir sind für Sie da',
-  text = 'Ob im akuten Trauerfall oder für ein Vorsorgegespräch – sprechen Sie uns an. Wir nehmen uns Zeit für Sie.',
+  text = 'Ob im akuten Trauerfall oder für ein Vorsorgegespräch: sprechen Sie uns an. Wir nehmen uns Zeit für Sie.',
 } = Astro.props;
 ---
 
@@ -41,12 +41,14 @@ const {
     flex-wrap: wrap;
     gap: var(--space-md);
   }
+  /* Creme statt Gold: auf dem Bordeaux-Band erreicht Gold als Textfarbe die
+     geforderten 4.5:1 nicht. */
   .cta__mail {
-    color: var(--brand-gold);
-    border-color: var(--brand-gold);
+    color: var(--text-on-dark);
+    border-color: var(--text-on-dark);
   }
   .cta__mail:hover {
-    background: var(--brand-gold);
-    color: var(--brand-charcoal);
+    background: var(--text-on-dark);
+    color: var(--brand-bordeaux-dark);
   }
 </style>

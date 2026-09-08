@@ -55,7 +55,7 @@ const reasons = [
   {
     icon: 'family' as const,
     title: 'Familiengeführt seit 1970',
-    text: 'Kein anonymes Unternehmen – feste Ansprechpartner vor Ort.',
+    text: 'Kein anonymes Unternehmen, sondern feste Ansprechpartner vor Ort.',
     href: '/ueber-uns/',
   },
   {
@@ -67,7 +67,7 @@ const reasons = [
   {
     icon: 'embrace' as const,
     title: 'Alles aus einer Hand',
-    text: 'Überführung, Formalitäten und Trauerfeier – koordiniert.',
+    text: 'Überführung, Formalitäten und Trauerfeier koordinieren wir für Sie.',
     href: '/leistungen/',
   },
   {
@@ -87,8 +87,8 @@ const facts = [
 ---
 
 <BaseLayout
-  title="Bestattungen Gorhau in Würzburg-Heidingsfeld | Bestatter seit 1970"
-  description="Bestattungs- und Überführungs-Institut Gorhau in Würzburg-Heidingsfeld: familiengeführt seit 1970. Persönlich an Ihrer Seite im Trauerfall, bei der Vorsorge und beim würdevollen Abschied."
+  title="Bestattungen Gorhau Würzburg | Bestatter seit 1970"
+  description="Bestattungsinstitut Gorhau in Würzburg-Heidingsfeld, familiengeführt seit 1970. Persönlich an Ihrer Seite im Trauerfall und bei der Vorsorge."
   path="/"
   includeBusinessLd={true}
 >
@@ -99,7 +99,7 @@ const facts = [
         <p class="eyebrow">Familienunternehmen seit 1970 · Würzburg-Heidingsfeld</p>
         <h1>Bestattungen Gorhau in Würzburg</h1>
         <p class="hero__sub">
-          Persönlich an Ihrer Seite – im Trauerfall, bei der Vorsorge und bei allen Fragen rund
+          Persönlich an Ihrer Seite: im Trauerfall, bei der Vorsorge und bei allen Fragen rund
           um einen würdevollen Abschied.
         </p>
         <div class="hero__actions">
@@ -146,7 +146,7 @@ const facts = [
         <span>Begleiten</span>
       </h2>
       <p class="philosophy__text">
-        So arbeiten wir seit 1970 als Familienunternehmen – persönlich, ohne Druck und mit
+        So arbeiten wir seit 1970 als Familienunternehmen: persönlich, ohne Druck und mit
         offenem Ohr für das, was Ihnen wichtig ist.
       </p>
       <div class="pillar-row">
@@ -158,7 +158,7 @@ const facts = [
         <div class="pillar">
           <Icon name="document" size={28} class="pillar__icon" />
           <h3>Beraten</h3>
-          <p>Offen und ohne Fachjargon – Sie entscheiden.</p>
+          <p>Offen und ohne Fachjargon. Sie entscheiden.</p>
         </div>
         <div class="pillar">
           <Icon name="family" size={28} class="pillar__icon" />
@@ -192,8 +192,8 @@ const facts = [
         <p class="eyebrow">Wer wir sind</p>
         <h2>Ein Familienunternehmen in Würzburg-Heidingsfeld</h2>
         <p>
-          Seit 1970 sind wir in der Reuterstraße für die Menschen in Würzburg und der Region da –
-          inhabergeführt, mit festen Ansprechpartnern statt anonymer Zentrale.
+          Seit 1970 sind wir in der Reuterstraße für die Menschen in Würzburg und der Region da.
+          Inhabergeführt, mit festen Ansprechpartnern statt anonymer Zentrale.
         </p>
         <p><a class="card__link" href={withBase('/ueber-uns/')}>Mehr über uns →</a></p>
       </div>
@@ -257,10 +257,10 @@ const facts = [
         <p class="eyebrow">Raum und Zeit</p>
         <h2>Unser hauseigener Abschiedsraum</h2>
         <p>
-          Seit 2004 bieten wir in Würzburg einen eigenen Abschiedsraum – für einen persönlichen
+          Seit 2004 bieten wir in Würzburg einen eigenen Abschiedsraum: für einen persönlichen
           Abschied im kleinen Kreis, ganz ohne Zeitdruck.
         </p>
-        <p><a class="btn btn--secondary" href={withBase('/abschiedsraum/')}>Abschiedsraum kennenlernen</a></p>
+        <p><a class="card__link" href={withBase('/abschiedsraum/')}>Abschiedsraum kennenlernen →</a></p>
       </div>
       <div class="split__aside">
         <PhotoFigure
@@ -281,7 +281,7 @@ const facts = [
         <h2>Bestattungsvorsorge</h2>
         <p>
           Legen Sie zu Lebzeiten fest, wie Ihr Abschied gestaltet werden soll, und entlasten Sie
-          Ihre Angehörigen – organisatorisch wie finanziell.
+          Ihre Angehörigen, organisatorisch wie finanziell.
         </p>
         <a class="card__link" href={withBase('/bestattungsvorsorge/')}>Zur Vorsorge →</a>
       </article>
@@ -307,7 +307,7 @@ const facts = [
         <a href={withBase('/mediathek/')}>Mediathek</a>.
       </p>
       <FactStrip facts={facts.slice(0, 3)} />
-      <p class="history-link"><a class="btn btn--secondary" href={withBase('/ueber-uns/historie/')}>Unsere Historie ansehen</a></p>
+      <p class="history-link"><a class="card__link" href={withBase('/ueber-uns/historie/')}>Unsere Historie ansehen →</a></p>
     </div>
   </section>
 
@@ -323,12 +323,12 @@ const facts = [
           <a href={`mailto:${company.email}`}>{company.email}</a>
         </address>
         <p class="contact-block__hours">
-          Mo–Fr 08:00–16:00 Uhr sowie nach Vereinbarung ·
+          Mo bis Fr, 08:00 bis 16:00 Uhr sowie nach Vereinbarung ·
           <a href={withBase('/kontakt/')}>Anfahrt &amp; weitere Kontaktwege</a>
         </p>
       </div>
       <div class="split__aside">
-        <p><a class="btn btn--primary" href={withBase('/kontakt/')}>Anfahrt &amp; Kontakt</a></p>
+        <p><a class="card__link" href={withBase('/kontakt/')}>Anfahrt &amp; Kontakt →</a></p>
         <p><a href={company.maps.osm} rel="noopener">Standort auf OpenStreetMap ansehen</a></p>
       </div>
     </div>
@@ -345,15 +345,12 @@ const facts = [
   .hero__text-col {
     max-width: 46rem;
   }
-  /* Ruhiges Bildband statt hoher Bildfläche: feste Anzeigehöhe, daher kein
-     Layout-Shift, und das Stadtmotiv bleibt mittig im Ausschnitt. */
+  /* Ruhiges Bildband. Der Zuschnitt der Bilddatei entspricht dem
+     Anzeigeverhältnis, deshalb kein object-fit und kein Layout-Sprung. */
   .hero :global(.hero__band) {
     margin-top: var(--space-xl);
   }
   .hero :global(.hero__band img) {
-    height: clamp(11rem, 28vw, 22rem);
-    object-fit: cover;
-    object-position: center 55%;
     border-radius: var(--radius-lg);
   }
   .hero__sub {

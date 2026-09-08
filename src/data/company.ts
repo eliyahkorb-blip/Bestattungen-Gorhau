@@ -33,7 +33,7 @@ export const company = {
   email: 'gorhau-bestattungen@t-online.de',
 
   // Erreichbarkeit
-  officeHours: 'Montag bis Freitag, 08:00 – 16:00 Uhr sowie nach Vereinbarung',
+  officeHours: 'Montag bis Freitag, 08:00 bis 16:00 Uhr sowie nach Vereinbarung',
   emergencyNote: 'Im Trauerfall sind wir für Sie Tag und Nacht erreichbar.',
 
   // Register (öffentlich recherchiert – vor Live-Schaltung final bestätigen)

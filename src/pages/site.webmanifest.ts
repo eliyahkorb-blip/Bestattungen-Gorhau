@@ -12,7 +12,7 @@ export const GET: APIRoute = () => {
     name: 'Bestattungen Gorhau Würzburg',
     short_name: 'Gorhau',
     description:
-      'Bestattungs- und Überführungs-Institut Gorhau in Würzburg-Heidingsfeld – familiengeführt seit 1970.',
+      'Bestattungs- und Überführungs-Institut Gorhau in Würzburg-Heidingsfeld, familiengeführt seit 1970.',
     lang: 'de',
     start_url: withBase('/'),
     scope: withBase('/'),

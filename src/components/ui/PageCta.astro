@@ -1,34 +1,40 @@
 ---
 /*
- * Zurückhaltender Abschluss-CTA für Themenseiten: ein Link, kein volltoniges
- * Bordeaux-Panel (das bleibt der Startseite/CtaSection vorbehalten), damit
- * Bordeaux die Seite nicht dominiert.
+ * Abschluss-CTA einer Themenseite: genau eine Handlung am Seitenende.
+ *
+ * Steht in einem eigenen Band (siehe PageLayout). Mit `onBrand` sitzt er auf
+ * dem Bordeaux-Band und bekommt den Gold-Button, sonst auf hellem Grund den
+ * normalen Primärbutton.
  */
 export interface Props {
   label: string;
   href: string;
   hint?: string;
+  onBrand?: boolean;
 }
-const { label, href, hint } = Astro.props;
+const { label, href, hint, onBrand = false } = Astro.props;
 ---
 
-<p class="page-cta">
-  {hint && <span class="page-cta__hint">{hint}</span>}
-  <a class="btn btn--primary" href={href}>{label}</a>
-</p>
+<div class:list={['page-cta', onBrand && 'page-cta--on-brand']}>
+  {hint && <p class="page-cta__hint">{hint}</p>}
+  <a class:list={['btn', onBrand ? 'btn--gold' : 'btn--primary']} href={href}>{label}</a>
+</div>
 
 <style>
   .page-cta {
-    margin-top: var(--space-2xl);
-    padding-top: var(--space-lg);
-    border-top: 1px solid var(--border-subtle);
+    margin: 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: var(--space-md);
+    gap: var(--space-lg) var(--space-xl);
   }
   .page-cta__hint {
+    margin: 0;
     color: var(--text-muted);
-    font-size: 0.95rem;
+    font-size: 1rem;
+    max-width: 34rem;
+  }
+  .page-cta--on-brand .page-cta__hint {
+    color: var(--text-on-dark);
   }
 </style>

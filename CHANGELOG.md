@@ -1,5 +1,54 @@
 # Changelog
 
+## 1.8.0 – Master-Design-Rework: Typografie, Farbgewichtung, Redaktion
+
+### Neu
+- **Eigene Typografie, selbst gehostet**: Source Serif 4 für Überschriften, Source Sans 3
+  für Fließtext (beide SIL OFL 1.1), unter `public/fonts/`, kein Google-Fonts-Request.
+  Drei Schnitte je Familie, 87 KB. `npm run fonts:sync` erzeugt sie aus den
+  @fontsource-Paketen. Die `size-adjust`-Werte der Ersatzschriften sind gemessen.
+- **Vier Prüfskripte**, die die Vorgaben des Auftrags messbar machen:
+  `npm run test:copy` (Gedankenstriche, Floskeln, Absatzlängen),
+  `npm run test:colour` (Farbgewichtung in Prozent),
+  `npm run test:seo` (SEO plus GEO, erzeugt zwei Berichte),
+  `tests/shot.mjs` (schnelle Einzelaufnahme beim Arbeiten).
+- **Berichte**: `audit/final-design-review.md`, `audit/final-seo-report.md`,
+  `audit/final-geo-review.md`, `audit/image-curation.md` und `.json`,
+  `docs/LEGAL-REVIEW-REQUIRED.md`.
+
+### Verbessert
+- **Farbgewichtung neu austariert.** Messung zeigte: die Seite war nicht zu rot, sondern
+  zu weiß (74 % Weiß, 5 % Beige, 0,7 % Bordeaux). Creme und Beige wurden vom Rosastich
+  auf warme Sandtöne gedreht, der fast schwarze Footer wurde hell und warm, das
+  Abschlussband trägt jetzt echtes Bordeaux. Ergebnis 68 / 21 / 8 Prozent.
+- **Redaktioneller Pass über alle 24 Seiten**: 107 Gedankenstriche einzeln gelesen und
+  sprachlich aufgelöst, Zeitspannen ausgeschrieben, zwei zu kurze Intros ergänzt.
+  Keine Floskeln, kein Absatz über 90 Wörter.
+- **CTA-Dichte**: Startseite von 7 auf 4 Buttons, drei mittige zu Textlinks abgestuft.
+- **Abstände**: eigener Absatz-Token, mehr Luft nach Überschriften, Sektionsabstände
+  wachsen jetzt mit der Viewportbreite.
+- **Dezenter Bild-Reveal** beim Scrollen, rein per CSS, an `@supports` gebunden und ohne
+  Bildunterschriften, damit nie Text mit reduziertem Kontrast steht.
+- **Datenschutzerklärung korrigiert**: Der Abschnitt zu Schriftarten behauptete
+  weiterhin „ausschließlich Systemschriften". Das stimmte nach der Font-Umstellung nicht
+  mehr und beschreibt jetzt die selbst gehosteten Schriften.
+
+### Behoben
+- **CLS 0,235 auf der Startseite** nach der Font-Umstellung. Ursache war nicht das
+  Hero-Bild, sondern der unterschiedliche Zeilenumbruch der H1 vor und nach dem
+  Schriftwechsel. Behoben mit `font-display: optional`. Performance 88 → 100, CLS 0.
+- **Zwei Kontrastfehler** auf dem neuen Bordeaux-Band: Gold als Textfarbe erreichte dort
+  nur 3,72:1. Buttons tragen dort jetzt helleres Gold bzw. eine Creme-Kontur.
+- **Hero-Zuschnitt** von 2:1 auf das echte Anzeigeverhältnis 3:1 geändert, dadurch kein
+  `object-fit`-Stauchen und weniger Bytes.
+
+### Hinweis
+- Die im Auftrag angekündigten neuen Bilder sind nicht angekommen. Der Bildteil konnte
+  daher nur am vorhandenen Bestand ausgeführt werden, siehe `audit/image-curation.md`.
+- Die 29 Referenzseiten waren aus dieser Umgebung nicht erreichbar. Gearbeitet wurde mit
+  den im Auftrag selbst benannten Prinzipien.
+- Der Imagefilm bleibt ausgeblendet: es liegt keine Video- oder Audiodatei vor.
+
 ## 1.7.0 – Visuelle Finalisierung mit den bereitgestellten Unsplash-Bildern
 
 ### Neu

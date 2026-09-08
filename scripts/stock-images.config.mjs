@@ -33,8 +33,10 @@ export const stockImages = [
     einsatz: 'Startseite – Hero',
     seiten: ['/'],
     alt: 'Blick über Würzburg im warmen Abendlicht, im Hintergrund die Festung Marienberg',
-    // 2:1-Band für Desktop, 3:2 für Mobil (Art Direction)
-    zuschnitt: { ratio: 2 / 1, position: 'center' },
+    // Der Desktop-Zuschnitt entspricht exakt dem Anzeigeverhältnis (3:1). Dadurch
+    // reserviert der Browser von Anfang an die richtige Höhe und es entsteht kein
+    // Layout-Sprung. Mobil ein ruhigeres 3:2 (Art Direction).
+    zuschnitt: { ratio: 3 / 1, position: 'center' },
     zuschnittMobil: { ratio: 3 / 2, position: 'center' },
     rolle: 'hero',
   },

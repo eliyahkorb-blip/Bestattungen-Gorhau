@@ -1,6 +1,6 @@
 # GitHub-Pages-Vorschau – lokaler Verifikationsbericht
 
-Erzeugt am 2026-09-07 durch `npm run test:pages-preview` gegen den lokal unter dem Unterpfad `/Bestattungen-Gorhau/` ausgelieferten `dist/`-Ordner aus `npm run build:pages` – simuliert exakt das Hosting-Verhalten von GitHub Pages (Repo-Unterpfad, 404-Fallback).
+Erzeugt am 2026-09-08 durch `npm run test:pages-preview` gegen den lokal unter dem Unterpfad `/Bestattungen-Gorhau/` ausgelieferten `dist/`-Ordner aus `npm run build:pages` – simuliert exakt das Hosting-Verhalten von GitHub Pages (Repo-Unterpfad, 404-Fallback).
 
 ## Zusammenfassung
 

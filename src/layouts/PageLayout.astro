@@ -62,19 +62,35 @@ const crumbLd = breadcrumbLd([
   <div class="section section--white">
     <div class="container">
       <slot />
-      {cta && <PageCta label={ctaLabel} href={ctaHref} hint={ctaHint} />}
     </div>
   </div>
+
+  {
+    cta && (
+      <div class="section section--dark page-close">
+        <div class="container">
+          <PageCta label={ctaLabel} href={ctaHref} hint={ctaHint} onBrand />
+        </div>
+      </div>
+    )
+  }
 </BaseLayout>
 
 <style>
+  /* Warmes Band über dem Inhalt: rahmt die weiße Lesefläche und nimmt der
+     Seite die klinische Wirkung, ohne Text auf farbigen Grund zu setzen. */
   .page-head {
-    background: var(--surface-cream);
+    background: linear-gradient(180deg, var(--surface-beige), var(--surface-cream));
     padding-block: var(--space-2xl) var(--space-xl);
     border-bottom: 1px solid var(--border-subtle);
   }
   .page-head .lead {
-    margin-top: var(--space-md);
+    margin-top: var(--space-lg);
     max-width: 46rem;
+  }
+  /* Ein kompaktes Markenband als Seitenabschluss: der einzige große
+     Bordeaux-Moment je Unterseite, bewusst ohne langen Text darauf. */
+  .page-close {
+    padding-block: var(--space-2xl);
   }
 </style>

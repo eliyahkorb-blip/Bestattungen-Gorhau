@@ -30,6 +30,37 @@ html {
   }
 }
 
+/*
+ * Sehr zurückhaltendes Einblenden von Bildern beim Scrollen.
+ *
+ * Bewusst ohne JavaScript und ohne Bewegung: nur die Deckkraft ändert sich,
+ * dadurch entsteht kein Layout-Sprung. Die Animation läuft über eine
+ * Scroll-Timeline und ist deshalb an @supports gebunden. Browser ohne diese
+ * Unterstützung zeigen die Bilder ganz normal sofort an, es wird also nie
+ * Inhalt versteckt. Bei reduzierter Bewegung bleibt alles statisch.
+ */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    /* Nur das Bild selbst, nie die Bildunterschrift: Text darf nie mit
+       reduzierter Deckkraft stehen, das senkt den Kontrast. */
+    .stock-photo img,
+    .photo-figure img {
+      animation: gorhau-fade-in linear both;
+      animation-timeline: view();
+      /* Früh abgeschlossen: was im Blickfeld ist, ist immer voll sichtbar. */
+      animation-range: entry 10% entry 55%;
+    }
+  }
+}
+@keyframes gorhau-fade-in {
+  from {
+    opacity: 0.25;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 body {
   font-family: var(--font-body);
   font-size: var(--fs-base);
@@ -57,8 +88,13 @@ h4 {
   font-family: var(--font-heading);
   line-height: var(--lh-heading);
   color: var(--text-primary);
-  font-weight: 600;
-  text-wrap: balance;
+  /* 700 ist ausgeliefert, 600 wäre nur ein Näherungsschnitt. */
+  font-weight: 700;
+  letter-spacing: var(--ls-heading);
+}
+h4 {
+  font-size: 1.05rem;
+  letter-spacing: 0;
 }
 h1 {
   color: var(--brand-bordeaux-dark);
@@ -97,7 +133,21 @@ h3 {
 * + .grid,
 * + .hintbox,
 * + .page-motif {
-  margin-top: var(--space-md);
+  margin-top: var(--space-para);
+}
+/* Nach einer Überschrift beginnt ein neuer Gedanke: etwas mehr Luft als
+   zwischen zwei Absätzen desselben Gedankens. */
+h2 + p,
+h2 + ul,
+h2 + ol,
+h3 + p,
+h3 + ul,
+h3 + ol,
+.accent-rule + p,
+.accent-rule + ul,
+.accent-rule + ol,
+.accent-rule + .prose {
+  margin-top: var(--space-lg);
 }
 
 p,
@@ -163,7 +213,9 @@ a[href^='mailto:']:hover {
 }
 
 .section {
-  padding-block: var(--space-2xl);
+  /* Auf großen Schirmen mehr Luft zwischen den Abschnitten, auf dem Handy
+     bleibt es kompakt genug zum Scrollen. */
+  padding-block: clamp(3rem, 5.5vw, 5.5rem);
 }
 .section--cream {
   background: var(--surface-cream);
@@ -174,17 +226,37 @@ a[href^='mailto:']:hover {
 .section--white {
   background: var(--surface);
 }
+/* Das Abschlussband trägt die Marke: tiefes Bordeaux statt eines fast
+   schwarzen Braun. Bewusst nur für kurze Abschnitte, nie hinter langem Text. */
 .section--dark {
-  background: var(--surface-dark);
+  background: var(--surface-brand);
   color: var(--text-on-dark);
 }
 .section--dark h1,
 .section--dark h2,
 .section--dark h3 {
-  color: var(--brand-gold);
+  color: var(--brand-white);
 }
 .section--dark a:not(.btn) {
-  color: var(--brand-gold);
+  color: var(--brand-gold-on-brand);
+}
+/* Auf dem Bordeaux-Band tragen Buttons helleres Gold bzw. eine Creme-Kontur.
+   Das dunkle Gold hätte gegen den Untergrund zu wenig Kontrast. */
+.section--dark .btn--gold {
+  background: var(--brand-gold-on-brand);
+  color: var(--brand-charcoal);
+}
+.section--dark .btn--gold:hover {
+  background: var(--brand-white);
+  color: var(--brand-charcoal);
+}
+.section--dark .btn--secondary {
+  color: var(--text-on-dark);
+  border-color: var(--text-on-dark);
+}
+.section--dark .btn--secondary:hover {
+  background: var(--text-on-dark);
+  color: var(--brand-bordeaux-dark);
 }
 
 /* ---------- Seiten-Motiv (farbige Linien-Illustration je Thema) ---------- */
