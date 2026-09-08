@@ -71,7 +71,12 @@ for (const [w, name, isMobile] of [[1440, 'desktop', false], [390, 'mobile', tru
   });
   for (const [path, slug] of pages) {
     const page = await ctx.newPage();
+    // Zweimal laden: die Schriften sind mit font-display: optional gesetzt und
+    // werden dadurch erst angewandt, wenn sie im Cache liegen. Der zweite Aufruf
+    // entspricht dem normalen Zustand beim Weiterklicken auf der Website.
     await page.goto(base + path, { waitUntil: 'networkidle' });
+    await page.reload({ waitUntil: 'networkidle' });
+    await page.evaluate(() => document.fonts.ready);
     // Lazy-Bilder unterhalb des Folds durch Durchscrollen auslösen, dann zurück nach oben.
     await page.evaluate(async () => {
       await new Promise((resolve) => {

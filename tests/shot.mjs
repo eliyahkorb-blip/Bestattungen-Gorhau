@@ -59,6 +59,7 @@ const ctx = await browser.newContext({
 });
 const page = await ctx.newPage();
 await page.goto(base + pagePath, { waitUntil: 'networkidle' });
+await page.reload({ waitUntil: 'networkidle' });
 await page.evaluate(() => document.fonts.ready);
 if (Number(scrollY) > 0) {
   await page.evaluate((y) => window.scrollTo(0, y), Number(scrollY));
