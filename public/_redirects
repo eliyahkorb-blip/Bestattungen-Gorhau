@@ -5,13 +5,12 @@
 /institut/  /ueber-uns/  301
 /institut/abschiedsraum.html  /abschiedsraum/  301
 /institut/mediathek.html  /mediathek/  301
-/institut/historie.html  /ueber-uns/historie/  301
-/institut/galerie.html  /ueber-uns/galerie/  301
-/dienstleistung/thanatopraxie.html  /leistungen/thanatopraxie/  301
+/institut/historie.html  /historie/  301
+/institut/galerie.html  /ueber-uns/  301
+/dienstleistung/thanatopraxie.html  /leistungen/  301
 /dienstleistung/  /leistungen/  301
 /dienstleistung/index.html  /leistungen/  301
-/vorsorge/index.html  /bestattungsvorsorge/  301
-/vorsorge/  /bestattungsvorsorge/  301
+/vorsorge/index.html  /vorsorge/  301
 /trauerfall/index.html  /im-trauerfall/  301
 /trauerfall/  /im-trauerfall/  301
 /bestattungsarten/index.html  /bestattungsarten/  301
@@ -26,5 +25,20 @@
 /institut/mediathek/radiospot_11_2009.flv  /mediathek/  301
 /institut/mediathek/tagderoffenentuer2012.jpg  /mediathek/  301
 /institut/mediathek/flyer_2009.jpg  /mediathek/  301
-/vorsorge/GN750.pdf  /bestattungsvorsorge/  301
-/bestattungsarten/urnengarten.pdf  /bestattungsarten/feuerbestattung/  301
+/vorsorge/GN750.pdf  /vorsorge/  301
+/bestattungsarten/urnengarten.pdf  /bestattungsarten/  301
+
+# UX-Rework 2026: zusammengelegte Seiten -> jeweilige Hauptseite
+/bestattungsarten/erdbestattung/  /bestattungsarten/  301
+/bestattungsarten/feuerbestattung/  /bestattungsarten/  301
+/bestattungsarten/seebestattung/  /bestattungsarten/  301
+/bestattungsarten/anonyme-bestattung/  /bestattungsarten/  301
+/im-trauerfall/benoetigte-dokumente/  /im-trauerfall/  301
+/leistungen/formalitaeten/  /leistungen/  301
+/leistungen/ueberfuehrungen/  /leistungen/  301
+/leistungen/thanatopraxie/  /leistungen/  301
+/leistungen/trauerfeier-und-trauerdruck/  /leistungen/  301
+/bestattungsvorsorge/  /vorsorge/  301
+/ueber-uns/historie/  /historie/  301
+/ueber-uns/galerie/  /ueber-uns/  301
+/friedhoefe-in-wuerzburg/  /friedhoefe/  301

@@ -4,7 +4,7 @@
  * Repo-Unterpfad "/Bestattungen-Gorhau/" ausgeliefert wird – exakt wie auf
  * https://eliyahkorb-blip.github.io/Bestattungen-Gorhau/.
  *
- * Prüft: alle 24 indexierbaren Seiten + 404 erreichbar, Navigation/Logo/Favicons/CSS/Bilder/
+ * Prüft: alle 14 indexierbaren Seiten + 404 erreichbar, Navigation/Logo/Favicons/CSS/Bilder/
  * Flyer ohne 404, keine defekten internen Links, kein horizontales Scrollen, mobile Navigation,
  * Breadcrumbs, prefers-reduced-motion, noindex.
  *
@@ -80,24 +80,14 @@ const base = `${origin}${BASE_PATH}`;
 const pages = [
   ['/', 'Startseite'],
   ['/im-trauerfall/', 'Im Trauerfall'],
-  ['/im-trauerfall/benoetigte-dokumente/', 'Benötigte Dokumente'],
   ['/leistungen/', 'Leistungen'],
-  ['/leistungen/ueberfuehrungen/', 'Überführungen'],
-  ['/leistungen/thanatopraxie/', 'Thanatopraxie'],
-  ['/leistungen/trauerfeier-und-trauerdruck/', 'Trauerfeier & Trauerdruck'],
-  ['/leistungen/formalitaeten/', 'Formalitäten'],
   ['/bestattungsarten/', 'Bestattungsarten'],
-  ['/bestattungsarten/erdbestattung/', 'Erdbestattung'],
-  ['/bestattungsarten/feuerbestattung/', 'Feuerbestattung'],
-  ['/bestattungsarten/seebestattung/', 'Seebestattung'],
-  ['/bestattungsarten/anonyme-bestattung/', 'Anonyme Bestattung'],
-  ['/bestattungsvorsorge/', 'Vorsorge'],
+  ['/vorsorge/', 'Vorsorge'],
   ['/abschiedsraum/', 'Abschiedsraum'],
   ['/ueber-uns/', 'Über uns'],
-  ['/ueber-uns/historie/', 'Historie'],
-  ['/ueber-uns/galerie/', 'Galerie'],
+  ['/historie/', 'Historie'],
   ['/mediathek/', 'Mediathek'],
-  ['/friedhoefe-in-wuerzburg/', 'Friedhöfe'],
+  ['/friedhoefe/', 'Friedhöfe'],
   ['/kontakt/', 'Kontakt'],
   ['/impressum/', 'Impressum'],
   ['/datenschutz/', 'Datenschutz'],

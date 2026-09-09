@@ -1,98 +1,229 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
-import IconFeature from '../../components/ui/IconFeature.astro';
 import HintBox from '../../components/ui/HintBox.astro';
+import PhotoFigure from '../../components/ui/PhotoFigure.astro';
 import StockPhoto from '../../components/ui/StockPhoto.astro';
 import { withBase } from '../../utils/url';
 
-const arten = [
-  { icon: 'map-pin' as const, t: 'Erdbestattung', d: 'Beisetzung des Sarges in einem Reihen- oder Wahlgrab.', href: '/bestattungsarten/erdbestattung/' },
-  { icon: 'sun' as const, t: 'Feuerbestattung', d: 'Urnenbeisetzung nach der Einäscherung, mit vielfältigen Grabformen.', href: '/bestattungsarten/feuerbestattung/' },
-  { icon: 'compass' as const, t: 'Seebestattung', d: 'Beisetzung der Urne auf See, Abschied im weiten Raum.', href: '/bestattungsarten/seebestattung/' },
-  { icon: 'leaf' as const, t: 'Anonyme Bestattung', d: 'Beisetzung ohne namentliche Kennzeichnung.', href: '/bestattungsarten/anonyme-bestattung/' },
-];
+/*
+ * Die vier Bestattungsarten standen bis zum UX-Rework auf eigenen Unterseiten.
+ * Sie liegen jetzt zusammen auf dieser Seite, damit Angehörige nicht durch eine
+ * Navigationsebene klicken müssen. Die alten URLs werden per 301 hierher
+ * geleitet (.htaccess und public/_redirects).
+ */
 ---
 
 <PageLayout
-  title="Bestattungsarten im Überblick | Bestattungen Gorhau Würzburg"
-  description="Erd-, Feuer-, See- und anonyme Bestattung: Bestattungen Gorhau in Würzburg erläutert die Bestattungsarten und hilft Ihnen, den passenden Abschied zu finden."
+  title="Bestattungsarten im Überblick | Gorhau Würzburg"
+  description="Erd-, Feuer-, See- und anonyme Bestattung verständlich erklärt: Ablauf, Grabformen und was jeweils zu beachten ist. Bestattungen Gorhau in Würzburg berät Sie dazu."
   eyebrow="Möglichkeiten des Abschieds"
   path="/bestattungsarten/"
   heading="Bestattungsarten"
-  intro="Es gibt viele Formen, Abschied zu nehmen. Wir stellen Ihnen die gängigen Bestattungsarten vor und beraten Sie, welche zu Ihnen passt."
+  intro="Es gibt vier gängige Formen, Abschied zu nehmen. Hier stehen sie mit Ablauf, Grabformen und den wichtigsten Punkten nebeneinander, damit Sie in Ruhe vergleichen können."
   breadcrumbs={[{ name: 'Bestattungsarten', path: '/bestattungsarten/' }]}
-  ctaLabel="Bestattungsarten besprechen"
+  ctaLabel="Bestattungsarten persönlich besprechen"
   ctaHref={withBase('/kontakt/')}
+  ctaHint="Unsicher, welche Form passt? Wir nehmen uns Zeit für Ihre Fragen."
 >
-  <StockPhoto
-    name="blumen-auf-sarg"
-    alt="Zarter Strauß aus rosa und weißen Blüten auf einem Holzsarg"
-    priority
-    class="page-stock"
-  />
-
-  <div class="prose">
+  <div class="prose intro-note">
     <p>
-      Welche Bestattungsart die richtige ist, ist eine persönliche Entscheidung. Oft im Vorfeld
-      per <a href={withBase('/bestattungsvorsorge/')}>Bestattungsvorsorge</a> festgelegt, sonst im Kreis der
-      Angehörigen getroffen. In Deutschland gilt grundsätzlich der Friedhofszwang: Die Beisetzung
-      muss auf einem zugelassenen Friedhof erfolgen, Ausnahmen bilden See- und Baumbestattung.
+      Welche Bestattungsart die richtige ist, ist eine persönliche Entscheidung. Oft ist sie
+      im Vorfeld über eine <a href={withBase('/vorsorge/')}>Bestattungsvorsorge</a> festgelegt,
+      sonst wird sie im Kreis der Angehörigen getroffen. In Deutschland gilt grundsätzlich der
+      Friedhofszwang: Die Beisetzung muss auf einem zugelassenen Friedhof erfolgen. Ausnahmen
+      sind See- und Baumbestattung.
     </p>
   </div>
 
-  <h2>Die vier gängigsten Bestattungsarten</h2>
-  <hr class="accent-rule" />
-  <div class="tile-grid">
-    {arten.map((a) => <IconFeature icon={a.icon} title={a.t} text={a.d} href={a.href} />)}
-  </div>
+  <section class="art" aria-labelledby="erdbestattung">
+    <div class="art__media">
+      <PhotoFigure
+        name="erdbestattung-dekoration"
+        alt="Grabstätte mit Blumengestecken und Kranzschmuck bei einer Erdbestattung"
+        width={260}
+        height={160}
+        priority
+      />
+    </div>
+    <div class="art__text">
+      <h2 id="erdbestattung">Erdbestattung</h2>
+      <p>
+        Die Erdbestattung ist die klassische Form. Der Sarg wird auf einem Friedhof beigesetzt,
+        die Grabstätte bleibt als Ort der Erinnerung bestehen und kann besucht und gepflegt
+        werden. Nach der Wahl der Grabstätte stimmen wir Termin und Ablauf mit dem Friedhof ab.
+        Die Trauerfeier findet in der Friedhofskapelle, in einer Kirche oder frei gestaltet
+        statt, bevor der Sarg zur Grabstätte getragen wird.
+      </p>
+      <ul class="art__points">
+        <li><span>Reihengrab:</span> wird der Reihe nach vergeben, für die Dauer der Ruhezeit</li>
+        <li><span>Wahlgrab:</span> frei wählbar und verlängerbar, oft als Familiengrab</li>
+        <li>Grabpflege durch Angehörige oder einen Friedhofsgärtner</li>
+        <li>Sarg in verschiedenen Modellen und Holzarten, wir beraten zu Gestaltung und Maßen</li>
+      </ul>
+    </div>
+  </section>
 
-  <h2>Wie Sie die passende Bestattungsart finden</h2>
+  <section class="art art--reverse" aria-labelledby="feuerbestattung">
+    <div class="art__media">
+      <PhotoFigure
+        name="feuerbestattung-urnen-dekoration"
+        alt="Urne mit Blumenschmuck und Kerzen bei einer Trauerfeier"
+        width={260}
+        height={160}
+      />
+    </div>
+    <div class="art__text">
+      <h2 id="feuerbestattung">Feuerbestattung</h2>
+      <p>
+        Die Feuerbestattung gehört heute zu den am häufigsten gewählten Formen. Nach der
+        Einäscherung im Krematorium stehen verschiedene Grabarten für die Urne zur Verfügung.
+        Neben der Todesbescheinigung ist eine zweite, unabhängige ärztliche Leichenschau
+        erforderlich. Diese Formalität übernehmen wir. Auf Wunsch ist vor der Einäscherung eine
+        Trauerfeier oder ein Abschied am Sarg möglich, die Urne wird erst danach beigesetzt.
+      </p>
+      <ul class="art__points">
+        <li>Urnenreihen- und Urnenwahlgrab</li>
+        <li>Urnengarten und Gemeinschaftsanlagen, dort pflegt oft die Friedhofsverwaltung</li>
+        <li>Baumbestattung als naturnahe Form</li>
+        <li>See- und anonyme Beisetzung als Sonderformen der Feuerbestattung</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="art" aria-labelledby="seebestattung">
+    <div class="art__media">
+      <StockPhoto
+        name="meer-horizont"
+        alt="Ruhige See mit weitem Horizont unter bewölktem Himmel"
+        sizes="260px"
+      />
+    </div>
+    <div class="art__text">
+      <h2 id="seebestattung">Seebestattung</h2>
+      <p>
+        Die Seebestattung ist eine besondere Form der Feuerbestattung. Die Asche wird in einer
+        wasserlöslichen Seeurne an einer zugelassenen Stelle auf See beigesetzt. Die Beisetzung
+        erfolgt von einem Schiff aus. Angehörige können an der Fahrt teilnehmen oder eine stille
+        Beisetzung im kleinsten Kreis der Besatzung wählen. Die Koordinaten werden danach
+        mitgeteilt.
+      </p>
+      <ul class="art__points">
+        <li>Nur in behördlich ausgewiesenen Gebieten zulässig, etwa in Nord- oder Ostsee</li>
+        <li>Teilnahme der Angehörigen oder stille Beisetzung</li>
+        <li>Seekarte mit den Koordinaten als Ort der Erinnerung</li>
+        <li>Grundsätzlich pflegefrei, kein eigenes Grab</li>
+        <li>Wir organisieren Einäscherung, Seeurne und Reederei</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="art art--reverse" aria-labelledby="anonyme-bestattung">
+    <div class="art__media">
+      <PhotoFigure
+        name="anonyme-bestattung-rasenfeld"
+        alt="Ruhige Rasenfläche einer anonymen Grabstätte"
+        width={260}
+        height={160}
+      />
+    </div>
+    <div class="art__text">
+      <h2 id="anonyme-bestattung">Anonyme Bestattung</h2>
+      <p>
+        Bei der anonymen Bestattung wird auf einer gemeinschaftlichen Fläche beigesetzt, ohne
+        Namen am Grab. Häufig wird diese Form gewählt, wenn der Abschied schlicht bleiben soll
+        oder Angehörige nicht mit dauerhafter Grabpflege belastet werden sollen. Ein würdevoller
+        Abschied ist trotzdem möglich, etwa durch eine Trauerfeier vor der Beisetzung. Die
+        Begleitung bleibt dabei bei Ihrer Familie, nur die Grabkennzeichnung entfällt.
+      </p>
+      <ul class="art__points">
+        <li>Beisetzung ohne Namensnennung am Grab</li>
+        <li>Genauer Ort in der Regel nicht bekannt</li>
+        <li>Beisein der Angehörigen je nach Friedhof möglich</li>
+        <li>Teilanonym: Name auf einer zentralen Stele, ohne eigene Grabpflege</li>
+        <li>Als Erdbestattung möglich, häufiger als Urnenbeisetzung</li>
+      </ul>
+    </div>
+  </section>
+
+  <h2>Wie Sie die passende Form finden</h2>
   <hr class="accent-rule" />
-  <div class="prose">
-    <p>
-      Erd- und Feuerbestattung unterscheiden sich vor allem darin, ob im Sarg oder als Urne
-      beigesetzt wird. Daraus ergeben sich unterschiedliche Grabformen und Pflegeanforderungen.
-      See- und anonyme Bestattung verzichten meist auf ein klassisches, gekennzeichnetes Grab.
-    </p>
-  </div>
   <ul class="question-list">
-    <li>Wie viel Zeit soll zwischen Todesfall und Beisetzung liegen?</li>
     <li>Soll ein fester Ort der Erinnerung entstehen?</li>
     <li>Wer kümmert sich später um die Grabpflege?</li>
+    <li>Wie viel Zeit soll zwischen Todesfall und Beisetzung liegen?</li>
   </ul>
-  <div class="prose">
-    <p>
-      Diese Fragen klären wir gern im persönlichen Gespräch, für jede Bestattungsart und die
-      dazugehörigen Grabformen.
-    </p>
-  </div>
+
   <HintBox>
-    Möglichkeiten und Gebühren unterscheiden sich je nach Friedhof und Gemeinde. Mehr dazu auf
-    unserer Seite <a href={withBase('/friedhoefe-in-wuerzburg/')}>Friedhöfe in Würzburg</a>.
+    Grabformen, Ruhezeiten und Gebühren richten sich nach der jeweiligen Friedhofssatzung und
+    unterscheiden sich von Ort zu Ort. Was in Würzburg und Umgebung gilt, steht auf der Seite
+    <a href={withBase('/friedhoefe/')}>Friedhöfe</a>.
   </HintBox>
 </PageLayout>
 
 <style>
-  .tile-grid {
-    display: grid;
-    gap: var(--space-md);
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
-    margin: var(--space-lg) 0 var(--space-xl);
-    max-width: none;
+  .intro-note {
+    margin-bottom: var(--space-2xl);
   }
-  .question-list {
+
+  /* Ruhige Text-Bild-Komposition je Bestattungsart. Die Bildspalte ist auf die
+     native Breite der Aufnahmen begrenzt, damit nichts hochskaliert wird. */
+  .art {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: var(--space-2xl);
+    align-items: start;
+    padding-block: var(--space-2xl);
+    border-top: 1px solid var(--border-subtle);
+  }
+  .art--reverse .art__media {
+    order: 2;
+  }
+  .art__text h2 {
+    margin-top: 0;
+  }
+  .art__text p {
+    margin-top: var(--space-md);
+    max-width: 42rem;
+  }
+  .art__points {
+    margin-top: var(--space-lg);
+    padding-left: 0;
     list-style: none;
-    padding: 0;
-    margin: var(--space-md) 0;
-    max-width: 40rem;
-    display: grid;
-    gap: var(--space-2xs);
+    max-width: 42rem;
   }
-  .question-list li {
-    padding: var(--space-sm) var(--space-md);
-    background: var(--surface-beige);
-    border-radius: var(--radius-sm);
-    color: var(--text-primary);
+  .art__points li {
+    position: relative;
+    padding-left: 1.5rem;
+    color: var(--text-muted);
+  }
+  .art__points li + li {
+    margin-top: var(--space-sm);
+  }
+  .art__points li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--brand-gold);
+  }
+  .art__points span {
     font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  @media (max-width: 52rem) {
+    .art {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+    .art--reverse .art__media {
+      order: 0;
+    }
+    .art__media {
+      max-width: 260px;
+    }
   }
 </style>

@@ -1,55 +1,26 @@
-/** Hauptnavigation und Footer-Struktur. */
+/**
+ * Hauptnavigation und Footer-Struktur.
+ *
+ * Bewusst flach und ohne Dropdowns: Wer gerade einen Angehörigen verloren hat,
+ * soll so wenig Navigationsentscheidungen wie möglich treffen müssen. Die
+ * früheren Unterseiten sind inhaltlich in die jeweilige Hauptseite integriert.
+ */
 
 export interface NavItem {
   label: string;
   href: string;
-  children?: NavItem[];
 }
 
 export const mainNav: NavItem[] = [
-  {
-    label: 'Im Trauerfall',
-    href: '/im-trauerfall/',
-    children: [
-      { label: 'Erste Schritte', href: '/im-trauerfall/' },
-      { label: 'Benötigte Dokumente', href: '/im-trauerfall/benoetigte-dokumente/' },
-    ],
-  },
-  {
-    label: 'Leistungen',
-    href: '/leistungen/',
-    children: [
-      { label: 'Überblick', href: '/leistungen/' },
-      { label: 'Überführungen', href: '/leistungen/ueberfuehrungen/' },
-      { label: 'Thanatopraxie', href: '/leistungen/thanatopraxie/' },
-      { label: 'Trauerfeier & Trauerdruck', href: '/leistungen/trauerfeier-und-trauerdruck/' },
-      { label: 'Formalitäten', href: '/leistungen/formalitaeten/' },
-    ],
-  },
-  {
-    label: 'Bestattungsarten',
-    href: '/bestattungsarten/',
-    children: [
-      { label: 'Überblick', href: '/bestattungsarten/' },
-      { label: 'Erdbestattung', href: '/bestattungsarten/erdbestattung/' },
-      { label: 'Feuerbestattung', href: '/bestattungsarten/feuerbestattung/' },
-      { label: 'Seebestattung', href: '/bestattungsarten/seebestattung/' },
-      { label: 'Anonyme Bestattung', href: '/bestattungsarten/anonyme-bestattung/' },
-    ],
-  },
-  { label: 'Vorsorge', href: '/bestattungsvorsorge/' },
+  { label: 'Im Trauerfall', href: '/im-trauerfall/' },
+  { label: 'Leistungen', href: '/leistungen/' },
+  { label: 'Bestattungsarten', href: '/bestattungsarten/' },
+  { label: 'Vorsorge', href: '/vorsorge/' },
   { label: 'Abschiedsraum', href: '/abschiedsraum/' },
-  {
-    label: 'Über uns',
-    href: '/ueber-uns/',
-    children: [
-      { label: 'Unternehmen', href: '/ueber-uns/' },
-      { label: 'Historie seit 1970', href: '/ueber-uns/historie/' },
-      { label: 'Galerie', href: '/ueber-uns/galerie/' },
-    ],
-  },
+  { label: 'Über uns', href: '/ueber-uns/' },
+  { label: 'Historie', href: '/historie/' },
   { label: 'Mediathek', href: '/mediathek/' },
-  { label: 'Friedhöfe', href: '/friedhoefe-in-wuerzburg/' },
+  { label: 'Friedhöfe', href: '/friedhoefe/' },
   { label: 'Kontakt', href: '/kontakt/' },
 ];
 

@@ -30,28 +30,18 @@ const server = createServer(async (req, res) => {
 await new Promise((r) => server.listen(0, r));
 const base = `http://127.0.0.1:${server.address().port}`;
 
-// Alle indexierbaren Seiten – Desktop und Mobil ergeben zusammen 48 Aufnahmen.
+// Alle indexierbaren Seiten, Desktop und Mobil ergeben zusammen 28 Aufnahmen.
 const pages = [
   ['/', 'startseite'],
   ['/im-trauerfall/', 'im-trauerfall'],
-  ['/im-trauerfall/benoetigte-dokumente/', 'benoetigte-dokumente'],
   ['/leistungen/', 'leistungen'],
-  ['/leistungen/ueberfuehrungen/', 'leistungen-ueberfuehrungen'],
-  ['/leistungen/thanatopraxie/', 'leistungen-thanatopraxie'],
-  ['/leistungen/trauerfeier-und-trauerdruck/', 'leistungen-trauerfeier'],
-  ['/leistungen/formalitaeten/', 'leistungen-formalitaeten'],
   ['/bestattungsarten/', 'bestattungsarten'],
-  ['/bestattungsarten/erdbestattung/', 'bestattungsarten-erdbestattung'],
-  ['/bestattungsarten/feuerbestattung/', 'bestattungsarten-feuerbestattung'],
-  ['/bestattungsarten/seebestattung/', 'bestattungsarten-seebestattung'],
-  ['/bestattungsarten/anonyme-bestattung/', 'bestattungsarten-anonyme-bestattung'],
+  ['/vorsorge/', 'vorsorge'],
   ['/abschiedsraum/', 'abschiedsraum'],
-  ['/bestattungsvorsorge/', 'vorsorge'],
-  ['/friedhoefe-in-wuerzburg/', 'friedhoefe-in-wuerzburg'],
   ['/ueber-uns/', 'ueber-uns'],
-  ['/ueber-uns/historie/', 'ueber-uns-historie'],
-  ['/ueber-uns/galerie/', 'ueber-uns-galerie'],
+  ['/historie/', 'historie'],
   ['/mediathek/', 'mediathek'],
+  ['/friedhoefe/', 'friedhoefe'],
   ['/kontakt/', 'kontakt'],
   ['/impressum/', 'impressum'],
   ['/datenschutz/', 'datenschutz'],

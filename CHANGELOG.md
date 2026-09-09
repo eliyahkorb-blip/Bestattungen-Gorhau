@@ -1,5 +1,36 @@
 # Changelog
 
+## 1.9.0 – UX- und Struktur-Rework: flachere Website
+
+### Geändert
+- **24 indexierbare Seiten auf 14 reduziert.** Die vier Bestattungsarten liegen jetzt als
+  H2-Abschnitte auf `/bestattungsarten/`, „Benötigte Dokumente" und „Formalitäten" sind in
+  `/im-trauerfall/` aufgegangen, die drei Leistungs-Unterseiten in `/leistungen/`, die
+  Galerie in `/ueber-uns/`.
+- **Kürzere Adressen:** `/vorsorge/`, `/historie/`, `/friedhoefe/`.
+- **13 alte URLs per 301 weitergeleitet**, in `.htaccess` und `public/_redirects`. Bestehende
+  Legacy-Regeln mit angepasst, damit keine Weiterleitungsketten entstehen.
+- **Navigation ohne Dropdown**, zehn Punkte, auf dem Desktop garantiert einzeilig. Unterhalb
+  von 1100 Pixeln wird auf die Hamburger-Navigation umgeschaltet.
+- **Künstliche Ersatzgrafiken entfernt**: Motif-Illustrationen und Icon-in-Kreis-Karten sind
+  raus, ersetzt durch echte Aufnahmen, Checklisten und Textkarten (`QuickLink.astro`).
+- **Spacing-System** auf die feste Skala 4/8/12/16/24/32/48/64/96 Pixel gebracht.
+- **Entfettet:** Eyebrow, Kontaktlabels, Akkordeon-Titel und Chip-Listen von 700 auf 500 bis
+  600, der fett gesetzte Erreichbarkeitssatz auf der Kontaktseite ist normaler Text.
+  Fließtext-Zeilenhöhe von 1,72 auf 1,62.
+- **Kontaktseite:** ein primärer Button „Route planen" statt zweier gleich starker Buttons,
+  Google Maps als Textlink, Datenschutzhinweis auf einen Satz gekürzt.
+- **Vorsorge** neu gegliedert, ohne Quote-Inszenierung und ohne beige Kästen.
+
+### Behoben
+- **Schriftdateien waren vertauscht:** `Source Serif 4` 700 lud die Sans-Datei und
+  `Source Sans 3` 400 die Serif-Datei. Überschriften erschienen dadurch serifenlos und
+  Fließtext serifenbetont. Korrigiert und maschinell gegengeprüft.
+
+### Geprüft
+- Lighthouse Desktop auf sechs Seiten: 100/100/100/100, LCP 0,4 bis 0,5 s, CLS 0.
+- axe: 0 kritische, 0 schwere Verstöße. 612 interne Links, 0 defekt. SEO-Audit: 0 Befunde.
+
 ## 1.8.0 – Master-Design-Rework: Typografie, Farbgewichtung, Redaktion
 
 ### Neu

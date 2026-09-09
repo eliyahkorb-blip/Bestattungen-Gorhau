@@ -10,15 +10,15 @@ entnehmen und eine Nutzerfrage korrekt beantworten, ohne zu raten?
 | Merkmal | Wert | Abdeckung |
 |---|---|---|
 | Name | Bestattungs- und Überführungsinstitut Gorhau, Inh. Thomas Gorhau e.K. | alle Seiten (Footer) |
-| Anschrift | Reuterstraße 2, 97084 Würzburg-Heidingsfeld | 0/0 Seiten |
-| Telefon | 0931 61 00 00 | 0/0 Seiten |
+| Anschrift | Reuterstraße 2, 97084 Würzburg-Heidingsfeld | 14/14 Seiten |
+| Telefon | 0931 61 00 00 | 14/14 Seiten |
 
 Die Daten stammen aus einer einzigen Quelle (`src/data/company.ts`) und können
 deshalb nicht auseinanderlaufen.
 
 ## Strukturierte Daten
 
-Eingesetzte Typen: 
+Eingesetzte Typen: `BreadcrumbList`, `FAQPage`, `FuneralHome`, `Organization`, `WebPage`, `WebSite`
 
 Bewusst **nicht** eingesetzt:
 
@@ -34,12 +34,12 @@ sichtbare Fragen und Antworten stehen.
 
 | Frage | Seite | vorhanden |
 |---|---|---|
-| Was ist im Trauerfall zuerst zu tun? | `/im-trauerfall/` | FEHLT |
+| Was ist im Trauerfall zuerst zu tun? | `/im-trauerfall/` | ja |
 | Welche Unterlagen werden benötigt? | `/im-trauerfall/benoetigte-dokumente/` | FEHLT |
-| Welche Bestattungsarten gibt es? | `/bestattungsarten/` | FEHLT |
+| Welche Bestattungsarten gibt es? | `/bestattungsarten/` | ja |
 | Wie läuft eine Überführung ab? | `/leistungen/ueberfuehrungen/` | FEHLT |
 | Was ist eine Bestattungsvorsorge? | `/bestattungsvorsorge/` | FEHLT |
-| Kann ich mich im Abschiedsraum persönlich verabschieden? | `/abschiedsraum/` | FEHLT |
+| Kann ich mich im Abschiedsraum persönlich verabschieden? | `/abschiedsraum/` | ja |
 
 ## Seitenumfang
 
@@ -48,3 +48,17 @@ beantworten.
 
 | Seite | Wörter |
 |---|---:|
+| `/im-trauerfall/` | 827 |
+| `/bestattungsarten/` | 615 |
+| `/datenschutz/` | 613 |
+| `/` | 598 |
+| `/leistungen/` | 582 |
+| `/barrierefreiheit/` | 350 |
+| `/ueber-uns/` | 335 |
+| `/historie/` | 329 |
+| `/impressum/` | 327 |
+| `/vorsorge/` | 327 |
+| `/friedhoefe/` | 280 |
+| `/abschiedsraum/` | 268 |
+| `/kontakt/` | 225 |
+| `/mediathek/` | 198 |

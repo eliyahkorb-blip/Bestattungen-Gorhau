@@ -1,50 +1,48 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaSection from '../components/CtaSection.astro';
-import IconFeature from '../components/ui/IconFeature.astro';
+import QuickLink from '../components/ui/QuickLink.astro';
 import FactStrip from '../components/ui/FactStrip.astro';
 import WaveDivider from '../components/ui/WaveDivider.astro';
 import Icon from '../components/icons/Icon.astro';
-import Motif from '../components/illustrations/Motif.astro';
 import PhotoFigure from '../components/ui/PhotoFigure.astro';
 import StockPhoto from '../components/ui/StockPhoto.astro';
 import { company } from '../data/company';
 import { withBase } from '../utils/url';
 
 const leistungenAuswahl = [
-  { name: 'ueberfuehrung' as const, t: 'Überführungen', d: 'Im In- und Ausland würdevoll organisiert.', href: '/leistungen/ueberfuehrungen/' },
-  { name: 'thanatopraxie' as const, t: 'Thanatopraxie', d: 'Hygienische und ästhetische Versorgung.', href: '/leistungen/thanatopraxie/' },
-  { name: 'trauerfeier' as const, t: 'Trauerfeier & Trauerdruck', d: 'Reden, Drucksachen, Dekoration.', href: '/leistungen/trauerfeier-und-trauerdruck/' },
+  { t: 'Überführungen', d: 'Im In- und Ausland würdevoll organisiert.' },
+  { t: 'Versorgung und Thanatopraxie', d: 'Hygienische Versorgung durch geschulte Fachkräfte.' },
+  { t: 'Trauerfeier und Trauerdruck', d: 'Ablauf, Reden, Drucksachen und Blumenschmuck.' },
+  { t: 'Behördengänge', d: 'Sterbeurkunde, Anmeldungen und Anträge.' },
 ];
 
+/* Die vier Bestattungsarten stehen auf einer Seite; die Links springen zum
+   jeweiligen Abschnitt. Bilder statt Illustrationen. */
 const bestattungsartenAuswahl = [
-  { name: 'erdbestattung' as const, t: 'Erdbestattung', href: '/bestattungsarten/erdbestattung/' },
-  { name: 'feuerbestattung' as const, t: 'Feuerbestattung', href: '/bestattungsarten/feuerbestattung/' },
-  { name: 'seebestattung' as const, t: 'Seebestattung', href: '/bestattungsarten/seebestattung/' },
-  { name: 'anonyme-bestattung' as const, t: 'Anonyme Bestattung', href: '/bestattungsarten/anonyme-bestattung/' },
+  { foto: 'erdbestattung-dekoration', t: 'Erdbestattung', alt: 'Grabstätte mit Blumengestecken bei einer Erdbestattung', href: '/bestattungsarten/#erdbestattung' },
+  { foto: 'feuerbestattung-urnen-dekoration', t: 'Feuerbestattung', alt: 'Urne mit Blumenschmuck und Kerzen', href: '/bestattungsarten/#feuerbestattung' },
+  { foto: 'urnengarten-grabanlage', t: 'Seebestattung', alt: 'Bepflanzte Urnengrabanlage', href: '/bestattungsarten/#seebestattung' },
+  { foto: 'anonyme-bestattung-rasenfeld', t: 'Anonyme Bestattung', alt: 'Ruhige Rasenfläche einer anonymen Grabstätte', href: '/bestattungsarten/#anonyme-bestattung' },
 ];
 
 const orientation = [
   {
-    icon: 'compass' as const,
     title: 'Im Trauerfall',
     text: 'Erste Schritte, ruhig und ohne Zeitdruck erklärt.',
     href: '/im-trauerfall/',
   },
   {
-    icon: 'leaf' as const,
     title: 'Bestattungsarten',
     text: 'Erd-, Feuer-, See- und anonyme Bestattung im Überblick.',
     href: '/bestattungsarten/',
   },
   {
-    icon: 'document' as const,
     title: 'Vorsorge',
     text: 'Wünsche zu Lebzeiten festhalten, Angehörige entlasten.',
-    href: '/bestattungsvorsorge/',
+    href: '/vorsorge/',
   },
   {
-    icon: 'window-light' as const,
     title: 'Abschiedsraum',
     text: 'Raum und Zeit für einen persönlichen Abschied.',
     href: '/abschiedsraum/',
@@ -53,25 +51,21 @@ const orientation = [
 
 const reasons = [
   {
-    icon: 'family' as const,
     title: 'Familiengeführt seit 1970',
     text: 'Kein anonymes Unternehmen, sondern feste Ansprechpartner vor Ort.',
     href: '/ueber-uns/',
   },
   {
-    icon: 'clock' as const,
     title: 'Tag und Nacht erreichbar',
     text: 'Im Trauerfall sind wir jederzeit für Sie da.',
     href: '/kontakt/',
   },
   {
-    icon: 'embrace' as const,
     title: 'Alles aus einer Hand',
     text: 'Überführung, Formalitäten und Trauerfeier koordinieren wir für Sie.',
     href: '/leistungen/',
   },
   {
-    icon: 'window-light' as const,
     title: 'Individuelle Abschiednahme',
     text: 'Im Abschiedsraum, kirchlich oder in stillem Rahmen.',
     href: '/abschiedsraum/',
@@ -106,7 +100,7 @@ const facts = [
           <a class="btn btn--primary" href={`tel:${company.phoneRaw}`}>
             <Icon name="phone" size={18} /> Im Trauerfall anrufen
           </a>
-          <a class="btn btn--secondary" href={withBase('/bestattungsvorsorge/')}>Vorsorge besprechen</a>
+          <a class="btn btn--secondary" href={withBase('/vorsorge/')}>Vorsorge besprechen</a>
         </div>
         <p class="hero__note">{company.emergencyNote}</p>
       </div>
@@ -131,7 +125,7 @@ const facts = [
       <p class="eyebrow">Schnelle Orientierung</p>
       <h2>Wobei können wir Ihnen helfen?</h2>
       <div class="tile-grid">
-        {orientation.map((o) => <IconFeature icon={o.icon} title={o.title} text={o.text} href={o.href} />)}
+        {orientation.map((o) => <QuickLink title={o.title} text={o.text} href={o.href} />)}
       </div>
     </div>
   </section>
@@ -151,17 +145,14 @@ const facts = [
       </p>
       <div class="pillar-row">
         <div class="pillar">
-          <Icon name="embrace" size={28} class="pillar__icon" />
           <h3>Zuhören</h3>
           <p>Erst das Gespräch, dann das Formular.</p>
         </div>
         <div class="pillar">
-          <Icon name="document" size={28} class="pillar__icon" />
           <h3>Beraten</h3>
           <p>Offen und ohne Fachjargon. Sie entscheiden.</p>
         </div>
         <div class="pillar">
-          <Icon name="family" size={28} class="pillar__icon" />
           <h3>Begleiten</h3>
           <p>Vom ersten Anruf bis über die Bestattung hinaus.</p>
         </div>
@@ -205,15 +196,14 @@ const facts = [
     <div class="container">
       <p class="eyebrow">Unser Leistungsspektrum</p>
       <h2>Ausgewählte Leistungen</h2>
-      <div class="motif-tile-grid">
+      <ul class="service-list">
         {leistungenAuswahl.map((l) => (
-          <a class="motif-tile" href={withBase(l.href)}>
-            <Motif name={l.name} label={l.t} class="motif-tile__img" />
+          <li>
             <h3>{l.t}</h3>
             <p>{l.d}</p>
-          </a>
+          </li>
         ))}
-      </div>
+      </ul>
       <p class="leistungen-links">
         <a href={withBase('/leistungen/')}>Alle Leistungen im Überblick →</a>
       </p>
@@ -226,7 +216,7 @@ const facts = [
       <p class="eyebrow">Was uns ausmacht</p>
       <h2>Kein Standardablauf, sondern Ihre Situation</h2>
       <div class="tile-grid">
-        {reasons.map((r) => <IconFeature icon={r.icon} title={r.title} text={r.text} href={r.href} />)}
+        {reasons.map((r) => <QuickLink title={r.title} text={r.text} href={r.href} />)}
       </div>
     </div>
   </section>
@@ -236,14 +226,16 @@ const facts = [
     <div class="container">
       <p class="eyebrow">Möglichkeiten des Abschieds</p>
       <h2>Bestattungsarten im Überblick</h2>
-      <div class="motif-tile-grid motif-tile-grid--four">
+      <ul class="art-grid">
         {bestattungsartenAuswahl.map((b) => (
-          <a class="motif-tile" href={withBase(b.href)}>
-            <Motif name={b.name} label={b.t} class="motif-tile__img" />
-            <h3>{b.t}</h3>
-          </a>
+          <li>
+            <a class="art-tile" href={withBase(b.href)}>
+              <PhotoFigure name={b.foto} alt={b.alt} width={260} height={160} class="art-tile__img" />
+              <span class="art-tile__label">{b.t}</span>
+            </a>
+          </li>
         ))}
-      </div>
+      </ul>
       <p class="leistungen-links">
         <a href={withBase('/bestattungsarten/')}>Alle Bestattungsarten im Vergleich →</a>
       </p>
@@ -283,7 +275,7 @@ const facts = [
           Legen Sie zu Lebzeiten fest, wie Ihr Abschied gestaltet werden soll, und entlasten Sie
           Ihre Angehörigen, organisatorisch wie finanziell.
         </p>
-        <a class="card__link" href={withBase('/bestattungsvorsorge/')}>Zur Vorsorge →</a>
+        <a class="card__link" href={withBase('/vorsorge/')}>Zur Vorsorge →</a>
       </article>
       <article class="mini-card">
         <h2>Über uns</h2>
@@ -307,7 +299,7 @@ const facts = [
         <a href={withBase('/mediathek/')}>Mediathek</a>.
       </p>
       <FactStrip facts={facts.slice(0, 3)} />
-      <p class="history-link"><a class="card__link" href={withBase('/ueber-uns/historie/')}>Unsere Historie ansehen →</a></p>
+      <p class="history-link"><a class="card__link" href={withBase('/historie/')}>Unsere Historie ansehen →</a></p>
     </div>
   </section>
 
@@ -375,9 +367,9 @@ const facts = [
 
   .tile-grid {
     display: grid;
-    gap: var(--space-md);
+    gap: var(--space-24);
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
-    margin-top: var(--space-lg);
+    margin-top: var(--space-32);
     max-width: none;
   }
 
@@ -406,10 +398,6 @@ const facts = [
   }
   .pillar {
     text-align: left;
-  }
-  .pillar :global(.pillar__icon) {
-    color: var(--brand-gold-dark);
-    margin-bottom: var(--space-xs);
   }
   .pillar h3 {
     font-size: 1.05rem;
@@ -454,45 +442,60 @@ const facts = [
     border-radius: var(--radius-lg);
   }
 
-  .motif-tile-grid {
-    display: grid;
-    gap: var(--space-md);
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
-    margin-top: var(--space-lg);
+  /* Leistungen als schlichte Textliste, ohne Kachelraster. */
+  .service-list {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--space-32);
     max-width: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    gap: var(--space-32);
   }
-  .motif-tile-grid--four {
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  .service-list h3 {
+    font-size: 1.05rem;
+    margin: 0;
   }
-  .motif-tile {
+  .service-list p {
+    margin-top: var(--space-8);
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  /* Bestattungsarten mit echten Fotos statt Illustrationen. */
+  .art-grid {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--space-32);
+    max-width: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+    gap: var(--space-24);
+  }
+  .art-tile {
     display: block;
-    background: var(--surface);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-md);
-    padding: var(--space-md);
     text-decoration: none;
     color: inherit;
-    transition: border-color 0.2s ease, transform 0.2s ease;
   }
-  .motif-tile:hover {
-    border-color: var(--brand-gold);
-    transform: translateY(-2px);
+  .art-tile :global(.art-tile__img img) {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.2s ease;
   }
-  .motif-tile :global(.motif-tile__img) {
-    max-width: 8rem;
-    margin: 0 auto var(--space-sm);
+  .art-tile:hover :global(.art-tile__img img) {
+    opacity: 0.88;
   }
-  .motif-tile h3 {
-    font-size: 1rem;
+  .art-tile__label {
+    display: block;
+    margin-top: var(--space-12);
+    font-family: var(--font-heading);
+    font-weight: 700;
     color: var(--brand-bordeaux-dark);
-    text-align: center;
-    margin-bottom: 0.2rem;
   }
-  .motif-tile p {
-    color: var(--text-muted);
-    font-size: 0.88rem;
-    text-align: center;
-    margin: 0;
+  @media (prefers-reduced-motion: reduce) {
+    .art-tile :global(.art-tile__img img) {
+      transition: none;
+    }
   }
 
   .contact-block {

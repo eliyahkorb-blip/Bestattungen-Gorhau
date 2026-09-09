@@ -1,0 +1,138 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import HintBox from '../components/ui/HintBox.astro';
+import StockPhoto from '../components/ui/StockPhoto.astro';
+import { withBase } from '../utils/url';
+
+/*
+ * Früher /bestattungsvorsorge/, seit dem UX-Rework unter der kürzeren URL
+ * /vorsorge/. Die alte Adresse wird per 301 hierher geleitet.
+ */
+
+const festlegbar = [
+  'Bestattungsart und Grabform',
+  'Ort und Ablauf der Trauerfeier',
+  'Musik, Redner und Blumenschmuck',
+  'Sarg oder Urne',
+  'Wer benachrichtigt werden soll',
+  'Gestaltung von Traueranzeige und Trauerdruck',
+];
+---
+
+<PageLayout
+  title="Bestattungsvorsorge in Würzburg | Gorhau"
+  description="Bestattungsvorsorge bei Bestattungen Gorhau in Würzburg: Wünsche zu Lebzeiten festhalten, Angehörige entlasten. Ablauf des Vorsorgegesprächs und finanzielle Absicherung."
+  eyebrow="Selbstbestimmt vorsorgen"
+  path="/vorsorge/"
+  heading="Bestattungsvorsorge"
+  intro="Mit einer Vorsorge legen Sie zu Lebzeiten fest, wie Ihr Abschied gestaltet werden soll. Das nimmt Angehörigen später viele Entscheidungen ab, in einer Zeit, in der ihnen der Kopf nach anderem steht."
+  breadcrumbs={[{ name: 'Vorsorge', path: '/vorsorge/' }]}
+  ctaLabel="Vorsorgegespräch vereinbaren"
+  ctaHref={withBase('/kontakt/')}
+>
+  <div class="lead-block">
+    <div class="prose">
+      <p>
+        Ein Todesfall trifft Angehörige oft unerwartet, selbst wenn er absehbar war. Wer
+        vorsorgt, klärt die wesentlichen Fragen im Voraus: was gewünscht ist, wer informiert
+        wird und wie die Kosten gedeckt sind. Nichts davon ist endgültig. Eine getroffene
+        Vorsorge lässt sich jederzeit anpassen.
+      </p>
+    </div>
+    <StockPhoto
+      name="wuerzburg-kaeppele-herbst"
+      alt="Herbstlicher Blick auf einen Würzburger Hang mit Kirche und Weinbergen"
+      sizes="(min-width: 60rem) 22rem, 92vw"
+      priority
+      class="lead-block__photo"
+    />
+  </div>
+
+  <h2>Was Sie festlegen können</h2>
+  <hr class="accent-rule" />
+  <ul class="plain-list">
+    {festlegbar.map((f) => <li>{f}</li>)}
+  </ul>
+
+  <h2>Wie ein Vorsorgegespräch abläuft</h2>
+  <hr class="accent-rule" />
+  <div class="prose">
+    <p>
+      Das Gespräch findet bei uns im Haus oder bei Ihnen zu Hause statt, ganz wie es Ihnen
+      lieber ist. Wir gehen die Punkte in Ruhe durch und halten Ihre Wünsche schriftlich fest.
+      Sie erhalten eine Ausfertigung, eine bleibt bei uns hinterlegt. Für das Gespräch entsteht
+      Ihnen keine Verpflichtung.
+    </p>
+  </div>
+
+  <h2>Finanzielle Vorsorge</h2>
+  <hr class="accent-rule" />
+  <div class="prose">
+    <p>
+      Für die finanzielle Seite gibt es zwei gängige Modelle: einen Vorsorgevertrag mit
+      treuhänderisch verwaltetem Betrag oder eine Sterbegeldversicherung mit monatlichen
+      Beiträgen. Beide unterscheiden sich in Flexibilität und Laufzeit. Wir erläutern die
+      Unterschiede, ohne ein bestimmtes Produkt aufzudrängen.
+    </p>
+  </div>
+
+  <HintBox>
+    Konkrete Konditionen richten sich nach dem jeweiligen Anbieter. Wir nennen Ihnen die zum
+    Gesprächszeitpunkt geltenden Möglichkeiten, unverbindlich.
+  </HintBox>
+
+  <p class="related-link">
+    Verwandte Themen: <a href={withBase('/bestattungsarten/')}>Bestattungsarten</a> ·
+    <a href={withBase('/abschiedsraum/')}>Abschiedsraum</a>
+  </p>
+</PageLayout>
+
+<style>
+  .lead-block {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 22rem;
+    gap: var(--space-64);
+    align-items: start;
+  }
+  .lead-block :global(.lead-block__photo img) {
+    border-radius: var(--radius-md);
+  }
+  @media (max-width: 60rem) {
+    .lead-block {
+      grid-template-columns: 1fr;
+      gap: var(--space-24);
+    }
+  }
+
+  /* Schlichte Liste statt beiger Kästen: die Aufzählung ist kein Hinweisblock. */
+  .plain-list {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--space-24);
+    max-width: 42rem;
+    columns: 2;
+    column-gap: var(--space-48);
+  }
+  .plain-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: var(--space-12);
+    break-inside: avoid;
+    color: var(--text-muted);
+  }
+  .plain-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--brand-gold);
+  }
+  @media (max-width: 40rem) {
+    .plain-list {
+      columns: 1;
+    }
+  }
+</style>

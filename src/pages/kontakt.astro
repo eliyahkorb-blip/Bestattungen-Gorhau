@@ -51,7 +51,7 @@ import { company } from '../data/company';
         <h2>Bürozeiten</h2>
         <hr class="accent-rule" />
         <p>Montag bis Freitag, 08:00 bis 16:00 Uhr<br />sowie nach Vereinbarung.</p>
-        <p class="emergency"><strong>Im Trauerfall sind wir für Sie Tag und Nacht erreichbar.</strong></p>
+        <p class="emergency">Im Trauerfall sind wir für Sie Tag und Nacht erreichbar.</p>
       </div>
     </section>
 
@@ -62,17 +62,15 @@ import { company } from '../data/company';
         Sie finden uns in der Reuterstraße 2 in Würzburg-Heidingsfeld. Parkmöglichkeiten sind
         in der Umgebung vorhanden.
       </p>
-      <p>
-        Aus Datenschutzgründen laden wir keine Kartendienste automatisch. Sie können den
-        Standort direkt bei einem Kartenanbieter Ihrer Wahl öffnen:
+      <p class="map-primary">
+        <a class="btn btn--primary" href={company.maps.osm} rel="noopener">Route planen</a>
       </p>
-      <div class="map-links">
-        <a class="btn btn--secondary" href={company.maps.osm} rel="noopener">Auf OpenStreetMap öffnen</a>
-        <a class="btn btn--secondary" href={company.maps.google} rel="noopener">Auf Google Maps öffnen</a>
-      </div>
+      <p class="map-alt">
+        Alternativ mit <a href={company.maps.google} rel="noopener">Google Maps</a> öffnen.
+      </p>
       <p class="src-note">
-        Beim Öffnen dieser Links werden Sie auf die Seite des jeweiligen Anbieters
-        weitergeleitet, wobei Daten an diesen übertragen werden können.
+        Der Kartendienst öffnet sich erst nach Ihrem Klick auf der Seite des jeweiligen
+        Anbieters.
       </p>
     </section>
   </div>
@@ -112,22 +110,24 @@ import { company } from '../data/company';
   }
   .contact-lines__label {
     min-width: 5rem;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--text-muted);
   }
   .emergency {
     color: var(--brand-bordeaux);
-    margin-top: var(--space-sm);
+    font-weight: 600;
+    margin-top: var(--space-16);
   }
-  .map-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-md);
-    margin-top: var(--space-lg);
+  .map-primary {
+    margin-top: var(--space-24);
+  }
+  .map-alt {
+    margin-top: var(--space-16);
+    color: var(--text-muted);
   }
   .src-note {
     color: var(--text-muted);
-    font-size: 0.95rem;
-    margin-top: var(--space-lg);
+    font-size: 0.9rem;
+    margin-top: var(--space-16);
   }
 </style>

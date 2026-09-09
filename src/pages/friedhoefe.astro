@@ -1,0 +1,110 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import HintBox from '../components/ui/HintBox.astro';
+import PhotoFigure from '../components/ui/PhotoFigure.astro';
+import StockPhoto from '../components/ui/StockPhoto.astro';
+import { withBase } from '../utils/url';
+---
+
+<PageLayout
+  title="Friedhöfe in Würzburg: Grabarten | Gorhau"
+  description="Hilfreiche Informationen zu Friedhöfen, Grabarten und Ruhezeiten in Würzburg. Bestattungen Gorhau berät Sie zu den aktuell geltenden Regelungen vor Ort."
+  eyebrow="Ratgeber"
+  path="/friedhoefe/"
+  heading="Friedhöfe in Würzburg"
+  intro="Rund um Friedhöfe, Grabarten und Ruhezeiten stellen sich viele Fragen. Ein allgemeiner Überblick."
+  breadcrumbs={[{ name: 'Friedhöfe in Würzburg', path: '/friedhoefe/' }]}
+  ctaLabel="Anfahrt öffnen"
+  ctaHref={withBase('/kontakt/')}
+>
+  <StockPhoto
+    name="friedhof-graeber-blumen"
+    alt="Gepflegte Gräberreihe mit Blumenbepflanzung und Grablichtern im Sonnenlicht"
+    priority
+    class="page-stock"
+  />
+
+  <div class="prose">
+    <p>
+      In Würzburg und den umliegenden Gemeinden gibt es verschiedene Friedhöfe mit
+      unterschiedlichen Grabarten. Welche Form verfügbar ist, regelt die jeweilige
+      Friedhofssatzung.
+    </p>
+  </div>
+
+  <h2>Häufige Grabarten</h2>
+  <hr class="accent-rule" />
+  <ul class="chip-list">
+    <li>Reihengrab</li>
+    <li>Wahlgrab</li>
+    <li>Urnengrab</li>
+    <li>Urnengarten</li>
+    <li>Baumgrab</li>
+    <li>Anonym / teilanonym</li>
+  </ul>
+
+  <h2>Friedhofszwang und Ruhezeiten</h2>
+  <hr class="accent-rule" />
+  <div class="prose">
+    <p>
+      In Deutschland gilt grundsätzlich die Friedhofspflicht: Beisetzungen müssen auf einem
+      zugelassenen Friedhof erfolgen, Ausnahmen bilden See- und Baumbestattung. Eine Aufbewahrung
+      der Urne zu Hause ist hierzulande nicht zulässig.
+    </p>
+  </div>
+  <HintBox>
+    Ruhezeiten, Grabarten und Gebühren unterscheiden sich je nach Friedhof und Gemeinde und
+    können sich ändern. Wir informieren Sie über die aktuell geltenden Regelungen vor Ort.
+  </HintBox>
+
+  <PhotoFigure
+    name="urnengemeinschaftsgrabanlage"
+    alt="Urnengemeinschaftsgrabanlage auf einem Friedhof mit Blumenschmuck"
+    width={260}
+    height={160}
+    class="page-motif page-motif--inline"
+  />
+
+  <h2>Den passenden Friedhof finden</h2>
+  <hr class="accent-rule" />
+  <div class="prose">
+    <p>
+      Nähe zum Wohnort, eine bestehende Familiengrabstätte oder verfügbare Grabarten spielen bei
+      der Wahl oft eine Rolle. Bei Reihen- und Wahlgräbern liegt die Pflege meist bei den
+      Angehörigen. Wer das nicht leisten möchte, kann sie an einen Friedhofsgärtner übergeben
+      oder eine pflegearme Grabform wählen.
+    </p>
+  </div>
+
+  <p class="related-link">
+    Verwandte Themen: <a href={withBase('/bestattungsarten/')}>Bestattungsarten</a> ·
+    <a href={withBase('/im-trauerfall/')}>Im Trauerfall</a>
+  </p>
+  <p class="src-note">
+    Dieser Beitrag dient der allgemeinen Information und stellt keine Rechtsberatung dar.
+  </p>
+</PageLayout>
+
+<style>
+  .chip-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--space-md) 0 var(--space-xl);
+    max-width: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+  .chip-list li {
+    background: var(--surface-cream);
+    border-radius: 999px;
+    padding: 0.5em 1.1em;
+    font-size: 0.92rem;
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+  .src-note {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+</style>

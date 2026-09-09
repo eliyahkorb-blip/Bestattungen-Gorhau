@@ -1,0 +1,66 @@
+---
+/*
+ * Schnellzugriff-Karte: Überschrift, ein Satz, dezenter Pfeil.
+ *
+ * Bewusst ohne Icon. Ein Icon in einem farbigen Kreis trägt hier keine
+ * Information, sondern nimmt nur Platz und lässt die Seite nach Baukasten
+ * aussehen. Die gesamte Karte ist Klickfläche.
+ */
+import { withBase } from '../../utils/url';
+
+export interface Props {
+  title: string;
+  text: string;
+  href: string;
+}
+const { title, text, href } = Astro.props;
+---
+
+<a class="quick-link" href={withBase(href)}>
+  <span class="quick-link__title">{title}</span>
+  <span class="quick-link__text">{text}</span>
+  <span class="quick-link__more" aria-hidden="true">Mehr erfahren →</span>
+</a>
+
+<style>
+  .quick-link {
+    display: flex;
+    flex-direction: column;
+    /* 32px Innenabstand laut Spacing-Skala. */
+    padding: var(--space-32);
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+  .quick-link:hover {
+    border-color: var(--brand-gold);
+    transform: translateY(-2px);
+    color: var(--text-primary);
+  }
+  .quick-link__title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.25;
+    color: var(--brand-bordeaux-dark);
+  }
+  .quick-link__text {
+    /* 12px zwischen Überschrift und Beschreibung. */
+    margin-top: var(--space-12);
+    color: var(--text-muted);
+  }
+  .quick-link__more {
+    margin-top: var(--space-24);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--brand-bordeaux);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .quick-link {
+      transition: none;
+    }
+  }
+</style>

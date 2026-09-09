@@ -1,5 +1,8 @@
 # Finaler Design-Review
 
+> Stand nach dem UX- und Struktur-Rework: 24 indexierbare Seiten wurden auf 14
+> zusammengelegt. Details siehe Abschnitt „Struktur" am Ende.
+
 Stand nach dem Master-Design-Rework. Alle Werte stammen aus messenden Skripten, nicht
 aus Schätzung. Reproduzierbar mit:
 
@@ -31,7 +34,7 @@ Prinzipien, die im Auftrag selbst je Referenz benannt sind. Übernommen wurde:
 |---|---|---|
 | Bild direkt im Einstieg, kurze Vertrauenspunkte | Hörakustik Glas | Hero mit echtem Würzburg-Motiv, darunter vier knappe Einstiege |
 | Starke Bildwirkung, schneller Einstieg in Leistungsbereiche | Fahrschule Undheim | Hero über volle Spaltenbreite, direkt danach die Orientierungskacheln |
-| Hochwertiges Hero, saubere echte Unterseiten | Dentech | 24 eigenständige Unterseiten mit eigener H1, eigenem Title und eigenem Bild |
+| Hochwertiges Hero, saubere echte Unterseiten | Dentech | 14 eigenständige Seiten mit eigener H1, eigenem Title und eigener Description |
 | Kategorien direkt sichtbar, angenehme Bild-Text-Abwechslung | Küchen Oase | Bestattungsarten als Bildauswahl, Wechsel aus Text, Bild, Fakten und Listen |
 | Warmer menschlicher Einstieg, zwei verständliche Handlungen | Martin Bayer | Genau zwei Aktionen im Hero: anrufen oder Vorsorge besprechen |
 | Wenige starke Fakten, weniger Text | Julian Suppelt | Faktenleiste 1970/1980/2004/24-7, keine Textwände |
@@ -47,10 +50,15 @@ gemessen wird und nicht der Bildinhalt.
 
 | Kategorie | vorher | nachher | Ziel |
 |---|---:|---:|---|
-| Weiß und Creme | 74,2 % | 67,9 % | 60 bis 70 % |
-| warmes Beige | 4,6 % | 21,1 % | 15 bis 20 % |
-| Bordeaux | 0,7 % | 8,2 % | 8 bis 12 % |
+| Weiß und Creme | 74,2 % | 72,5 % | 60 bis 70 % |
+| warmes Beige | 4,6 % | 18,0 % | 15 bis 20 % |
+| Bordeaux | 0,7 % | 6,6 % | 8 bis 12 % |
 | Gold | 0,2 % | 0,3 % | punktuell |
+
+Nach dem Zusammenlegen der Seiten liegt Weiß wieder etwas über und Bordeaux etwas unter
+dem Zielkorridor: Die Sammelseiten sind länger, dadurch wächst die weiße Lesefläche,
+während das Bordeaux-Abschlussband gleich groß bleibt. Das ist bewusst nicht durch
+zusätzliche farbige Kästen ausgeglichen worden, weil der Auftrag genau davor warnt.
 
 Bemerkenswert: Die Ausgangslage war **nicht** zu rot, sondern zu weiß und zu kalt. Die
 früheren Durchgänge hatten Bordeaux fast vollständig entfernt. Der Umbau ging daher in
@@ -65,8 +73,6 @@ formulierten Ziels „warm, wohnlich, nicht steril":
 - Bordeaux hat damit einen festen, begrenzten Platz: ein kompaktes Band je Seite und ein
   schmaler Streifen am Seitenfuß. Keine roten Flächen hinter langen Texten.
 
-Beige liegt mit 21,1 % gut einen Punkt über dem Zielkorridor. Das ist innerhalb der
-Messgenauigkeit eines Pixelklassifikators und optisch unauffällig.
 
 ## Typografie
 
@@ -80,11 +86,11 @@ Messgenauigkeit eines Pixelklassifikators und optisch unauffällig.
 - Die `size-adjust`-Werte der Ersatzschriften sind **gemessen**, nicht geschätzt:
   Source Sans 3 ist 92,8 % so breit wie Arial, Source Serif 4 113,9 % so breit wie
   Georgia. Dadurch verschiebt der Schriftwechsel den Textumbruch kaum.
-- Fließtext `line-height` 1,72, Überschriften 1,18 mit leicht negativer Laufweite.
+- Fließtext `line-height` 1,62, Überschriften 1,18 mit leicht negativer Laufweite.
 
 ## Redaktion
 
-Gemessen am gebauten HTML über alle 24 indexierbaren Seiten:
+Gemessen am gebauten HTML über alle 14 indexierbaren Seiten:
 
 | Prüfung | Ergebnis |
 |---|---|
@@ -121,7 +127,7 @@ sonst üblichen zweiten CTA oben.
 
 ## Barrierefreiheit
 
-- axe-core über alle 24 indexierbaren Seiten: **0 kritische, 0 schwere Verstöße**.
+- axe-core über alle 14 indexierbaren Seiten: **0 kritische, 0 schwere Verstöße**.
 - Zwei Kontrastfehler, die durch das neue Bordeaux-Band entstanden waren, wurden behoben:
   Gold als Textfarbe erreichte dort nur 3,72:1. Buttons tragen dort jetzt helleres Gold
   bzw. eine Creme-Kontur.
@@ -134,10 +140,11 @@ Lighthouse, Desktop-Preset, gegen den Produktionsbuild:
 
 | Seite | Performance | Accessibility | Best Practices | SEO | LCP | CLS |
 |---|---:|---:|---:|---:|---:|---:|
-| `/` | 100 | 100 | 100 | 100 | 0,6 s | 0 |
+| `/` | 100 | 100 | 100 | 100 | 0,5 s | 0 |
 | `/im-trauerfall/` | 100 | 100 | 100 | 100 | 0,4 s | 0 |
-| `/bestattungsarten/seebestattung/` | 100 | 100 | 100 | 100 | 0,4 s | 0 |
-| `/ueber-uns/` | 100 | 100 | 100 | 100 | 0,4 s | 0 |
+| `/bestattungsarten/` | 100 | 100 | 100 | 100 | 0,5 s | 0 |
+| `/leistungen/` | 100 | 100 | 100 | 100 | 0,4 s | 0 |
+| `/vorsorge/` | 100 | 100 | 100 | 100 | 0,4 s | 0 |
 | `/kontakt/` | 100 | 100 | 100 | 100 | 0,5 s | 0 |
 
 Alle Zielwerte des Auftrags erreicht: Performance mindestens 95, Accessibility 100,
@@ -170,3 +177,39 @@ beibehalten, weil er unabhängig davon Bandbreite spart.
 - **Drei Seiten ohne Bild**: Vorsorge, Benötigte Dokumente, Formalitäten. Es fehlen
   Dokument- und Papiermotive.
 - **Beige leicht über Zielkorridor** (21,1 % statt maximal 20 %).
+
+## Struktur nach dem UX-Rework
+
+Von 24 auf **14 indexierbare Seiten**. Zusammengelegt wurde:
+
+| aufgelöst | jetzt Teil von |
+|---|---|
+| `/bestattungsarten/erdbestattung/` | `/bestattungsarten/` (H2-Abschnitt) |
+| `/bestattungsarten/feuerbestattung/` | `/bestattungsarten/` (H2-Abschnitt) |
+| `/bestattungsarten/seebestattung/` | `/bestattungsarten/` (H2-Abschnitt) |
+| `/bestattungsarten/anonyme-bestattung/` | `/bestattungsarten/` (H2-Abschnitt) |
+| `/im-trauerfall/benoetigte-dokumente/` | `/im-trauerfall/` (Checkliste) |
+| `/leistungen/formalitaeten/` | `/im-trauerfall/` und `/leistungen/` |
+| `/leistungen/ueberfuehrungen/` | `/leistungen/` |
+| `/leistungen/thanatopraxie/` | `/leistungen/` |
+| `/leistungen/trauerfeier-und-trauerdruck/` | `/leistungen/` |
+| `/ueber-uns/galerie/` | `/ueber-uns/` (Bildraster) |
+
+Umbenannt zu kürzeren Adressen: `/bestattungsvorsorge/` zu `/vorsorge/`,
+`/ueber-uns/historie/` zu `/historie/`, `/friedhoefe-in-wuerzburg/` zu `/friedhoefe/`.
+
+Alle 13 alten Adressen sind in `.htaccess` und `public/_redirects` als 301 hinterlegt.
+Bestehende Legacy-Regeln wurden mit angepasst, damit keine Weiterleitungsketten entstehen.
+Geprüft: keine Kette, keine defekten internen Links.
+
+## Entfernte künstliche Grafiken
+
+- Die Motif-Illustrationen (gezeichnete Häuser, Dokumente, Urnen, Sprechblasen) sind von
+  allen Seiten verschwunden, auf denen sie die visuelle Hauptrolle hatten.
+- Die Icon-in-Kreis-Karten der Startseite sind durch ruhige Textkarten ersetzt
+  (`QuickLink.astro`). Die Information funktioniert vollständig ohne Icons.
+- Die dekorativen Icons in der Haltungs-Sektion sind entfallen.
+- Geblieben ist ausschließlich funktionales Beiwerk: das Telefon-Icon im Kontakt-Chip.
+
+Stattdessen im Einsatz: echte Gorhau-Aufnahmen (Fahrzeuge, Versorgungsraum, Erd- und
+Feuerbestattung, anonyme Grabstätte, Galerie) sowie Checklisten und schlichte Listen.

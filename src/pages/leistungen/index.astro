@@ -1,89 +1,155 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
-import IconFeature from '../../components/ui/IconFeature.astro';
 import AccordionItem from '../../components/ui/AccordionItem.astro';
+import HintBox from '../../components/ui/HintBox.astro';
 import PhotoFigure from '../../components/ui/PhotoFigure.astro';
+import StockPhoto from '../../components/ui/StockPhoto.astro';
 import { withBase } from '../../utils/url';
 
-const leistungen = [
-  { icon: 'map-pin' as const, t: 'Überführungen', d: 'Würdevoll im In- und Ausland organisiert.', href: '/leistungen/ueberfuehrungen/' },
-  { icon: 'embrace' as const, t: 'Thanatopraxie', d: 'Hygienische und ästhetische Versorgung.', href: '/leistungen/thanatopraxie/' },
-  { icon: 'sun' as const, t: 'Trauerfeier & Trauerdruck', d: 'Trauerreden, Drucksachen, Dekoration.', href: '/leistungen/trauerfeier-und-trauerdruck/' },
-  { icon: 'document' as const, t: 'Formalitäten', d: 'Behördengänge: wir nehmen Ihnen den Papierkram ab.', href: '/leistungen/formalitaeten/' },
-  { icon: 'leaf' as const, t: 'Bestattungsarten', d: 'Erd-, Feuer-, See- und anonyme Bestattung.', href: '/bestattungsarten/' },
-  { icon: 'clock' as const, t: 'Bestattungsvorsorge', d: 'Wünsche zu Lebzeiten festhalten.', href: '/bestattungsvorsorge/' },
+/*
+ * Überführungen, Thanatopraxie sowie Trauerfeier und Trauerdruck standen bis zum
+ * UX-Rework auf eigenen Unterseiten. Sie liegen jetzt hier zusammen, bewusst in
+ * wechselnden Darstellungsformen statt in gleichförmigen Karten.
+ */
+
+const trauerdruck = [
+  'Traueranzeigen und Danksagungen',
+  'Trauerkarten und Sterbebilder',
+  'Trauerbriefe',
+  'Blumenschmuck und Dekoration',
+];
+
+const formalitaeten = [
+  'Beurkundung des Sterbefalls beim Standesamt',
+  'Anmeldung bei Friedhof oder Krematorium',
+  'Trauerfeier- und Bestattungstermin',
+  'Renten- und Versicherungsanträge',
+  'Abmeldungen und Anträge bei Behörden',
+  'Dokumente und Genehmigungen für Überführungen',
 ];
 ---
 
 <PageLayout
   title="Leistungen | Bestattungen Gorhau Würzburg"
-  description="Das Leistungsspektrum von Bestattungen Gorhau in Würzburg: Überführungen, Thanatopraxie, Trauerfeier und Trauerdruck, Formalitäten sowie alle Bestattungsarten."
+  description="Überführungen, hygienische Versorgung, Thanatopraxie, Trauerfeier, Trauerdruck und Behördengänge: das Leistungsspektrum von Bestattungen Gorhau in Würzburg."
   eyebrow="Unser Leistungsspektrum"
   path="/leistungen/"
   heading="Leistungen"
-  intro="Von der ersten Beratung bis zum würdevollen Abschied begleiten wir Sie umfassend. Alle organisatorischen und gestalterischen Aufgaben kommen aus einer Hand."
+  intro="Von der ersten Beratung bis zum Abschied begleiten wir Sie. Die organisatorischen und gestalterischen Aufgaben kommen aus einer Hand, damit Sie sich auf das Wesentliche konzentrieren können."
   breadcrumbs={[{ name: 'Leistungen', path: '/leistungen/' }]}
+  ctaLabel="Leistungen persönlich besprechen"
+  ctaHref={withBase('/kontakt/')}
 >
-  <PhotoFigure
-    name="sargausstellung-bestattungen-gorhau-panorama"
-    alt="Sargausstellung im Bestattungsinstitut Gorhau"
-    width={979}
-    height={280}
-    priority
-    class="page-photo"
-  />
-
-  <div class="prose">
-    <p>
-      Als familiengeführtes Institut übernehmen wir Organisation und Behördengänge, damit Sie
-      sich auf das Wesentliche konzentrieren können: den Abschied von einem geliebten Menschen.
-      Jede Entscheidung treffen Sie dabei in Ruhe und nach Ihren eigenen Vorstellungen.
-    </p>
-    <p>
-      Unsere Leistungen greifen ineinander, von der Überführung bis zur Trauerfeier. Wenn Sie
-      noch nicht wissen, welche <a href={withBase('/bestattungsarten/')}>Bestattungsart</a> passt, beraten
-      wir Sie dazu gern persönlich und unverbindlich.
-    </p>
-  </div>
-
-  <h2>Unsere Kernleistungen im Überblick</h2>
-  <hr class="accent-rule" />
-  <div class="tile-grid">
-    {leistungen.map((l) => <IconFeature icon={l.icon} title={l.t} text={l.d} href={l.href} />)}
-  </div>
-
   <h2>So arbeiten wir mit Ihnen zusammen</h2>
   <hr class="accent-rule" />
-  <ol class="mini-steps">
+  <ol class="steps-row">
     <li>
-      <strong>Persönliches Gespräch.</strong> Telefonisch, bei uns im Haus oder bei Ihnen.
-      Wir klären, was in Ihrer Situation gebraucht wird.
+      <span class="steps-row__num">1</span>
+      <h3>Persönliches Gespräch</h3>
+      <p>Telefonisch, bei uns im Haus oder bei Ihnen. Wir klären, was in Ihrer Situation gebraucht wird.</p>
     </li>
     <li>
-      <strong>Verständliche Erklärung.</strong> Keine Fachbegriffe, keine Entscheidungen unter
-      Zeitdruck. Wir zeigen, wo Fristen wirklich bestehen.
+      <span class="steps-row__num">2</span>
+      <h3>Verständliche Erklärung</h3>
+      <p>Keine Fachbegriffe, keine Entscheidungen unter Zeitdruck. Wir zeigen, wo Fristen wirklich bestehen.</p>
     </li>
     <li>
-      <strong>Koordination im Hintergrund.</strong> Behörden, Friedhofsverwaltung, Kirche oder
-      Trauerredner. Wir stimmen alle Termine ab.
+      <span class="steps-row__num">3</span>
+      <h3>Koordination im Hintergrund</h3>
+      <p>Behörden, Friedhofsverwaltung, Kirche oder Trauerredner. Wir stimmen alle Termine ab.</p>
     </li>
   </ol>
+
+  <h2>Überführungen im In- und Ausland</h2>
+  <hr class="accent-rule" />
+  <div class="split">
+    <div class="split__text">
+      <p>
+        Ein Todesfall kann sich fernab des Heimatortes ereignen, auf Reisen oder in einer
+        Einrichtung in einer anderen Stadt. Im Inland holen wir die verstorbene Person an jedem
+        Ort in Deutschland ab und stimmen uns mit Behörden, Kliniken und Einrichtungen ab. Bei
+        Überführungen über Landesgrenzen kennen wir die besonderen Bestimmungen, kümmern uns um
+        den Leichenpass und arbeiten mit zuverlässigen Partnern am Zielort. Auch innerhalb
+        Würzburgs übernehmen wir die Überführung in unsere Räume, sobald die Todesbescheinigung
+        vorliegt.
+      </p>
+    </div>
+    <div class="split__media">
+      <PhotoFigure
+        name="fahrzeuge-vor-bestattungsinstitut"
+        alt="Bestattungsfahrzeuge vor dem Bestattungsinstitut Gorhau"
+        width={208}
+        height={126}
+        priority
+      />
+    </div>
+  </div>
+
+  <h2>Versorgung und Thanatopraxie</h2>
+  <hr class="accent-rule" />
+  <div class="split split--reverse">
+    <div class="split__text">
+      <p>
+        Für viele Angehörige ist es wichtig, die verstorbene Person noch einmal in Ruhe sehen zu
+        können. Die hygienische Versorgung, die Thanatopraxie, schafft dafür die Voraussetzung.
+        Sie erfolgt in unseren Räumen durch geschultes Personal. Ziel ist ein friedvoller,
+        natürlicher Anblick, keine künstliche Veränderung. Eine aufgebahrte Abschiednahme, etwa
+        in unserem <a href={withBase('/abschiedsraum/')}>Abschiedsraum</a>, ist in der Regel nur
+        nach einer solchen Versorgung möglich. Nötig ist sie nicht immer: Bei zeitnaher
+        Beisetzung kann darauf verzichtet werden. Wir beraten Sie dazu offen und ohne Druck.
+      </p>
+    </div>
+    <div class="split__media">
+      <PhotoFigure
+        name="versorgungsraum-bestattungen-gorhau"
+        alt="Versorgungsraum des Bestattungsinstituts Gorhau"
+        width={208}
+        height={126}
+      />
+    </div>
+  </div>
+
+  <h2>Trauerfeier und Trauerdruck</h2>
+  <hr class="accent-rule" />
   <div class="prose">
     <p>
-      Liegt bereits eine <a href={withBase('/bestattungsvorsorge/')}>Bestattungsvorsorge</a> vor, arbeiten
-      wir auf dieser Grundlage weiter. Für die ersten Schritte nach einem Todesfall lesen Sie
-      unsere Seite <a href={withBase('/im-trauerfall/')}>Im Trauerfall</a>.
+      Ob feierlich oder schlicht, kirchlich oder frei: Wir stimmen Ort, Ablauf und Rahmen ab und
+      koordinieren Feierhalle, Musik sowie Geistliche oder freie Rednerinnen und Redner. Ein
+      Musikstück, ein Foto, eigene Worte von Angehörigen geben einer Feier Bedeutung. Die
+      Traueranzeige ist oft die erste Nachricht vom Tod eines Angehörigen. Wir unterstützen bei
+      Formulierung, Gestaltung und der Abstimmung mit Zeitungen und Druckereien.
     </p>
   </div>
+  <div class="two-col">
+    <ul class="plain-list">
+      {trauerdruck.map((t) => <li>{t}</li>)}
+    </ul>
+    <StockPhoto
+      name="gedenkkerzen"
+      alt="Mehrere brennende Gedenkkerzen mit warmem Licht"
+      sizes="(min-width: 60rem) 22rem, 92vw"
+      class="two-col__photo"
+    />
+  </div>
+
+  <h2>Behördengänge und Formalitäten</h2>
+  <hr class="accent-rule" />
+  <div class="prose">
+    <p>
+      Den Papierkram müssen Sie nicht selbst erledigen. Die Sterbeurkunde wird erst nach der
+      Beurkundung beim Standesamt ausgestellt und für viele weitere Schritte gebraucht. Wir
+      kennen diese Abläufe und sorgen dafür, dass nichts unnötig verzögert wird.
+    </p>
+  </div>
+  <ul class="chip-list">
+    {formalitaeten.map((f) => <li>{f}</li>)}
+  </ul>
 
   <h2>Weitere Leistungen im Detail</h2>
   <hr class="accent-rule" />
   <AccordionItem title="Vollständige Übersicht ansehen">
-    <p>
-      Über die Kernleistungen hinaus unterstützen wir Sie bei einer Vielzahl weiterer Aufgaben:
-    </p>
+    <p>Über die genannten Bereiche hinaus unterstützen wir Sie bei:</p>
     <ul>
-      <li>Hygienische Versorgung der verstorbenen Person</li>
       <li>Würdevolle Aufbewahrung in unseren gekühlten Räumlichkeiten</li>
       <li>Umbettungen sowie Grabbereitungen und Graböffnungen</li>
       <li>Trägergestellung</li>
@@ -92,54 +158,113 @@ const leistungen = [
       <li>Beratung zu Grabmal und Grabpflege</li>
     </ul>
     <p>
-      Sie vermissen eine bestimmte Leistung? Sprechen Sie uns an. Wir sagen Ihnen offen, ob
-      und wie wir Ihnen weiterhelfen können.
+      Sie vermissen eine bestimmte Leistung? Sprechen Sie uns an. Wir sagen Ihnen offen, ob und
+      wie wir Ihnen weiterhelfen können.
     </p>
   </AccordionItem>
+
+  <HintBox>
+    Was direkt nach einem Todesfall zu tun ist, steht auf der Seite
+    <a href={withBase('/im-trauerfall/')}>Im Trauerfall</a>. Wünsche für den eigenen Abschied
+    lassen sich über eine <a href={withBase('/vorsorge/')}>Bestattungsvorsorge</a> festhalten.
+  </HintBox>
 </PageLayout>
 
 <style>
-  .tile-grid {
-    display: grid;
-    gap: var(--space-md);
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
-    margin: var(--space-lg) 0 var(--space-xl);
-    max-width: none;
-  }
-  .mini-steps {
+  /* Drei Schritte nebeneinander statt untereinander: kompakter Einstieg. */
+  .steps-row {
     list-style: none;
-    counter-reset: step;
     padding: 0;
-    margin: var(--space-lg) 0 var(--space-lg);
-    max-width: 42rem;
+    margin-top: var(--space-lg);
+    max-width: none;
     display: grid;
-    gap: var(--space-sm);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    gap: var(--space-xl);
   }
-  .mini-steps li {
-    counter-increment: step;
-    position: relative;
-    padding: var(--space-sm) var(--space-md) var(--space-sm) 3rem;
-    background: var(--surface-cream);
-    border-radius: var(--radius-md);
-    color: var(--text-muted);
-  }
-  .mini-steps li::before {
-    content: counter(step);
-    position: absolute;
-    left: 0.9rem;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 1.6rem;
-    height: 1.6rem;
+  .steps-row__num {
     display: grid;
     place-items: center;
-    background: var(--brand-bordeaux);
-    color: var(--brand-white);
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
-    font-size: 0.85rem;
-    font-weight: 700;
-  }
-  .mini-steps strong {
+    background: var(--surface-beige);
     color: var(--brand-bordeaux-dark);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .steps-row h3 {
+    margin-top: var(--space-md);
+    font-size: 1.05rem;
+  }
+  .steps-row p {
+    margin-top: var(--space-sm);
+    color: var(--text-muted);
+  }
+
+  /* Text und Bild nebeneinander. Die Bildspalte ist auf die native Breite der
+     Aufnahme begrenzt, damit nichts hochskaliert wird. */
+  .split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 208px;
+    gap: var(--space-2xl);
+    align-items: start;
+    margin-top: var(--space-lg);
+  }
+  .split--reverse .split__media {
+    order: -1;
+  }
+  .split__text p {
+    max-width: 42rem;
+  }
+  @media (max-width: 52rem) {
+    .split {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+    .split--reverse .split__media {
+      order: 0;
+    }
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 22rem;
+    gap: var(--space-2xl);
+    align-items: start;
+    margin-top: var(--space-lg);
+    max-width: none;
+  }
+  .two-col :global(.two-col__photo img) {
+    border-radius: var(--radius-md);
+  }
+  @media (max-width: 60rem) {
+    .two-col {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+  }
+
+  .plain-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .plain-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    color: var(--text-muted);
+  }
+  .plain-list li + li {
+    margin-top: var(--space-sm);
+  }
+  .plain-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--brand-gold);
   }
 </style>

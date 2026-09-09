@@ -1,16 +1,28 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
-import IconFeature from '../../components/ui/IconFeature.astro';
 import PhotoFigure from '../../components/ui/PhotoFigure.astro';
 import StockPhoto from '../../components/ui/StockPhoto.astro';
 import { company } from '../../data/company';
 import { withBase } from '../../utils/url';
 
-const links = [
-  { icon: 'history' as const, title: 'Historie seit 1970', text: 'Die Stationen unserer Geschichte.', href: '/ueber-uns/historie/' },
-  { icon: 'film' as const, title: 'Galerie', text: 'Einblicke in Haus, Abschiedsraum und Geschichte.', href: '/ueber-uns/galerie/' },
-  { icon: 'window-light' as const, title: 'Abschiedsraum', text: 'Unser hauseigener Raum für den Abschied.', href: '/abschiedsraum/' },
-  { icon: 'film' as const, title: 'Mediathek', text: 'Historisches Pressematerial aus unserem Archiv.', href: '/mediathek/' },
+/*
+ * Die frühere Galerie-Unterseite ist hier integriert. Es sind ausschließlich
+ * echte Aufnahmen des Unternehmens, die nur als 208x126-Thumbnails vorliegen und
+ * deshalb bewusst klein und ohne Hochskalierung gezeigt werden.
+ */
+const fotos = [
+  { name: 'bestattungsinstitut-gorhau-aussenansicht-panorama', alt: 'Außenansicht des Bestattungsinstituts Gorhau in der Reuterstraße, Würzburg-Heidingsfeld' },
+  { name: 'abschiedsraum-bestattungen-gorhau-panorama', alt: 'Abschiedsraum des Bestattungsinstituts Gorhau' },
+  { name: 'beratungsbuero-bestattungen-gorhau', alt: 'Beratungsbüro im Bestattungsinstitut Gorhau' },
+  { name: 'versorgungsraum-bestattungen-gorhau', alt: 'Versorgungsraum des Bestattungsinstituts Gorhau' },
+  { name: 'sargausstellung-detail-1', alt: 'Detailansicht der Sargausstellung' },
+  { name: 'sargausstellung-detail-2', alt: 'Weitere Detailansicht der Sargausstellung' },
+  { name: 'fahrzeuge-vor-bestattungsinstitut', alt: 'Bestattungsfahrzeuge vor dem Bestattungsinstitut Gorhau' },
+  { name: 'bestattungsinstitut-gorhau-innenhof-panorama-2', alt: 'Innenhof des Bestattungsinstituts Gorhau in Würzburg-Heidingsfeld' },
+  { name: 'historisches-gebaeude-reuterstrasse', alt: 'Historische Ansicht des Gebäudes in der Reuterstraße' },
+  { name: 'filiale-erthalstrasse-wuerzburg', alt: 'Frühere Filiale des Bestattungsinstituts Gorhau in der Erthalstraße' },
+  { name: 'historische-filiale-muenzstrasse', alt: 'Historische Filiale des Bestattungsinstituts in der Münzstraße' },
+  { name: 'historische-filiale-uffenheim', alt: 'Historische Filiale des Bestattungsinstituts in Uffenheim' },
 ];
 ---
 
@@ -74,26 +86,50 @@ const links = [
     class="page-stock page-stock--inline"
   />
 
-  <h2>Mehr über uns</h2>
+  <h2>Einblicke in unser Haus</h2>
   <hr class="accent-rule" />
-  <div class="tile-grid">
-    {links.map((l) => <IconFeature icon={l.icon} title={l.title} text={l.text} href={l.href} />)}
+  <div class="prose">
+    <p>
+      Beratungsbüro, Abschiedsraum, Sargausstellung und frühere Standorte: Aufnahmen aus
+      unserem Haus und aus dem Firmenarchiv.
+    </p>
   </div>
+  <ul class="photo-grid">
+    {
+      fotos.map((f) => (
+        <li>
+          <PhotoFigure name={f.name} alt={f.alt} width={208} height={126} class="photo-grid__item" />
+        </li>
+      ))
+    }
+  </ul>
 
   <div class="prose">
     <p>
-      Sie erreichen uns unter <a href={`tel:${company.phoneRaw}`}>{company.phone}</a> oder per
-      E-Mail an <a href={`mailto:${company.email}`}>{company.email}</a>.
+      Mehr zur Geschichte des Hauses steht auf der Seite
+      <a href={withBase('/historie/')}>Historie</a>, historisches Pressematerial in der
+      <a href={withBase('/mediathek/')}>Mediathek</a>. Sie erreichen uns unter
+      <a href={`tel:${company.phoneRaw}`}>{company.phone}</a> oder per E-Mail an
+      <a href={`mailto:${company.email}`}>{company.email}</a>.
     </p>
   </div>
 </PageLayout>
 
 <style>
-  .tile-grid {
-    display: grid;
-    gap: var(--space-md);
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  .photo-grid {
+    list-style: none;
+    padding: 0;
     margin: var(--space-lg) 0 var(--space-xl);
     max-width: none;
+    display: grid;
+    gap: var(--space-md);
+    grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
+  }
+  .photo-grid :global(.photo-grid__item) {
+    margin: 0;
+  }
+  .photo-grid :global(.photo-grid__item img) {
+    width: 100%;
+    height: auto;
   }
 </style>

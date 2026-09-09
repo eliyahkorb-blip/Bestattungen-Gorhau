@@ -1,9 +1,16 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
+import StockPhoto from '../../components/ui/StockPhoto.astro';
+import AccordionItem from '../../components/ui/AccordionItem.astro';
 import { company } from '../../data/company';
 import { withBase } from '../../utils/url';
-import Motif from '../../components/illustrations/Motif.astro';
-import StockPhoto from '../../components/ui/StockPhoto.astro';
+
+/*
+ * Diese Seite führt zusammen, was vorher auf drei Seiten verteilt war:
+ * "Im Trauerfall", "Benötigte Dokumente" und "Formalitäten". Angehörige sollen
+ * in einer belastenden Situation nicht durch Unterseiten navigieren müssen.
+ * Die alten URLs werden per 301 hierher geleitet.
+ */
 
 const steps = [
   {
@@ -12,7 +19,7 @@ const steps = [
   },
   {
     t: 'Ärztliche Todesbescheinigung',
-    d: 'Ein Arzt oder eine Ärztin stellt die Todesbescheinigung aus. Zu Hause verständigen Sie dazu den Hausarzt oder den ärztlichen Bereitschaftsdienst; in einer Einrichtung übernimmt dies das Personal.',
+    d: 'Ein Arzt oder eine Ärztin stellt die Todesbescheinigung aus. Zu Hause verständigen Sie dazu den Hausarzt oder den ärztlichen Bereitschaftsdienst, in einer Einrichtung übernimmt dies das Personal.',
   },
   {
     t: 'Überführung in unsere Obhut',
@@ -20,12 +27,53 @@ const steps = [
   },
   {
     t: 'Persönliches Beratungsgespräch',
-    d: 'In Ruhe besprechen wir Bestattungsart, Ablauf und persönliche Wünsche. Bringen Sie die benötigten Unterlagen mit, soweit sie vorliegen.',
+    d: 'In Ruhe besprechen wir Bestattungsart, Ablauf und persönliche Wünsche. Bringen Sie die Unterlagen mit, soweit sie vorliegen.',
   },
   {
-    t: 'Organisation & Formalitäten',
+    t: 'Organisation und Formalitäten',
     d: 'Wir übernehmen die Behördengänge, die Abstimmung mit Friedhof oder Krematorium und die Gestaltung von Trauerfeier und Trauerdruck.',
   },
+];
+
+const urkunden = [
+  { t: 'ledig', items: ['Personalausweis oder Reisepass', 'Geburtsurkunde'] },
+  {
+    t: 'verheiratet',
+    items: ['Personalausweis oder Reisepass', 'Heiratsurkunde oder Familienstammbuch'],
+  },
+  {
+    t: 'verwitwet',
+    items: [
+      'Personalausweis oder Reisepass',
+      'Heiratsurkunde oder Familienstammbuch',
+      'Sterbeurkunde des Ehepartners',
+    ],
+  },
+  {
+    t: 'geschieden',
+    items: [
+      'Personalausweis oder Reisepass',
+      'Heiratsurkunde oder Familienstammbuch',
+      'Rechtskräftiges Scheidungsurteil',
+    ],
+  },
+];
+
+const weitere = [
+  'Ärztliche Todesbescheinigung, wird vom Arzt ausgestellt',
+  'Krankenversicherungskarte',
+  'Rentennummer oder Rentenbescheid, falls vorhanden',
+  'Unterlagen zu einer bestehenden Vorsorge oder Sterbegeldversicherung',
+  'Grabdokumente bei einer vorhandenen Grabstätte',
+];
+
+const formalitaeten = [
+  'Beurkundung des Sterbefalls beim Standesamt',
+  'Anmeldung bei Friedhof oder Krematorium',
+  'Trauerfeier- und Bestattungstermin',
+  'Renten- und Versicherungsanträge',
+  'Abmeldungen und Anträge bei Behörden',
+  'Überführungen aus dem und ins Ausland',
 ];
 
 const faqs = [
@@ -39,7 +87,7 @@ const faqs = [
   },
   {
     q: 'Welche Unterlagen werden benötigt?',
-    a: 'Benötigt werden je nach Familienstand unter anderem der Personalausweis, die Geburts- oder Heiratsurkunde sowie die Todesbescheinigung. Eine vollständige Übersicht finden Sie auf der Seite „Benötigte Dokumente“.',
+    a: 'Je nach Familienstand der verstorbenen Person werden Personalausweis, Geburts- oder Heiratsurkunde und gegebenenfalls Sterbeurkunde des Ehepartners oder Scheidungsurteil benötigt, dazu die ärztliche Todesbescheinigung. Die vollständige Checkliste steht auf dieser Seite.',
   },
   {
     q: 'Was kostet ein erstes Beratungsgespräch?',
@@ -59,39 +107,55 @@ const faqLd = {
 ---
 
 <PageLayout
-  title="Im Trauerfall: Erste Schritte | Bestattungen Gorhau Würzburg"
-  description="Was ist im Trauerfall zu tun? Bestattungen Gorhau in Würzburg begleitet Sie ruhig durch die ersten Schritte. Tag und Nacht erreichbar. Erste Hilfe und Checkliste."
+  title="Im Trauerfall: Erste Schritte | Gorhau Würzburg"
+  description="Was ist im Trauerfall zu tun? Erste Schritte, benötigte Unterlagen und die Formalitäten, die wir übernehmen. Bestattungen Gorhau in Würzburg ist Tag und Nacht erreichbar."
   path="/im-trauerfall/"
   eyebrow="Erste Hilfe im Trauerfall"
   heading="Im Trauerfall sind wir für Sie da"
-  intro="Wenn ein Mensch verstorben ist, stellt sich vieles gleichzeitig. Sie müssen jetzt nichts allein regeln. Wir begleiten Sie Schritt für Schritt."
+  intro="Wenn ein Mensch verstorben ist, stellt sich vieles gleichzeitig. Sie müssen jetzt nichts allein regeln. Auf dieser Seite steht alles, was in den ersten Tagen wichtig ist."
   breadcrumbs={[{ name: 'Im Trauerfall', path: '/im-trauerfall/' }]}
   jsonLd={[faqLd]}
   ctaLabel="Im Trauerfall anrufen"
   ctaHref={`tel:${company.phoneRaw}`}
   ctaHint="Wir sind Tag und Nacht erreichbar."
 >
-  <StockPhoto
-    name="trauernde-umarmung"
-    alt="Zwei trauernde Menschen stehen eng beieinander, von hinten aufgenommen"
-    priority
-    class="page-stock"
-  />
+  <h2>Was jetzt zuerst wichtig ist</h2>
+  <hr class="accent-rule" />
+  <div class="lead-block">
+    <div class="prose">
+      <p>
+        Der Verlust eines nahen Menschen ist ein tiefer Einschnitt. In den ersten Stunden wirkt
+        vieles überwältigend. Das Wichtigste zuerst: Es besteht kein Zeitdruck. Nehmen Sie sich
+        einen Moment. Die notwendigen Schritte gehen wir anschließend gemeinsam.
+      </p>
+      <p>
+        Gesetzlich vorgeschrieben ist zunächst nur eines: Ein Arzt muss den Tod feststellen und
+        die Todesbescheinigung ausstellen. Alles Weitere hat Zeit, bis Sie so weit sind.
+      </p>
+    </div>
+    <StockPhoto
+      name="trauernde-umarmung"
+      alt="Zwei trauernde Menschen stehen eng beieinander, von hinten aufgenommen"
+      sizes="(min-width: 60rem) 22rem, 92vw"
+      priority
+      class="lead-block__photo"
+    />
+  </div>
 
-  <div class="prose">
-    <p class="urgent">
-      <strong>Sie brauchen jetzt Hilfe?</strong> Rufen Sie uns an. Wir sind Tag und Nacht
-      für Sie erreichbar:
-      <a href={`tel:${company.phoneRaw}`}>{company.phone}</a>.
+  <h2>Wen Sie anrufen können</h2>
+  <hr class="accent-rule" />
+  <div class="call-now">
+    <p class="call-now__label">Im Trauerfall Tag und Nacht erreichbar</p>
+    <p class="call-now__number">
+      <a href={`tel:${company.phoneRaw}`}>{company.phone}</a>
     </p>
-    <p>
-      Der Verlust eines nahen Menschen ist ein tiefer Einschnitt. In den ersten Stunden wirkt
-      vieles überwältigend. Das Wichtigste zuerst: Es besteht kein Zeitdruck. Nehmen Sie sich
-      einen Moment. Die notwendigen Schritte gehen wir anschließend gemeinsam.
+    <p class="call-now__note">
+      Rufen Sie an, sobald Sie so weit sind. Sie müssen nichts vorbereiten und keine Unterlagen
+      zur Hand haben. Wir klären am Telefon, was als Nächstes zu tun ist.
     </p>
   </div>
 
-  <h2>Die ersten Schritte im Überblick</h2>
+  <h2>Die ersten Schritte</h2>
   <hr class="accent-rule" />
   <ol class="steps">
     {
@@ -104,17 +168,70 @@ const faqLd = {
     }
   </ol>
 
+  <h2>Benötigte Unterlagen</h2>
+  <hr class="accent-rule" />
   <div class="prose">
     <p>
-      <a class="btn btn--secondary" href={withBase('/im-trauerfall/benoetigte-dokumente/')}>
-        Benötigte Dokumente ansehen
-      </a>
+      Welche Urkunden gebraucht werden, hängt vom Familienstand der verstorbenen Person ab. Sie
+      werden vor allem für die Beurkundung des Sterbefalls beim Standesamt benötigt. Machen Sie
+      sich keine Sorgen, wenn etwas fehlt: Wir gehen die Liste gemeinsam durch und helfen auch
+      dabei, Ersatzausfertigungen beim Standesamt zu beantragen.
     </p>
   </div>
 
-  <figure class="page-motif page-motif--inline">
-    <Motif name="formalitaeten" label="Dokument mit Häkchen als Symbol für erledigte Formalitäten" />
-  </figure>
+  <div class="checklist">
+    {
+      urkunden.map((g) => (
+        <div class="checklist__group">
+          <h3 class="checklist__title">Verstorbene Person war {g.t}</h3>
+          <ul class="checklist__items">
+            {g.items.map((i) => (
+              <li>{i}</li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+
+  <h3 class="checklist__further-title">Zusätzlich hilfreich</h3>
+  <ul class="checklist__items checklist__items--wide">
+    {weitere.map((f) => <li>{f}</li>)}
+  </ul>
+
+  <h2>Formalitäten, die wir übernehmen</h2>
+  <hr class="accent-rule" />
+  <div class="prose">
+    <p>
+      Den Papierkram müssen Sie nicht selbst erledigen. Die Sterbeurkunde wird erst nach der
+      Beurkundung beim Standesamt ausgestellt und für viele weitere Schritte gebraucht, etwa
+      für Anträge bei Versicherungen oder für Bankangelegenheiten. Wir kennen diese Abläufe und
+      sorgen dafür, dass nichts unnötig verzögert wird.
+    </p>
+  </div>
+  <ul class="chip-list">
+    {formalitaeten.map((f) => <li>{f}</li>)}
+  </ul>
+
+  <h2>Was Sie nicht sofort erledigen müssen</h2>
+  <hr class="accent-rule" />
+  <div class="prose">
+    <p>
+      Manches muss kurzfristig geregelt werden, vieles hat mehr Zeit als gedacht. Kündigungen
+      von Verträgen, Abonnements und Mitgliedschaften, die Wohnungsauflösung und erbrechtliche
+      Fragen können warten. Wir sortieren im Beratungsgespräch gemeinsam, was eilt und was
+      nicht.
+    </p>
+  </div>
+
+  <AccordionItem title="Was außerhalb unserer Leistungen liegt">
+    <p>
+      Kündigungen von Mitgliedschaften, Verträgen oder Abonnements der verstorbenen Person
+      sowie erbrechtliche Fragen gehören nicht zu unserem Leistungsumfang. Wir weisen Sie im
+      Beratungsgespräch darauf hin und nennen bei Bedarf geeignete Ansprechpartner, etwa
+      Notariate oder Rechtsanwaltskanzleien.
+    </p>
+  </AccordionItem>
 
   <h2>Häufige Fragen im Trauerfall</h2>
   <hr class="accent-rule" />
@@ -128,16 +245,70 @@ const faqLd = {
       ))
     }
   </div>
+
+  <h2>Kontakt</h2>
+  <hr class="accent-rule" />
+  <div class="prose">
+    <p>
+      Sie erreichen uns unter <a href={`tel:${company.phoneRaw}`}>{company.phone}</a> oder per
+      E-Mail an <a href={`mailto:${company.email}`}>{company.email}</a>. Unser Büro finden Sie
+      in der {company.street} in {company.city}-{company.district}. Anfahrt und Bürozeiten
+      stehen auf der Seite <a href={withBase('/kontakt/')}>Kontakt</a>.
+    </p>
+  </div>
 </PageLayout>
 
 <style>
-  .urgent {
-    background: var(--surface-cream);
-    border-left: 4px solid var(--brand-bordeaux);
-    padding: var(--space-md);
-    border-radius: var(--radius-sm);
-    max-width: none;
+  /* Text und Bild nebeneinander statt Bild über volle Breite: die Seite soll
+     sofort mit Inhalt beginnen, nicht mit einer großen Bildfläche. */
+  .lead-block {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 22rem;
+    gap: var(--space-2xl);
+    align-items: start;
+    margin-top: var(--space-lg);
   }
+  .lead-block :global(.lead-block__photo img) {
+    border-radius: var(--radius-md);
+  }
+  @media (max-width: 60rem) {
+    .lead-block {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+  }
+
+  /* Die Telefonnummer ist auf dieser Seite die wichtigste Information. */
+  .call-now {
+    margin-top: var(--space-lg);
+    padding: var(--space-xl);
+    background: var(--surface-cream);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    max-width: 42rem;
+  }
+  .call-now__label {
+    margin: 0;
+    font-size: 0.9rem;
+    letter-spacing: var(--ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .call-now__number {
+    margin: var(--space-sm) 0 0;
+    font-family: var(--font-heading);
+    font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.2rem);
+    line-height: 1.2;
+  }
+  .call-now__number a {
+    color: var(--brand-bordeaux-dark);
+    text-decoration: none;
+  }
+  .call-now__note {
+    margin-top: var(--space-md);
+    color: var(--text-muted);
+  }
+
   .steps {
     list-style: none;
     counter-reset: step;
@@ -145,13 +316,12 @@ const faqLd = {
     display: grid;
     gap: var(--space-md);
     max-width: none;
-    margin-block: var(--space-md) var(--space-lg);
+    margin-top: var(--space-lg);
   }
   .steps__item {
     counter-increment: step;
     position: relative;
-    padding: var(--space-lg);
-    padding-left: 4.5rem;
+    padding: var(--space-lg) var(--space-lg) var(--space-lg) 4.5rem;
     background: var(--surface);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-md);
@@ -161,30 +331,85 @@ const faqLd = {
     position: absolute;
     left: var(--space-lg);
     top: var(--space-lg);
-    width: 2.2rem;
-    height: 2.2rem;
+    width: 2rem;
+    height: 2rem;
     display: grid;
     place-items: center;
+    border-radius: 50%;
     background: var(--brand-bordeaux);
     color: var(--brand-white);
-    border-radius: 50%;
-    font-family: var(--font-heading);
-    font-weight: 700;
+    font-size: 0.9rem;
+    font-weight: 600;
   }
   .steps__item h3 {
-    margin-bottom: var(--space-2xs);
+    margin: 0;
+    font-size: 1.05rem;
   }
   .steps__item p {
+    margin-top: var(--space-sm);
     color: var(--text-muted);
+    max-width: 44rem;
+  }
+
+  /* Checkliste statt Kartenraster: übersichtlich und zum Abhaken. */
+  .checklist {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+    gap: var(--space-lg) var(--space-2xl);
+    margin-top: var(--space-lg);
+    max-width: none;
+  }
+  .checklist__title,
+  .checklist__further-title {
+    font-size: 1rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    letter-spacing: 0;
+    margin: 0 0 var(--space-sm);
+    padding-bottom: var(--space-xs);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .checklist__further-title {
+    margin-top: var(--space-xl);
+    max-width: 42rem;
+  }
+  .checklist__items {
+    list-style: none;
+    padding: 0;
     margin: 0;
   }
+  .checklist__items--wide {
+    max-width: 42rem;
+  }
+  .checklist__items li {
+    position: relative;
+    padding-left: 1.75rem;
+    color: var(--text-muted);
+  }
+  .checklist__items li + li {
+    margin-top: var(--space-sm);
+  }
+  /* Häkchen als reines CSS-Zeichen, kein Bild und kein Emoji. */
+  .checklist__items li::before {
+    content: '';
+    position: absolute;
+    left: 0.25rem;
+    top: 0.45em;
+    width: 0.42rem;
+    height: 0.75rem;
+    border-right: 2px solid var(--brand-gold-text);
+    border-bottom: 2px solid var(--brand-gold-text);
+    transform: rotate(45deg);
+  }
+
   .faq {
     max-width: 46rem;
+    margin-top: var(--space-lg);
   }
   .faq__item {
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-md);
-    padding: var(--space-sm) var(--space-md);
+    padding: var(--space-md) var(--space-lg);
     margin-bottom: var(--space-sm);
     background: var(--surface);
   }
